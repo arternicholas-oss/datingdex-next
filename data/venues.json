@@ -1,0 +1,4946 @@
+[
+  {
+    "slug": "cafe-milano",
+    "name": "Cafe Milano",
+    "neighborhood": "Georgetown",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "See-and-be-seen Italian",
+    "desc": "See-and-be-seen Italian. Celebrity spotting. High-impact date.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "kinship",
+    "name": "Kinship",
+    "neighborhood": "Mt Vernon Triangle",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.7,
+    "hook": "Eric Ziebold Michelin-starred",
+    "desc": "Eric Ziebold Michelin-starred. Quietly perfect.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "succotash-prime",
+    "name": "Succotash Prime",
+    "neighborhood": "Mt Vernon Triangle",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "Upscale Southern with beautiful space",
+    "desc": "Upscale Southern with beautiful space.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "marcel-s-by-robert-wiedmaier",
+    "name": "Marcel's by Robert Wiedmaier",
+    "neighborhood": "West End",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.7,
+    "hook": "One of DC's most classic fine dining rooms",
+    "desc": "One of DC's most classic fine dining rooms.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "rasika-west-end",
+    "name": "Rasika West End",
+    "neighborhood": "West End",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.7,
+    "hook": "Rasika's sister location",
+    "desc": "Rasika's sister location. Still elite.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "the-palm",
+    "name": "The Palm",
+    "neighborhood": "Foggy Bottom",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "Old-school power steakhouse",
+    "desc": "Old-school power steakhouse. Classic DC.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "masseria",
+    "name": "Masseria",
+    "neighborhood": "Union Market",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.7,
+    "hook": "Nicholas Stefanelli Michelin-starred",
+    "desc": "Nicholas Stefanelli Michelin-starred. Enchanting.",
+    "photo": "https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "albi",
+    "name": "Albi",
+    "neighborhood": "Navy Yard",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "Michelin-starred Michael Rafidi",
+    "desc": "Michelin-starred Michael Rafidi. Open-fire Levantine.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "del-frisco-s-double-eagle",
+    "name": "Del Frisco's Double Eagle",
+    "neighborhood": "Downtown",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "Classic power steakhouse",
+    "desc": "Classic power steakhouse. Reliable.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "minibar",
+    "name": "minibar",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 9.5,
+    "hook": "The \"I planned something unforgettable\" move",
+    "desc": "Pull this out on date three or later. High effort, high reward. They will remember this one.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJMY6KQ5C3t4kREDURgsrWo2s/photos/AU_ZVEGsaP2zFYAVc4VEhbAET6nUIu0tFCpx4m-KbACqeox1GRIi7duyI9aByzVxQtKNTdSvGoiHfewdaQXtQXE5IgN36S-Wtg3VW4SKwNUFqxookC-bflfgbPrjCOgzJfTI2WSk2oYLQ0pQbD74gD7mB30-AZsWKpFP_VSREp-5sUXw6DW03L3K-UzpCI2sBkqSW_an0fR9sG6oJF---W0Gdf6cF7e9kHlx1JZ_cOp628nmiFDwtErQUHS-seqmkCDqeTN83sIGzn7OQ-YNtKVSUtVR8Va4B-Oh6-wPXl0hCjsxlg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "chez-billy-sud",
+    "name": "Chez Billy Sud",
+    "neighborhood": "Georgetown",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.5,
+    "hook": "French bistro elegance that feels genuinely romantic",
+    "desc": "Charming Georgetown bistro with exceptional French food and wine. Makes you feel like you're in a Parisian movie.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJP1dFC0y2t4kRZfnkY-lmzcE/photos/AU_ZVEFoAClMkO-h1nHh5nEsfR4afDSP7DsDrWKf0rn_6ICABSd3HyJiq-6dfXLfu9J0ehkqzZTUAOcIf2EcD5g-Xg3jDh0mOa0ipUorcuVO9hfAbJ9KJVrsFHQfH8oJP0pxDlghOi6tLfUv5aMlt6POcem0IbjjwXZ-hZzJ1wB0pKUhiqo_sRrP1FBqOz39WS4_fgtQ9g0ODScllj5RHGl2XQ08ZBQu_TKHBI2nsSLTnZ1e6As73VPQyT_SwJUcTnpDW4QS7rpETCaoTgA4eelHErqiAaoD229Ysn6i98fMENoK1Q/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "komi",
+    "name": "Komi",
+    "neighborhood": "Dupont Circle",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.5,
+    "hook": "Michelin-starred intimate tasting menu",
+    "desc": "Michelin-starred intimate tasting menu. One of DC's most romantic restaurants.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "doi-moi",
+    "name": "Doi Moi",
+    "neighborhood": "Logan Circle",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.3,
+    "hook": "Perfect for easy conversation + low pressure exit",
+    "desc": "Great if you want to look thoughtful without going over the top. The lighting does half the work for you.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJJ0ZTR-i3t4kRLDrhQrCNIdQ/photos/AU_ZVEHYaQ98Y6PoZ9wnSiYJ6iFlpzaZ5bwQML1t5vAxEQytNZftgiFCgiRBsx7rSRDI50W0-1g5f4jHy1yIt74xRs_rAe_yXZ7Dt1OfU_ybopBoL3-9FJQWvewoc1Hhok7sfNxAu0xd6niz5ZdNo0eg7CCpJ7kNhIaJFP1sgKaBAA46C-oVl0c1iXsgwuwBlvi4sqmvP4xzTY8wW3MVDT88uuog4zoR0hLdAQy6J0h3yUqaHFpEjz0OHGVVLn7AALTfT9UwKBcLnjuZJxBphmBSgmhrGKvgkdI7g6h6FAKXLWpnrQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "minibar-2",
+    "name": "minibar",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 9.5,
+    "hook": "The \"I planned something unforgettable\" move",
+    "desc": "Pull this out on date three or later. High effort, high reward. They will remember this one.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJMY6KQ5C3t4kREDURgsrWo2s/photos/AU_ZVEGsaP2zFYAVc4VEhbAET6nUIu0tFCpx4m-KbACqeox1GRIi7duyI9aByzVxQtKNTdSvGoiHfewdaQXtQXE5IgN36S-Wtg3VW4SKwNUFqxookC-bflfgbPrjCOgzJfTI2WSk2oYLQ0pQbD74gD7mB30-AZsWKpFP_VSREp-5sUXw6DW03L3K-UzpCI2sBkqSW_an0fR9sG6oJF---W0Gdf6cF7e9kHlx1JZ_cOp628nmiFDwtErQUHS-seqmkCDqeTN83sIGzn7OQ-YNtKVSUtVR8Va4B-Oh6-wPXl0hCjsxlg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "slipstream",
+    "name": "Slipstream",
+    "neighborhood": "U Street",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.6,
+    "hook": "Zero pressure — just coffee and good conversation",
+    "desc": "No dinner pressure, good light, and not too loud. Perfect for the \"let's grab coffee\" situation you actually mean.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJHxIaX-q3t4kR-fGIJglefr4/photos/AU_ZVEHD4HJkW_OwsNxivLXh_EqZCABm_eakQLPv7qDVvDi34RFT3WD4WzP2gM9MvArJ16ssV9xQl_6XhVVU-rYH54YbrLnFuOQPKdq_cPUWizW9AZJ0p-c6U6fRXJpLbwfjyfKKpmrniKTM366zt_LONvEWctMQH0zlm5_GurnPeEAz-8A2SrZPlhKhAYV3mz8_xxpfD2y530F1avjAFNqG5WSXOnnG_4kwVqbOsd1t6_2QotFbwID3H5vyy6evZA9hhz_iGAwECb_t8d9tjyenQU_cD5piqpMF96dmM44UM1p6xQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "fiola-mare",
+    "name": "Fiola Mare",
+    "neighborhood": "Georgetown",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.7,
+    "hook": "When you want to impress without looking desperate",
+    "desc": "River views, low noise, feels elevated without screaming \"I tried too hard.\"",
+    "photo": "https://places.googleapis.com/v1/places/ChIJZUQ8NEy2t4kRX3b-nMqKZ-I/photos/AU_ZVEG5rUoSPGl7SOJa7VoI2gDyN8aT_QcVatR9v0L_1-Ug0xbt3-xWj48crTZGcOP-t3KrbcS9XlcDgEhI2GNdWTCl1Qp2xPy63PbmRXORX91PiGF9-cLu0rMVSJ1eJDFQ0udNu32OIpTm2uB1_uAVqrM2x2fb0f_hzOLlXGyIXRARfqcFgHmlh-JrLVquJJbG-VhxZn8ScZ2GV9qKUQXa5orY_XZsA8i0oqwKEatJzwxcVCqIQ6P37GCRiWsKOUIllSghN3y3bs9EL_3-85_8F0A58ZlCloLQa1TUxx2xwbxU0g/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 9.1 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "churchkey",
+    "name": "Churchkey",
+    "neighborhood": "U Street",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.3,
+    "hook": "Keeps things loose when you're still figuring it out",
+    "desc": "Good energy, not too loud, solid for a second date when you want to keep things loose.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJEeAiX-q3t4kR-VwuFaxkRxM/photos/AU_ZVEHteLQyyAqeFN7GnDlYbDw5EyRLPGU4fkuSPiYiT4QAp1rvocWhMGe78U8jpi2M-tto0pilMGjSZdsvRKf2JBewiunVHuC8LmlC1KLd_ajM29YRBax42FHGnDFmVfm2wKKzn2yjczF7Azw4RGQIpAsPZFDP_hFAqxNHYNE_XEKrPZMyyr0oOXt2V1svQ14ZPaeu7JVjCtXzUvdCuLMCBGbVEFvWiBdBV7ZQHlCuGrKQC1TwTGaVBHdOtJqWXXODrXQIV8TqOGlrRt9YKc1Byqo6vOwd1k1KoiniGsqpkIlXlA/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "filter-coffeehouse",
+    "name": "Filter Coffeehouse",
+    "neighborhood": "Dupont Circle",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.5,
+    "hook": "The \"let's just see if we vibe\" safety net",
+    "desc": "Laid-back, great light, no pressure. The kind of coffee date that actually goes well.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJy8k4Drq3t4kRB5Y1SGtK6T8/photos/AU_ZVEEUW9NYzMEosqd1XKQUYlCQvKTG3lCklfwog568EKrkgh1whnLyxG3OoUbpJuhdafdew0cr4cC3GifehOXe8NjiW6g7bmTO6eHmfushejzurs5a9dnTco7wV4WuAZlRGCjq1i5aiEn3ZafYWymOOnC0-RkKI_kjZ2_4VRz4awLFNPhvv6KN7BW23JGRuEvAxPOo5DouBFjSBR0OWre1T59sdd-bgpN55tbCPGjnfI20aVaW758FHjf66-qdWRRpHJtyOb2fx97vJNB3uIrfOzPOdNprsEQRGTWSt40ZOWQgyJkuXFKAzhrT-MXan2r5Wj7nEFWwGauc1TwYDL6vtKwc6dtMRHhYqbcGsfnUr4llzEQHxWAT3RFVqYS8xjwxh-eM_df9Njjdz1KGm0Cdp5X6M5CcmSQYrd3VI0zkiDtEDaHl/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "bresca",
+    "name": "Bresca",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.0,
+    "hook": "Tells them you're serious without saying a word",
+    "desc": "One of the most legitimately romantic restaurants in the city. Use this when you mean it.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJIfKOC-i3t4kRjYSije_nwy0/photos/AU_ZVEH3EXP3ajvcIIMOqpRB9PHLRzSlPlxPCyvbTPYEyVuGovUApG0jwXuYG3IcBAdOtuMCkvkUOQnSUx46Zibxuw3i2llnNfPoWzH_189QtdQ2YG1wUitNcbzO0XNbGAJwUhaVtvy5oT0UUBKGgW0NiPXl2UNlzKJ0wrv_0e4j1a0v6eW42Sxve-wF-foCrCTBzvSobHOaLvT__lE28QbtTVSw4zJmvg30s0Eh8hUa0e2Arr2P-rb7qrk5G6BIzcjKzx29mXYZf3woalDf5Gx7Ih8XFZvdV7ZUhpbnV98RS-l9UOrOGSlaAOJ-AZhS_R0ke92H0FuAz1a6azDHMbdodsa4SF936D7h8-WDmzGlGk4u9W1usJqOd7KYhIOmU4XIOefFnHHpg6XDsJ0i12lE4YXqn0yI308_Q-2ak13fcBdpEGaC/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 9.4 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "madam-s-organ",
+    "name": "Madam's Organ",
+    "neighborhood": "Adams Morgan",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 8.4,
+    "hook": "For when the date should feel like an adventure",
+    "desc": "Late night energy, good for when you want the date to feel like an adventure.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJHaWHK9q3t4kRxJy0xNHc0gE/photos/AU_ZVEE_5Po6cJrTcvgIuz5DxzEmV8w4Xl7tueXiaeOPnMiv2Izvge501cmyAfYQCDVL6bM39wubCSg3UjXVFXW6w0DaUFSB3auDhpxdQgtsl4iFsG4Orbl40ivEE9AFOYjqKRKYrGiEurdINLU0QxJA4FOydqIv2OR_rhgev4Zk3PtoA32A0nSrmVMfPS1HbzRDtYjruUW_hDHaeRuDGhNke320z98WKMo6rau-SFK-LzY2RamNP0fOlr_cctFytyPtaURnGFnlajUEAZjeUZWw7FryjCF_lYDKPCZD2fNwgBI61GdIBt64VudHCuYuKHqIrD0k-E3JH_KEIpqt8x3hL7fyBnp4zArXeYkp0EZgj2vQ8nb0CEWEE6nq1Y5w_93o2JR7vEAqobKUwBDTD0wi_mFXO105rCWt4LjXl8aYuOUn-_s/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 8.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "le-diplomate",
+    "name": "Le Diplomate",
+    "neighborhood": "Logan Circle",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 8.9,
+    "hook": "Parisian vibes without the flight attendant requirements",
+    "desc": "Classic French bistro with that \"we're cultured but also fun\" energy. Lively bar scene, great wine list, and enough noise to hide awkward silences.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJgYIki-m3t4kRZImvuN_pp9Q/photos/AU_ZVEHGr5IWl6b_JHjcL-HfJ3Xd0W9YuJhjrQJLmbntB82oYmvEMx0awP5li9a06r9SrczaTbrK4LfjzaCKHRPX54V43dcdMbvqYowkhnBw94vSOt5g0jCUux4be9O4iH-2LdN8z3hduYL9G9AabEsqdnuV_KeuJgt08EgZtm-VX9_wcmovEq-dQzlBHtPhCNcGKMPFS_8JnRPfmb3Es-quN9uE9EqoVY94mtDpDEALWRSKO1YGUJcJ0Pd27lH9b3M2hGrkvnFsaQ_bfhJoM8JZZ-nL-CAnmGwh0JxPkF55QgjLLQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "the-dabney",
+    "name": "The Dabney",
+    "neighborhood": "Shaw",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.4,
+    "hook": "Upscale American cooking that says \"I definitely have my life together\"",
+    "desc": "Sophisticated wood-fired cooking, intimate lighting, and the kind of seasonal menu that gives you natural conversation starters.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJrTuAH-23t4kRUu2vghXPScI/photos/AU_ZVEH1Zbv5vS0FhZT2TzOjY2eaSfiex_wqWI_6tzBqi4MUtBQm9h0O28ev4Gbo0qeZsHkqJvPtmDzqwK120Dr9qw2kATta4oquauwPeSbjdj-ArF_sxGmYAcj7YSBhqf4Agvsl-sHLZSD-qX3tueJGLqoTaAZ7PJmOkXNUuO3iB865Nfs9XM9023DITQ9ZspJtg2q044gHEbk-yF4bw1Mp_srfzrbkQhxqa46aMgp0UwRvlipQe2V7_FfzetjB4DqN-MYBolUFRfdYrphuiWQ91Odo5JQR2xU7hKH4_QYzYzObNmaBhJsZZ8bsTYMprmOwMHghwStsEQd5rMQiBJY6rt496WL4vFPx3LdrEMIxpezd6uwwwQP698EmzskdcBl3Si2iiFP9sqDC7-8_uFKninzSTs7IyulUjtpO2ix5_Bk3HPgQvZ9g-C_TiqXvGihR/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.3 convo",
+      "vibe": "✨ 9.8 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "rose-s-luxury",
+    "name": "Rose's Luxury",
+    "neighborhood": "Capitol Hill",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.3,
+    "hook": "Delicious food with a \"we're just vibing\" atmosphere",
+    "desc": "Small plates mean you're not locked into a 90-minute entree situation. Lively, fun, and the kind of place where people laugh a lot.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJUZM20My5t4kRnhgopk_e4YA/photos/AU_ZVEHSvMqdGaX4IQYpGpTMqKAgQaiv4DtXAJY25HCG6iDaCBdCyloOHfEnxqWDd_Fjc3mCRnM5mVI2VR8YFkNB3zXwp4y5JdFFmSB9I1AnzSAAV_nJ_aj9grDgHg3a1be_6EcHd9yxChBoI5PZAXXolSeD6xBxbWZso7T3nwMFujUWwZxHE9uk1_KXfzWoGRwT2obIKemhWiEPan-Lzkt_Di6TKOzlCHi1Y2XIyFCnW0JCoeMmaVmr9VH6OeSLZY9qU3DzfvGsQa1lcvxk6qcaS3Wc4cH484zkIaz2Fb25D3bS_DdeXH4GeJl-PW3x2ErcDPYo0VMh-FbrO--YQq0MolwruqVi-VlmEhEaFza3ieqVbZiMGS2y31O6J27XusDmTXFVXpo1SkE6Zhhh1aGJAsgITQZCjthHwGYoboSZmT1Fqg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.7 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "bar-charley",
+    "name": "Bar Charley",
+    "neighborhood": "Adams Morgan",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.8,
+    "hook": "Craft cocktails let you order something interesting to talk about",
+    "desc": "Dimly lit cocktail bar where you can actually hear each other talk. Great if you need liquid courage but don't want to commit to a full dinner yet.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJFZf4-sS3t4kRIrzJdxTMS1s/photos/AU_ZVEGFcHqlZbuIhSYHXkJvN-hBo8dBFJCd9qoP7j2Q4o6YW6FgFHPaMsBR6NJmLjQCvFRtTUA03G-6p4wJ8iAX8_g7gzN5HEdfuUsaHtpfr_rWhtK0RTY8ZsB7SJRRia90PLNtIfq0XFxbfzzgBXbIuz6-N-q_sDPlwsnupLhDJ8lt2wPoe8OuvlofJn78er6eIjdyoKDItEtyjaVXAnP1N-KeydoBaZP0KsARoVV7Kh7WmPmEg1GvRKNpZuutk-CrjfSouNXSxX0kpYmtckAT6_7V_sgclWk7aPkrT0SYWnZ0NgOUhV94vIzr4du7vZT_Je6vRlDV2sIY0cja7XscN9SHa5wcqa2X07JWx4rjVGTG6rYQy4OrHaW1gVQN4C_PN3f0b7TxsgOkZLomEG1j1JJf1bMVxsvg2EgazaYKsIWumQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "tail-up-goat",
+    "name": "Tail Up Goat",
+    "neighborhood": "Adams Morgan",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.1,
+    "hook": "Sharing plates breaks the ice naturally",
+    "desc": "Casual enough to relax but the food is legitimately impressive. Sharing plates breaks the ice naturally and the wine list won't intimidate you.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJgT2sldm3t4kRwS7hCfPYGCw/photos/AU_ZVEGwSzYQsZq-uWtyJSIEyYNqvPh4qD5PsC0vpzoE0XHztFSlOSldrceCVpY4164oupCdtVMTW7qD_3Mz_EG73JqDokaAzUNuHSNWxUF4RYXZD7FqP7zUWUVBckBMsRggRmNuGpjONbxfYVE7EP1ymyU0zOmCi_mq5vJw0_u8MKtnjjnzXVShtowWXa3Akkd5ZPHhK3clNHM9nqksKNfYfG8tn9hjkyV_0JPBF3BlqiUf-EhhcNzZD3SK8U1-t00DmzuoLuvsrDjgkf7jWMdKtws8WoDwsC7_BJB2j4dnWQEUsFgjIC5Y-T9SfPA551z7qhiv8uymH29I6fm0xvW-Sei3AbSR-W0Wy-aaAgnJEknf4kqx-dGvm8rk4UCwCRt8fJ3qpC7uHzkUdpqfVGP3hQgazfYvoTOG4WPhU0BO3tWWwJB1/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "iron-gate",
+    "name": "Iron Gate",
+    "neighborhood": "Dupont Circle",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.2,
+    "hook": "The candlelit courtyard is basically date magic",
+    "desc": "Candlelit garden setting, incredible wine program, and food that tastes like you know what you're doing. The courtyard is the move.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJh7mQV8e3t4kRAaXlvPlNF4E/photos/AU_ZVEHi0Aq1NTgNrz-Z0cOyuHaq5kLW_-7Ti52p_6EvVzvLCoUnYLf_9-TeSfVoeTt5n3hUPKowopOKS7YrKNxnRS29fsoPQCujDGoHubfTuF4XFG6F0NNgu5NThar5biDx8fml3vVEbE88aUDFelq7nUtpuPa0-JAcF3BClvWTeQsaRSNQNoJv1uEslYX86yEsdyS--H6ehkn1JqXJEfQ_BjMR58dFI-zt0fik41PUw3R1xRbuaaZ4gy89_aD-f8n2LBpk4idHV_UdIxnc6-jGlanuFzgw-_OHlVugxlkOYUd5sQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "compass-rose",
+    "name": "Compass Rose",
+    "neighborhood": "U Street",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.5,
+    "hook": "Global small plates give you permission to try weird things together",
+    "desc": "Every dish is a conversation starter. Fun, lively, and if something's weird you can both laugh about it. Takes pressure off.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJI3EDcui3t4kRPIuF_GEGF7U/photos/AU_ZVEFcQ_7vNQ_5pJHkGQsuuvSRM367b_5GSQ0l2P2Yn7YIC0Vt92zVm-qrwSV6DXM8cMbIAP2QAa8C-iGlUXqKfggMc6eikZoPgXoyPZL6Hg6Z0Od_wblWDL-fdIfSq0ADt2AwaOLCmApLAccyUyEkvEkmxM5E4jnFNBDYs-rAs99jwY2GiU9oe792dUR5sKK0B6iBdZlQh-Nqgjeqg7p5RdlNmu3eqQuPB-87x1CDclV1Q21yxn3T51dW995V1BQdRpiF9-HbNvnoZmFbKyoAOpV_DOc5aUS15OfB-EBKcdNeLTqAB8kmVOa_j5Gft15D_pPnsk5MbpZra-fAu9DcOXDKA3JO9ORzl3TlZ7Iuv2GtJfSmcrJnzDx9mZqsL9zf2ThUg40bp0wDzO_pcW-ooXC6tzNJLCgrGMcWMaX5eAm4Zg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "estadio",
+    "name": "Estadio",
+    "neighborhood": "Logan Circle",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.8,
+    "hook": "Spanish tapas = built-in date conversation around the food",
+    "desc": "Energetic tapas bar where sharing plates feels natural, not forced. Great cocktails, killer croquetas, and fun without being chaotic.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJ32LJVWK3t4kR0ILbTkU9i5U/photos/AU_ZVEEp78VNdixo5QSL8M3afYwloBWesTlPNODfCb60C7blhJXJROY1wTONSqRwVl5CN4Ttekec3_Wfgsl8AaIFhtXJ0gXSG-CbEYV8lkndUC-R0mnzff35g4tD6ESLVNeMbNNm6yfGz3qloACndPZee7S6ZjjSbethghiaB83zOhjPNlfBQXfzfWreF4V8BWpxBzo6znEowQdMy9DktSfyInQfVHvCMjUaQwR7BEXSO7dE1hH4FgSXeDxdp9sqwuWpoTZUdF-Y1rxHmTt8Vz9wQemliPYuIdbtqMfu1rXKzIDH5A/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "all-purpose",
+    "name": "All-Purpose",
+    "neighborhood": "Shaw",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.5,
+    "hook": "Pizza and casual vibes mean nobody has to stress",
+    "desc": "Casual, fun pizzeria with a relaxed atmosphere. Perfect for taking the pressure off. Good beer and food you can enjoy while actually talking.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJ-RCVBO23t4kRZy_eTbCJFC0/photos/AU_ZVEEnQJ3L6KnMcWuSHqErnhN8fP5EVzXUj3mkA3nWN0FvMgLE1-kVbiWT5ZgXOthQs7tEp8qY4iok9Q_QdZVypyZYmaMuSMsS9bOrUo7uYW1rQBGgjbJpkyfa-pWZot62ZGtQy2uQ91KgjOSU-G9lM0pc00hFVRSXOfyBCfIp2Phu8Ed8qcNyL-RbZq9s7zun6Cm_OIQ23MRAxysCpA7hnS3ap883G2J_P_RKdshRKZPwTeyreklcGyJ0o5OdOQJ6-Mso3aQwlPHRLTpZ-SRWj0U7ezcwEwCnCpg9zLJobag/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "the-red-hen",
+    "name": "The Red Hen",
+    "neighborhood": "Capitol Hill",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.4,
+    "hook": "Italian comfort food that feels fancy without being pretentious",
+    "desc": "Warm, intimate lighting with exceptional pasta and wine. Shows you care about quality but aren't trying too hard.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJTWEMOfi3t4kRqIeS1vxpQ80/photos/AU_ZVEH9O_ntqL3q8Oz-pXr4V_Y6RkDpoTq_NK6CT5k4eZmSl34oiXHVPxLfks2lTllDHf8oU0TSzBlGsuhg91N0MFf20epuRLUKtntbc2j3pdWFm4WpoXYHtpiqQEnvS2Rppl1q_pPnT9L0JhgZBKofxNcGXd_DWqdnG3bEeDuS_aG80kLfmfeABK6IxV-z-0r0-d6iVQVbDNs8xNZBNv-qKO8rtnRiP2C20wqwvmSWarx_ZXUPf06z0qx26FTR7ySwbVvYCWLlc2q8GHbi4Tmp6Ud08Pf0P3AcG70qkov2ZC3XLQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "boqueria",
+    "name": "Boqueria",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.1,
+    "hook": "Spanish tapas in a buzzy atmosphere that makes you feel alive",
+    "desc": "Energy without being overwhelming. Great cocktails, excellent small plates, and the crowd keeps things feeling fun.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJcwufQbi3t4kRRi2mcewhvr0/photos/AU_ZVEGS4iajMZKLAsCpIk-lav57i-rD6xmqKmHVHqGQ4SORRoWtzzylE_rqcv_nNn6QKg05ECiq6MwvAy-299r2nP_XA0Ccuv4Z-anATpAfSWduCrkuVJT2dXphtTPItOhPGBD-K2vntsnfniHChVdYGaxs8vwv_saq1XLUrw8nzXQoOXVuVeX6NLATpjkLrwAZoFb9lmU8MDJJ3hBakJaXeukko8iTa8dhUWqfyXUyH9ekJno7FtZIuld8_rvO3XavOagPbI51OWEbEkjCjzLD7fopmY6rIScS7_sk0l1x5DS2mQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "tiger-fork",
+    "name": "Tiger Fork",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.7,
+    "hook": "Adventure through Chinese food means you're in it together",
+    "desc": "Fun, casual, and the adventurous menu gives you something to bond over. H Street location feels cool without being try-hard.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJTRIX_ey3t4kRGkTeAWsk_9w/photos/AU_ZVEGWlKs_1DT_snMXBAiDnhlc9hR_X-V5alBVyo5aqF0hpAK6XbU7MOIvZZIDl9dvKLMGbxYsgX1Zcoy-KsDCjMhUdhs5pFFDySjjBpQNxPwzz7Vfk3wIrFLdDiYuFqWhQffv7KW0189qsy5WL6M36zKuR4B2HBuDLOH-Yd2geOkwRzuA0PyK-o4mqDX3W3b-pgI7B_W22oWj797DtGYm3bcLpB2Opyyw1A97W87GJBPcUBXYuwd4gzndIiVzEyUZO0H09eimMqnvZPV8MdEZzL6eCt0iFVxnYfW51GHEZJ0yMlyJ2gIIy2fEVVUNsaIz-Nfc9AAPY7oeTC4SclyREc2ytFxAKsnzlCQfzXTHfWsERQfhKLlXN9TyK8b1oVUvMPcVJ4uTJYBeab5jWBR21w7EjT6Bg433mmnjung8butOIS8G/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "ambar",
+    "name": "Ambar",
+    "neighborhood": "Capitol Hill",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.2,
+    "hook": "Balkan food you've never tried = instant conversation about flavors",
+    "desc": "Laid-back atmosphere with incredible small plates. The novelty of the cuisine gives you natural conversation flow.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJKd5tOzO4t4kRPYGgQo6ZReI/photos/AU_ZVEFS5CmKjEqwf6YkeSapHf8geByKlQirXHl2avb970dmrNR0IdJwR5_Q2aAKFcz_FS1oxi5KEtcdHZDdza2LOeWZFMs5JTkFA5VAbYJb3QuwnnriXO_Xzz-Z2Nzj1XlLr1AQgzLQv5QR_UUVdTPdLdPREoWPGkuU9HPOy_4yBooRSbLKptC3AuxmfWGQV9muEO4MaMo7rYqW3iINCmTkICSa4vtjJZm8EhsWKQtNuEy9nO6qgASJxTdEta4JXKJ3w9XZfpv-LgLIqGSJRpyhyexvKJ0ofNN80v87E8RnuV8eCg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "service-bar",
+    "name": "Service Bar",
+    "neighborhood": "U Street",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.6,
+    "hook": "Craft cocktails in a chill neighborhood spot that feels like a secret",
+    "desc": "Low-key cool vibe, creative drinks, and bartenders who actually care. Perfect for keeping things casual and conversational.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJfwVroeW3t4kRPqFvM6RDkwM/photos/AU_ZVEEvJJ46LFsPrCwvxzk-FNLArNodKb9_aLJni7UYfSoch0ySk0S-PcQyte5iwfQ18rJ-z5LGaIvhWDgJoYZb0xyLee3HUJZKM9hOJhFfDMwe8uHt6BlwR-E5K-vvvYzc0uYpyBpQKyxnGkrL8RwsVIYk7BgpiJ3BSwnCtiOI1ievRqySUXrEB6EKnI_f4juMRymdbRjaZyTcjyIeCdVQ80yB936ARJPHwaQwodvS-EiHyfsr4a5uTnFkPVwep6jD9kF9V23su3Q9IK3PPqvxxmfknwYjLkm69XoTATeYN9jRWg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "copycat-co",
+    "name": "Copycat Co",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.6,
+    "hook": "Chinese food and cocktails = sophisticated but fun and unexpected",
+    "desc": "Clever cocktails paired with excellent dumplings and noodles. Hip, playful, and exactly weird enough to be memorable.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJLQ1hOj64t4kRdZoiAw3UUi4/photos/AU_ZVEHPFmmbE5lxPrDTL1NH4BzkYdfxK-4x2Tex3MFsv_ai6MLbXBcxe0L2xGvuEDzsx2Dm5xulYYqF2nDxJqQHSLN4OVBwlzCkVebRBHg3JzUJXx4Q_ZF6kybxV2i18_44pVYsE3ZcSrQoWcEXW2ob48xs3lKvYa-sRTdtW7yiUgcI82pGHH2yQT6G5Q0OyFLiOcJxJ6_8_v_CG4-csOQbajuWPUmFrU6_JY-nf2F3v0UK4u2ls__m_xwzoGS9I7-pQTym1J_q5o1pm2xz5034KqStc9fY2MD12L2d41a1PrD1nonFv1or9tj1gaUNN8z5-jdtL3xKzZh_Vg6Kju1h-MxsiHU6Z-k_IygPQ0mKpRYNfQASY1_BdjDR_So89pyVLOAf8gpgezPfeqVtejDDMZb2wx9LTCIYjvEdNSHVP3hgxQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "maydan",
+    "name": "Maydan",
+    "neighborhood": "U Street",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.9,
+    "hook": "Wood-fired Middle Eastern cooking that feels like an experience",
+    "desc": "Stunning open kitchen, incredible flavors, and a vibe that's elegant but warm. The whole place feels special.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJuRQJIue3t4kR4aTvgqKSRg0/photos/AU_ZVEHtmEnpkf0jJK4Abrk2T9Mj2_St3np3rEscflAkpUjjoobcTptBi62RtixRPKrAtJOmfZip7oa_CeFLcn2ibSTy_qdDHmbwT1jqbEfpzKWZboHtWasdbSZnDNhRjr9Qwnkq5BQHbw5wKQhAq7M25Sch8iXG56aAPvNOLBaInoQmE718kCC3iB0WPaf9AEdF-vXnUah0dY-Iqcd9mv0YkkYJ6ER7NKW0mX9JswngNcDuy46_GmCtnRFF__rr72hbjkBPnv9iKxEXQ_4iYcyM9vyn6yBAn_TVFnu-JQXb5zjb4g/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 9.3 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "stellina-pizzeria",
+    "name": "Stellina Pizzeria",
+    "neighborhood": "Capitol Hill",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.1,
+    "hook": "Great pizza in a neighborhood spot means you can relax",
+    "desc": "Casual and approachable. Good pizza, cold beer, and a relaxed Hill crowd. Keeps things light.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJf4eqrF65t4kRWu_TMbNdNqg/photos/AU_ZVEFpvu6JbRpMCuFdoAQXa2gVueLjTXoEDGCaQeIrAU-dN0FiTfxcXKEbv2UvXX7_RBzodFQci5Av0zcmf1ggJMjNLnKBdWfWTQSH175McwlyZ2gIqvHg5mfFmmfrmb__h0UQXPRbbzlC_DxeQObw9zRkPYBl_BfYfuX9oZtcW09HT9F2uUR_ezgRsUzjuQxREfle0P98Bkk1smZcG6VXWI7jMjxgFp4YnvElaZ2Mtj4dGgToB8HTnasqK-vf1eHv62S_OKAH7vndummMcXp7sfNj2KVvZqRDWyIy9GQZ-vpMzXE3ZbX1aeS4dRJuZmEXYJJmR83CNOXfBHW3D9WpRonZUykeQIQM3b_IBI98W5BKWmIA5hYSlDfOIowA779IVkw6YFiOgxtRT4uP1wkOINwU-C7EcOr6Z2rCGe-GxEs8Mw/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "duke-s-grocery",
+    "name": "Duke's Grocery",
+    "neighborhood": "Dupont Circle",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.8,
+    "hook": "Cool cafe where you can chat without any pressure",
+    "desc": "Chill Dupont vibes, excellent coffee, and a relaxed atmosphere. Good for figuring out if there's chemistry without the dinner commitment.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJlROfpKm3t4kRtsQ4dv8O0A4/photos/AU_ZVEFU0BD8y4vA7wcXk0vlWZ_2vP2Sld05GJB8LQBVernxZmRFQU85rqCnSVtIOYChIRL5j-d-P2kzAxNG5OWxdzcccL70J_bnnX3tu14Hgmb60UB9RBG_Fv6nnmvhPlpFFr2WYKSl9wcNESA6AzAube478y2_dRrv7LQoRjk4BbV-QDAIOY9UG6DmtsaUUFCtiGHVg-un6hGKXXAHY-BLpAR-Z2SIax0q3PzHCMkwzyOqJWQ1X5eEBPTJi-CgN-mZ2kz_jtNnEW46rO3u2LU-kcy_LaxeE43X9LxDlBpQsxalvw/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "thip-khao",
+    "name": "Thip Khao",
+    "neighborhood": "Columbia Heights",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.7,
+    "hook": "Laotian food and casual vibes mean you're both here to have fun",
+    "desc": "Laid-back neighborhood spot with incredible food that won't break the bank. Casual energy takes pressure off.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJZ_aTmBjIt4kRBOOprOJHSwk/photos/AU_ZVEGt6T_y8o9QqkTx-O8aeTBKYkxykLBxTv8UB4Shi01U6_jvsCiKSkaj4xpMKvgL9-Lm8v4mff7aIXNvuquGn4v9Qy0_ftclZKMbf30OJmOa2QEvYo07Vy73GjIWBmAlJ8KnVZaOgqbOJTaNZ_ZhGgewwW7IkyfGSM80GuMqP4LneaXKD9mOreopltRtTfVJzvaE-ZLw1y4D-K8SCAOZ1bZwQo_yhZ1WkMsTAHrlcaXZOyFPCSpLqGksnFLk8LOgrS1XS0eVGxzNTI0oe6-vW9CNXCPnwnTt_6gkz8Tsv2Y27xSkkDVo_CxpXGOrLx4y2pG80w4UFevX-4HOg6AwF4VIvxfLy3mpstleLRePeAC491OBeSM0OxUUjTgPdElC3n2jyKGCgmNS4VlHTScfZS5R-t_vra62bIp2rLykYL-MHGb9BrjGE6Z4i0_RkB8n/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "the-salt-line",
+    "name": "The Salt Line",
+    "neighborhood": "Navy Yard",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 8.8,
+    "hook": "Upscale seafood in an emerging neighborhood = sophisticated but not stuffy",
+    "desc": "Beautiful nautical-chic space with excellent oysters and cocktails. Navy Yard location feels cool and intimate.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJDY08ztm5t4kRvwC4fC7RC8w/photos/AU_ZVEF2aYUHVoilWn3V0kvFZl5YK3kLTTHwV-Sad9xELT7YIkvaMsJhhxHIQQ4jpkwHTc5QONMhU6QJVS2xiSYiiEedVdTHZwlXg98_Ooou-5QV2ONLW5jaTIx28-gbkh8HcUgyRqjgp6lEzg7FY2A8x8RZXpD9BC8h8T80dFrudEWx5fW_VbTnl9i-S8Il_KDIyxHCnQ7UlP-5_1wTPmnuMGb0ya9k1ijbzrY4e8znfFv5qV-QzM-htREOjtTDiKQsf1aj9WsmfnXC8XDF_zYZEcBAYDQCGzlMa18Fnk-u2SD-Og/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 9.2 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "unconventional-diner",
+    "name": "Unconventional Diner",
+    "neighborhood": "Shaw",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 6.5,
+    "hook": "Modern diner that's fun and casual — perfect for keeping things breezy",
+    "desc": "Elevated comfort food, cool vibe, and a relaxed atmosphere. Great for a low-stakes hang.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJz3M3Se23t4kRk5q7sY9-ZUU/photos/AU_ZVEEgPZ2ofEW1ZEICqs4ZVUnDp6lzoWxy9Ksx5fy5tZ6ePa4NvdbYXO6C14L24ck_njF1G_YA-rbUT6KE1PZnDmM6Z_NRhncQtxvfPEla5IoKbSi7QEjYSD543uLaHzYPIpk4OfS5NHP2FOTXH7sV0i53LvIiXOJ1CFikXoV85g3PnnJSifQcz5nhARgaNGPLQewJBuyYlhyQE1C7JGf3IKcQC5pRCVeLd8I1trUPAuiUr0p0qUAlxqLZb75oE_cRG3zvPLMmYx5NZ7Rjr1MzwMwH9z3_nSZwNoLrxaYL80AEZXAUdmXJcff4SBarc7tKTfTD-3aOomvdz9Bq3AijDgSLH-0DI8_lT6Th1NWHw-v_Vu3J-MlS7LMQkVhs9qy7L9p--_zb-BEpxX7WJN8q-OsmSP0HEvWGJASJVndH6RgxrQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "busboys-and-poets",
+    "name": "Busboys and Poets",
+    "neighborhood": "U Street",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.3,
+    "hook": "Bookstore cafe where you can sit forever without feeling rushed",
+    "desc": "Chill U Street institution with books, coffee, and a vibe that encourages lingering. Low-key perfection.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJ9QBVvOe3t4kRk9O6xcjy8i0/photos/AU_ZVEEXH3xu1JB-ldlQl7WXHg9EsnZFwjSYWRR8jsdbztPetegHbwHTt5hyU2E8LBLKzJTZMH2EkV5PTLwhI0HOiUPfXKJgkqfZp7p-W3GWgNk6ory3ls1gGCC4Kdy1i0vn29g_PyAnGAHL-B7sSTbIo9HSG_i5PdQqAsUq3loOdL3eF6tfjB5tzs84VNUOO7oJRT_Lj0rcy5kBqxiw9LodYRLpuA95JSecHi5pBe0O2oYtu970_CaX_FI6SmvRvjuqPS6-vdH-dp7AYlGPXkSnaQyJ4QaHJwVZIU9nDvepE7T8Mw/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "dacha-beer-garden",
+    "name": "Dacha Beer Garden",
+    "neighborhood": "Shaw",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 8.0,
+    "hook": "Outdoor beer garden where the energy keeps things fun and low-pressure",
+    "desc": "Relaxed German beer garden vibe in Shaw. Great for later in the night when you want to keep the energy up.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJN8SJIO63t4kROmv1yrm_3b0/photos/AU_ZVEGHkOY4LEVaVYMWTTjSXu4eK7mTUQRQy9RR4eXBTudyy5YbGf88rV-W26Zac5y2LK3TmhkLw-uaoTbrLcWEkLw9inqUdzB1cFOQwtv3WyptYbGXRDH0Vm_tz6GKWH9AWONmHNoY5TwlXuGs0DqondnvvaknX6RPijDL187sRDK0m-rAUOHYu6UW5WYUc_q9JOIV-sBpsNtyDdtTaqVX9SxigxthM_efGI0iDiWH2JRd5PS1kHa0AiY7AVjs0cq63JxfAVPfLdGIWL81T2iNl_2E8GKEsDBO25_HliVFWOkufw/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "right-proper-brewing",
+    "name": "Right Proper Brewing",
+    "neighborhood": "Shaw",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.8,
+    "hook": "Brewery with solid beer and a relaxed vibe for keeping it casual",
+    "desc": "Laid-back brewery atmosphere where you're not expected to dress up or perform. Good beer, snacks, and easy vibes.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJZ7r5AfTHt4kR5hZrciJ20pE/photos/AU_ZVEHXVftzgIl0frIr1oHNXoySDFjTi0yVjyseNwIr_npc-gXAHKWF77QWQohnqqA6k0fySsz39ZSPrVgldpoChczteioNFQf22DSmFsyZRQKUaq8jw4N2Mch1KASboeC0HnkuscuSaPrSrelYo2TLrhinmD56sPQOF-g75mOkiXgB9xgAbDL3QFe-WAoZGemJEaMgtLsyw-yO8ZHphcvtLLAk6cFAdzoHijnW9IYB7WyS7Y6ya7x1HUl1PHVTixekovJREpEPnvemIJPzxOpBPkVKZQxlDnfJNxIFIEk67dG6sw/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "chez-billy-sud-2",
+    "name": "Chez Billy Sud",
+    "neighborhood": "Georgetown",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.5,
+    "hook": "French bistro elegance that feels genuinely romantic",
+    "desc": "Charming Georgetown bistro with exceptional French food and wine. Makes you feel like you're in a Parisian movie.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJP1dFC0y2t4kRZfnkY-lmzcE/photos/AU_ZVEFoAClMkO-h1nHh5nEsfR4afDSP7DsDrWKf0rn_6ICABSd3HyJiq-6dfXLfu9J0ehkqzZTUAOcIf2EcD5g-Xg3jDh0mOa0ipUorcuVO9hfAbJ9KJVrsFHQfH8oJP0pxDlghOi6tLfUv5aMlt6POcem0IbjjwXZ-hZzJ1wB0pKUhiqo_sRrP1FBqOz39WS4_fgtQ9g0ODScllj5RHGl2XQ08ZBQu_TKHBI2nsSLTnZ1e6As73VPQyT_SwJUcTnpDW4QS7rpETCaoTgA4eelHErqiAaoD229Ysn6i98fMENoK1Q/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "filomena",
+    "name": "Filomena",
+    "neighborhood": "Georgetown",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.9,
+    "hook": "Classic Georgetown Italian that feels special and timeless",
+    "desc": "Old-school Italian charm with exceptional pasta and an intimate setting. White tablecloths and proper date energy.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJPTqF_Uu2t4kR9o9RyZkZPWA/photos/AU_ZVEH55LNFbHB9zv1UMaxLLtQ4nBf-88TJV1ZDScoXWEI3AH3Enwc8sRu_sCt10hARfjl99GxHn5krtOAkWyG8OQOtZodZ7Ll3VgIpzTNaZUtWRAh1hk1KXYChIdYTGK3ffwUvVBZu2JZww7Ke4Rp80UbxceDhXIRAPEEDUBcvTLNDQ_C1NVdNK-RtUMcnfxpg82iKpskhJDmyOz0HVOC9RYesr3f4ZjyXUBfx8DMeIs8gsRd4Q6qyMHIN2-Dd_J92I26StaG86dCjRMXWyNG3aH76R0YOHmVcSt0YyeRBk3m9QZS668WlcYWZoNtS0jmSRCbCkbnbJVi00vUA6gFvLD4MJGNvwFsCAGVY-YsEHzOXh0yu1IEez9udccjeeCk4jS0XYFupiK3Sn08458CwuuUZqJrJULe_YZSdlpKc3jAtdA4cafXmDWN3Wn7X8og6/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 9.2 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "primrose",
+    "name": "Primrose",
+    "neighborhood": "Brookland",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 9.1,
+    "hook": "Neighborhood gem with seasonal American food that feels like a discovery",
+    "desc": "Charming Brookland spot with thoughtful cooking. Feels like discovering a secret together.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJoXoUmvPHt4kR4YEr-cJky6I/photos/AU_ZVEEEKkqE3zgLzi2-5Sz2lwpToFLmaVNVl86lBwFpafo1L_BKmQ6RZI5CiH8Rc20hEplBF3oDZq5EiqkdsYC4fyGqTBuR2_PZ9RH8WdbpngVQG-PICBnAFjBSQO5LqE5_2y7OwZ5m5iA1azw2kXofwZPJl-MJREF_dAyjakNk8uJae4fpgnrEInZsYkFvYpI7m8bw_kwmbZE6FdwuIiBd_m9KsZMcHcrBG3mtsoVoPPYGnRRym0l-GT_amtbYPv5Z-KDJi3hAkmpIObuEXttpK60Kswadx57dKqlz_kJjWDx6M--4ZcOTR2lsRlKBHa4MhsflOik40z59_-pZoexHt9txtjZsMr6CXhsxJCLgMK4rh-wCJ7IY9T06AKqSce8yfPtsyfydw9xxYkCIqYwfUDkEkOiC4-6msbUwi1w5D9Qu__g/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.2 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "succotash",
+    "name": "Succotash",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.9,
+    "hook": "Southern cooking that's elevated but fun",
+    "desc": "Creative Southern food in a lively Penn Quarter setting. Upscale but not stuffy, with cocktails that are actually good.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJEfb5qZG3t4kR8jQmH09MKRE/photos/AU_ZVEHKLnVL9elym_0qsdP86rFfBFyHToGQOBzNSnOIsbB5wwa_6nz0oMtxVQIIFDEJWx45g6YtTqqiB3lmIJMpSDYoNam3GXctgedWLrSbBscp0LreLe-CHbG140_7qRQfu5YRPEnbBiL5mJQo3EHFR_69l0mgYazY_ZxT1lOQ8MDlwTwA82-Upa5RfWrLOMaROTD7S62hC4LdqeNSZsDzg-SBOKP0y28ngntdQxm0I4tiPpNhC2w0S1sfomLYjTEyM-2LNJrx9ifa3W5hkxtMaaC2nUsV1RrDja38IfkhlFMOig/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "rasika",
+    "name": "Rasika",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 7.9,
+    "hook": "Upscale Indian cuisine that feels sophisticated and intimate",
+    "desc": "Stunning Indian restaurant with elegant plating and great cocktails. The flavors give you natural conversation starters.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJJbjP-o-3t4kRpnr_gpNc4pE/photos/AU_ZVEEnI7gcWr9tnCl_lTcyaSJ6U7KfffW5m65xAFJK7QThO7e6iWQMQyLKUpHgjq1PwZ9eAmO6W6FWxyHwJoXOB_3kAY2nkfbqU9nyWKO_pA21KtWhmBdGyUf-dTrEmsPBvRkTfLswV08k4eMpFWOmD-kPhTMphLO_lsKLfbDN0rmxn6qI8dBAKPMX5ZgyUrkd8tfUZT1vPIjJVb0aCZJLBB31t98Z0E5ME_5dXIYommpJf8KAgqKfgn5woC7J1B5pvJRENYyvRhFH9rrLYZ1rvhE97YTVO37zFRA-Xj-EFSYbdxfGr07v6MlJUNmNljztarUKv5LVDv9Z0v43egrnytM3YPwOLDeknBHHrKV_17dOiCypD397yXaD5v5yCpxoJu1nH6jtECmWHy310laTd-CzFT870uaEPorBoyhZCVkdFnp8/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "zaytinya",
+    "name": "Zaytinya",
+    "neighborhood": "Penn Quarter",
+    "price": "$",
+    "vibe": "First Date",
+    "score": 7.8,
+    "hook": "Mediterranean mezze that's impressive but feels casual and shareable",
+    "desc": "Buzzy Penn Quarter spot with excellent mezze and wine. The sharing format is perfect for dates.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJ3_mSkpG3t4kRDEWpol01OrI/photos/AU_ZVEEJEX-ovQBSGO2p7B-KUqQrBDyUkJ3qUwC_21qKjG6xwR8DsIFLyN3UJRV6u_YIEoIUsG8_V1elGmzLMv_S9siE2K-ptxRNT316vO2kdA--v9aA3Gt4ZUlsf4u9QY2BhlRJJuTagsOl1Kny_r6hvJizOzbT4tYOC-rYjI-VnlKZFKHpBLzdcB4bcmvAcRyMlqJQ95Xi6dR700k-NB9igVfvnjL24Kg_MaCDT_k22DSiJBF59aRYtZxUKw5JVomry7CSYpjIZecHRBUK_6YhdF9IUbB8oYx-cuSiGxa5-K1DRQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "taverna",
+    "name": "Taverna",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.2,
+    "hook": "Upscale Italian with candlelit ambiance and exceptional pasta",
+    "desc": "Classic date night spot with romantic lighting and attentive service. Outstanding risotto and wine pairings will definitely impress.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJ66DXz7u3t4kRZEE4ew8YgME/photos/AU_ZVEGsWLPF3i1VFblbNEnBURHNgDn_X19vGSTZJD8rKvgtuP93oDsV-9b9QrG_Xy7lfTO8eu0e2gPlKV5cOTc_SDQK7yiSgHS4AWDawSc0a9bl7HA3IgNExEinOjVItZBx4wKAjXrfF6XsSU_86e2TGmNxFz4o4jdbKXuvu_U9A_rysuvfw38kvSUhNeHWXq61x1vOor5Ozj7HaRm19_LLvWr9QZ4yKyIMYYMIYsFZ4YFutky2ywoeookpPmAiD-v2ZQILrBsASyS3s65EbExazSA81eMSXzKFkyEs1vrY1BmyKg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "virtue-feed-grain",
+    "name": "Virtue Feed & Grain",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.5,
+    "hook": "Relaxed Southern restaurant with great bourbon selection",
+    "desc": "Open concept dining means lots to look at and talk about. Fried chicken and cocktails set a fun, approachable tone.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJUbM3p1iwt4kRknoFCNtQaE8/photos/AU_ZVEE-cltTk6kYQtXF0m4Utmvmf5sFaXd7E5bZhk3dvE3m0fJSK1e0cwbui0Zem6uDHey9_VPH_YEOiZrQ2LF2r8V3VJFZ25OU3q9jWXLWk52mXW_f0wLLm3tYg2gcmzrXSADHf7QShnjLs_6sjtrb94VDR80-ZSmOn2A1hspQm3cFZuFcknu6d8plRyYXfY6J7i8h4c4-ceOyJ3gbABj0k9OO1H1dFg_L8G7ri4KJGVcYud7bXHltvgrOrjJNQPVmJNDLNzwp7ndy2iQ0SuWsci3HaWlE-25wV9SAWcjDCrFQ8A/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "px-old-town",
+    "name": "PX Old Town",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.4,
+    "hook": "Speakeasy vibes with craft cocktails and intimate booths",
+    "desc": "Dim lighting and cozy corners make this perfect for late-night conversations. Expert bartenders make incredible cocktails.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJgVSngfiwt4kR2KrRlEo14uI/photos/AU_ZVEFtEOdATUoHiTT30dj21eAxYEgf3Kh7-1zKPQxcofAhY4VFX_o6ShW-cIhujvKmnbpGGc2itoKnYI8AIkkqS86-p09F_DCiFElLfC252fYjmR6x0U61GGSJVuFyA3e8mZweXKCq2d-H5jR6uYZDM5VbLPvmYOjMBVk8OTRwUtktbZsvVHAamCql0zo2XpNPpkqG9Va7FfiA1hBVuOAZU1o250gWTNdkTtuLNuzY6fXNi1adL4XdHQ-r8YfW-dYx4kcw2pgH32A_jO6erDBH3UVophgYMa6d4tyZlSSXxUk3XsFVa6OqNiN3B7l9MTA5HZzDxaXQYhyhCyM33cfoNhKNog2_oc1KwUFE1NOMhSPP8pob7CcDKkejyb9GUSakypI1qwbH-rbS6OISWY1xerFppj3dWVhW53Z05DvMmQywb9qU/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "cheesetique",
+    "name": "Cheesetique",
+    "neighborhood": "Del Ray",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.8,
+    "hook": "Casual grilled cheese spot with counter seating and friendly staff",
+    "desc": "Low-key vibe perfect for testing the waters. Simple menu means conversation is the main course.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJN7xHg0-xt4kRtOM_mdVUzfo/photos/AU_ZVEHkU43ELRzkqXdj3atSQeIfLkwlG-WMWhgEhIvNEslJfMsluPhX3qaHKTltFpOGy4g0NJMKC0D-AAmAkSW0XrUPlA2C8NeO1NiR3RaFcWgOGPzMDsDCVLF7Z1CveR3djc5MoPBoKcAxKyvvubWqDaWRT382ovjEmXpm9c-B7Tfxk9HYWvxHgeaZkdFNstD12RJBNKru6WnXbyP_1Y34HJRDxtpqVlEFrmwrvovSuL2XxATMnIHlCx9095AL54BKaUhHsfHQj0rceBn4yn--EMVQnpnfk-iu1INWdo8Gvbhqsw/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "the-majestic",
+    "name": "The Majestic",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.2,
+    "hook": "Cozy neighborhood bar with vintage charm and great cocktails",
+    "desc": "Dark wood, dim lighting, and a loyal crowd. Intimate booths make it feel like your own private space.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJddN6ciHIt4kRMXVuTGNR5dM/photos/AU_ZVEGd2SsN5eBRrME4BMJuMOSLatJEVePN1QDTrBqdMH8LF8Qsys_zKod1Jp7H8yq46tbCk8D1Y78PknXRJ7ZsXvGcYMtOVEuzGxiCkwzqoEG8I-XWe-tcwcj5fLeL-RfP5w4gykIuhLD-boB_RzDCMDtTvT2fLADOPGOc5-gUq9ck1RuJBLFXynFXfwhA8BHaE88V6tgp2VKoSM3nRWXGucwdIqHaGsya3_OFhgXs-49sezTphNLupnAsZKGQSEKlWwUTDnBWt5VY2ZzuoxzGNetR0z8suvUpzh-Wapmlzf-NUg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.1 convo",
+      "vibe": "✨ 9.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "pupatella",
+    "name": "Pupatella",
+    "neighborhood": "Clarendon",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.2,
+    "hook": "Neapolitan pizza perfection with sophisticated Italian wine pairing",
+    "desc": "Wood-fired pizzas made with incredible technique. Upscale casual vibe that feels special without being stuffy.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJr9n1nSq5t4kRpcV3363Tpug/photos/AU_ZVEFZrEP6FtZ15h4n5jDDnSp0ILoRjdarxQHlW991bZpUYVfno4OowPm7as4v9-NyFyl5l-DZnDccwtPSbY5RdEwRlbZcJQG5p30nVLQBL2_R0OswrcUvZ9A5t2MSR4kJJF26xt9PaU_TzhdPbOJrrzqTJBk1mdJB8HBM2X835_m6DOvAz3_dSXIrge3iOKdd3mWpPyBscRxDsuWzuIDKV2JCqANV85rhmGPZnNVoTt-pwqKNRWOXhRY5I4zmToC-448K6h5F1LGSYx1e3YbO2nC-tkGWS7Y3jMru3zQ9ule0H-7ussa89hefWS9fy7monzwODvQ6-_GuQLSO-PwWHdPzZuMfjlLJQE7zyf82uPTucbrxbvH-yL1TxXJgDfXXffgsnRTGePFrH-V8fwEsafgPkX5UiuWovSFlr3gP0jclmYWZ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.3 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "ireland-s-four-courts",
+    "name": "Ireland's Four Courts",
+    "neighborhood": "Ballston",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 8.6,
+    "hook": "Irish pub with packed dance floor and sing-along energy",
+    "desc": "Great for late-night vibes when you want to move beyond conversation. Lively crowd and strong cocktails keep things fun.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJXXOn6GG2t4kR1NsCMpkVJRA/photos/AU_ZVEF_8srLEHbOh-3g7J8kLKaZ2nEdMtceaFhGoC1FezmhoAOnASf_oKqv9_aR7uhnxmFqoECedoT-05eTfZae-_XMqMJsS8J4GZVGo8I2KxfyjfCWrH2gu137-etxkt518Wg7fPQLKwNcuX8JhR8AsxRmHsE1J4Evb3166v9qlfIbXuf4YNwJSDvMfIiL8cczuooE6oB2-X_zjQUIdECtKBp-OlQLY9V6IOPUveLWpgHZ7eAXNCVlWZu7W0Cq7HZ902HN9xySi0-WtB_2G634X4lwn9irprMVPI4m6XUtYSLUzg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "raku-japanese-restaurant",
+    "name": "Raku Japanese Restaurant",
+    "neighborhood": "Ballston",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 9.3,
+    "hook": "Omakase counter seating with chef interaction and elegant presentation",
+    "desc": "High-end Japanese with interactive counter dining. Impressive without being pretentious, great for impressing someone special.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJt0ycIdnJt4kRp3BdmDeSK0E/photos/AU_ZVEEJo9RsFLSBrg2e5E2CRO_F4FfTeHV3wY4LH9vBUAcEjkmyIMv1i74sKS9XXlZtTjBMbQi3Mz9uZrNiw3aFlKxWYyGyq985oS071RCrWOUV_J-z538EYLayncoN4qnsrYsfbDAPrlS-Jj38eKxFFgTaiZyct-pz_sCHqAI6TH9vr379yIEeID3a7qNhXUzFFk52S51R1Nz9cDF3GEBDIxihcn9kkbTtno5HA6Bl9vE19-bqSEZJ-W3SgAT2PCrc5ADBRbQGz8dMEipDzluek6pch_MuJlZi-V1B3lqIiOiv-A/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.4 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "northampton-coffee",
+    "name": "Northampton Coffee",
+    "neighborhood": "Shirlington",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.1,
+    "hook": "Cozy neighborhood coffee shop with excellent pastries and local art",
+    "desc": "Intimate space perfect for midday coffee dates. Great coffee and a loyal local crowd sets a comfortable vibe.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJHYqM_JTJt4kRKtA6-E-5bOg/photos/AU_ZVEGGnhXPey9-AQZSPTsL7Buqn1fVol_TCYcfhCNh7bMsIzepGvErcHkL6GGVWviXMvK-bNSPKb3f6OUtMKAL541IF3HJTqSJbtTDQOywGsg2ZvTPx-Teos0de5UGrb8lgF9TxtnEsEKkYUwsAZJrDH7ynBg1dtSrrN92hGdQORSqrCAIOfv49wQxh6WSFc7ESMae7pEy6GsAIM4FvGBeunF5aGdeMPi86eJ7RnNu06iGB2RuUv4mpNEwIKGedenbUNzujLAwHK5Qj4rH5aVYOtKfWveDqh9jrnKMioxOBGE/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "the-pint-room",
+    "name": "The Pint Room",
+    "neighborhood": "Pentagon City",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.8,
+    "hook": "Upscale wine bar with intimate tables and extensive wine list",
+    "desc": "Dark, moody lighting and carefully curated wines. Intimate booth seating perfect for meaningful conversation.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJmzvklCS3t4kRqkZCKiv1OfY/photos/AU_ZVEGtbwA5mXzq-NObmi2Fjv4RoTpsdyy5bbAUJzE0UQ43p0jOSvUakUZIwZd33VAVR6QDLKNAKhn080bWUNh27lt4II-hXz0bRdODJBhlB3Ovl6kgghxDGv3JvH2oQyHdpRaLuJx3g0Asx6q6GfaJBzDl7QtyiKaLMDe2xvpPeVhC3ZRLUAG9danSp3QciZuk_qgY8R8PVlVBKcBfmyyYozUJAZNZO1CmtcuQHnj2i57csqGnGEZc8Q4VF0gkVkMobFOjZCQY88OdlDVTonj2ocfHBlA0_rh5oNXL_v0stbcorEt29Wb8KsunfMQZXet4L-TXB10sxuKeCeMc99wsgP1fbI7HYNxBfqJQtWWj45IrTMDK5vGy-t6uZr30DP_gj9yTipkvE_kcx7vqCBiPYipHxmwEvTpdrqC1w3yN7WvlHzQTE5yn8-ufsR4WLPVI/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "district-taco",
+    "name": "District Taco",
+    "neighborhood": "Rosslyn",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.4,
+    "hook": "Casual, fresh tacos with counter ordering and energetic vibes",
+    "desc": "Quick, unpretentious, and delicious. Great for a relaxed first date where you can be yourself.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJbzUhBJe3t4kRSonHJnzbmzk/photos/AU_ZVEGWTZvWf5IyZgaJ5Yr8SpAaPXfII8Cch0GZaC0SypSP4kTv5xfFq25d7-IXB-Nfo9blC2GDW-x-I_LEivQwHXywSEnvybwxQ3tn5XFPFOhj7Gi0XTz0Yab_eNc9n9U7I6OYrNl1Xy027lvj__Z6rnmYiApowic__psrCTS11pdlA2H0fJJhKgXnVtz2vZAT4b_r-FUdOcp5RrhPTJKno7s8EHfywFIV13pOje0LixfTzOWwOY5MVyD-q2v5ksXoA3p0GIx2G8ado6L15M9GMtq54SP4gRB81XJ02erbEnWEeg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 8.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "swingers-crazy-golf",
+    "name": "Swingers Crazy Golf",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.7,
+    "hook": "Neon-lit mini golf with craft beer and arcade games",
+    "desc": "Perfect ice-breaker with built-in conversation starters. Competitive mini golf is flirty, fun, and never boring.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJDUyoKhy3t4kRVStQxnWLBZY/photos/AU_ZVEFuruU9U8CjQyOAutD0bETCj3ty4bfYN9aX4kfuXKGOEDnNuj1EbTRxBUhipTGiAjR0ubHAcNeafaTc5eXh_080B1YuIaybl-KP5KAf0-5LpRIjdPFoUycMoOA6xSUqzqKhlWXjQJfHMqKA7ToOgo_kCQnntgitIf7JKZQlmrYABbS2jrt3D4AhjUP4bFEw-gPpLVepEffNCgVt96ScejioY8C0LXfn_uYcKESiTRwGqOVk28JDjIm7CZ24LB7qI9fDlFLrsI7_WcepLutcVE0hbtE3z7OXh64ml3S-4EE/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "bowlero-dc",
+    "name": "Bowlero DC",
+    "neighborhood": "NoMa",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 9.0,
+    "hook": "Modern bowling lanes with craft cocktails and arcade nostalgia",
+    "desc": "Casual activity that keeps things light and fun. Great excuse to lean in, laugh at gutter balls, and grab drinks between frames.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJ1fW3cN63t4kRQ2QwZ47_Ago/photos/AU_ZVEFctHob769xqWbJQY-gqkM_VqEEUKk-9hzWOTnmlNJFnlZ8sRcczO6HCyVH62MzoFrXrtFjOzpIlQ-adnlHoBlcSLjNe9CNHGMe_BBs7FZm6GYFU2cDjZQYGI77h_QzKUQOtw-fZTGhDB3l__ejV-xmmFGUSes0KWwcEc8NVai4Q2N8HIULaPI-ZiTWdr4aeRtsZxquDV7Te0WiTUvgt6sGjN30MF6BT-Qd3GGqi9l75QslC82pPu8WcAg33zc8aXTmz1GTb_p6QA1FSMNt27SvFUs-WtHCGLPMIRPvmnmWPIRoj96Iqw-xTghhSyjPYWeBN1woumxTwU_iZMNUdMGwRODw2nY2uD5Nkn00ieKSZxjgPH8H6FS7ZNBJqSITt8mtIJXzrfW61TLZH-S-ua8umwHt4cOzMMs8u3gjp5NguXSB/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.2 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "escape-room-live-dc",
+    "name": "Escape Room Live DC",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.5,
+    "hook": "Immersive puzzle game requiring teamwork and communication",
+    "desc": "Forced collaboration reveals how you work together. Adrenaline rush creates natural connection and shared experience.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJcfBIqUi2t4kRDm9kV7cD4gE/photos/AU_ZVEHI-Dzoh_DAXEOmzPkZfBovKdy14--gYU64qer2H7kPl1WKGfQ_Cu47vs1BB4yj_GPlgWhwQMvaeb_HC87ewdmZ_aXbT_XPGvZ2Xxu9EMarV_l5smd2Zl8MT-ZyUjiXvDpJkt4srdADA8U2eUKMMRlC-bNf1K44dvNbEcnWwYWG278vDxwd6PSdbeaPsnQNk-XlKU-TCAqOxMAs_hkMq6xvNsb-9r9xAbenzTh2x2I3uqQa3lPv7-gWztPFJk0mZ834otaCZTxxBRxM-qo6B5y1-EefRDgOLtp1ikUT1tWxug/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 8.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "topgolf-alexandria",
+    "name": "TopGolf Alexandria",
+    "neighborhood": "Potomac Yard",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.5,
+    "hook": "High-tech golf with craft cocktails and shareable bay seating",
+    "desc": "Modern golf venue where everyone can have fun regardless of skill level. Games and food keep things moving and interactive.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJGSKCzQ27t4kRLlArx5baofo/photos/AU_ZVEFGuS8Cb-jwB5779-vC4FwtK1enYQIZUhLdrHO3MM1GC-0AwiKz-LS89rsAEZ9tKCQtx8TnQ_RUVN7OGY3apGXLZpR36XGqt0IzAv6t4u4euM0hCtxRp3RL4zOTkQ3fXLEx8Sjga_tniRnar_NDTtwbfYMH9KotL0mNEhu8APM4s6q024FI5ea5xrrUN1CLuwMhWavZUXbHz-aeKMFJmMi-UuQmP1_IawgZWEY-8Tf7LgHjH5ipkvq8cZYtDPe9_4hIVYaBqhcuRE5wAWazQZ8ZmvUZyIi5QV0aWAkYZxmBkA/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "punch-bowl-social-alexandria",
+    "name": "Punch Bowl Social Alexandria",
+    "neighborhood": "Carlyle",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.4,
+    "hook": "Bowling alley with crafty cocktails, arcade games, and food",
+    "desc": "Retro fun with modern execution. Multi-activity venue means lots to do if one thing gets boring.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJJ3h9eSS0t4kRPxtJAjSUoCs/photos/AU_ZVEFbE3E7GmY037ECvB6dFmHW60YQMvWjmkAsRPRoil64lN_jqWaRsQJQulTXbHIDWJ5MwQ9FC5uCptF983gxxW42LDp6iQ9_zpIOXpGKLYYFMsxLSY1b0cpubjlOCS4_I7m_91xfbABkMrXJbD5m2F7iQAHe_fpJCn7SRGg_-O3TYRVBmXliv6a1fFGhpJOEnc3IRTJoQs3ovmLNj68OcVPdIPVdrIFYNpHm4glRlUSeh2tzvFXQKHZe3YWrGM_Aef4EwPwSwgC4k-3MrK8XEYy9Z4vcBr4p2sxEQiLnvF2UJw/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "monster-mini-golf-alexandria",
+    "name": "Monster Mini Golf Alexandria",
+    "neighborhood": "Landmark",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.7,
+    "hook": "Glow-in-the-dark mini golf with jungle and monster theming",
+    "desc": "Playful, creative mini golf perfect for testing chemistry. Low-stakes competition and fun atmosphere beat awkward silence.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJDUyoKhy3t4kRVStQxnWLBZY/photos/AU_ZVEEiOa-jiGIDJGnkOF8VvSYvC6uFkk4oqlGwQFBu3ELdMt1edVUxUD0eGecGNAocBk_iUfps4xgls7FS0LyPZopUcVPjIpi_8XZ-RiqO3PkdrHVshvEILlT8NVY6ZprAOUSj68oYcBuuglOTfnBhNxEE-g_9NcI5ia5Ude4ViTGuBmsiU74gNoGbb6_4-MCm61ComwCsDIn8eykF3_647QznB-veLMp8fhTlOCwKIZ6kRyyLcy_IgRy3I7xtAt9hwSduutapmOtqKxs0CDzX-dhKSfsbI2g2M9t0HDGR0Dk/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "bowl-america-shirlington",
+    "name": "Bowl America Shirlington",
+    "neighborhood": "Shirlington",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.5,
+    "hook": "Classic bowling alley with retro charm and great snacks",
+    "desc": "Nostalgic, laid-back venue perfect for casual first dates. Gutter balls and laughter break any awkwardness instantly.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJdWMIIu6yt4kRg_Br-zZ6XZk/photos/AU_ZVEG9-9ZbWdzC0jBURFuR8uE6DVvLTo0e5xNDd9oe3trYHJWtunHtyhCAwcXnme8F6yBhyai9VKfTcKW_qjcSEE4ku-iUjHWrE4c2PXw0IfyD9VCqLUi8V8Yv7NosNZ5FrsjX9oA2ioeE3KQOazlZrSWepY1CtwpBFQlyjDQ11aQZ8xTfZEXoumPvfq_1w9V0stQYxKflJ4-X6UAqt37BCVbPosNIroc7m6RMAD12_KvKJYreMAaOkt9pq5uCnDwdlNK9pmb0VdT_eSXw8WV6S6UvhFTmvuAH7seiy5aLqUkECSKUwrYNrZh9Fq7QiZsiObLF_C7184MSxFErDgwvm7PT1v-8Q3lKYHY74_R0hzG24mNPTcB4qE54ct1vJJijoQHF3b0fwCDz_rXJSyMpsYa_b0gzf8OC6kA5VLftKXo/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "escape-room-arlington",
+    "name": "Escape Room Arlington",
+    "neighborhood": "Clarendon",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.2,
+    "hook": "Team puzzle challenge that builds trust and laughs",
+    "desc": "Working together under pressure is a true test of chemistry. Win or lose, you'll have stories to tell.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJY2-6cTW3t4kRUvxabWiY3xA/photos/AU_ZVEF4A0fS1r5rFdtuFomL6xPpEI9lblgg_aHtQaHm8LvmKXHvEUnoEXBKTHaMIjLq1kSf90N0SYSGG7rxZs9LQwqjjyyucPzMhewpXH6sY7lIcjvRjqTyDIiefHY2oqG6DHdM3wXwXPnbvGUAXu9IuVTAY2tCNlJDrwap8rIwDWfrX-9ae-98meVwo7M5NskuKuBBEZyIBdSLGyVKaizzlkFBKF9Xm4ih2vhkyh6Jey4IaYDGQ5lDb1DNQhZZFWYZChvHTF4yfl2ZMuZQeS2aj5Wuiogi42rjB65ckH8kZBTdRQ/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "bowlero-arlington",
+    "name": "Bowlero Arlington",
+    "neighborhood": "Ballston",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.4,
+    "hook": "Modern bowling with craft beer selection and fun arcade",
+    "desc": "Updated bowling experience with great drinks and food. Casual activity that gives you natural conversation breaks.",
+    "photo": "https://places.googleapis.com/v1/places/ChIJ1fW3cN63t4kRQ2QwZ47_Ago/photos/AU_ZVEFZLwovhg8FN55zMpSHd8qqNJuyb3i205rBKxdh8ObBs-rt6p_MUlLMJLNPpBNtyArDByqh4AkU8l3KakMHBaT27GHe5S6JmsoVpvqupWlE63zbx9xJACMVzcAgw9jiNCIjvYsYV7_c8COgxhteLlTIT-EmSdVIDc_fP8gDquAFB4PJjN4tZrEg2ZdUhPb33RIEQqqnfUwsWbSdAmkokncwm6YUlvGIpOuCC5XjH6xmfFRR_eLrbp_5Ta3Q2YWJlUa40e6kQ8iIku7L2rLrgIXZGTqFYWEk4mwXtnTZ-aaXKhNEM-ddee_VMARkmNsx33JZuu_wrSfeQ4X20nRejnyXD-H36q1Jxf0NAcZBQfRURIva3e49CORLui9YfE-ruc3BQPP1mOwMUSGXPC6IieXj6knQyHLeiwJ-YYe1EqoGvHoj/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "muse-paintbar",
+    "name": "Muse Paintbar",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.8,
+    "hook": "Both of you get mildly tipsy and mildly artistic",
+    "desc": "Structured enough that you're never staring at each other in silence, low-stakes enough that nobody's masterpiece matters.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "pinot-s-palette",
+    "name": "Pinot's Palette",
+    "neighborhood": "Shaw",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.4,
+    "hook": "Wine plus paint equals instant personality reveal",
+    "desc": "You'll learn more about how your date handles mild failure in ninety minutes here than in three dinners.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "kick-axe-throwing-dc",
+    "name": "Kick Axe Throwing DC",
+    "neighborhood": "NoMa",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.8,
+    "hook": "Aggression, beer, and bullseyes — strangely romantic",
+    "desc": "Pro-tip: if they're a gracious loser at axes, they're probably a gracious loser in general.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "bad-axe-throwing",
+    "name": "Bad Axe Throwing",
+    "neighborhood": "Capitol Hill",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.6,
+    "hook": "Nothing says 'second date' like mutual property damage",
+    "desc": "Coaches handle the scary part so you can focus on looking mildly competent. BYOB lets you correct for nerves.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "the-break-room-dc",
+    "name": "The Break Room DC",
+    "neighborhood": "Brookland",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.0,
+    "hook": "Smashing plates together is a legitimate love language",
+    "desc": "Twenty minutes, safety goggles, a crate of glassware, and zero expectations for small talk. Absolutely unhinged in the best way.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "smash-therapy",
+    "name": "Smash Therapy",
+    "neighborhood": "Hyattsville",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.0,
+    "hook": "For when the group chat agrees they're 'kinda emotionally unavailable'",
+    "desc": "The least subtle date you'll ever plan and somehow one of the most effective. Comes with couples packages.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "player-1-video-game-bar",
+    "name": "Player 1 Video Game Bar",
+    "neighborhood": "Dupont Circle",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.2,
+    "hook": "For when you want to win their heart at Mario Kart",
+    "desc": "Free play on 30+ arcade cabinets with actually decent cocktails. You're not paying per game, which removes the dad-at-Dave-and-Busters energy.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "district-clay-center",
+    "name": "District Clay Center",
+    "neighborhood": "Brookland",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.6,
+    "hook": "Yes, your Ghost reenactment is going exactly as you planned it",
+    "desc": "Two-hour wheel-throwing intro where the instructor does most of the work. You leave with a lopsided bowl and a story.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "hinckley-pottery",
+    "name": "Hinckley Pottery",
+    "neighborhood": "Adams Morgan",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.1,
+    "hook": "The date where 'it's not perfect' becomes a running joke forever",
+    "desc": "Small-group classes, intimate studio, and a fired piece you can actually put on a shelf. Sincere without being saccharine.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 8.3 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "candlefish-dc",
+    "name": "Candlefish DC",
+    "neighborhood": "Georgetown",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.2,
+    "hook": "You get to smell-profile each other for ninety minutes",
+    "desc": "You pick scents together, which sounds cheesy and becomes the most telling conversation of the night. Leave with a candle you'll definitely burn together later.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "penn-quarter-candle-bar",
+    "name": "Penn Quarter Candle Bar",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.7,
+    "hook": "Cheesy in theory, charming in practice",
+    "desc": "Two-hour pour-your-own session with wine available. Ideal for a date that needs a shared artifact at the end.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "culinaerie",
+    "name": "CulinAerie",
+    "neighborhood": "Logan Circle",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 7.2,
+    "hook": "Can you chop an onion without crying. Critical information.",
+    "desc": "Hands-on class, shared stations, you actually eat what you make at the end. Graceful under low-grade pressure is a green flag.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "hill-center-cooking-class",
+    "name": "Hill Center Cooking Class",
+    "neighborhood": "Capitol Hill",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.3,
+    "hook": "Pasta-making is a personality test disguised as dinner",
+    "desc": "Smaller and less polished than CulinAerie which makes it somehow more fun. You'll eat later than you think.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "the-escape-game-dc",
+    "name": "The Escape Game DC",
+    "neighborhood": "Gallery Place",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.4,
+    "hook": "The 'are you my emergency contact' vetting process",
+    "desc": "Higher production value and more theatrical than most. If you win you're both insufferable about it for a week.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "washington-improv-theater",
+    "name": "Washington Improv Theater",
+    "neighborhood": "Columbia Heights",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.3,
+    "hook": "You laugh, they laugh, nobody has to be funny themselves",
+    "desc": "Forty-five minute show, bring a drink, leave with a couple of inside jokes. Cheap, repeatable, and weirdly disarming.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 8.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "dc-improv-comedy-club",
+    "name": "DC Improv Comedy Club",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.5,
+    "hook": "Two drink minimum also works as a 'was this worth it' stress test",
+    "desc": "Proper club setup with headliners most weekends. Reliable crowd-pleaser that kills the 'what should we do' paralysis.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 8.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "joy-of-motion-dance-class",
+    "name": "Joy of Motion Dance Class",
+    "neighborhood": "Friendship Heights",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 7.3,
+    "hook": "Drop-in salsa is a cardio workout and a personality scan",
+    "desc": "Single-class drop-in, no partner required, instructors are patient. Great if you want to see if they can laugh at themselves in public.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "wunder-garten-trivia-night",
+    "name": "Wunder Garten Trivia Night",
+    "neighborhood": "NoMa",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.4,
+    "hook": "Discover if they actually know the state capitals or just claim to",
+    "desc": "Outdoor beer garden, team trivia, low bar for participation. Great as a second-date move after you've already confirmed basic chemistry.",
+    "photo": null,
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "komi-2",
+    "name": "Komi",
+    "neighborhood": "Dupont Circle",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.5,
+    "hook": "Michelin-starred intimate tasting menu",
+    "desc": "Michelin-starred intimate tasting menu. One of DC's most romantic restaurants.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "bistrot-du-coin",
+    "name": "Bistrot du Coin",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.5,
+    "hook": "Classic Parisian bistro, lively, approachable, easy conversation",
+    "desc": "Classic Parisian bistro, lively, approachable, easy conversation.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "hank-s-oyster-bar",
+    "name": "Hank's Oyster Bar",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.6,
+    "hook": "Consistently packed oyster bar",
+    "desc": "Consistently packed oyster bar. Good energy for dates.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "pizzeria-paradiso",
+    "name": "Pizzeria Paradiso",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.9,
+    "hook": "Casual, well-loved, 4",
+    "desc": "Casual, well-loved, 4.4 on Google, great beer list.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "the-tabard-inn",
+    "name": "The Tabard Inn",
+    "neighborhood": "Dupont Circle",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.3,
+    "hook": "Historic hotel restaurant with garden patio",
+    "desc": "Historic hotel restaurant with garden patio. Elegant, quiet.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "anju",
+    "name": "Anju",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.8,
+    "hook": "Modern Korean",
+    "desc": "Modern Korean. Eater essential, 4.5 rating. Great for second-date escalation.",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "tico",
+    "name": "Tico",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.5,
+    "hook": "Small plates make sharing natural",
+    "desc": "Small plates make sharing natural. Fun vibe.",
+    "photo": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "duke-s-counter",
+    "name": "Duke's Counter",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 6.7,
+    "hook": "Casual pub",
+    "desc": "Casual pub. Easy exit.",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "1789-restaurant",
+    "name": "1789 Restaurant",
+    "neighborhood": "Georgetown",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.1,
+    "hook": "Classic DC power restaurant in a Federal townhouse",
+    "desc": "Classic DC power restaurant in a Federal townhouse. Romantic and historic.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 9.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "martin-s-tavern",
+    "name": "Martin's Tavern",
+    "neighborhood": "Georgetown",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.6,
+    "hook": "Historic tavern",
+    "desc": "Historic tavern. JFK proposed to Jackie in Booth 3. Iconic DC date spot.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "cafe-milano-2",
+    "name": "Cafe Milano",
+    "neighborhood": "Georgetown",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "See-and-be-seen Italian",
+    "desc": "See-and-be-seen Italian. Celebrity spotting. High-impact date.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "il-canale",
+    "name": "Il Canale",
+    "neighborhood": "Georgetown",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.9,
+    "hook": "Authentic Neapolitan pizza",
+    "desc": "Authentic Neapolitan pizza. Romantic lower-level dining room.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "bourbon-steak",
+    "name": "Bourbon Steak",
+    "neighborhood": "Georgetown",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 8.7,
+    "hook": "Four Seasons Michael Mina steakhouse",
+    "desc": "Four Seasons Michael Mina steakhouse. Big-night fine dining.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 9.1 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "farmers-fishers-bakers",
+    "name": "Farmers Fishers Bakers",
+    "neighborhood": "Georgetown",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.4,
+    "hook": "Waterfront, casual-chic, farm-to-table",
+    "desc": "Waterfront, casual-chic, farm-to-table. Good for relaxed dates.",
+    "photo": "https://images.unsplash.com/photo-1576866209830-589e1bfbaa8d?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 8.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "chaia-tacos",
+    "name": "Chaia Tacos",
+    "neighborhood": "Georgetown",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.8,
+    "hook": "Farm-to-taco vegetarian spot",
+    "desc": "Farm-to-taco vegetarian spot. Casual and inclusive.",
+    "photo": "https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "pizzeria-paradiso-georgetown",
+    "name": "Pizzeria Paradiso Georgetown",
+    "neighborhood": "Georgetown",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.5,
+    "hook": "Georgetown outpost of the Dupont classic",
+    "desc": "Georgetown outpost of the Dupont classic.",
+    "photo": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "sequoia",
+    "name": "Sequoia",
+    "neighborhood": "Georgetown",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 7.9,
+    "hook": "Waterfront views",
+    "desc": "Waterfront views. Big glass walls over the Potomac.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "fiola",
+    "name": "Fiola",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.8,
+    "hook": "Michelin-starred Italian by Fabio Trabocchi",
+    "desc": "Michelin-starred Italian by Fabio Trabocchi. One of DC's most romantic.",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 9.2 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "oyamel",
+    "name": "Oyamel",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.5,
+    "hook": "Jose Andres antojitos",
+    "desc": "Jose Andres antojitos. Fun vibe, tableside guacamole.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "jaleo",
+    "name": "Jaleo",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.2,
+    "hook": "Jose Andres Spanish tapas",
+    "desc": "Jose Andres Spanish tapas. Lively, sharable, date-friendly.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.3 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "sushi-nakazawa",
+    "name": "Sushi Nakazawa",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 8.7,
+    "hook": "NYC transplant omakase",
+    "desc": "NYC transplant omakase. Pricey but memorable.",
+    "photo": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 9.1 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "carmine-s",
+    "name": "Carmine's",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.0,
+    "hook": "Family-style giant portions",
+    "desc": "Family-style giant portions. Loud, fun, low-pressure.",
+    "photo": "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "the-hamilton",
+    "name": "The Hamilton",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 8.3,
+    "hook": "Massive restaurant with live music downstairs",
+    "desc": "Massive restaurant with live music downstairs. Date + show in one stop.",
+    "photo": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "daikaya",
+    "name": "Daikaya",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.7,
+    "hook": "Ramen downstairs, izakaya upstairs",
+    "desc": "Ramen downstairs, izakaya upstairs. Both date-friendly.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "barcelona-wine-bar",
+    "name": "Barcelona Wine Bar",
+    "neighborhood": "Logan Circle",
+    "price": "$$",
+    "vibe": "Quiet & Intimate",
+    "score": 7.9,
+    "hook": "Candlelit tapas",
+    "desc": "Candlelit tapas. Great patio. Textbook first-date spot.",
+    "photo": "https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "the-pig",
+    "name": "The Pig",
+    "neighborhood": "Logan Circle",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.4,
+    "hook": "Farm-to-table, cozy, pork-focused",
+    "desc": "Farm-to-table, cozy, pork-focused. Solid for casual dates.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 8.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "sakuramen",
+    "name": "Sakuramen",
+    "neighborhood": "Logan Circle",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.4,
+    "hook": "Ramen basement spot",
+    "desc": "Ramen basement spot. Warm and casual.",
+    "photo": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "etto",
+    "name": "Etto",
+    "neighborhood": "Logan Circle",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 9.0,
+    "hook": "Natural-yeast pizza on 14th",
+    "desc": "Natural-yeast pizza on 14th. Relaxed and delicious.",
+    "photo": "https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.1 convo",
+      "vibe": "✨ 9.1 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "kapnos",
+    "name": "Kapnos",
+    "neighborhood": "Logan Circle",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 8.9,
+    "hook": "Mike Isabella's former project now under new ownership",
+    "desc": "Mike Isabella's former project now under new ownership. Great vibes.",
+    "photo": "https://images.unsplash.com/photo-1576866209830-589e1bfbaa8d?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 9.3 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "st-vincent",
+    "name": "St. Vincent",
+    "neighborhood": "Logan Circle",
+    "price": "$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.0,
+    "hook": "Cozy Italian with fresh pasta",
+    "desc": "Cozy Italian with fresh pasta. 4.6 Google rating.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 8.1 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "convivial",
+    "name": "Convivial",
+    "neighborhood": "Shaw",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.7,
+    "hook": "Michelin Bib Gourmand French",
+    "desc": "Michelin Bib Gourmand French. Warm, small, date-perfect.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "espita-mezcaleria",
+    "name": "Espita Mezcaleria",
+    "neighborhood": "Shaw",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.5,
+    "hook": "Beautiful Oaxacan space",
+    "desc": "Beautiful Oaxacan space. Mezcal-forward. Unique.",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "thamee",
+    "name": "Thamee",
+    "neighborhood": "Shaw",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.9,
+    "hook": "Burmese family restaurant",
+    "desc": "Burmese family restaurant. Warm and intimate.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "seylou",
+    "name": "Seylou",
+    "neighborhood": "Shaw",
+    "price": "$$",
+    "vibe": "Coffee Date",
+    "score": 8.4,
+    "hook": "Wood-fire bakery",
+    "desc": "Wood-fire bakery. Beautiful weekend daytime date.",
+    "photo": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "halfsmoke",
+    "name": "Halfsmoke",
+    "neighborhood": "Shaw",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 6.5,
+    "hook": "Upscale sausages",
+    "desc": "Upscale sausages. Casual, fun, no pressure.",
+    "photo": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "haikan",
+    "name": "Haikan",
+    "neighborhood": "Shaw",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.5,
+    "hook": "Daikaya group ramen spot",
+    "desc": "Daikaya group ramen spot.",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "pineapple-and-pearls",
+    "name": "Pineapple and Pearls",
+    "neighborhood": "Capitol Hill",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.4,
+    "hook": "2-Michelin-star tasting menu",
+    "desc": "2-Michelin-star tasting menu. Biggest romantic move in DC.",
+    "photo": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.3 convo",
+      "vibe": "✨ 9.8 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "little-pearl",
+    "name": "Little Pearl",
+    "neighborhood": "Capitol Hill",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.9,
+    "hook": "Sister to Pineapple and Pearls",
+    "desc": "Sister to Pineapple and Pearls. Tiny wine bar with serious food.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 9.2 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "good-stuff-eatery",
+    "name": "Good Stuff Eatery",
+    "neighborhood": "Capitol Hill",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.5,
+    "hook": "Spike Mendelsohn burgers",
+    "desc": "Spike Mendelsohn burgers. Casual and beloved.",
+    "photo": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "we-the-pizza",
+    "name": "We The Pizza",
+    "neighborhood": "Capitol Hill",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.3,
+    "hook": "Casual pizza by Spike Mendelsohn",
+    "desc": "Casual pizza by Spike Mendelsohn.",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "ted-s-bulletin",
+    "name": "Ted's Bulletin",
+    "neighborhood": "Capitol Hill",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.2,
+    "hook": "Retro diner with pop-tarts and milkshakes",
+    "desc": "Retro diner with pop-tarts and milkshakes. Charming.",
+    "photo": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.3 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "belga-cafe",
+    "name": "Belga Cafe",
+    "neighborhood": "Capitol Hill",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.8,
+    "hook": "Belgian food and beer on Barracks Row",
+    "desc": "Belgian food and beer on Barracks Row. Intimate rooms.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "acqua-al-2",
+    "name": "Acqua al 2",
+    "neighborhood": "Capitol Hill",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.5,
+    "hook": "Florence transplant",
+    "desc": "Florence transplant. Famous for blueberry steak. Romantic.",
+    "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "the-queen-vic",
+    "name": "The Queen Vic",
+    "neighborhood": "Capitol Hill",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.9,
+    "hook": "British pub",
+    "desc": "British pub. Easy casual hang.",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "joselito",
+    "name": "Joselito",
+    "neighborhood": "Capitol Hill",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.7,
+    "hook": "Spanish, beautiful space",
+    "desc": "Spanish, beautiful space. Logan Circle / Cap Hill border.",
+    "photo": "https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "the-gibson",
+    "name": "The Gibson",
+    "neighborhood": "U Street",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.3,
+    "hook": "Unmarked speakeasy on 14th",
+    "desc": "Unmarked speakeasy on 14th. Reservation-only. Major date move.",
+    "photo": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "marvin",
+    "name": "Marvin",
+    "neighborhood": "U Street",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.0,
+    "hook": "Rooftop bar and mussels",
+    "desc": "Rooftop bar and mussels. Lively and reliable.",
+    "photo": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "ben-s-chili-bowl",
+    "name": "Ben's Chili Bowl",
+    "neighborhood": "U Street",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.3,
+    "hook": "Historic DC institution",
+    "desc": "Historic DC institution. Half-smokes since 1958.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "ben-s-next-door",
+    "name": "Ben's Next Door",
+    "neighborhood": "U Street",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.2,
+    "hook": "Sit-down version next to Ben's",
+    "desc": "Sit-down version next to Ben's. More date-appropriate.",
+    "photo": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "pearl-dive-oyster-palace",
+    "name": "Pearl Dive Oyster Palace",
+    "neighborhood": "U Street",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.8,
+    "hook": "14th Street oyster bar",
+    "desc": "14th Street oyster bar. Lively and packed.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "jack-rose-dining-saloon",
+    "name": "Jack Rose Dining Saloon",
+    "neighborhood": "U Street",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 7.8,
+    "hook": "Rooftop with 2700+ whiskeys",
+    "desc": "Rooftop with 2700+ whiskeys. Iconic late-night date.",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 8.1 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "mintwood-place",
+    "name": "Mintwood Place",
+    "neighborhood": "Adams Morgan",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.3,
+    "hook": "Romantic rustic American",
+    "desc": "Romantic rustic American. Consistently on best-date lists.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "perry-s",
+    "name": "Perry's",
+    "neighborhood": "Adams Morgan",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 8.6,
+    "hook": "Rooftop sushi with drag brunch fame",
+    "desc": "Rooftop sushi with drag brunch fame. Fun date energy.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "lapis",
+    "name": "Lapis",
+    "neighborhood": "Adams Morgan",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.1,
+    "hook": "Warm Afghan restaurant",
+    "desc": "Warm Afghan restaurant. Beautiful tiled interior.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "roofers-union",
+    "name": "Roofers Union",
+    "neighborhood": "Adams Morgan",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.3,
+    "hook": "Rooftop on 18th",
+    "desc": "Rooftop on 18th. Casual and views.",
+    "photo": "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "tryst",
+    "name": "Tryst",
+    "neighborhood": "Adams Morgan",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.7,
+    "hook": "Iconic Adams Morgan coffeehouse",
+    "desc": "Iconic Adams Morgan coffeehouse. THE coffee first-date spot.",
+    "photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "maketto",
+    "name": "Maketto",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.7,
+    "hook": "Restaurant + retail + cafe",
+    "desc": "Restaurant + retail + cafe. Cool vibe, Erik Bruner-Yang project.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "toki-underground",
+    "name": "Toki Underground",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.7,
+    "hook": "Tiny ramen spot above the Pug",
+    "desc": "Tiny ramen spot above the Pug. Intimate by default.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "fancy-radish",
+    "name": "Fancy Radish",
+    "neighborhood": "H Street NE",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 8.5,
+    "hook": "Rich Landau upscale vegan",
+    "desc": "Rich Landau upscale vegan. Even carnivores love it.",
+    "photo": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "granville-moore-s",
+    "name": "Granville Moore's",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.7,
+    "hook": "Belgian mussels and frites",
+    "desc": "Belgian mussels and frites. Bourdain-approved.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "ethiopic",
+    "name": "Ethiopic",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.8,
+    "hook": "One of the best Ethiopian spots in DC",
+    "desc": "One of the best Ethiopian spots in DC. Sharing is built in.",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "the-atlas-room",
+    "name": "The Atlas Room",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.4,
+    "hook": "Neighborhood restaurant with date-night energy",
+    "desc": "Neighborhood restaurant with date-night energy.",
+    "photo": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 8.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "stable",
+    "name": "Stable",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.6,
+    "hook": "Swiss comfort food",
+    "desc": "Swiss comfort food. Cozy and unique.",
+    "photo": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "officina",
+    "name": "Officina",
+    "neighborhood": "The Wharf",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 8.6,
+    "hook": "Nicholas Stefanelli multi-level Italian",
+    "desc": "Nicholas Stefanelli multi-level Italian. Beautiful.",
+    "photo": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "del-mar",
+    "name": "Del Mar",
+    "neighborhood": "The Wharf",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.3,
+    "hook": "Fabio Trabocchi Spanish coastal",
+    "desc": "Fabio Trabocchi Spanish coastal. Romantic waterfront.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "rappahannock-oyster-bar",
+    "name": "Rappahannock Oyster Bar",
+    "neighborhood": "The Wharf",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.1,
+    "hook": "Virginia oysters right on the water",
+    "desc": "Virginia oysters right on the water.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "kaliwa",
+    "name": "Kaliwa",
+    "neighborhood": "The Wharf",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.8,
+    "hook": "Fabio Trabocchi Filipino-Thai-Korean",
+    "desc": "Fabio Trabocchi Filipino-Thai-Korean. Fun and flavorful.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "mi-vida",
+    "name": "Mi Vida",
+    "neighborhood": "The Wharf",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 8.2,
+    "hook": "Upscale Mexican with waterfront patio",
+    "desc": "Upscale Mexican with waterfront patio.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.3 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "hank-s-oyster-bar-the-wharf",
+    "name": "Hank's Oyster Bar The Wharf",
+    "neighborhood": "The Wharf",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.8,
+    "hook": "Waterfront Hank's outpost",
+    "desc": "Waterfront Hank's outpost.",
+    "photo": "https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "whaley-s",
+    "name": "Whaley's",
+    "neighborhood": "Navy Yard",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 7.5,
+    "hook": "Yards Park seafood with water views",
+    "desc": "Yards Park seafood with water views. Sunny patio.",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "ice-cream-jubilee",
+    "name": "Ice Cream Jubilee",
+    "neighborhood": "Navy Yard",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.1,
+    "hook": "Black-owned creative ice cream",
+    "desc": "Black-owned creative ice cream. Walk-and-talk friendly.",
+    "photo": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "all-purpose-navy-yard",
+    "name": "All Purpose Navy Yard",
+    "neighborhood": "Navy Yard",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.4,
+    "hook": "Shaw favorite's Navy Yard location",
+    "desc": "Shaw favorite's Navy Yard location.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "bluejacket-brewery",
+    "name": "Bluejacket Brewery",
+    "neighborhood": "Navy Yard",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.5,
+    "hook": "Beer flights in an old boiler shop",
+    "desc": "Beer flights in an old boiler shop. Adventure vibe.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "kinship-2",
+    "name": "Kinship",
+    "neighborhood": "Mt Vernon Triangle",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.7,
+    "hook": "Eric Ziebold Michelin-starred",
+    "desc": "Eric Ziebold Michelin-starred. Quietly perfect.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "dauphine-s",
+    "name": "Dauphine's",
+    "neighborhood": "Mt Vernon Triangle",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.2,
+    "hook": "New Orleans energy in DC",
+    "desc": "New Orleans energy in DC. Loud and warm.",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.3 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "bantam-king",
+    "name": "Bantam King",
+    "neighborhood": "Mt Vernon Triangle",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.5,
+    "hook": "Chicken-based ramen from Daikaya team",
+    "desc": "Chicken-based ramen from Daikaya team.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "succotash-prime-2",
+    "name": "Succotash Prime",
+    "neighborhood": "Mt Vernon Triangle",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "Upscale Southern with beautiful space",
+    "desc": "Upscale Southern with beautiful space.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "spoken-english",
+    "name": "Spoken English",
+    "neighborhood": "Mt Vernon Triangle",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.7,
+    "hook": "Standing-only Asian small plates",
+    "desc": "Standing-only Asian small plates. Unique date.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "blue-duck-tavern",
+    "name": "Blue Duck Tavern",
+    "neighborhood": "West End",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.5,
+    "hook": "Park Hyatt Michelin-starred",
+    "desc": "Park Hyatt Michelin-starred. Legendary for anniversaries.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "marcel-s-by-robert-wiedmaier-2",
+    "name": "Marcel's by Robert Wiedmaier",
+    "neighborhood": "West End",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.7,
+    "hook": "One of DC's most classic fine dining rooms",
+    "desc": "One of DC's most classic fine dining rooms.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "rasika-west-end-2",
+    "name": "Rasika West End",
+    "neighborhood": "West End",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.7,
+    "hook": "Rasika's sister location",
+    "desc": "Rasika's sister location. Still elite.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "imperfecto",
+    "name": "Imperfecto",
+    "neighborhood": "West End",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.0,
+    "hook": "Enrique Limardo's acclaimed project",
+    "desc": "Enrique Limardo's acclaimed project. Romantic.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 9.4 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "bindaas",
+    "name": "Bindaas",
+    "neighborhood": "Foggy Bottom",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.5,
+    "hook": "Knightsbridge group Indian",
+    "desc": "Knightsbridge group Indian. Fun and casual.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "the-palm-2",
+    "name": "The Palm",
+    "neighborhood": "Foggy Bottom",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "Old-school power steakhouse",
+    "desc": "Old-school power steakhouse. Classic DC.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "st-anselm",
+    "name": "St. Anselm",
+    "neighborhood": "Union Market",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 8.5,
+    "hook": "NYC import butcher's steakhouse",
+    "desc": "NYC import butcher's steakhouse. Warm and romantic.",
+    "photo": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "masseria-2",
+    "name": "Masseria",
+    "neighborhood": "Union Market",
+    "price": "$$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 9.7,
+    "hook": "Nicholas Stefanelli Michelin-starred",
+    "desc": "Nicholas Stefanelli Michelin-starred. Enchanting.",
+    "photo": "https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "gatsby",
+    "name": "Gatsby",
+    "neighborhood": "Union Market",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 8.8,
+    "hook": "New Italian spot, beautiful dining room",
+    "desc": "New Italian spot, beautiful dining room.",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "politics-and-prose-cafe",
+    "name": "Politics and Prose Cafe",
+    "neighborhood": "Union Market",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.8,
+    "hook": "Bookstore + cafe",
+    "desc": "Bookstore + cafe. Intellectual first-date energy.",
+    "photo": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "red-apron-butchery",
+    "name": "Red Apron Butchery",
+    "neighborhood": "Union Market",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.3,
+    "hook": "Butcher counter + sandwiches",
+    "desc": "Butcher counter + sandwiches. Casual Saturday date.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "cotton-and-reed",
+    "name": "Cotton and Reed",
+    "neighborhood": "Union Market",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.7,
+    "hook": "Rum distillery with tasting room",
+    "desc": "Rum distillery with tasting room. Unique hang.",
+    "photo": "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "timber-pizza",
+    "name": "Timber Pizza",
+    "neighborhood": "Petworth",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.3,
+    "hook": "Wood-fired pizza beloved by the neighborhood",
+    "desc": "Wood-fired pizza beloved by the neighborhood.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "call-your-mother-petworth",
+    "name": "Call Your Mother Petworth",
+    "neighborhood": "Petworth",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.5,
+    "hook": "Flagship Call Your Mother",
+    "desc": "Flagship Call Your Mother. Bagel date sleeper hit.",
+    "photo": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "taqueria-habanero",
+    "name": "Taqueria Habanero",
+    "neighborhood": "Petworth",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.9,
+    "hook": "Authentic Puebla Mexican",
+    "desc": "Authentic Puebla Mexican. 4.7 rating.",
+    "photo": "https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "slim-s-diner",
+    "name": "Slim's Diner",
+    "neighborhood": "Petworth",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.1,
+    "hook": "Retro diner",
+    "desc": "Retro diner. Casual and fun.",
+    "photo": "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "cinder-bbq",
+    "name": "Cinder BBQ",
+    "neighborhood": "Petworth",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.0,
+    "hook": "Smoked meats",
+    "desc": "Smoked meats. Casual neighborhood.",
+    "photo": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 8.1 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "queen-s-english",
+    "name": "Queen's English",
+    "neighborhood": "Columbia Heights",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 8.5,
+    "hook": "Hong Kong-inspired",
+    "desc": "Hong Kong-inspired. Michelin Bib. Rave reviews.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "purple-patch",
+    "name": "Purple Patch",
+    "neighborhood": "Columbia Heights",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.5,
+    "hook": "Family-run Filipino",
+    "desc": "Family-run Filipino. Warm and beloved.",
+    "photo": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "el-chucho",
+    "name": "El Chucho",
+    "neighborhood": "Columbia Heights",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.1,
+    "hook": "Mezcal bar and tacos",
+    "desc": "Mezcal bar and tacos. Lively energy.",
+    "photo": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "mi-casita",
+    "name": "Mi Casita",
+    "neighborhood": "Columbia Heights",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 6.7,
+    "hook": "Casual Salvadoran",
+    "desc": "Casual Salvadoran. Authentic and affordable.",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "red-rocks",
+    "name": "Red Rocks",
+    "neighborhood": "Columbia Heights",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.5,
+    "hook": "Neighborhood pizza",
+    "desc": "Neighborhood pizza. Consistent and cozy.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "makan",
+    "name": "Makan",
+    "neighborhood": "Mount Pleasant",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.9,
+    "hook": "Malaysian comfort food in Mount Pleasant",
+    "desc": "Malaysian comfort food in Mount Pleasant.",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "beau-thai",
+    "name": "Beau Thai",
+    "neighborhood": "Mount Pleasant",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.6,
+    "hook": "Neighborhood Thai",
+    "desc": "Neighborhood Thai. Reliable.",
+    "photo": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 8.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "each-peach-market",
+    "name": "Each Peach Market",
+    "neighborhood": "Mount Pleasant",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 6.6,
+    "hook": "Specialty grocery + cafe",
+    "desc": "Specialty grocery + cafe. Charming.",
+    "photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "2-amys",
+    "name": "2 Amys",
+    "neighborhood": "Cleveland Park",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.6,
+    "hook": "Certified Neapolitan pizza",
+    "desc": "Certified Neapolitan pizza. Family-friendly but date-viable.",
+    "photo": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 8.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "ripple",
+    "name": "Ripple",
+    "neighborhood": "Cleveland Park",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.9,
+    "hook": "Intimate neighborhood spot",
+    "desc": "Intimate neighborhood spot. Strong wine list.",
+    "photo": "https://images.unsplash.com/photo-1576866209830-589e1bfbaa8d?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 9.2 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "indique",
+    "name": "Indique",
+    "neighborhood": "Cleveland Park",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.6,
+    "hook": "Upscale modern Indian",
+    "desc": "Upscale modern Indian. Beautiful space.",
+    "photo": "https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "millie-s",
+    "name": "Millie's",
+    "neighborhood": "AU Park",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 6.9,
+    "hook": "Beach-shack energy in DC",
+    "desc": "Beach-shack energy in DC. Casual.",
+    "photo": "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "cafe-of-india",
+    "name": "Cafe of India",
+    "neighborhood": "Tenleytown",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.7,
+    "hook": "Longtime neighborhood favorite",
+    "desc": "Longtime neighborhood favorite.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "medium-rare",
+    "name": "Medium Rare",
+    "neighborhood": "Bethesda",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.1,
+    "hook": "Single menu: steak, fries, salad",
+    "desc": "Single menu: steak, fries, salad. Fun gimmick, reliable.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "rock-creek",
+    "name": "Rock Creek",
+    "neighborhood": "Bethesda",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 8.1,
+    "hook": "Seasonal farm-to-table",
+    "desc": "Seasonal farm-to-table. Consistently well-reviewed.",
+    "photo": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "q-by-peter-chang",
+    "name": "Q by Peter Chang",
+    "neighborhood": "Bethesda",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 9.5,
+    "hook": "Upscale Chinese from a celebrity chef",
+    "desc": "Upscale Chinese from a celebrity chef. Beautiful space.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.4 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "grapeseed",
+    "name": "Grapeseed",
+    "neighborhood": "Bethesda",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.0,
+    "hook": "Wine bar with small plates",
+    "desc": "Wine bar with small plates. Intimate and elegant.",
+    "photo": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 8.1 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "mon-ami-gabi",
+    "name": "Mon Ami Gabi",
+    "neighborhood": "Bethesda",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.5,
+    "hook": "Consistent French bistro",
+    "desc": "Consistent French bistro. Safe quality pick.",
+    "photo": "https://images.unsplash.com/photo-1565958011703-44f9829ba187?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "mussel-bar",
+    "name": "Mussel Bar",
+    "neighborhood": "Bethesda",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.8,
+    "hook": "Robert Wiedmaier's casual Belgian",
+    "desc": "Robert Wiedmaier's casual Belgian. Beer and mussels.",
+    "photo": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "barrel-and-crow",
+    "name": "Barrel and Crow",
+    "neighborhood": "Bethesda",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.0,
+    "hook": "Neighborhood bistro with strong reputation",
+    "desc": "Neighborhood bistro with strong reputation.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 8.1 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "true-food-kitchen",
+    "name": "True Food Kitchen",
+    "neighborhood": "Bethesda",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.4,
+    "hook": "Dr",
+    "desc": "Dr. Weil's healthy-chic chain. Date-friendly atmosphere.",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 8.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "bethesda-blues-and-jazz",
+    "name": "Bethesda Blues and Jazz",
+    "neighborhood": "Bethesda",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 7.7,
+    "hook": "Dinner + live jazz in one venue",
+    "desc": "Dinner + live jazz in one venue. Built-in date narrative.",
+    "photo": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "tastee-diner",
+    "name": "Tastee Diner",
+    "neighborhood": "Bethesda",
+    "price": "$",
+    "vibe": "Late Night",
+    "score": 7.7,
+    "hook": "24-hour diner institution",
+    "desc": "24-hour diner institution. Late-night date move.",
+    "photo": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "quincy-hall",
+    "name": "Quincy Hall",
+    "neighborhood": "Ballston",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.8,
+    "hook": "Massive beer garden food hall",
+    "desc": "Massive beer garden food hall. Low-pressure fun.",
+    "photo": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "ruthie-s-all-day",
+    "name": "Ruthie's All-Day",
+    "neighborhood": "Arlington",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.6,
+    "hook": "Matt Adler's beloved Arlington spot",
+    "desc": "Matt Adler's beloved Arlington spot. Smoker-driven menu.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 8.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "ser",
+    "name": "SER",
+    "neighborhood": "Ballston",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 9.2,
+    "hook": "Upscale Spanish",
+    "desc": "Upscale Spanish. Sangria and beautiful space.",
+    "photo": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.1 convo",
+      "vibe": "✨ 9.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "kapnos-taverna",
+    "name": "Kapnos Taverna",
+    "neighborhood": "Ballston",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.8,
+    "hook": "Casual Greek from Mike Isabella team",
+    "desc": "Casual Greek from Mike Isabella team. Lively.",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "liberty-tavern",
+    "name": "Liberty Tavern",
+    "neighborhood": "Clarendon",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.4,
+    "hook": "Clarendon neighborhood classic",
+    "desc": "Clarendon neighborhood classic. Patio and rooftop.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 8.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "green-pig-bistro",
+    "name": "Green Pig Bistro",
+    "neighborhood": "Clarendon",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.7,
+    "hook": "Farm-to-table neighborhood bistro",
+    "desc": "Farm-to-table neighborhood bistro.",
+    "photo": "https://images.unsplash.com/photo-1576866209830-589e1bfbaa8d?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "lyon-hall",
+    "name": "Lyon Hall",
+    "neighborhood": "Clarendon",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.8,
+    "hook": "Brasserie vibes in Clarendon",
+    "desc": "Brasserie vibes in Clarendon. Charcuterie-forward.",
+    "photo": "https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "ambar-clarendon",
+    "name": "Ambar Clarendon",
+    "neighborhood": "Clarendon",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.5,
+    "hook": "Unlimited small-plates Balkan",
+    "desc": "Unlimited small-plates Balkan. Fun and filling.",
+    "photo": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "bayou-bakery",
+    "name": "Bayou Bakery",
+    "neighborhood": "Clarendon",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.7,
+    "hook": "Beignets and coffee",
+    "desc": "Beignets and coffee. Unique daytime date.",
+    "photo": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "tupelo-honey",
+    "name": "Tupelo Honey",
+    "neighborhood": "Arlington",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.3,
+    "hook": "Southern comfort",
+    "desc": "Southern comfort. Reliable brunch date.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "kora",
+    "name": "Kora",
+    "neighborhood": "Pentagon City",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 8.6,
+    "hook": "Upscale Italian in Amazon HQ2 era",
+    "desc": "Upscale Italian in Amazon HQ2 era. Beautiful.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "freddie-s-beach-bar",
+    "name": "Freddie's Beach Bar",
+    "neighborhood": "Crystal City",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.9,
+    "hook": "LGBTQ+ friendly beach bar",
+    "desc": "LGBTQ+ friendly beach bar. Karaoke and character.",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "enjera",
+    "name": "Enjera",
+    "neighborhood": "Arlington",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.4,
+    "hook": "Arlington Ethiopian",
+    "desc": "Arlington Ethiopian. Sharing built in.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.5 convo",
+      "vibe": "✨ 8.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "ada-s-on-the-river",
+    "name": "Ada's on the River",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 8.8,
+    "hook": "Ada's steakhouse on the Potomac",
+    "desc": "Ada's steakhouse on the Potomac. Stunning waterfront.",
+    "photo": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 9.2 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "vermilion",
+    "name": "Vermilion",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 8.0,
+    "hook": "King Street mainstay",
+    "desc": "King Street mainstay. Seasonal menu.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 8.1 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "brabo-by-robert-wiedmaier",
+    "name": "Brabo by Robert Wiedmaier",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.4,
+    "hook": "Kimpton Lorien fine dining",
+    "desc": "Kimpton Lorien fine dining. Elegant.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.3 convo",
+      "vibe": "✨ 9.8 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "hank-s-oyster-bar-old-town",
+    "name": "Hank's Oyster Bar Old Town",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.7,
+    "hook": "Old Town Hank's",
+    "desc": "Old Town Hank's. Consistent.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "chart-house",
+    "name": "Chart House",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.7,
+    "hook": "Waterfront seafood with views of the marina",
+    "desc": "Waterfront seafood with views of the marina.",
+    "photo": "https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "bastille",
+    "name": "Bastille",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 7.6,
+    "hook": "Traditional French bistro",
+    "desc": "Traditional French bistro. Romantic.",
+    "photo": "https://images.unsplash.com/photo-1559847844-5315695dadae?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "hummingbird",
+    "name": "Hummingbird",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.3,
+    "hook": "Hotel Indigo waterfront",
+    "desc": "Hotel Indigo waterfront. Patio seating.",
+    "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "magnolia-s-on-king",
+    "name": "Magnolia's on King",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.3,
+    "hook": "Southern charm on King Street",
+    "desc": "Southern charm on King Street.",
+    "photo": "https://images.unsplash.com/photo-1498654896293-37aacf113fd9?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "lena-s-wood-fired-pizza",
+    "name": "Lena's Wood-Fired Pizza",
+    "neighborhood": "Del Ray",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.5,
+    "hook": "Neighborhood wood-fire pizza",
+    "desc": "Neighborhood wood-fire pizza. 4.6 rating.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "evening-star-cafe",
+    "name": "Evening Star Cafe",
+    "neighborhood": "Del Ray",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 9.0,
+    "hook": "Del Ray cornerstone",
+    "desc": "Del Ray cornerstone. Reliable and cozy.",
+    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.1 convo",
+      "vibe": "✨ 9.1 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "pork-barrel-bbq",
+    "name": "Pork Barrel BBQ",
+    "neighborhood": "Del Ray",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.1,
+    "hook": "Award-winning BBQ",
+    "desc": "Award-winning BBQ. Casual.",
+    "photo": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "all-set",
+    "name": "All Set",
+    "neighborhood": "Silver Spring",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.3,
+    "hook": "Seafood-forward",
+    "desc": "Seafood-forward. Charming.",
+    "photo": "https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "denizens-brewing",
+    "name": "Denizens Brewing",
+    "neighborhood": "Silver Spring",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.8,
+    "hook": "Cozy taproom",
+    "desc": "Cozy taproom. Low-pressure hang.",
+    "photo": "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "ray-s-the-classics",
+    "name": "Ray's The Classics",
+    "neighborhood": "Silver Spring",
+    "price": "$$$",
+    "vibe": "Impress Them",
+    "score": 9.3,
+    "hook": "Ray's steakhouse in Silver Spring",
+    "desc": "Ray's steakhouse in Silver Spring. Strong value.",
+    "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.7 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "urban-butcher",
+    "name": "Urban Butcher",
+    "neighborhood": "Silver Spring",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 8.6,
+    "hook": "Whole-animal butchery",
+    "desc": "Whole-animal butchery. Warm dining room.",
+    "photo": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.7 convo",
+      "vibe": "✨ 8.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "republic",
+    "name": "Republic",
+    "neighborhood": "Takoma Park",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.8,
+    "hook": "Live music and New American food",
+    "desc": "Live music and New American food. Takoma date hub.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 8.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "sweetgreen-georgetown",
+    "name": "Sweetgreen Georgetown",
+    "neighborhood": "Georgetown",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.4,
+    "hook": "Flagship Sweetgreen",
+    "desc": "Flagship Sweetgreen. Casual daytime date.",
+    "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "compass-coffee-blagden",
+    "name": "Compass Coffee Blagden",
+    "neighborhood": "Shaw",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 6.6,
+    "hook": "Shaw roaster",
+    "desc": "Shaw roaster. Modern flagship.",
+    "photo": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "la-colombe-blagden",
+    "name": "La Colombe Blagden",
+    "neighborhood": "Shaw",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.0,
+    "hook": "La Colombe DC outpost",
+    "desc": "La Colombe DC outpost. Beautiful space.",
+    "photo": "https://images.unsplash.com/photo-1453614512568-c4024d13c247?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "bluestone-lane-georgetown",
+    "name": "Bluestone Lane Georgetown",
+    "neighborhood": "Georgetown",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.5,
+    "hook": "Australian coffee and brunch",
+    "desc": "Australian coffee and brunch. Instagram-friendly.",
+    "photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "emissary",
+    "name": "Emissary",
+    "neighborhood": "Dupont Circle",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 8.0,
+    "hook": "Coffee by day cocktails by night",
+    "desc": "Coffee by day cocktails by night. Date escalation built-in.",
+    "photo": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.3 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "kramerbooks-and-afterwords",
+    "name": "Kramerbooks and Afterwords",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Coffee Date",
+    "score": 7.3,
+    "hook": "Iconic Dupont bookstore cafe",
+    "desc": "Iconic Dupont bookstore cafe. Open late.",
+    "photo": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "un-je-ne-sais-quoi",
+    "name": "Un Je Ne Sais Quoi",
+    "neighborhood": "Dupont Circle",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.5,
+    "hook": "Authentic French pastries",
+    "desc": "Authentic French pastries. Charming.",
+    "photo": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "the-coupe",
+    "name": "The Coupe",
+    "neighborhood": "Columbia Heights",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.2,
+    "hook": "24-hour diner",
+    "desc": "24-hour diner. First-date to last-call versatility.",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "dolcezza-gelato",
+    "name": "Dolcezza Gelato",
+    "neighborhood": "Various",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.2,
+    "hook": "Local gelato chain",
+    "desc": "Local gelato chain. Walk-and-eat date.",
+    "photo": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "baked-and-wired",
+    "name": "Baked and Wired",
+    "neighborhood": "Georgetown",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.6,
+    "hook": "Cupcakes without the Georgetown Cupcake line",
+    "desc": "Cupcakes without the Georgetown Cupcake line. Canal-adjacent.",
+    "photo": "https://images.unsplash.com/photo-1502462041640-b3d7e50d0662?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "buna-coffeehouse",
+    "name": "Buna Coffeehouse",
+    "neighborhood": "Mount Pleasant",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.4,
+    "hook": "Ethiopian coffee ceremony",
+    "desc": "Ethiopian coffee ceremony. Unique.",
+    "photo": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "the-wydown",
+    "name": "The Wydown",
+    "neighborhood": "14th Street",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 6.5,
+    "hook": "Third-wave coffee on 14th",
+    "desc": "Third-wave coffee on 14th. Minimal hip.",
+    "photo": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "a-baked-joint",
+    "name": "A Baked Joint",
+    "neighborhood": "Mt Vernon Triangle",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.0,
+    "hook": "Bread-forward cafe",
+    "desc": "Bread-forward cafe. Good light and seating.",
+    "photo": "https://images.unsplash.com/photo-1501339847302-ac426a4a7cbb?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "qualia-coffee",
+    "name": "Qualia Coffee",
+    "neighborhood": "Petworth",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.7,
+    "hook": "Neighborhood roaster",
+    "desc": "Neighborhood roaster. Small but loved.",
+    "photo": "https://images.unsplash.com/photo-1509042239860-f550ce710b93?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "swing-s-coffee",
+    "name": "Swing's Coffee",
+    "neighborhood": "Downtown",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.9,
+    "hook": "Historic DC coffee roaster",
+    "desc": "Historic DC coffee roaster. Multiple locations.",
+    "photo": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "little-red-fox",
+    "name": "Little Red Fox",
+    "neighborhood": "Upper Northwest",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 6.6,
+    "hook": "Coffee + market + prepared foods",
+    "desc": "Coffee + market + prepared foods. Nice for longer date.",
+    "photo": "https://images.unsplash.com/photo-1572442388796-11668a67e53d?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "calabash-tea-and-tonic",
+    "name": "Calabash Tea and Tonic",
+    "neighborhood": "Shaw",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.2,
+    "hook": "Herbal tea bar",
+    "desc": "Herbal tea bar. Calm and unique.",
+    "photo": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "lost-sock-roasters",
+    "name": "Lost Sock Roasters",
+    "neighborhood": "Takoma",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.3,
+    "hook": "Takoma micro-roaster",
+    "desc": "Takoma micro-roaster. Quirky.",
+    "photo": "https://images.unsplash.com/photo-1442512595331-e89e73853f31?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "columbia-room",
+    "name": "Columbia Room",
+    "neighborhood": "Shaw",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 7.6,
+    "hook": "Derek Brown's temple of cocktails",
+    "desc": "Derek Brown's temple of cocktails. Tasting-menu drinks.",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "off-the-record",
+    "name": "Off the Record",
+    "neighborhood": "Downtown",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 7.6,
+    "hook": "Hay-Adams basement bar",
+    "desc": "Hay-Adams basement bar. Presidential-caliber vibe.",
+    "photo": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "round-robin-bar",
+    "name": "Round Robin Bar",
+    "neighborhood": "Downtown",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 7.5,
+    "hook": "Willard Hotel historic bar",
+    "desc": "Willard Hotel historic bar. Lobbying lore.",
+    "photo": "https://images.unsplash.com/photo-1551024709-8f23befc6f87?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "the-green-zone",
+    "name": "The Green Zone",
+    "neighborhood": "Adams Morgan",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.5,
+    "hook": "Middle Eastern cocktails",
+    "desc": "Middle Eastern cocktails. Unique angle.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.6 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "dirty-habit",
+    "name": "Dirty Habit",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 7.1,
+    "hook": "Kimpton rooftop",
+    "desc": "Kimpton rooftop. Fire pits and city views.",
+    "photo": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "allegory",
+    "name": "Allegory",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 7.1,
+    "hook": "Eaton Hotel hidden cocktail bar",
+    "desc": "Eaton Hotel hidden cocktail bar. Artistic concept.",
+    "photo": "https://images.unsplash.com/photo-1532634922-8fe0b757fb13?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "silver-lyan",
+    "name": "Silver Lyan",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 9.1,
+    "hook": "Riggs Hotel Ryan Chetiyawardana bar",
+    "desc": "Riggs Hotel Ryan Chetiyawardana bar. World-class.",
+    "photo": "https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 9.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "barmini",
+    "name": "Barmini",
+    "neighborhood": "Penn Quarter",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.0,
+    "hook": "Jose Andres cocktail laboratory",
+    "desc": "Jose Andres cocktail laboratory. 22-seat tasting.",
+    "photo": "https://images.unsplash.com/photo-1550966871-3ed3cdb51f3a?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 9.4 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "wundergarten",
+    "name": "Wundergarten",
+    "neighborhood": "NoMa",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.4,
+    "hook": "Open-air beer garden",
+    "desc": "Open-air beer garden. Low commitment.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "the-wharf-ferris-wheel",
+    "name": "The Wharf Ferris Wheel",
+    "neighborhood": "The Wharf",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.6,
+    "hook": "Small ferris wheel on the Wharf",
+    "desc": "Small ferris wheel on the Wharf. Quick novelty date.",
+    "photo": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "top-of-the-gate",
+    "name": "Top of the Gate",
+    "neighborhood": "Foggy Bottom",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 8.5,
+    "hook": "Watergate rooftop",
+    "desc": "Watergate rooftop. Potomac views.",
+    "photo": "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "12-stories",
+    "name": "12 Stories",
+    "neighborhood": "The Wharf",
+    "price": "$$$",
+    "vibe": "Late Night",
+    "score": 7.6,
+    "hook": "Intercontinental rooftop",
+    "desc": "Intercontinental rooftop. Best monument views downtown.",
+    "photo": "https://images.unsplash.com/photo-1559329007-40df8a9345d8?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "wild-days",
+    "name": "Wild Days",
+    "neighborhood": "Downtown",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 6.9,
+    "hook": "Eaton Hotel rooftop",
+    "desc": "Eaton Hotel rooftop. Plant-filled and lush.",
+    "photo": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "cafe-saint-ex",
+    "name": "Cafe Saint-Ex",
+    "neighborhood": "U Street",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.6,
+    "hook": "Aviation-themed cocktails and food",
+    "desc": "Aviation-themed cocktails and food. 14th Street classic.",
+    "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "tabla",
+    "name": "Tabla",
+    "neighborhood": "U Street",
+    "price": "$$$",
+    "vibe": "First Date",
+    "score": 8.7,
+    "hook": "Beautiful Indian spot from Rasika alum",
+    "desc": "Beautiful Indian spot from Rasika alum.",
+    "photo": "https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.8 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "imm-thai",
+    "name": "Imm Thai",
+    "neighborhood": "Navy Yard",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.5,
+    "hook": "Modern Thai at the Yards",
+    "desc": "Modern Thai at the Yards. Casual.",
+    "photo": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "hazel",
+    "name": "Hazel",
+    "neighborhood": "Shaw",
+    "price": "$$$",
+    "vibe": "Quiet & Intimate",
+    "score": 8.1,
+    "hook": "Rob Rubba Michelin Green Star",
+    "desc": "Rob Rubba Michelin Green Star. Sustainable fine dining.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.0 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "oyster-oyster",
+    "name": "Oyster Oyster",
+    "neighborhood": "Shaw",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.3,
+    "hook": "Two Michelin stars",
+    "desc": "Two Michelin stars. Vegetable-forward tasting menu.",
+    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "albi-2",
+    "name": "Albi",
+    "neighborhood": "Navy Yard",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "Michelin-starred Michael Rafidi",
+    "desc": "Michelin-starred Michael Rafidi. Open-fire Levantine.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "opal",
+    "name": "Opal",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.6,
+    "hook": "Dupont Mediterranean",
+    "desc": "Dupont Mediterranean. Patio seating.",
+    "photo": "https://images.unsplash.com/photo-1576866209830-589e1bfbaa8d?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "mastros",
+    "name": "Mastros",
+    "neighborhood": "Downtown",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.1,
+    "hook": "Luxury steakhouse",
+    "desc": "Luxury steakhouse. Big-spender energy.",
+    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.0 convo",
+      "vibe": "✨ 9.5 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "del-frisco-s-double-eagle-2",
+    "name": "Del Frisco's Double Eagle",
+    "neighborhood": "Downtown",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.7,
+    "hook": "Classic power steakhouse",
+    "desc": "Classic power steakhouse. Reliable.",
+    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.6 convo",
+      "vibe": "✨ 9.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "the-smith",
+    "name": "The Smith",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.7,
+    "hook": "Trendy brasserie",
+    "desc": "Trendy brasserie. Lively and casual.",
+    "photo": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "provincia",
+    "name": "Provincia",
+    "neighborhood": "Penn Quarter",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 7.7,
+    "hook": "Pizza and small plates",
+    "desc": "Pizza and small plates. Warm date spot.",
+    "photo": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.8 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "bresca-s-jont",
+    "name": "Bresca's Jont",
+    "neighborhood": "Dupont Circle",
+    "price": "$$$$",
+    "vibe": "Impress Them",
+    "score": 9.2,
+    "hook": "Ryan Ratino 2-Michelin-star counter tasting",
+    "desc": "Ryan Ratino 2-Michelin-star counter tasting. Elite.",
+    "photo": "https://images.unsplash.com/photo-1541014741259-de529411b96a?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.1 convo",
+      "vibe": "✨ 9.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "the-dabney-cellar",
+    "name": "The Dabney Cellar",
+    "neighborhood": "Shaw",
+    "price": "$$",
+    "vibe": "First Date",
+    "score": 8.5,
+    "hook": "Downstairs from The Dabney",
+    "desc": "Downstairs from The Dabney. More casual.",
+    "photo": "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "radici-market",
+    "name": "Radici Market",
+    "neighborhood": "Capitol Hill",
+    "price": "$",
+    "vibe": "Coffee Date",
+    "score": 7.9,
+    "hook": "Italian market and cafe on Barracks Row",
+    "desc": "Italian market and cafe on Barracks Row. Charming.",
+    "photo": "https://images.unsplash.com/photo-1521017432531-fbd92d768814?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "matchbox",
+    "name": "Matchbox",
+    "neighborhood": "Chinatown",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.6,
+    "hook": "Chinatown fire pit pizzas",
+    "desc": "Chinatown fire pit pizzas. Casual.",
+    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.7 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "city-tap-house",
+    "name": "City Tap House",
+    "neighborhood": "Chinatown",
+    "price": "$$",
+    "vibe": "Late Night",
+    "score": 7.8,
+    "hook": "Huge beer list",
+    "desc": "Huge beer list. Easy hang.",
+    "photo": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "teaism",
+    "name": "Teaism",
+    "neighborhood": "Dupont Circle",
+    "price": "$$",
+    "vibe": "Coffee Date",
+    "score": 8.3,
+    "hook": "Tea bar with Asian snacks",
+    "desc": "Tea bar with Asian snacks. Calm daytime date.",
+    "photo": "https://images.unsplash.com/photo-1541167760496-1628856ab772?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.3 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "pavilion-at-kennedy-center",
+    "name": "Pavilion at Kennedy Center",
+    "neighborhood": "Foggy Bottom",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 8.4,
+    "hook": "Dinner + show at the Kennedy Center",
+    "desc": "Dinner + show at the Kennedy Center.",
+    "photo": "https://images.unsplash.com/photo-1538228684716-ad46c7462b5a?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "sculpture-garden",
+    "name": "Sculpture Garden",
+    "neighborhood": "Downtown",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.2,
+    "hook": "Winter ice skating in the National Gallery sculpture garden",
+    "desc": "Winter ice skating in the National Gallery sculpture garden.",
+    "photo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "kayaking-at-key-bridge-boathouse",
+    "name": "Kayaking at Key Bridge Boathouse",
+    "neighborhood": "Georgetown",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.4,
+    "hook": "Rent a kayak on the Potomac",
+    "desc": "Rent a kayak on the Potomac. Summer date move.",
+    "photo": "https://images.unsplash.com/photo-1513104890138-7c749659a591?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "capital-crescent-trail",
+    "name": "Capital Crescent Trail",
+    "neighborhood": "Bethesda",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 7.5,
+    "hook": "Paved trail from Bethesda to Georgetown",
+    "desc": "Paved trail from Bethesda to Georgetown. Long walking date.",
+    "photo": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "eastern-market",
+    "name": "Eastern Market",
+    "neighborhood": "Capitol Hill",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 7.0,
+    "hook": "Saturday flea market + food vendors",
+    "desc": "Saturday flea market + food vendors. Classic daytime date.",
+    "photo": "https://images.unsplash.com/photo-1538228684716-ad46c7462b5a?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "national-gallery-of-art",
+    "name": "National Gallery of Art",
+    "neighborhood": "Downtown",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.2,
+    "hook": "Free art museum",
+    "desc": "Free art museum. High-culture date. Fountain room.",
+    "photo": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "renwick-gallery",
+    "name": "Renwick Gallery",
+    "neighborhood": "Downtown",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 8.4,
+    "hook": "Small Smithsonian craft museum",
+    "desc": "Small Smithsonian craft museum. Cozy winter date.",
+    "photo": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "phillips-collection",
+    "name": "Phillips Collection",
+    "neighborhood": "Dupont Circle",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 7.4,
+    "hook": "Impressionist art museum",
+    "desc": "Impressionist art museum. Date-sized not overwhelming.",
+    "photo": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.8 convo",
+      "vibe": "✨ 7.6 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "rock-creek-park-nature-center",
+    "name": "Rock Creek Park Nature Center",
+    "neighborhood": "Upper Northwest",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.2,
+    "hook": "Forest hiking in DC",
+    "desc": "Forest hiking in DC. Nature date.",
+    "photo": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "kenilworth-aquatic-gardens",
+    "name": "Kenilworth Aquatic Gardens",
+    "neighborhood": "Northeast DC",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.7,
+    "hook": "Lotus flowers in July",
+    "desc": "Lotus flowers in July. Hidden gem date.",
+    "photo": "https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "tidal-basin-paddle-boats",
+    "name": "Tidal Basin Paddle Boats",
+    "neighborhood": "Downtown",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 7.5,
+    "hook": "Paddle boats with Jefferson Memorial views",
+    "desc": "Paddle boats with Jefferson Memorial views.",
+    "photo": "https://images.unsplash.com/photo-1509908110317-3c5bd4dba6c5?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "blues-alley",
+    "name": "Blues Alley",
+    "neighborhood": "Georgetown",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 8.8,
+    "hook": "Historic jazz club since 1965",
+    "desc": "Historic jazz club since 1965. Dinner and show.",
+    "photo": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "signature-theatre",
+    "name": "Signature Theatre",
+    "neighborhood": "Shirlington",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 7.7,
+    "hook": "Regional theater in Shirlington",
+    "desc": "Regional theater in Shirlington. Dinner theater date.",
+    "photo": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.1 convo",
+      "vibe": "✨ 7.9 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "round-house-theatre",
+    "name": "Round House Theatre",
+    "neighborhood": "Bethesda",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 8.8,
+    "hook": "Bethesda regional theater",
+    "desc": "Bethesda regional theater.",
+    "photo": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "strathmore",
+    "name": "Strathmore",
+    "neighborhood": "North Bethesda",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 8.8,
+    "hook": "Concert hall for classical music dates",
+    "desc": "Concert hall for classical music dates.",
+    "photo": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
+    "scores": {
+      "convo": "💬 9.2 convo",
+      "vibe": "✨ 9.0 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "glen-echo-park",
+    "name": "Glen Echo Park",
+    "neighborhood": "Bethesda",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 7.5,
+    "hook": "Historic park with Saturday swing dancing",
+    "desc": "Historic park with Saturday swing dancing.",
+    "photo": "https://images.unsplash.com/photo-1503095396549-807759245b35?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 impressive"
+    }
+  },
+  {
+    "slug": "the-anthem",
+    "name": "The Anthem",
+    "neighborhood": "The Wharf",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 7.5,
+    "hook": "Waterfront concert venue",
+    "desc": "Waterfront concert venue. Show + Wharf dinner.",
+    "photo": "https://images.unsplash.com/photo-1538228684716-ad46c7462b5a?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "9-30-club",
+    "name": "9:30 Club",
+    "neighborhood": "U Street",
+    "price": "$$$",
+    "vibe": "Activity Date",
+    "score": 7.5,
+    "hook": "DC's iconic concert venue",
+    "desc": "DC's iconic concert venue. Concert date.",
+    "photo": "https://images.unsplash.com/photo-1538228684716-ad46c7462b5a?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 easy exit"
+    }
+  },
+  {
+    "slug": "atlas-performing-arts",
+    "name": "Atlas Performing Arts",
+    "neighborhood": "H Street NE",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.0,
+    "hook": "H Street theater complex",
+    "desc": "H Street theater complex.",
+    "photo": "https://images.unsplash.com/photo-1538228684716-ad46c7462b5a?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.4 convo",
+      "vibe": "✨ 8.2 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "hillwood-estate",
+    "name": "Hillwood Estate",
+    "neighborhood": "Upper Northwest",
+    "price": "$$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.8,
+    "hook": "Marjorie Post's mansion and gardens",
+    "desc": "Marjorie Post's mansion and gardens. Hidden gem.",
+    "photo": "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "dumbarton-oaks",
+    "name": "Dumbarton Oaks",
+    "neighborhood": "Georgetown",
+    "price": "$$",
+    "vibe": "Activity Date",
+    "score": 8.2,
+    "hook": "Gorgeous historic gardens",
+    "desc": "Gorgeous historic gardens. Spring and fall date.",
+    "photo": "https://images.unsplash.com/photo-1509908110317-3c5bd4dba6c5?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.6 convo",
+      "vibe": "✨ 8.4 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "national-arboretum",
+    "name": "National Arboretum",
+    "neighborhood": "Northeast DC",
+    "price": "$",
+    "vibe": "Low Pressure First Date",
+    "score": 7.5,
+    "hook": "Capitol Columns and bonsai museum",
+    "desc": "Capitol Columns and bonsai museum. Underrated.",
+    "photo": "https://images.unsplash.com/photo-1415201364774-f6f0bb35f28f?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.9 convo",
+      "vibe": "✨ 7.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "meridian-hill-park",
+    "name": "Meridian Hill Park",
+    "neighborhood": "Columbia Heights",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 7.0,
+    "hook": "Cascading fountain park",
+    "desc": "Cascading fountain park. Sunday drum circles.",
+    "photo": "https://images.unsplash.com/photo-1533174072545-7a4b6ad7a6c3?w=600&q=80",
+    "scores": {
+      "convo": "💬 7.5 convo",
+      "vibe": "✨ 7.5 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "theodore-roosevelt-island",
+    "name": "Theodore Roosevelt Island",
+    "neighborhood": "Rosslyn",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.4,
+    "hook": "Island nature preserve in the Potomac",
+    "desc": "Island nature preserve in the Potomac. Easy hike.",
+    "photo": "https://images.unsplash.com/photo-1566127444979-b3d2b654e3d7?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.8 convo",
+      "vibe": "✨ 8.6 vibe",
+      "exit": "🚪 memorable"
+    }
+  },
+  {
+    "slug": "mount-vernon-trail",
+    "name": "Mount Vernon Trail",
+    "neighborhood": "Arlington",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 8.5,
+    "hook": "Bike or walk along the Potomac",
+    "desc": "Bike or walk along the Potomac. Classic date.",
+    "photo": "https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.9 convo",
+      "vibe": "✨ 8.7 vibe",
+      "exit": "🚪 good pacing"
+    }
+  },
+  {
+    "slug": "old-town-waterfront",
+    "name": "Old Town Waterfront",
+    "neighborhood": "Old Town Alexandria",
+    "price": "$",
+    "vibe": "Activity Date",
+    "score": 7.8,
+    "hook": "King Street to the water",
+    "desc": "King Street to the water. Sunset walking date.",
+    "photo": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80",
+    "scores": {
+      "convo": "💬 8.2 convo",
+      "vibe": "✨ 8.0 vibe",
+      "exit": "🚪 impressive"
+    }
+  }
+]
