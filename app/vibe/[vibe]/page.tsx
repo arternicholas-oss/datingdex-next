@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { getVenuesByVibe, allVibes } from '@/lib/venues';
+import { getVenuesByVibe, allVibes, allNeighborhoods } from '@/lib/venues';
 import SpotCard from '@/components/SpotCard';
 
 export function generateStaticParams() {
