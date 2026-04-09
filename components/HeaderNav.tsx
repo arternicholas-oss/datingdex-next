@@ -17,10 +17,10 @@ export default function HeaderNav() {
       {user ? (
         <div className="nav-user">
           <span className="nav-tier">{isPremium ? '⭐ Premium' : 'Free'}</span>
-          <button className="nav-link-btn" onClick={signOut}>Sign out</button>
+          <button type="button" className="nav-link-btn" onClick={signOut}>Sign out</button>
         </div>
       ) : (
-        <button className="nav-link-btn" onClick={() => openAuth('signin')}>Sign in</button>
+        <button type="button" className="nav-link-btn" onClick={() => openAuth('signin')}>Sign in</button>
       )}
     </nav>
   );
