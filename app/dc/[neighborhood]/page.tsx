@@ -67,6 +67,9 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
           <p>The most date-worthy restaurants, bars, and spots in {name}, Washington DC — ranked by conversation score and vibe.</p>
         </div>
 
+        <div className="spots-grid">
+          {sorted.map((v) => <SpotCard key={v.slug} venue={v} />)}
+        </div>
         <section className="seo-content">
           <h2>Dating in {name}</h2>
           <p>
@@ -94,10 +97,6 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
             ))}
           </ul>
         </section>
-
-        <div className="spots-grid">
-          {sorted.map((v) => <SpotCard key={v.slug} venue={v} />)}
-        </div>
       </div>
     </>
   );
