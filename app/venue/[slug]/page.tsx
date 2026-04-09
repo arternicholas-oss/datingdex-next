@@ -21,11 +21,15 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
       title, description,
       url: `https://www.datingdex.com/venue/${v.slug}`,
       images: v.photo ? [{ url: v.photo }] : undefined,
-      type: 'article',
-    },
-  };
-}
-
+         type: 'article',
+       },
+       twitter: {
+         card: 'summary_large_image',
+         title,
+         description,
+         images: v.photo ? [v.photo] : undefined,
+       },
+     };
 export default function VenuePage({ params }: { params: { slug: string } }) {
   const v = getVenueBySlug(params.slug);
   if (!v) return notFound();
