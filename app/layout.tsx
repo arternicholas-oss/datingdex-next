@@ -9,11 +9,11 @@ import PostHogProvider from '@/components/PostHogProvider';
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.datingdex.com'),
   title: {
-    default: '309 Best Date Spots in Washington DC (2026) — Ranked by Vibe | DatingDex',
+    default: '300+ Best Date Spots in Washington DC (2026) \u2014 Ranked by Vibe | DatingDex',
     template: '%s | DatingDex',
   },
   description:
-    'The 309 best date ideas in Washington DC, hand-picked and ranked. Filter by vibe — first date, impress them, coffee, late night — plus neighborhood and budget. Free.',
+    'The 300+ best date ideas in Washington DC, hand-picked and ranked. Filter by vibe \u2014 first date, impress them, coffee, late night \u2014 plus neighborhood and budget. Free.',
   keywords: [
     'DC date ideas', 'Washington DC date night', 'date spots DC', 'romantic restaurants DC',
     'first date DC', 'DMV date ideas', 'Georgetown date', 'Logan Circle restaurants',
@@ -23,14 +23,14 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'DatingDex',
     url: 'https://www.datingdex.com',
-    title: '309 Best Date Spots in Washington DC (2026) | DatingDex',
+    title: '300+ Best Date Spots in Washington DC (2026) | DatingDex',
     description: 'Hand-picked date ideas across DC, Arlington & Alexandria. Filter by vibe, budget, and neighborhood.',
     images: ['/og-image.jpg'],
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: '309 Best Date Spots in Washington DC (2026) | DatingDex',
+    title: '300+ Best Date Spots in Washington DC (2026) | DatingDex',
     description: 'Hand-picked date ideas across DC, Arlington & Alexandria.',
     images: ['/og-image.jpg'],
   },
@@ -78,7 +78,34 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             </header>
             <main id="main-content">{children}</main>
             <footer className="footer">
-              <p>© {new Date().getFullYear()} DatingDex · Hand-picked date spots in Washington DC · <Link href="/about">About</Link> · <Link href="/plan-my-date">Plan My Date</Link> · <Link href="/premium">Premium</Link></p>
+              <div className="footer-inner">
+                <div className="footer-top">
+                  <div className="footer-col">
+                    <h4>DatingDex</h4>
+                    <p>Hand-picked date spots in Washington DC. 300+ venues ranked by vibe, budget, and neighborhood.</p>
+                  </div>
+                  <div className="footer-col">
+                    <h4>Explore</h4>
+                    <ul>
+                      <li><Link href="/discovery">All Spots</Link></li>
+                      <li><Link href="/plan-my-date">Plan My Date</Link></li>
+                      <li><Link href="/couples">Couples Mode</Link></li>
+                      <li><Link href="/premium">Premium</Link></li>
+                    </ul>
+                  </div>
+                  <div className="footer-col">
+                    <h4>Resources</h4>
+                    <ul>
+                      <li><Link href="/guides">Blog</Link></li>
+                      <li><Link href="/about">About</Link></li>
+                      <li><Link href="/for-restaurants">For Restaurants</Link></li>
+                    </ul>
+                  </div>
+                </div>
+                <div className="footer-bottom">
+                  <p>&copy; {new Date().getFullYear()} DatingDex &middot; Washington DC</p>
+                </div>
+              </div>
             </footer>
             <AuthModal />
           </PostHogProvider>
