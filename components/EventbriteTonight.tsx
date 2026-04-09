@@ -49,13 +49,7 @@ export default function EventbriteTonight() {
     );
   }
 
-  if (events.length === 0) {
-    return (
-      <div className="eb-tonight-empty">
-        <p>Check back soon — we pull tonight&apos;s best events from Eventbrite every hour.</p>
-      </div>
-    );
-  }
+  if (events.length === 0) return null;
 
   return (
     <div className="eb-tonight-grid">
