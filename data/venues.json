@@ -208,22 +208,6 @@
     }
   },
   {
-    "slug": "minibar-2",
-    "name": "minibar",
-    "neighborhood": "Penn Quarter",
-    "price": "$$$",
-    "vibe": "Impress Them",
-    "score": 9.5,
-    "hook": "The \"I planned something unforgettable\" move",
-    "desc": "Pull this out on date three or later. High effort, high reward. They will remember this one.",
-    "photo": "https://places.googleapis.com/v1/places/ChIJMY6KQ5C3t4kREDURgsrWo2s/photos/AU_ZVEGsaP2zFYAVc4VEhbAET6nUIu0tFCpx4m-KbACqeox1GRIi7duyI9aByzVxQtKNTdSvGoiHfewdaQXtQXE5IgN36S-Wtg3VW4SKwNUFqxookC-bflfgbPrjCOgzJfTI2WSk2oYLQ0pQbD74gD7mB30-AZsWKpFP_VSREp-5sUXw6DW03L3K-UzpCI2sBkqSW_an0fR9sG6oJF---W0Gdf6cF7e9kHlx1JZ_cOp628nmiFDwtErQUHS-seqmkCDqeTN83sIGzn7OQ-YNtKVSUtVR8Va4B-Oh6-wPXl0hCjsxlg/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
-    "scores": {
-      "convo": "💬 9.4 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 easy exit"
-    }
-  },
-  {
     "slug": "slipstream",
     "name": "Slipstream",
     "neighborhood": "U Street",
@@ -701,22 +685,6 @@
       "convo": "💬 7.5 convo",
       "vibe": "✨ 7.5 vibe",
       "exit": "🚪 easy exit"
-    }
-  },
-  {
-    "slug": "chez-billy-sud-2",
-    "name": "Chez Billy Sud",
-    "neighborhood": "Georgetown",
-    "price": "$$$",
-    "vibe": "Quiet & Intimate",
-    "score": 9.5,
-    "hook": "French bistro elegance that feels genuinely romantic",
-    "desc": "Charming Georgetown bistro with exceptional French food and wine. Makes you feel like you're in a Parisian movie.",
-    "photo": "https://places.googleapis.com/v1/places/ChIJP1dFC0y2t4kRZfnkY-lmzcE/photos/AU_ZVEFoAClMkO-h1nHh5nEsfR4afDSP7DsDrWKf0rn_6ICABSd3HyJiq-6dfXLfu9J0ehkqzZTUAOcIf2EcD5g-Xg3jDh0mOa0ipUorcuVO9hfAbJ9KJVrsFHQfH8oJP0pxDlghOi6tLfUv5aMlt6POcem0IbjjwXZ-hZzJ1wB0pKUhiqo_sRrP1FBqOz39WS4_fgtQ9g0ODScllj5RHGl2XQ08ZBQu_TKHBI2nsSLTnZ1e6As73VPQyT_SwJUcTnpDW4QS7rpETCaoTgA4eelHErqiAaoD229Ysn6i98fMENoK1Q/media?maxHeightPx=400&maxWidthPx=600&key=AIzaSyCB-U0fDKW_qKrQHLqGQwaB4ks462oRPr8",
-    "scores": {
-      "convo": "💬 9.4 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 memorable"
     }
   },
   {
@@ -1408,22 +1376,6 @@
     }
   },
   {
-    "slug": "komi-2",
-    "name": "Komi",
-    "neighborhood": "Dupont Circle",
-    "price": "$$$$",
-    "vibe": "Quiet & Intimate",
-    "score": 9.5,
-    "hook": "Michelin-starred intimate tasting menu",
-    "desc": "Michelin-starred intimate tasting menu. One of DC's most romantic restaurants.",
-    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.4 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 easy exit"
-    }
-  },
-  {
     "slug": "bistrot-du-coin",
     "name": "Bistrot du Coin",
     "neighborhood": "Dupont Circle",
@@ -1564,22 +1516,6 @@
     "scores": {
       "convo": "💬 7.7 convo",
       "vibe": "✨ 7.7 vibe",
-      "exit": "🚪 impressive"
-    }
-  },
-  {
-    "slug": "cafe-milano-2",
-    "name": "Cafe Milano",
-    "neighborhood": "Georgetown",
-    "price": "$$$$",
-    "vibe": "Impress Them",
-    "score": 9.7,
-    "hook": "See-and-be-seen Italian",
-    "desc": "See-and-be-seen Italian. Celebrity spotting. High-impact date.",
-    "photo": "https://images.unsplash.com/photo-1600891964092-4316c288032e?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
       "exit": "🚪 impressive"
     }
   },
@@ -2080,22 +2016,6 @@
     }
   },
   {
-    "slug": "acqua-al-2",
-    "name": "Acqua al 2",
-    "neighborhood": "Capitol Hill",
-    "price": "$$$",
-    "vibe": "Quiet & Intimate",
-    "score": 8.5,
-    "hook": "Florence transplant",
-    "desc": "Florence transplant. Famous for blueberry steak. Romantic.",
-    "photo": "https://images.unsplash.com/photo-1579871494447-9811cf80d66c?w=600&q=80",
-    "scores": {
-      "convo": "💬 8.4 convo",
-      "vibe": "✨ 8.9 vibe",
-      "exit": "🚪 memorable"
-    }
-  },
-  {
     "slug": "the-queen-vic",
     "name": "The Queen Vic",
     "neighborhood": "Capitol Hill",
@@ -2576,22 +2496,6 @@
     }
   },
   {
-    "slug": "kinship-2",
-    "name": "Kinship",
-    "neighborhood": "Mt Vernon Triangle",
-    "price": "$$$$",
-    "vibe": "Quiet & Intimate",
-    "score": 9.7,
-    "hook": "Eric Ziebold Michelin-starred",
-    "desc": "Eric Ziebold Michelin-starred. Quietly perfect.",
-    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 easy exit"
-    }
-  },
-  {
     "slug": "dauphine-s",
     "name": "Dauphine's",
     "neighborhood": "Mt Vernon Triangle",
@@ -2620,22 +2524,6 @@
     "scores": {
       "convo": "💬 7.6 convo",
       "vibe": "✨ 7.6 vibe",
-      "exit": "🚪 memorable"
-    }
-  },
-  {
-    "slug": "succotash-prime-2",
-    "name": "Succotash Prime",
-    "neighborhood": "Mt Vernon Triangle",
-    "price": "$$$",
-    "vibe": "Impress Them",
-    "score": 9.7,
-    "hook": "Upscale Southern with beautiful space",
-    "desc": "Upscale Southern with beautiful space.",
-    "photo": "https://images.unsplash.com/photo-1470337458703-46ad1756a187?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
       "exit": "🚪 memorable"
     }
   },
@@ -2672,38 +2560,6 @@
     }
   },
   {
-    "slug": "marcel-s-by-robert-wiedmaier-2",
-    "name": "Marcel's by Robert Wiedmaier",
-    "neighborhood": "West End",
-    "price": "$$$$",
-    "vibe": "Quiet & Intimate",
-    "score": 9.7,
-    "hook": "One of DC's most classic fine dining rooms",
-    "desc": "One of DC's most classic fine dining rooms.",
-    "photo": "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 easy exit"
-    }
-  },
-  {
-    "slug": "rasika-west-end-2",
-    "name": "Rasika West End",
-    "neighborhood": "West End",
-    "price": "$$$",
-    "vibe": "Quiet & Intimate",
-    "score": 9.7,
-    "hook": "Rasika's sister location",
-    "desc": "Rasika's sister location. Still elite.",
-    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 good pacing"
-    }
-  },
-  {
     "slug": "imperfecto",
     "name": "Imperfecto",
     "neighborhood": "West End",
@@ -2736,22 +2592,6 @@
     }
   },
   {
-    "slug": "the-palm-2",
-    "name": "The Palm",
-    "neighborhood": "Foggy Bottom",
-    "price": "$$$$",
-    "vibe": "Impress Them",
-    "score": 9.7,
-    "hook": "Old-school power steakhouse",
-    "desc": "Old-school power steakhouse. Classic DC.",
-    "photo": "https://images.unsplash.com/photo-1552611052-33e04de081de?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 good pacing"
-    }
-  },
-  {
     "slug": "st-anselm",
     "name": "St. Anselm",
     "neighborhood": "Union Market",
@@ -2765,22 +2605,6 @@
       "convo": "💬 8.4 convo",
       "vibe": "✨ 8.9 vibe",
       "exit": "🚪 impressive"
-    }
-  },
-  {
-    "slug": "masseria-2",
-    "name": "Masseria",
-    "neighborhood": "Union Market",
-    "price": "$$$$",
-    "vibe": "Quiet & Intimate",
-    "score": 9.7,
-    "hook": "Nicholas Stefanelli Michelin-starred",
-    "desc": "Nicholas Stefanelli Michelin-starred. Enchanting.",
-    "photo": "https://images.unsplash.com/photo-1560717845-968823efbee1?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 good pacing"
     }
   },
   {
@@ -4336,22 +4160,6 @@
     }
   },
   {
-    "slug": "albi-2",
-    "name": "Albi",
-    "neighborhood": "Navy Yard",
-    "price": "$$$$",
-    "vibe": "Impress Them",
-    "score": 9.7,
-    "hook": "Michelin-starred Michael Rafidi",
-    "desc": "Michelin-starred Michael Rafidi. Open-fire Levantine.",
-    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 memorable"
-    }
-  },
-  {
     "slug": "opal",
     "name": "Opal",
     "neighborhood": "Dupont Circle",
@@ -4381,22 +4189,6 @@
       "convo": "💬 9.0 convo",
       "vibe": "✨ 9.5 vibe",
       "exit": "🚪 impressive"
-    }
-  },
-  {
-    "slug": "del-frisco-s-double-eagle-2",
-    "name": "Del Frisco's Double Eagle",
-    "neighborhood": "Downtown",
-    "price": "$$$$",
-    "vibe": "Impress Them",
-    "score": 9.7,
-    "hook": "Classic power steakhouse",
-    "desc": "Classic power steakhouse. Reliable.",
-    "photo": "https://images.unsplash.com/photo-1544025162-d76694265947?w=600&q=80",
-    "scores": {
-      "convo": "💬 9.6 convo",
-      "vibe": "✨ 9.9 vibe",
-      "exit": "🚪 memorable"
     }
   },
   {
