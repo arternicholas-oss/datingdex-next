@@ -32,9 +32,9 @@ export default function HomePage() {
             Where to sit. What to order. What to say. How to get there.
             300+ DC spots, one AI that plans the whole night in <strong>30 seconds</strong>.
           </p>
-          <p className="hero-proof">
-            <span className="dot" /> 1,284 dates planned this month {'\u00B7'} Trusted by DC couples since 2024
-          </p>
+          <div className="hero-ctas">
+            <Link href="/plan-my-date" className="cta cta-primary">Plan my date — free →</Link>
+          </div>
         </div>
       </section>
 
