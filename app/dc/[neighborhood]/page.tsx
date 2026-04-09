@@ -66,6 +66,35 @@ export default function NeighborhoodPage({ params }: { params: { neighborhood: s
           <h1>{list.length} Best Date Spots in {name}</h1>
           <p>The most date-worthy restaurants, bars, and spots in {name}, Washington DC — ranked by conversation score and vibe.</p>
         </div>
+
+        <section className="seo-content">
+          <h2>Dating in {name}</h2>
+          <p>
+            {name} is one of Washington DC&apos;s most popular neighborhoods for date nights, offering {list.length} hand-picked
+            restaurants, bars, and experiences. Whether you&apos;re planning a first date or a special anniversary dinner,
+            {name} delivers a range of atmospheres from intimate candlelit bistros to lively cocktail lounges. Every spot
+            on this page has been scored by DatingDex across four dimensions — conversation friendliness, vibe, price, and
+            ease of exit — so you can find the perfect match for your evening.
+          </p>
+          <p>
+            Prices in {name} range from budget-friendly coffee shops to upscale tasting menus, meaning there&apos;s something
+            here no matter your budget. Many of these venues are bookable on Resy in one tap directly from DatingDex.
+            Browse the cards below, sorted by overall score, to find your next great date spot.
+          </p>
+          <h3>Explore other DC neighborhoods</h3>
+          <ul className="seo-links">
+            {allNeighborhoods().filter(n => n.name !== name).slice(0, 12).map(n => (
+              <li key={n.slug}><Link href={`/dc/${n.slug}`}>{n.name} ({n.count})</Link></li>
+            ))}
+          </ul>
+          <h3>Browse by vibe</h3>
+          <ul className="seo-links">
+            {allVibes().map(v => (
+              <li key={v.slug}><Link href={`/vibe/${v.slug}`}>{v.name} ({v.count})</Link></li>
+            ))}
+          </ul>
+        </section>
+
         <div className="spots-grid">
           {sorted.map((v) => <SpotCard key={v.slug} venue={v} />)}
         </div>
