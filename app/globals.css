@@ -400,3 +400,49 @@ img { max-width: 100%; display: block; }
 /* ==================== SHARE CARD ==================== */
 .plan-share-card { margin: 2rem 0; }
 .plan-share-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
+
+
+/* ── Discovery filter sidebar ── */
+.filter-toggle {
+  display: none;
+  background: var(--brand); color: #fff; border: none; border-radius: 8px;
+  padding: .6rem 1.2rem; font-size: .95rem; font-weight: 600; cursor: pointer;
+  margin-bottom: 1rem;
+}
+@media (max-width: 768px) {
+  .filter-toggle { display: inline-flex; align-items: center; gap: .4rem; }
+}
+.discovery-sidebar {
+  display: flex; flex-wrap: wrap; gap: 2rem; margin-bottom: 1.5rem;
+}
+.discovery-sidebar .sidebar-section h3 {
+  font-size: .95rem; font-weight: 700; margin-bottom: .5rem; color: var(--fg);
+}
+.discovery-sidebar .sidebar-section ul {
+  list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: .35rem;
+}
+.discovery-sidebar .sidebar-section ul li a {
+  display: inline-block; padding: .3rem .7rem; border-radius: 6px;
+  background: var(--card-bg); border: 1px solid var(--border); font-size: .85rem;
+  color: var(--fg); text-decoration: none; transition: background .15s, border-color .15s;
+}
+.discovery-sidebar .sidebar-section ul li a:hover {
+  background: var(--brand); color: #fff; border-color: var(--brand);
+}
+@media (max-width: 768px) {
+  .discovery-sidebar {
+    display: none; flex-direction: column; gap: 1.2rem;
+    position: fixed; top: 0; left: 0; width: 80vw; max-width: 320px; height: 100vh;
+    background: var(--bg); z-index: 1000; padding: 2rem 1.25rem; overflow-y: auto;
+    box-shadow: 2px 0 12px rgba(0,0,0,.15);
+  }
+  .discovery-sidebar--open { display: flex; }
+  .discovery-sidebar .sidebar-section ul { flex-direction: column; gap: .2rem; }
+  .discovery-sidebar .sidebar-section ul li a { display: block; padding: .5rem .7rem; }
+}
+.filter-backdrop {
+  display: none; position: fixed; inset: 0; background: rgba(0,0,0,.4); z-index: 999;
+}
+@media (max-width: 768px) {
+  .filter-backdrop { display: block; }
+}
