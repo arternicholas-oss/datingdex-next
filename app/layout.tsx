@@ -97,7 +97,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <h4>Resources</h4>
                     <ul>
                       <li><Link href="/guides">Blog</Link></li>
-                      <li><Link href="/about">About</Link></li>
+                      <li><Link href="/for-restaurants">For Restaurants</Link></li>
                       <li><Link href="/for-restaurants">For Restaurants</Link></li>
                     </ul>
                   </div>
