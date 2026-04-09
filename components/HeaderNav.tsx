@@ -10,6 +10,7 @@ export default function HeaderNav() {
     <nav className="nav" aria-label="Primary">
       <Link href="/discovery">All Spots</Link>
       <Link href="/plan-my-date" className="nav-plan">Plan My Date ✦</Link>
+      <Link href="/couples">Couples</Link>
       <Link href="/premium">Premium</Link>
       {user ? (
         <div className="nav-user">

@@ -259,3 +259,57 @@ img { max-width: 100%; display: block; }
 .dashboard-section input:focus, .dashboard-section textarea:focus { outline: none; border-color: var(--brand); }
 .dashboard-tags { margin: 1rem 0; }
 
+
+/* ---------- v2 hero + repositioning ---------- */
+.hero-v2 { padding: 4rem 1.25rem 3rem; text-align: center; background: linear-gradient(180deg, #fff7f5 0%, #fff 100%); }
+.hero-v2 h1 { font-size: clamp(2.2rem, 6vw, 3.75rem); margin: 1rem 0 1rem; letter-spacing: -0.03em; line-height: 1.05; }
+.hero-v2 .hero-sub { font-size: 1.2rem; color: var(--muted); max-width: 680px; margin: 0 auto 1.75rem; line-height: 1.55; }
+.hero-v2 .hero-sub strong { color: var(--ink); }
+.hero-badge { display: inline-block; background: #fff; border: 1px solid var(--border); color: var(--brand); font-weight: 700; font-size: .8rem; padding: .45rem .85rem; border-radius: 999px; text-transform: uppercase; letter-spacing: .05em; box-shadow: var(--shadow); }
+.hero-ctas { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; margin: 1rem 0 1.25rem; }
+.cta { display: inline-block; padding: .95rem 1.6rem; border-radius: 999px; font-weight: 700; font-size: 1rem; transition: transform .15s, box-shadow .15s; }
+.cta-primary { background: var(--brand); color: #fff; box-shadow: 0 6px 18px rgba(255,92,58,.3); }
+.cta-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(255,92,58,.4); }
+.cta-ghost { background: transparent; color: var(--ink); border: 1.5px solid var(--border); }
+.cta-ghost:hover { border-color: var(--ink); }
+.hero-proof { font-size: .9rem; color: var(--muted); display: inline-flex; align-items: center; gap: .5rem; margin-top: .5rem; }
+.hero-proof .dot { width: 8px; height: 8px; background: #22c55e; border-radius: 50%; display: inline-block; box-shadow: 0 0 0 4px rgba(34,197,94,.2); }
+
+.section-sub { color: var(--muted); font-size: 1rem; margin: -.25rem 0 1rem; max-width: 640px; }
+
+/* how it works */
+.how-it-works { padding: 3rem 1.25rem; text-align: center; }
+.how-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 1.5rem; margin: 2rem 0; }
+.how-step { background: #fff; border: 1px solid var(--border); border-radius: var(--radius); padding: 1.75rem 1.25rem; text-align: left; box-shadow: var(--shadow); }
+.how-num { width: 40px; height: 40px; border-radius: 50%; background: var(--brand); color: #fff; font-weight: 800; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; margin-bottom: .75rem; }
+.how-step h3 { margin: .25rem 0 .5rem; font-size: 1.2rem; }
+.how-step p { margin: 0; color: var(--muted); line-height: 1.5; }
+.how-cta { margin-top: 1rem; }
+
+/* couples teaser */
+.couples-teaser { padding: 2rem 1.25rem; }
+.couples-card { background: linear-gradient(135deg, #fff7f5 0%, #ffe9e3 100%); border: 1px solid #ffd6cc; border-radius: 20px; padding: 2.5rem; display: flex; align-items: center; gap: 2rem; }
+.couples-card h2 { font-size: clamp(1.6rem, 3.5vw, 2.25rem); margin: 1rem 0 .75rem; letter-spacing: -0.02em; }
+.couples-card p { color: var(--muted); font-size: 1.05rem; max-width: 520px; margin: 0 0 1.25rem; line-height: 1.55; }
+.couples-illo { font-size: 6rem; flex-shrink: 0; }
+@media (max-width: 720px) { .couples-card { flex-direction: column; text-align: center; padding: 2rem 1.25rem; } .couples-illo { font-size: 4rem; } }
+
+/* email capture */
+.email-capture { background: var(--ink); color: #fff; border-radius: 20px; padding: 2.5rem; margin: 2rem 0; }
+.email-capture-inner { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.email-capture h2 { margin: 0 0 .5rem; font-size: 1.6rem; letter-spacing: -0.02em; }
+.email-capture p { margin: 0; color: #bbb; font-size: .95rem; }
+.email-capture form { display: flex; gap: .5rem; flex-wrap: wrap; }
+.email-capture input { flex: 1; min-width: 180px; padding: .95rem 1.15rem; border-radius: 999px; border: 0; font-size: 1rem; background: #fff; color: var(--ink); }
+.email-capture .cta-primary { white-space: nowrap; }
+.email-done { color: #22c55e; font-weight: 600; font-size: 1.1rem; }
+.email-error { color: #ff6b6b; font-size: .85rem; margin: .5rem 0 0; flex-basis: 100%; }
+@media (max-width: 720px) { .email-capture-inner { grid-template-columns: 1fr; } .email-capture { padding: 1.75rem; } }
+
+/* nav tweak so Plan My Date pops */
+.nav .nav-plan { color: var(--brand); font-weight: 700; }
+.nav .nav-plan:hover { color: var(--brand-dark); }
+.nav-user { display: flex; align-items: center; gap: .75rem; }
+.nav-tier { font-size: .8rem; font-weight: 700; color: var(--brand); background: #fff7f5; padding: .3rem .65rem; border-radius: 999px; }
+.nav-link-btn { background: none; border: 0; color: var(--muted); font-weight: 500; font-size: .95rem; cursor: pointer; font-family: inherit; }
+.nav-link-btn:hover { color: var(--ink); }

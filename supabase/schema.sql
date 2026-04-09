@@ -156,3 +156,130 @@ begin
   returning plan_uses_count into v_count;
   return v_count;
 end; $$;
+
+-- ============================================================
+-- email_subscribers: home capture
+-- ============================================================
+create table if not exists public.email_subscribers (
+  email text primary key,
+  source text,
+  created_at timestamptz not null default now()
+);
+alter table public.email_subscribers enable row level security;
+-- no user-facing read access; writes via service role only
+
+-- ============================================================
+-- couples: two-user shared date brain
+-- ============================================================
+create table if not exists public.couples (
+  id uuid primary key default gen_random_uuid(),
+  partner_a uuid not null references auth.users(id) on delete cascade,
+  partner_b uuid references auth.users(id) on delete cascade,
+  invite_token text unique,
+  anniversary_date date,
+  display_name text,
+  created_at timestamptz not null default now(),
+  joined_at timestamptz,
+  status text not null default 'pending' check (status in ('pending','active','ended'))
+);
+create index if not exists couples_partner_a_idx on public.couples(partner_a);
+create index if not exists couples_partner_b_idx on public.couples(partner_b);
+create index if not exists couples_invite_token_idx on public.couples(invite_token);
+
+alter table public.couples enable row level security;
+
+drop policy if exists "couples_members_read" on public.couples;
+create policy "couples_members_read" on public.couples
+  for select using (auth.uid() = partner_a or auth.uid() = partner_b);
+
+drop policy if exists "couples_partner_a_insert" on public.couples;
+create policy "couples_partner_a_insert" on public.couples
+  for insert with check (auth.uid() = partner_a);
+
+drop policy if exists "couples_members_update" on public.couples;
+create policy "couples_members_update" on public.couples
+  for update using (auth.uid() = partner_a or auth.uid() = partner_b);
+
+-- shared favorites
+create table if not exists public.couple_favorites (
+  couple_id uuid not null references public.couples(id) on delete cascade,
+  venue_slug text not null,
+  saved_by uuid not null references auth.users(id) on delete cascade,
+  note text,
+  created_at timestamptz not null default now(),
+  primary key (couple_id, venue_slug)
+);
+alter table public.couple_favorites enable row level security;
+
+drop policy if exists "couple_favorites_members_all" on public.couple_favorites;
+create policy "couple_favorites_members_all" on public.couple_favorites
+  for all using (
+    exists (select 1 from public.couples c
+      where c.id = couple_favorites.couple_id
+        and (auth.uid() = c.partner_a or auth.uid() = c.partner_b))
+  ) with check (
+    exists (select 1 from public.couples c
+      where c.id = couple_favorites.couple_id
+        and (auth.uid() = c.partner_a or auth.uid() = c.partner_b))
+  );
+
+-- voting sessions: each partner picks spots, overlap wins
+create table if not exists public.couple_votes (
+  id uuid primary key default gen_random_uuid(),
+  couple_id uuid not null references public.couples(id) on delete cascade,
+  user_id uuid not null references auth.users(id) on delete cascade,
+  venue_slug text not null,
+  vote text not null check (vote in ('yes','no')),
+  created_at timestamptz not null default now(),
+  unique (couple_id, user_id, venue_slug)
+);
+alter table public.couple_votes enable row level security;
+
+drop policy if exists "couple_votes_members_all" on public.couple_votes;
+create policy "couple_votes_members_all" on public.couple_votes
+  for all using (
+    exists (select 1 from public.couples c
+      where c.id = couple_votes.couple_id
+        and (auth.uid() = c.partner_a or auth.uid() = c.partner_b))
+  ) with check (
+    exists (select 1 from public.couples c
+      where c.id = couple_votes.couple_id
+        and (auth.uid() = c.partner_a or auth.uid() = c.partner_b))
+  );
+
+-- ============================================================
+-- reviews: UGC captured via debrief flow
+-- ============================================================
+create table if not exists public.reviews (
+  id uuid primary key default gen_random_uuid(),
+  user_id uuid not null references auth.users(id) on delete cascade,
+  venue_slug text not null,
+  plan_id uuid references public.plans(id) on delete set null,
+  rating int not null check (rating between 1 and 5),
+  quote text,
+  sentiment text,
+  published boolean not null default true,
+  created_at timestamptz not null default now()
+);
+create index if not exists reviews_venue_idx on public.reviews(venue_slug);
+create index if not exists reviews_user_idx on public.reviews(user_id);
+
+alter table public.reviews enable row level security;
+
+drop policy if exists "reviews_public_read" on public.reviews;
+create policy "reviews_public_read" on public.reviews
+  for select using (published = true);
+
+drop policy if exists "reviews_owner_write" on public.reviews;
+create policy "reviews_owner_write" on public.reviews
+  for insert with check (auth.uid() = user_id);
+
+drop policy if exists "reviews_owner_update" on public.reviews;
+create policy "reviews_owner_update" on public.reviews
+  for update using (auth.uid() = user_id);
+
+-- debrief tracking fields on plans
+alter table public.plans add column if not exists debrief_sent_at timestamptz;
+alter table public.plans add column if not exists debrief_rating int;
+alter table public.plans add column if not exists debrief_note text;
+alter table public.plans add column if not exists date_time timestamptz;

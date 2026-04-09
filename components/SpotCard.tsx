@@ -17,7 +17,9 @@ export default function SpotCard({ venue }: { venue: Venue }) {
         </div>
         <div className="spot-name">{venue.name}</div>
         <div className="spot-hook">{venue.hook}</div>
-        <div className="spot-desc">{venue.desc}</div>
+        {venue.desc && venue.desc.trim() !== venue.hook.trim() && (
+          <div className="spot-desc">{venue.desc}</div>
+        )}
         <div className="spot-pills">
           {venue.scores.convo && <span className="pill">{venue.scores.convo}</span>}
           {venue.scores.vibe && <span className="pill">{venue.scores.vibe}</span>}
