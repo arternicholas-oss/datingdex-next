@@ -50,6 +50,10 @@ export async function GET(req: Request) {
             <p style="color:#444;line-height:1.5;">Your plan was: <strong>${top}</strong></p>
             <p style="color:#444;line-height:1.5;">15 seconds of feedback makes your next plan smarter. Tell us what worked, what didn't, and we'll learn your preferences.</p>
             <a href="${debriefUrl}" style="display:inline-block;background:#FF5C3A;color:#fff;padding:14px 24px;border-radius:999px;font-weight:700;text-decoration:none;margin-top:8px;">Share how it went →</a>
+            <div style="background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:16px;margin-top:24px;">
+              <p style="margin:0 0 4px;color:#166534;font-weight:700;font-size:14px;">Share the love</p>
+              <p style="margin:0;color:#166534;font-size:13px;line-height:1.5;">Send DatingDex to a friend — you both get 3 extra free plans. Share your link: <a href="${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.datingdex.com'}/?ref=${p.user_id}" style="color:#15803d;font-weight:700;">${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.datingdex.com'}/?ref=...</a></p>
+            </div>
             <p style="margin-top:32px;color:#888;font-size:12px;">You're getting this because you built a date plan on DatingDex. <a href="${process.env.NEXT_PUBLIC_SITE_URL}/account" style="color:#888;">Manage emails</a></p>
           </div>
         `,

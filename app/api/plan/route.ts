@@ -1,7 +1,8 @@
 import { NextResponse } from 'next/server';
 import { buildItinerary, type PlanInput } from '@/lib/planner';
-import { parseFreeText, writeBlurbs } from '@/lib/anthropic';
+import { parseFreeText, writeChoreography, validateVenues } from '@/lib/anthropic';
 import { createSupabaseServerClient, createServiceClient } from '@/lib/supabase-server';
+import { rateLimitPlan } from '@/lib/rate-limit';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -26,6 +27,15 @@ export async function POST(req: Request) {
     );
   }
 
+  // Rate limit check
+  const rl = rateLimitPlan(user.id);
+  if (!rl.allowed) {
+    return NextResponse.json(
+      { error: 'rate_limit', message: 'Too many plans. Try again later.' },
+      { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } }
+    );
+  }
+
   // Check tier + usage
   const svc = createServiceClient();
   const { data: profile } = await svc.from('profiles').select('*').eq('id', user.id).single();
@@ -47,6 +57,7 @@ export async function POST(req: Request) {
     vibe: body.vibe || 'romantic',
     activity: body.activity || 'dinner',
     budget: body.budget || '30-60',
+    neighborhood: body.neighborhood || undefined,
     dateAt: body.dateAt,
     freeText: body.freeText,
   };
@@ -69,17 +80,57 @@ export async function POST(req: Request) {
     tierMap[r.venue_slug] = r.tier as any;
   }
 
-  const itinerary = buildItinerary(input, tierMap);
+  // Load date history for personalization (no-repeat within 60 days)
+  let dateHistory: string[] = [];
+  const sixtyDaysAgo = new Date(Date.now() - 60 * 24 * 3600 * 1000).toISOString();
+  const { data: recentPlans } = await svc
+    .from('plans')
+    .select('itinerary')
+    .eq('user_id', user.id)
+    .gte('created_at', sixtyDaysAgo)
+    .order('created_at', { ascending: false })
+    .limit(10);
+
+  if (recentPlans) {
+    for (const p of recentPlans) {
+      const it: any = p.itinerary;
+      if (it?.stops) {
+        for (const s of it.stops) {
+          if (s.venue?.slug) dateHistory.push(s.venue.slug);
+        }
+      }
+    }
+    dateHistory = [...new Set(dateHistory)];
+  }
+
+  const rawItinerary = buildItinerary(input, tierMap, dateHistory);
+  const itinerary = validateVenues(rawItinerary);
+
+  // Write choreography blurbs (+ copilot for premium users)
   let blurbs: string[] = [];
   let shareBlurb = itinerary.stops.map((s) => s.venue.name).join(' → ');
+  let copilot: any = undefined;
+
   try {
-    const r = await writeBlurbs(itinerary);
+    const r = await writeChoreography(itinerary, {
+      includeeCopilot: isPremium,
+      dateHistory,
+    });
     blurbs = r.blurbs;
     shareBlurb = r.shareBlurb;
+    copilot = r.copilot;
   } catch (e) {
-    console.error('writeBlurbs failed', e);
+    console.error('writeChoreography failed', e);
   }
-  itinerary.stops = itinerary.stops.map((s, i) => ({ ...s, blurb: blurbs[i] || `${s.venue.hook}. ${s.venue.desc}` }));
+
+  itinerary.stops = itinerary.stops.map((s, i) => ({
+    ...s,
+    blurb: blurbs[i] || `${s.venue.hook}. ${s.venue.desc}`,
+  }));
+
+  if (copilot?.dressCode) {
+    itinerary.dressCode = copilot.dressCode;
+  }
 
   // Persist
   const { data: inserted, error: insErr } = await svc
@@ -115,6 +166,7 @@ export async function POST(req: Request) {
     shareId: inserted.share_id,
     itinerary,
     shareBlurb,
+    copilot: isPremium ? copilot : undefined,
     usesRemaining: isPremium ? null : Math.max(0, FREE_LIMIT - (uses + 1)),
   });
 }

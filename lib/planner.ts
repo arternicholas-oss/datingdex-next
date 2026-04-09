@@ -1,4 +1,4 @@
-import { VENUES, type Venue } from './venues';
+import { VENUES, type Venue, slugify } from './venues';
 
 // Map of venue_slug -> restaurant tier ('featured' | 'restaurant_premium').
 // Populated at request time and passed into buildItinerary so paying
@@ -10,7 +10,8 @@ export type PlanInput = {
   situation: string; // first-date, second-date, anniversary, casual-hang, make-it-up
   vibe: string; // low-pressure, romantic, fun-playful, impressive, sexy
   activity: string; // dinner, drinks-only, coffee, activity, full-evening
-  budget: string; // under-30, 30-60, 60-100, no-limit
+  budget: string; // under-30, 30-60, 60-100, no-limit  OR dollar amount
+  neighborhood?: string; // optional neighborhood filter
   dateAt?: string; // ISO datetime of the date
   freeText?: string;
 };
@@ -32,6 +33,7 @@ export type Itinerary = {
   totalEstimateUsd: [number, number];
   walkingMinutes: number;
   generatedAt: string;
+  dressCode?: string;
 };
 
 const PRICE_BUCKETS: Record<string, string[]> = {
@@ -57,15 +59,34 @@ const ACTIVITY_TO_SLOT: Record<string, ('before' | 'main' | 'after')[]> = {
   'full-evening': ['before', 'main', 'after'],
 };
 
+/**
+ * Convert dollar amount budget to price bucket.
+ * Supports both legacy bucket strings and dollar amounts.
+ */
+function normalizeBudget(budget: string): string {
+  if (PRICE_BUCKETS[budget]) return budget;
+  const num = parseInt(budget.replace(/[^0-9]/g, ''), 10);
+  if (isNaN(num)) return '30-60';
+  if (num < 30) return 'under-30';
+  if (num <= 60) return '30-60';
+  if (num <= 100) return '60-100';
+  return 'no-limit';
+}
+
 function score(v: Venue, input: PlanInput, tiers?: RestaurantTierMap): number {
   let s = v.score ?? 7;
   const tagPrefs = VIBE_TO_TAG[input.vibe] || [];
   if (tagPrefs.includes(v.vibe)) s += 1.2;
-  if ((PRICE_BUCKETS[input.budget] || []).includes(v.price)) s += 0.6;
+  const normalizedBudget = normalizeBudget(input.budget);
+  if ((PRICE_BUCKETS[normalizedBudget] || []).includes(v.price)) s += 0.6;
+  // Neighborhood match gives strong boost
+  if (input.neighborhood && slugify(v.neighborhood) === slugify(input.neighborhood)) s += 2.0;
   // Restaurant tier boost - paying restaurants surface more in Plan My Date.
   const tier = tiers?.[v.slug];
   if (tier === 'restaurant_premium') s += 1.5;
   else if (tier === 'featured') s += 0.9;
+  // Add small random jitter so repeat runs get variety
+  s += Math.random() * 0.5;
   return s;
 }
 
@@ -73,9 +94,14 @@ function pickFor(
   slot: 'before' | 'main' | 'after',
   input: PlanInput,
   exclude: Set<string>,
-  tiers?: RestaurantTierMap
+  tiers?: RestaurantTierMap,
+  excludeHistory?: Set<string>
 ): Venue | null {
-  const filtered = VENUES.filter((v) => !exclude.has(v.slug));
+  const filtered = VENUES.filter((v) => {
+    if (exclude.has(v.slug)) return false;
+    if (excludeHistory?.has(v.slug)) return false;
+    return true;
+  });
   const ranked = filtered
     .map((v) => ({ v, s: score(v, input, tiers) + slotBoost(v, slot) }))
     .sort((a, b) => b.s - a.s);
@@ -95,8 +121,6 @@ function slotBoost(v: Venue, slot: 'before' | 'main' | 'after'): number {
 }
 
 function bookingFor(v: Venue): { url: string; provider: 'resy' | 'opentable' | 'walk-in' } {
-  // Heuristic: most upscale DC restaurants are on Resy. Walk-ins for $/coffee.
-  const slug = v.slug;
   const date = encodeURIComponent(new Date(Date.now() + 48 * 3600 * 1000).toISOString().slice(0, 10));
   if (v.price === '$') {
     return { url: `https://www.google.com/maps/search/${encodeURIComponent(v.name + ' Washington DC')}`, provider: 'walk-in' };
@@ -119,9 +143,14 @@ function timeMath(start: string, addMin: number): string {
   return `${String(hh).padStart(2, '0')}:${String(mm).padStart(2, '0')}`;
 }
 
-export function buildItinerary(input: PlanInput, tiers?: RestaurantTierMap): Itinerary {
+export function buildItinerary(
+  input: PlanInput,
+  tiers?: RestaurantTierMap,
+  excludeHistory?: string[]
+): Itinerary {
   const slots = ACTIVITY_TO_SLOT[input.activity] || ['main'];
   const used = new Set<string>();
+  const historySet = new Set(excludeHistory || []);
   const stops: Stop[] = [];
 
   // base start time: 6:30pm if not provided
@@ -132,7 +161,7 @@ export function buildItinerary(input: PlanInput, tiers?: RestaurantTierMap): Iti
   }
 
   for (const slot of slots) {
-    const v = pickFor(slot, input, used, tiers);
+    const v = pickFor(slot, input, used, tiers, historySet);
     if (!v) continue;
     used.add(v.slug);
     const dur = slot === 'before' ? 45 : slot === 'main' ? 90 : 60;

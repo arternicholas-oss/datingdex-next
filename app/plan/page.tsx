@@ -1,10 +1,11 @@
 'use client';
 
-import { useState } from 'react';
+import { Suspense, useState, useEffect } from 'react';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
 import { useAuth } from '@/components/AuthProvider';
 import { track } from '@/components/PostHogProvider';
+import { allNeighborhoods } from '@/lib/venues';
 
 type Itin = {
   stops: Array<{
@@ -18,15 +19,16 @@ type Itin = {
   }>;
   totalEstimateUsd: [number, number];
   walkingMinutes: number;
+  dressCode?: string;
 };
 
-const SITUATIONS = [
-  { id: 'first-date', label: 'First date' },
-  { id: 'second-date', label: 'Second date' },
-  { id: 'anniversary', label: 'Anniversary' },
-  { id: 'casual-hang', label: 'Casual hang' },
-  { id: 'make-it-up', label: 'Make it up to them' },
-];
+type Copilot = {
+  dressCode: string;
+  conversationOpeners: string[];
+  postDateText: string;
+  arrivalTip: string;
+};
+
 const VIBES = [
   { id: 'low-pressure', label: 'Low pressure' },
   { id: 'romantic', label: 'Romantic' },
@@ -34,19 +36,8 @@ const VIBES = [
   { id: 'impressive', label: 'Impressive' },
   { id: 'sexy', label: 'Sexy' },
 ];
-const ACTIVITIES = [
-  { id: 'dinner', label: 'Dinner' },
-  { id: 'drinks-only', label: 'Drinks only' },
-  { id: 'coffee', label: 'Coffee' },
-  { id: 'activity', label: 'Activity' },
-  { id: 'full-evening', label: 'Full evening' },
-];
-const BUDGETS = [
-  { id: 'under-30', label: 'Under $30' },
-  { id: '30-60', label: '$30–60' },
-  { id: '60-100', label: '$60–100' },
-  { id: 'no-limit', label: 'No limit' },
-];
+
+const NEIGHBORHOODS = allNeighborhoods().slice(0, 12);
 
 function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
@@ -56,25 +47,53 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
   );
 }
 
-export default function PlanPage() {
+export default function PlanPageWrapper() {
+  return (
+    <Suspense fallback={<div className="container plan-page"><div className="plan-header"><h1>Plan My Date <span className="ai-tag">AI</span></h1></div></div>}>
+      <PlanPage />
+    </Suspense>
+  );
+}
+
+function PlanPage() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { user, openAuth, isPremium, profile } = useAuth();
+
+  // Pre-select vibe based on mode from homepage doors
+  const mode = searchParams.get('mode');
+  const defaultVibe = mode === 'tonight' ? 'fun-playful' : mode === 'impress' ? 'impressive' : 'romantic';
+
   const [freeText, setFreeText] = useState('');
-  const [situation, setSituation] = useState('first-date');
-  const [vibe, setVibe] = useState('romantic');
-  const [activity, setActivity] = useState('dinner');
-  const [budget, setBudget] = useState('30-60');
-  const [dateAt, setDateAt] = useState('');
+  const [neighborhood, setNeighborhood] = useState('');
+  const [vibe, setVibe] = useState(defaultVibe);
+  const [budget, setBudget] = useState(75);
   const [busy, setBusy] = useState(false);
-  const [result, setResult] = useState<{ shareId: string; itinerary: Itin; shareBlurb: string; usesRemaining: number | null } | null>(null);
+  const [result, setResult] = useState<{
+    shareId: string;
+    itinerary: Itin;
+    shareBlurb: string;
+    copilot?: Copilot;
+    usesRemaining: number | null;
+  } | null>(null);
   const [paywall, setPaywall] = useState(false);
   const [err, setErr] = useState<string | null>(null);
+  const [copied, setCopied] = useState(false);
+
+  // Map dollar budget to legacy bucket for API
+  function budgetToBucket(val: number): string {
+    if (val < 30) return 'under-30';
+    if (val <= 60) return '30-60';
+    if (val <= 100) return '60-100';
+    return 'no-limit';
+  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
     setErr(null);
     setPaywall(false);
-    track('plan_started', { situation, vibe, activity, budget, has_free_text: !!freeText });
+    setCopied(false);
+    track('plan_started', { neighborhood, vibe, budget, has_free_text: !!freeText });
     if (!user) {
       track('plan_blocked_logged_out');
       openAuth('signup');
@@ -85,7 +104,14 @@ export default function PlanPage() {
       const res = await fetch('/api/plan', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
-        body: JSON.stringify({ situation, vibe, activity, budget, dateAt, freeText }),
+        body: JSON.stringify({
+          neighborhood,
+          vibe,
+          budget: budgetToBucket(budget),
+          activity: mode === 'tonight' ? 'full-evening' : 'dinner',
+          situation: mode === 'impress' ? 'anniversary' : 'first-date',
+          freeText,
+        }),
       });
       const data = await res.json();
       if (res.status === 402) {
@@ -103,13 +129,21 @@ export default function PlanPage() {
     }
   }
 
+  async function copyShareLink() {
+    if (!result) return;
+    const url = `${window.location.origin}/plan/${result.shareId}`;
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    track('share_link_copied', { share_id: result.shareId });
+    setTimeout(() => setCopied(false), 2000);
+  }
+
   return (
     <div className="container plan-page">
       <div className="plan-header">
         <h1>Plan My Date <span className="ai-tag">AI</span></h1>
         <p className="plan-sub">
-          Tell us about the date in your own words, or use the chips below. We&apos;ll build a full timestamped night —
-          where to go, when to arrive, what to order, and how to book.
+          3 questions. 30 seconds. A fully choreographed night — where to go, when to arrive, what to order, what to say.
         </p>
         {user && !isPremium && profile && (
           <div className="plan-quota">
@@ -120,28 +154,22 @@ export default function PlanPage() {
       </div>
 
       <form onSubmit={submit} className="plan-form">
-        <label className="plan-field">
-          <span className="plan-label">Tell us about it (optional, but recommended)</span>
-          <textarea
-            className="plan-textarea"
-            placeholder="It's our 2nd date, she likes natural wine and hates loud places, I want to seem thoughtful but not try-hard, $120 budget for the night."
-            value={freeText}
-            onChange={(e) => setFreeText(e.target.value)}
-            rows={3}
-          />
-        </label>
-
+        {/* Q1: Neighborhood */}
         <div className="plan-field">
-          <span className="plan-label">What&apos;s the situation?</span>
+          <span className="plan-label">Where in DC?</span>
           <div className="plan-chips">
-            {SITUATIONS.map((s) => (
-              <Chip key={s.id} active={situation === s.id} onClick={() => setSituation(s.id)}>{s.label}</Chip>
+            <Chip active={neighborhood === ''} onClick={() => setNeighborhood('')}>Anywhere</Chip>
+            {NEIGHBORHOODS.map((n) => (
+              <Chip key={n.slug} active={neighborhood === n.slug} onClick={() => setNeighborhood(n.slug)}>
+                {n.name}
+              </Chip>
             ))}
           </div>
         </div>
 
+        {/* Q2: Vibe */}
         <div className="plan-field">
-          <span className="plan-label">Vibe?</span>
+          <span className="plan-label">What&apos;s the vibe?</span>
           <div className="plan-chips">
             {VIBES.map((v) => (
               <Chip key={v.id} active={vibe === v.id} onClick={() => setVibe(v.id)}>{v.label}</Chip>
@@ -149,45 +177,49 @@ export default function PlanPage() {
           </div>
         </div>
 
+        {/* Q3: Budget (dollar slider) */}
         <div className="plan-field">
-          <span className="plan-label">What are you doing?</span>
-          <div className="plan-chips">
-            {ACTIVITIES.map((a) => (
-              <Chip key={a.id} active={activity === a.id} onClick={() => setActivity(a.id)}>{a.label}</Chip>
-            ))}
-          </div>
-        </div>
-
-        <div className="plan-field">
-          <span className="plan-label">Budget per person</span>
-          <div className="plan-chips">
-            {BUDGETS.map((b) => (
-              <Chip key={b.id} active={budget === b.id} onClick={() => setBudget(b.id)}>{b.label}</Chip>
-            ))}
-          </div>
-        </div>
-
-        <label className="plan-field">
-          <span className="plan-label">When is the date? (optional)</span>
+          <span className="plan-label">Budget for the night (both of you): <strong>${budget}</strong></span>
           <input
-            type="datetime-local"
-            className="plan-input"
-            value={dateAt}
-            onChange={(e) => setDateAt(e.target.value)}
+            type="range"
+            min={20}
+            max={300}
+            step={10}
+            value={budget}
+            onChange={(e) => setBudget(Number(e.target.value))}
+            className="plan-slider"
+          />
+          <div className="plan-slider-labels">
+            <span>$20</span>
+            <span>$100</span>
+            <span>$200</span>
+            <span>$300+</span>
+          </div>
+        </div>
+
+        {/* Optional: free text */}
+        <label className="plan-field plan-field-optional">
+          <span className="plan-label">Anything else? <span className="plan-optional-tag">optional</span></span>
+          <textarea
+            className="plan-textarea"
+            placeholder="She likes natural wine and hates loud places. I want to seem thoughtful but not try-hard."
+            value={freeText}
+            onChange={(e) => setFreeText(e.target.value)}
+            rows={2}
           />
         </label>
 
         {err && <div className="auth-err">{err}</div>}
         <button type="submit" className="cta plan-submit" disabled={busy}>
-          {busy ? 'Building your night…' : 'Build my date night ✦'}
+          {busy ? 'Choreographing your night…' : 'Build my date night ✦'}
         </button>
       </form>
 
       {paywall && (
         <div className="paywall">
           <h2>You&apos;ve used your 3 free plans</h2>
-          <p>Premium gives you unlimited Plan My Date, smarter recommendations the more you use it, the post-date debrief that makes your next plan better, and saved itineraries you can reuse.</p>
-          <Link href="/premium" className="cta">See Premium →</Link>
+          <p>Pro gives you unlimited plans, Date Copilot (what to wear, say, and text after), and recommendations that learn from every date.</p>
+          <Link href="/premium" className="cta">See Pro →</Link>
         </div>
       )}
 
@@ -196,10 +228,19 @@ export default function PlanPage() {
           <div className="plan-result-head">
             <h2>Your night ✦</h2>
             <p>Estimated total: ${result.itinerary.totalEstimateUsd[0]}–${result.itinerary.totalEstimateUsd[1]} for two · {result.itinerary.walkingMinutes} min walking between stops</p>
-            <div className="plan-share">
-              <Link href={`/plan/${result.shareId}`} className="cta cta-secondary">View &amp; share this plan →</Link>
+            {result.itinerary.dressCode && (
+              <div className="plan-dress-code">
+                <strong>What to wear:</strong> {result.itinerary.dressCode}
+              </div>
+            )}
+            <div className="plan-share-row">
+              <Link href={`/plan/${result.shareId}`} className="cta cta-secondary plan-share-btn">View full plan →</Link>
+              <button className="cta cta-ghost plan-share-btn" onClick={copyShareLink}>
+                {copied ? 'Copied!' : 'Copy share link'}
+              </button>
             </div>
           </div>
+
           {result.itinerary.stops.map((s, i) => (
             <article key={i} className="plan-stop">
               <div className="plan-stop-time">
@@ -223,6 +264,56 @@ export default function PlanPage() {
               </div>
             </article>
           ))}
+
+          {/* Date Copilot — Pro only */}
+          {result.copilot && (
+            <div className="copilot-section">
+              <div className="copilot-badge">Date Copilot <span className="ai-tag">PRO</span></div>
+
+              {result.copilot.arrivalTip && (
+                <div className="copilot-card">
+                  <h4>When you arrive</h4>
+                  <p>{result.copilot.arrivalTip}</p>
+                </div>
+              )}
+
+              {result.copilot.conversationOpeners?.length > 0 && (
+                <div className="copilot-card">
+                  <h4>Conversation starters</h4>
+                  <ul className="copilot-openers">
+                    {result.copilot.conversationOpeners.map((o, i) => (
+                      <li key={i}>{o}</li>
+                    ))}
+                  </ul>
+                </div>
+              )}
+
+              {result.copilot.postDateText && (
+                <div className="copilot-card">
+                  <h4>The follow-up text</h4>
+                  <p className="copilot-text-msg">&ldquo;{result.copilot.postDateText}&rdquo;</p>
+                  <button
+                    className="copilot-copy-btn"
+                    onClick={() => {
+                      navigator.clipboard.writeText(result.copilot!.postDateText);
+                      track('copilot_text_copied');
+                    }}
+                  >
+                    Copy text
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
+
+          {/* Copilot upsell for free users */}
+          {!result.copilot && !isPremium && (
+            <div className="copilot-upsell">
+              <div className="copilot-badge">Date Copilot <span className="ai-tag">PRO</span></div>
+              <p>What to wear. 3 conversation starters tied to your venues. A follow-up text to send after.</p>
+              <Link href="/premium" className="cta cta-secondary">Unlock Date Copilot →</Link>
+            </div>
+          )}
         </div>
       )}
     </div>

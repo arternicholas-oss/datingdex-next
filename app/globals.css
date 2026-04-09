@@ -313,3 +313,79 @@ img { max-width: 100%; display: block; }
 .nav-tier { font-size: .8rem; font-weight: 700; color: var(--brand); background: #fff7f5; padding: .3rem .65rem; border-radius: 999px; }
 .nav-link-btn { background: none; border: 0; color: var(--muted); font-weight: 500; font-size: .95rem; cursor: pointer; font-family: inherit; }
 .nav-link-btn:hover { color: var(--ink); }
+
+/* ==================== 3-DOOR HOMEPAGE ==================== */
+.doors-section { padding: 2.5rem 1.25rem 1rem; }
+.doors-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.25rem; }
+@media (max-width: 768px) { .doors-grid { grid-template-columns: 1fr; } }
+.door-card { background: var(--card); border: 2px solid var(--border); border-radius: 20px; padding: 2rem 1.5rem; text-align: center; transition: transform .2s, box-shadow .2s, border-color .2s; display: flex; flex-direction: column; align-items: center; gap: .5rem; }
+.door-card:hover { transform: translateY(-4px); box-shadow: 0 12px 32px rgba(0,0,0,.08); }
+.door-tonight:hover { border-color: #6366f1; }
+.door-impress:hover { border-color: var(--brand); }
+.door-couples:hover { border-color: #ec4899; }
+.door-icon { font-size: 2.5rem; margin-bottom: .25rem; }
+.door-card h2 { font-size: 1.4rem; margin: 0; letter-spacing: -0.02em; }
+.door-card p { color: var(--muted); font-size: .92rem; line-height: 1.5; margin: 0; max-width: 280px; }
+.door-cta { color: var(--brand); font-weight: 700; font-size: .92rem; margin-top: auto; padding-top: .5rem; }
+.door-tonight .door-cta { color: #6366f1; }
+.door-couples .door-cta { color: #ec4899; }
+
+/* ==================== EVENTBRITE TONIGHT ==================== */
+.tonight-section { padding: 2rem 1.25rem; }
+.tonight-section h2 { font-size: clamp(1.5rem, 3vw, 2rem); margin: 0 0 .25rem; }
+.eb-tonight-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; margin-top: 1rem; }
+.eb-card { background: var(--card); border: 1.5px solid var(--border); border-radius: var(--radius); overflow: hidden; transition: transform .2s, box-shadow .2s; display: flex; flex-direction: column; }
+.eb-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,.1); }
+.eb-card-img { height: 140px; background-size: cover; background-position: center; background-color: #f2f2f2; }
+.eb-card-body { padding: 1rem; display: flex; flex-direction: column; gap: .3rem; flex: 1; }
+.eb-card-when { font-size: .78rem; font-weight: 700; color: var(--brand); text-transform: uppercase; letter-spacing: .5px; }
+.eb-card-title { font-size: .95rem; font-weight: 700; color: var(--ink); margin: 0; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+.eb-card-venue { font-size: .82rem; color: var(--muted); }
+.eb-card-price { font-size: .82rem; color: #22c55e; font-weight: 600; margin-top: auto; }
+.eb-tonight-loading { display: flex; gap: 1rem; margin-top: 1rem; }
+.eb-shimmer { height: 200px; flex: 1; background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%); background-size: 200% 100%; border-radius: var(--radius); animation: shimmer 1.5s infinite; }
+@keyframes shimmer { 0% { background-position: 200% 0; } 100% { background-position: -200% 0; } }
+.eb-tonight-empty { padding: 2rem; text-align: center; color: var(--muted); }
+
+/* ==================== BUDGET SLIDER ==================== */
+.plan-slider { -webkit-appearance: none; appearance: none; width: 100%; height: 8px; background: linear-gradient(to right, #22c55e 0%, var(--brand) 50%, #ef4444 100%); border-radius: 999px; outline: none; cursor: pointer; }
+.plan-slider::-webkit-slider-thumb { -webkit-appearance: none; appearance: none; width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 3px solid var(--brand); box-shadow: 0 2px 8px rgba(0,0,0,.15); cursor: pointer; }
+.plan-slider::-moz-range-thumb { width: 28px; height: 28px; border-radius: 50%; background: #fff; border: 3px solid var(--brand); box-shadow: 0 2px 8px rgba(0,0,0,.15); cursor: pointer; }
+.plan-slider-labels { display: flex; justify-content: space-between; font-size: .78rem; color: var(--muted); margin-top: .25rem; }
+.plan-optional-tag { font-size: .7rem; color: var(--muted); font-weight: 400; background: #f5f5f5; padding: .15rem .4rem; border-radius: 4px; }
+.plan-field-optional { opacity: .85; }
+
+/* ==================== DATE COPILOT ==================== */
+.copilot-section { margin-top: 2rem; background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); border-radius: 20px; padding: 2rem; color: #fff; }
+.copilot-badge { font-size: .85rem; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; color: #a78bfa; margin-bottom: 1.25rem; display: flex; align-items: center; gap: .5rem; }
+.copilot-badge .ai-tag { background: #a78bfa; }
+.copilot-card { background: rgba(255,255,255,.08); border: 1px solid rgba(255,255,255,.12); border-radius: 14px; padding: 1.25rem; margin-bottom: 1rem; }
+.copilot-card h4 { margin: 0 0 .5rem; font-size: 1rem; color: #e2e8f0; }
+.copilot-card p { margin: 0; color: #cbd5e1; line-height: 1.55; font-size: .92rem; }
+.copilot-openers { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .5rem; }
+.copilot-openers li { padding: .65rem .85rem; background: rgba(255,255,255,.06); border-radius: 10px; color: #e2e8f0; font-size: .9rem; line-height: 1.45; }
+.copilot-openers li::before { content: '\201C'; color: #a78bfa; font-weight: 800; margin-right: .25rem; }
+.copilot-text-msg { font-style: italic; color: #93c5fd !important; font-size: .95rem !important; }
+.copilot-copy-btn { background: rgba(255,255,255,.12); border: 1px solid rgba(255,255,255,.2); color: #e2e8f0; padding: .5rem 1rem; border-radius: 999px; font-size: .82rem; font-weight: 600; cursor: pointer; margin-top: .75rem; }
+.copilot-copy-btn:hover { background: rgba(255,255,255,.2); }
+
+.copilot-upsell { background: linear-gradient(135deg, rgba(167,139,250,.08), rgba(99,102,241,.08)); border: 2px dashed rgba(167,139,250,.3); border-radius: 20px; padding: 2rem; text-align: center; margin-top: 2rem; }
+.copilot-upsell .copilot-badge { justify-content: center; color: #7c3aed; }
+.copilot-upsell .copilot-badge .ai-tag { background: #7c3aed; }
+.copilot-upsell p { color: var(--muted); max-width: 480px; margin: 0 auto 1.25rem; line-height: 1.55; }
+
+/* ==================== SHARE ROW ==================== */
+.plan-share-row { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }
+.plan-share-btn { font-size: .88rem !important; padding: .65rem 1.2rem !important; }
+.plan-dress-code { background: #faf5ff; border: 1.5px solid #e9d5ff; border-radius: 12px; padding: .85rem 1.1rem; margin-top: 1rem; font-size: .9rem; color: #6b21a8; }
+.plan-dress-code strong { color: #581c87; }
+
+/* ==================== REFERRAL BANNER ==================== */
+.referral-banner { background: linear-gradient(135deg, #ecfdf5, #f0fdf4); border: 1.5px solid #bbf7d0; border-radius: 16px; padding: 1.5rem 2rem; margin-top: 2rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.referral-banner p { margin: 0; color: #166534; font-size: .95rem; line-height: 1.5; }
+.referral-banner strong { color: #14532d; }
+.referral-code { background: #fff; border: 1.5px solid #86efac; border-radius: 10px; padding: .6rem 1rem; font-family: monospace; font-size: .9rem; color: #166534; font-weight: 700; letter-spacing: .5px; cursor: pointer; }
+
+/* ==================== SHARE CARD ==================== */
+.plan-share-card { margin: 2rem 0; }
+.plan-share-actions { display: flex; gap: .75rem; flex-wrap: wrap; margin-top: 1rem; }

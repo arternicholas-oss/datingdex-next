@@ -51,6 +51,8 @@ export default async function SavedPlanPage({ params }: Params) {
   if (!plan) notFound();
   const it: any = plan.itinerary;
   const stops = it.stops || [];
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.datingdex.com';
+  const ogImageUrl = `${siteUrl}/api/og/plan/${params.shareId}`;
 
   return (
     <div className="container plan-saved">
@@ -61,6 +63,40 @@ export default async function SavedPlanPage({ params }: Params) {
         <p className="plan-saved-meta">
           {plan.city} · Estimated total ${it.totalEstimateUsd?.[0] ?? '—'}–${it.totalEstimateUsd?.[1] ?? '—'} for two · {it.walkingMinutes ?? 0} min walking
         </p>
+        {it.dressCode && (
+          <div className="plan-dress-code">
+            <strong>What to wear:</strong> {it.dressCode}
+          </div>
+        )}
+      </div>
+
+      {/* Share card preview */}
+      <div className="plan-share-card">
+        <img
+          src={ogImageUrl}
+          alt="Share card preview"
+          width={1200}
+          height={630}
+          style={{ width: '100%', height: 'auto', borderRadius: '12px', border: '1.5px solid #eee' }}
+        />
+        <div className="plan-share-actions">
+          <a
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`My date night plan: ${stops.map((s: any) => s.venue?.name).join(' → ')} ✦`)}&url=${encodeURIComponent(`${siteUrl}/plan/${params.shareId}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta cta-secondary plan-share-btn"
+          >
+            Share on X →
+          </a>
+          <a
+            href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(`${siteUrl}/plan/${params.shareId}`)}`}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="cta cta-secondary plan-share-btn"
+          >
+            Share on Facebook →
+          </a>
+        </div>
       </div>
 
       {stops.map((s: any, i: number) => (
