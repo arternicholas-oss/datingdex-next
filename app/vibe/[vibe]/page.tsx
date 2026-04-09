@@ -53,6 +53,9 @@ export default function VibePage({ params }: { params: { vibe: string } }) {
           <p>Hand-picked {name.toLowerCase()} date ideas across Washington DC, Arlington, and Alexandria.</p>
         </div>
 
+        <div className="spots-grid">
+          {sorted.map((v) => <SpotCard key={v.slug} venue={v} />)}
+        </div>
         <section className="seo-content">
           <h2>Planning a {name.toLowerCase()} in DC</h2>
           <p>
@@ -80,10 +83,6 @@ export default function VibePage({ params }: { params: { vibe: string } }) {
             ))}
           </ul>
         </section>
-
-        <div className="spots-grid">
-          {sorted.map((v) => <SpotCard key={v.slug} venue={v} />)}
-        </div>
       </div>
     </>
   );
