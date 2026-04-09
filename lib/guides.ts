@@ -256,6 +256,275 @@ export const GUIDES: Guide[] = [
         .sort(byScore)
         .slice(0, 15),
   },
+  {
+    slug: 'best-rooftop-bars-dc-date-night',
+    title: 'Best Rooftop Bars in DC for a Date Night (2026)',
+    h1: 'The Best Rooftop Bars in Washington DC for Date Night',
+    description:
+      'The best rooftop bars in DC for date night in 2026. Sunset timing, dress codes, reservation tactics, and the rooftops that actually live up to the photos.',
+    published: '2026-04-08',
+    updated: '2026-04-08',
+    intro: [
+      'A rooftop date is one of the highest-leverage moves in DC. The view does the work, the air does the work, and the photo at the end is built in. The catch: most DC rooftops are oversold, undersized, and impossible to walk into on a Friday at 7pm.',
+      'Below are the rooftops that consistently deliver — with the timing, booking strategy, and dress-code intel you need to actually have a good night.',
+    ],
+    sections: [
+      {
+        h2: 'Time it for sunset',
+        body: [
+          'Arrive 45 minutes before sunset, not at sunset. The 30-minute window before is when the light goes gold and every photo looks intentional. Sit on the west side of the roof if you can specify.',
+          'In summer, sunset is around 8:30pm — a 7:45 reservation is ideal. In winter, sunset slips to 5pm and the rooftops with heaters become essential.',
+        ],
+      },
+      {
+        h2: 'Booking the rooftop',
+        body: [
+          'Most DC rooftops do NOT take rooftop-specific reservations on Resy or OpenTable — they seat the indoor restaurant first and walk-up the rooftop. The hack: book the indoor dining room at 6:30pm and ask the host if you can be moved upstairs after.',
+          'For the rooftops that do take direct reservations (a small handful), book 14 days in advance for Friday and Saturday. Tuesday and Wednesday are wide open.',
+        ],
+      },
+      {
+        h2: 'What to wear',
+        body: [
+          'Most DC rooftops are smart-casual — no athletic wear, no flip-flops, no shorts after 7pm. A button-down or a slip dress reads correctly almost everywhere. Bring a layer; even in July the rooftops with shade get breezy after dark.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is the best rooftop bar in DC for a date?',
+        a: 'The best rooftop dates in DC combine a clear view, a real cocktail program, and seating you can actually claim. Our top picks are concentrated in 14th Street, Penn Quarter, and the Wharf.',
+      },
+      {
+        q: 'Do DC rooftops take reservations?',
+        a: 'Some do, most do not. The reliable workaround is to book the indoor restaurant and ask to be moved to the rooftop after you order a drink.',
+      },
+      {
+        q: 'When is the best time to go to a DC rooftop on a date?',
+        a: 'Arrive 45 minutes before sunset. The light is best in the 30-minute window before sunset, the crowd is still thin, and you can lock in the better seats.',
+      },
+      {
+        q: 'Is rooftop dating year-round in DC?',
+        a: 'Mostly April through October. A handful of DC rooftops have heaters and stay open in winter, but the wind makes them rough below 45°F. Switch to a cozy bar with a fireplace for December and January.',
+      },
+    ],
+    pickVenues: (all) =>
+      all
+        .filter((v) => /rooftop|view|sky|terrace/i.test(v.name + ' ' + v.desc + ' ' + v.hook))
+        .concat(all.filter((v) => /Romantic|Impress/i.test(v.vibe)))
+        .filter((v, i, arr) => arr.findIndex((x) => x.slug === v.slug) === i)
+        .sort(byScore)
+        .slice(0, 15),
+  },
+  {
+    slug: 'late-night-date-spots-dc',
+    title: 'Late Night Date Spots in DC (Open After 10pm)',
+    h1: 'Late Night Date Spots in Washington DC',
+    description:
+      'The best late-night date spots in DC — bars, restaurants, and dessert spots open after 10pm. Where to go after the show, after dinner, after the date almost ended.',
+    published: '2026-04-08',
+    updated: '2026-04-08',
+    intro: [
+      'The late-night spot is the most underrated weapon in DC dating. It is the place you suggest at 9:45pm when the dinner is going better than expected, when neither of you wants the night to end, when you need a graceful reason to keep going for one more hour.',
+      'These are the DC spots that actually deliver after 10pm — open kitchens, real bartenders, rooms that feel busy without being chaotic.',
+    ],
+    sections: [
+      {
+        h2: 'The "one more drink" move',
+        body: [
+          'When dinner has been good, do not pay the check and ask "where to next?" — that breaks the rhythm. Instead, while you are still mid-conversation, say: "I know a place a few blocks away that gets good after 10. Want to walk over after this?" You have given them an out (no) and a path (walk).',
+          'Pick a late-night spot that is a 5 to 10 minute walk from your dinner. The walk is the date.',
+        ],
+      },
+      {
+        h2: 'Late-night categories that work',
+        body: [
+          'Speakeasies and dim cocktail bars are the safest move — the lighting flatters, the menus are short, and "let me read you the cocktail list" is built-in conversation. Dessert spots and gelato are the soft option. Wine bars work if you both still have appetite.',
+          'Avoid clubs, sports bars after the game, and any room with a TV.',
+        ],
+      },
+      {
+        h2: 'Neighborhoods that stay open',
+        body: [
+          'U Street, Shaw, and 14th Street have the deepest late-night density. Penn Quarter dies after 10 except for a few spots. Georgetown is largely closed by 11pm on weeknights — do not get stuck there.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is open late on a date in DC?',
+        a: 'Speakeasies, cocktail bars, dessert spots, and a handful of restaurants with late-night menus — concentrated in U Street, Shaw, and 14th Street.',
+      },
+      {
+        q: 'How late do DC restaurants stay open?',
+        a: 'Most stop seating by 10pm on weeknights and 10:30 to 11pm on weekends. Bars and late-night spots run until 1am or 2am on Friday and Saturday.',
+      },
+      {
+        q: 'Is it weird to suggest a second spot on a first date?',
+        a: 'Only if the first spot was bad. If the date is going well at 9:45pm, suggesting one more drink at a place a few blocks away is the strongest signal you can send that you want to keep talking.',
+      },
+    ],
+    pickVenues: (all) =>
+      all
+        .filter((v) => /Late Night|Cocktail|Bar|Speakeasy/i.test(v.vibe))
+        .sort(byScore)
+        .slice(0, 15),
+  },
+  {
+    slug: 'dc-date-ideas-by-neighborhood',
+    title: 'DC Date Ideas by Neighborhood (2026 Guide)',
+    h1: 'DC Date Ideas by Neighborhood',
+    description:
+      'Where to take a date in every Washington DC neighborhood — from Georgetown to Shaw to the Wharf. Pros, cons, parking, vibes, and the right reservation strategy for each.',
+    published: '2026-04-08',
+    updated: '2026-04-08',
+    intro: [
+      'The neighborhood you pick matters more than the restaurant. Pick the wrong neighborhood and a great restaurant feels stranded — no walk, no after-spot, no escape route. Pick the right one and even a B+ restaurant becomes part of an A night.',
+      'This is the neighborhood-by-neighborhood guide to dating in DC: where to go, when to go, and where the local landmines are.',
+    ],
+    sections: [
+      {
+        h2: 'Dupont Circle — best all-around',
+        body: [
+          'Dupont is the most reliable date neighborhood in DC. Walkable, metro-accessible, dense with options at every price point, and the kind of foot traffic that keeps energy up without feeling chaotic. Park-and-walk friendly. Easy to chain a drink, dinner, and a third spot inside 8 blocks.',
+        ],
+      },
+      {
+        h2: 'Shaw and U Street — best for second and third dates',
+        body: [
+          'Shaw and U Street are where the date gets interesting. Higher concept restaurants, real cocktail bars, and the late-night density that makes the "one more drink" move actually work. Slightly less polished than Dupont, which often plays as charming.',
+        ],
+      },
+      {
+        h2: 'Georgetown — best for romance, worst for parking',
+        body: [
+          'Georgetown wins on atmosphere — cobblestones, the canal, the waterfront — and loses on logistics. Parking is genuinely miserable, the metro is a 15-minute walk, and many spots close early. Choose Georgetown only if you both live close or if the date is special enough to justify the friction.',
+        ],
+      },
+      {
+        h2: 'Penn Quarter — best for downtown convenience',
+        body: [
+          'Penn Quarter works when one of you is coming from work and the other is coming from a metro. Solid mid-range restaurants, easy parking garages, but it dies after 10pm — plan your second spot somewhere else.',
+        ],
+      },
+      {
+        h2: 'The Wharf — best for views, trickiest crowds',
+        body: [
+          'The Wharf has the best water views in the city and the worst weekend crowds. Go on a Tuesday or Wednesday for the experience without the chaos. Skip the obvious chains; the smaller restaurants on the eastern end consistently outperform.',
+        ],
+      },
+      {
+        h2: '14th Street — best for trendy and late-night',
+        body: [
+          'The strip from Logan Circle to U Street is the densest cocktail-bar corridor in the city and the best place to chain three spots in one night. Reservations are competitive on Fridays and Saturdays.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'What is the best DC neighborhood for a date?',
+        a: 'Dupont Circle is the most reliable all-around date neighborhood in DC — walkable, metro-accessible, and dense with options at every price point. For second and third dates, Shaw and U Street offer more interesting restaurants and better late-night density.',
+      },
+      {
+        q: 'Where should you avoid for a date in DC?',
+        a: 'Avoid neighborhoods with parking issues unless both of you live close (Georgetown), and avoid Penn Quarter after 10pm unless you have a clear plan for a second spot in another area.',
+      },
+      {
+        q: 'Is Georgetown good for a date?',
+        a: 'Georgetown is great for atmosphere but hard for logistics. Parking is genuinely difficult and the neighborhood closes early. Choose Georgetown when the date is special enough to justify the friction, and plan accordingly.',
+      },
+    ],
+    pickVenues: (all) => all.sort(byScore).slice(0, 15),
+  },
+  {
+    slug: 'dc-date-night-budget-guide',
+    title: 'DC Date Night on a Budget — Under $75 for Two (2026)',
+    h1: 'DC Date Night on a Budget — Under $75 for Two',
+    description:
+      'How to plan a great DC date night for under $75 for two. Real itineraries, real spots, the order-strategy that keeps the bill down, and the moves that look generous without being expensive.',
+    published: '2026-04-08',
+    updated: '2026-04-08',
+    intro: [
+      'A $75 date night in DC is not just possible — it can outperform a $200 one if you make the right choices. The trick is shifting your budget away from the entree and toward the experience: a great drink, a small shared plate, and a free or near-free second activity that gives the night its shape.',
+      'Below is the playbook, plus the spots that consistently make $75 for two feel generous.',
+    ],
+    sections: [
+      {
+        h2: 'The order strategy',
+        body: [
+          'Skip entrees. Two cocktails plus three small plates almost always costs less than two entrees and tastes more interesting. You also get the bonus of sharing food, which is intimacy at no extra cost.',
+          'Order the cocktail special, not the most expensive cocktail. The special is what the bartender wants to be making — it is almost always the best drink in the house.',
+        ],
+      },
+      {
+        h2: 'Free and near-free second spots',
+        body: [
+          'After dinner, do not pay for a second venue. Walk somewhere. The Tidal Basin at night, the Georgetown waterfront, the National Mall after 9pm, the Kennedy Center rooftop terrace (free, open until midnight). The walk and the view are the second date.',
+          'In winter, swap the walk for a free museum — the Phillips Collection is open until 8:30pm on Thursdays, and the Hirshhorn has rotating evening events.',
+        ],
+      },
+      {
+        h2: 'The budget moves that read as effort',
+        body: [
+          'Pre-book the table even at a $$ spot — walking in and being told to wait kills the night. Show up 5 minutes early. Order a drink while you wait. These three moves cost nothing and signal more thoughtfulness than a $50 entree.',
+        ],
+      },
+    ],
+    faq: [
+      {
+        q: 'Can you have a good DC date for under $75?',
+        a: 'Yes — and a thoughtful $75 date often outperforms a $200 one. The key is shifting budget away from entrees toward experience: cocktails, shared small plates, and a free second activity like a waterfront walk or an evening museum visit.',
+      },
+      {
+        q: 'What are the cheapest date spots in DC?',
+        a: 'Coffee dates, happy hours from 4pm to 6pm at higher-end restaurants, small-plate cocktail bars, and any restaurant with a sub-$30 prix fixe. Many great DC restaurants run $25 to $35 happy hour menus that include drinks.',
+      },
+      {
+        q: 'What free things can you do on a date in DC?',
+        a: 'Walk the Tidal Basin, visit any Smithsonian museum, walk the Georgetown waterfront, see the monuments at night, or check out a free evening event at the Kennedy Center or Phillips Collection.',
+      },
+    ],
+    pickVenues: (all) =>
+      all
+        .filter((v) => v.price === '$' || v.price === '$$')
+        .sort(byScore)
+        .slice(0, 15),
+  },
+  {
+    slug: 'best-brunch-date-spots-dc',
+    title: 'Best Brunch Date Spots in DC (2026)',
+    description:
+      'Brunch is the lowest-pressure date format in DC: daylight, mimosas, and a built-in two-hour cap. Here are the spots that actually deliver.',
+    updated: '2026-04-01',
+    heroEmoji: '🥂',
+    intro:
+      'Brunch dates work because they remove the biggest sources of first-date anxiety: the awkward "where does this end" question and the expectation of a three-hour dinner marathon. You get daylight, caffeine, a glass of something sparkling, and a clean exit if the chemistry isn\'t there — or an easy pivot to a walk if it is. The spots below are DC rooms that are actually romantic at 11am, not just dinner restaurants pulling double duty.',
+    sections: [
+      {
+        heading: 'What makes a brunch spot date-worthy',
+        body: 'Good lighting, tables you can hear each other across, a menu beyond eggs benedict, and a drinks program that takes mimosas seriously. Bonus points for walkable neighborhoods so you can extend the date with zero planning.',
+      },
+      {
+        heading: 'How to play it',
+        body: 'Book for 11:30am — late enough you both had time to get ready, early enough the room isn\'t screaming. Skip bottomless unless you already know each other; it forces a pace that can tip into awkward. End with a walk, not a second round.',
+      },
+    ],
+    faqs: [
+      {
+        q: 'Is brunch a good first date?',
+        a: 'It is arguably the best first date in DC. Daylight reduces pressure, the time window is naturally capped, and you can pivot to a walk if things click.',
+      },
+      {
+        q: 'Should I book ahead for brunch in DC?',
+        a: 'Yes. The best brunch rooms in DC book out Saturdays and Sundays a week in advance. Resy or OpenTable at the 11am–noon window.',
+      },
+    ],
+    pickVenues: (all) =>
+      all
+        .filter((v) => v.vibe === 'romantic' || v.vibe === 'casual' || v.vibe === 'upscale')
+        .sort(byScore)
+        .slice(0, 12),
+  },
 ];
 
 export function getGuideBySlug(slug: string): Guide | undefined {

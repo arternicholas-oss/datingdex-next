@@ -1,6 +1,10 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import './globals.css';
+import { AuthProvider } from '@/components/AuthProvider';
+import AuthModal from '@/components/AuthModal';
+import HeaderNav from '@/components/HeaderNav';
+import PostHogProvider from '@/components/PostHogProvider';
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://www.datingdex.com'),
@@ -63,22 +67,22 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
       </head>
       <body>
-        <a href="#main-content" className="skip-to-content">Skip to content</a>
-        <header className="site-header">
-          <div className="inner">
-            <Link href="/" className="logo">DatingDex</Link>
-            <nav className="nav" aria-label="Primary">
-              <Link href="/discovery">All Spots</Link>
-              <Link href="/vibe/first-date">First Date</Link>
-              <Link href="/vibe/impress-them">Impress Them</Link>
-              <Link href="/vibe/coffee-date">Coffee</Link>
-            </nav>
-          </div>
-        </header>
-        <main id="main-content">{children}</main>
-        <footer className="footer">
-          <p>© {new Date().getFullYear()} DatingDex · Hand-picked date spots in Washington DC · <Link href="/about">About</Link></p>
-        </footer>
+        <AuthProvider>
+          <PostHogProvider>
+            <a href="#main-content" className="skip-to-content">Skip to content</a>
+            <header className="site-header">
+              <div className="inner">
+                <Link href="/" className="logo">DatingDex</Link>
+                <HeaderNav />
+              </div>
+            </header>
+            <main id="main-content">{children}</main>
+            <footer className="footer">
+              <p>© {new Date().getFullYear()} DatingDex · Hand-picked date spots in Washington DC · <Link href="/about">About</Link> · <Link href="/plan-my-date">Plan My Date</Link> · <Link href="/premium">Premium</Link></p>
+            </footer>
+            <AuthModal />
+          </PostHogProvider>
+        </AuthProvider>
       </body>
     </html>
   );
