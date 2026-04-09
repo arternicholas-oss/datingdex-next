@@ -446,3 +446,22 @@ img { max-width: 100%; display: block; }
 @media (max-width: 768px) {
   .filter-backdrop { display: block; }
 }
+
+
+/* ── SEO content sections ── */
+.seo-content { margin: 2rem 0; line-height: 1.7; }
+.seo-content h2 { font-size: 1.3rem; font-weight: 700; margin-bottom: .75rem; }
+.seo-content h3 { font-size: 1.05rem; font-weight: 600; margin: 1.5rem 0 .5rem; }
+.seo-content p { color: var(--muted); margin-bottom: 1rem; }
+.seo-links {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; gap: .4rem;
+}
+.seo-links li a {
+  display: inline-block; padding: .3rem .7rem; border-radius: 6px;
+  background: var(--card-bg); border: 1px solid var(--border); font-size: .85rem;
+  color: var(--fg); text-decoration: none; transition: background .15s, border-color .15s;
+}
+.seo-links li a:hover {
+  background: var(--brand); color: #fff; border-color: var(--brand);
+}
