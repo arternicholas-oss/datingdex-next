@@ -1,7 +1,7 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { VENUES, getVenuesByNeighborhood, allNeighborhoods, slugify } from '@/lib/venues';
+import { VENUES, getVenuesByNeighborhood, allNeighborhoods, allVibes, slugify } from '@/lib/venues';
 import SpotCard from '@/components/SpotCard';
 
 export function generateStaticParams() {
