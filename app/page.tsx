@@ -9,7 +9,7 @@ export default function HomePage() {
   const featured = [...VENUES].filter(v => (v.score ?? 0) >= 9.5).slice(0, 9);
 
   const faqJsonLd = {
-    '@context': 'https://schema.org'
+    '@context': 'https://schema.org',
     '@type': 'FAQPage',
     mainEntity: [
       { '@type': 'Question', name: 'How does DatingDex plan a date for me?', acceptedAnswer: { '@type': 'Answer', text: 'Answer 3 quick questions \u2014 neighborhood, vibe, and budget \u2014 and our AI plans a choreographed night: arrival time, where to sit, what to order, conversation openers, and the walk between stops. Every stop is booked in one tap.' } },
