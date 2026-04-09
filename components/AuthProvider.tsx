@@ -8,7 +8,8 @@ type Profile = {
   id: string;
   email: string | null;
   full_name: string | null;
-  tier: 'free' | 'premium' | 'annual';
+  role: 'user' | 'restaurant';
+  tier: 'free' | 'premium' | 'annual' | 'featured' | 'restaurant_premium';
   plan_uses_count: number;
 };
 
