@@ -52,7 +52,7 @@ export default function PremiumPage() {
           <div className="premium-period">Free forever</div>
           <ul>
             <li>Plan My Date — 3 free uses</li>
-            <li>Browse all 309 venues</li>
+            <li>Browse all 300+ venues</li>
             <li>Choreographed itineraries</li>
             <li>Resy / OpenTable booking links</li>
             <li className="muted">🔒 Date Copilot (dress code, scripts, follow-up text)</li>
