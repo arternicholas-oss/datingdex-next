@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 
 export const metadata: Metadata = {
-  title: 'Restaurants — Reach Date-Night Diners | DatingDex',
+  title: 'Restaurants — Reach Date-Night Diners',
   description:
     'DatingDex is where DC goes to plan dates. Claim your listing free, get boosted in our Plan My Date AI results, and reach diners who are actively looking for the perfect spot.',
   alternates: { canonical: 'https://www.datingdex.com/for-restaurants' },
@@ -34,7 +34,7 @@ export default function ForRestaurantsLanding() {
       <section className="fr-stats">
         <div className="container">
           <div className="fr-stat">
-            <div className="fr-stat-num">309</div>
+            <div className="fr-stat-num">300+</div>
             <div className="fr-stat-label">Hand-curated DC venues</div>
           </div>
           <div className="fr-stat">
