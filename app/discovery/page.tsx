@@ -3,8 +3,8 @@ import { VENUES } from '@/lib/venues';
 import SpotCard from '@/components/SpotCard';
 
 export const metadata: Metadata = {
-  title: 'All 309 DC Date Spots — Browse by Vibe, Neighborhood & Budget',
-  description: 'Browse all 309 hand-picked date spots in Washington DC. Filter by vibe, neighborhood, and price. Book on Resy in one tap.',
+  title: 'All 300+ DC Date Spots — Browse by Vibe, Neighborhood & Budget',
+  description: 'Browse all 300+ hand-picked date spots in Washington DC. Filter by vibe, neighborhood, and price. Book on Resy in one tap.',
   alternates: { canonical: 'https://www.datingdex.com/discovery' },
 };
 
@@ -14,7 +14,7 @@ export default function DiscoveryPage() {
     <div className="container">
       <div className="page-hero">
         <nav className="breadcrumbs" aria-label="Breadcrumb"><a href="/">Home</a><span>›</span>All Spots</nav>
-        <h1>All 309 Date Spots in Washington DC</h1>
+        <h1>All 300+ Date Spots in Washington DC</h1>
         <p>Every spot on DatingDex, ranked by overall score. Filter by vibe or neighborhood in the nav above.</p>
       </div>
       <div className="spots-grid">
