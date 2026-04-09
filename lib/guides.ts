@@ -493,23 +493,32 @@ export const GUIDES: Guide[] = [
   {
     slug: 'best-brunch-date-spots-dc',
     title: 'Best Brunch Date Spots in DC (2026)',
+    h1: 'Best Brunch Date Spots in Washington DC',
     description:
       'Brunch is the lowest-pressure date format in DC: daylight, mimosas, and a built-in two-hour cap. Here are the spots that actually deliver.',
-    updated: '2026-04-01',
-    heroEmoji: '🥂',
-    intro:
-      'Brunch dates work because they remove the biggest sources of first-date anxiety: the awkward "where does this end" question and the expectation of a three-hour dinner marathon. You get daylight, caffeine, a glass of something sparkling, and a clean exit if the chemistry isn\'t there — or an easy pivot to a walk if it is. The spots below are DC rooms that are actually romantic at 11am, not just dinner restaurants pulling double duty.',
+    published: '2026-04-08',
+    updated: '2026-04-08',
+    intro: [
+      'Brunch dates work because they remove the biggest sources of first-date anxiety: the awkward "where does this end" question and the expectation of a three-hour dinner marathon. You get daylight, caffeine, a glass of something sparkling, and a clean exit if the chemistry is not there — or an easy pivot to a walk if it is.',
+      'The spots below are DC rooms that are actually romantic at 11am, not just dinner restaurants pulling double duty.',
+    ],
     sections: [
       {
-        heading: 'What makes a brunch spot date-worthy',
-        body: 'Good lighting, tables you can hear each other across, a menu beyond eggs benedict, and a drinks program that takes mimosas seriously. Bonus points for walkable neighborhoods so you can extend the date with zero planning.',
+        h2: 'What makes a brunch spot date-worthy',
+        body: [
+          'Good lighting, tables you can hear each other across, a menu beyond eggs benedict, and a drinks program that takes mimosas seriously.',
+          'Bonus points for walkable neighborhoods so you can extend the date with zero planning.',
+        ],
       },
       {
-        heading: 'How to play it',
-        body: 'Book for 11:30am — late enough you both had time to get ready, early enough the room isn\'t screaming. Skip bottomless unless you already know each other; it forces a pace that can tip into awkward. End with a walk, not a second round.',
+        h2: 'How to play it',
+        body: [
+          'Book for 11:30am — late enough you both had time to get ready, early enough the room is not screaming. Skip bottomless unless you already know each other; it forces a pace that can tip into awkward.',
+          'End with a walk, not a second round.',
+        ],
       },
     ],
-    faqs: [
+    faq: [
       {
         q: 'Is brunch a good first date?',
         a: 'It is arguably the best first date in DC. Daylight reduces pressure, the time window is naturally capped, and you can pivot to a walk if things click.',
