@@ -52,6 +52,35 @@ export default function VibePage({ params }: { params: { vibe: string } }) {
           <h1>{list.length} Best {name} Spots in Washington DC</h1>
           <p>Hand-picked {name.toLowerCase()} date ideas across Washington DC, Arlington, and Alexandria.</p>
         </div>
+
+        <section className="seo-content">
+          <h2>Planning a {name.toLowerCase()} in DC</h2>
+          <p>
+            Looking for the perfect {name.toLowerCase()} in Washington DC? DatingDex has curated {list.length} top-rated
+            spots across the District, Arlington, and Alexandria that nail the {name.toLowerCase()} atmosphere. Each venue
+            is scored on conversation friendliness, overall vibe, price range, and how easy it is to leave if things
+            aren&apos;t clicking — so you can pick with confidence.
+          </p>
+          <p>
+            From cozy neighborhood gems to buzzworthy new openings, every {name.toLowerCase()} spot below has been
+            personally vetted. Browse by score, check prices at a glance, and book your favorite on Resy in one tap.
+            Whether you&apos;re a DC local or visiting for the weekend, this curated list takes the guesswork out of
+            choosing where to go.
+          </p>
+          <h3>Top neighborhoods for {name.toLowerCase()} dates</h3>
+          <ul className="seo-links">
+            {allNeighborhoods().slice(0, 12).map(n => (
+              <li key={n.slug}><Link href={`/dc/${n.slug}`}>{n.name} ({n.count})</Link></li>
+            ))}
+          </ul>
+          <h3>Explore other vibes</h3>
+          <ul className="seo-links">
+            {allVibes().filter(v => v.name !== name).map(v => (
+              <li key={v.slug}><Link href={`/vibe/${v.slug}`}>{v.name} ({v.count})</Link></li>
+            ))}
+          </ul>
+        </section>
+
         <div className="spots-grid">
           {sorted.map((v) => <SpotCard key={v.slug} venue={v} />)}
         </div>
