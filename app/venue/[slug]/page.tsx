@@ -13,8 +13,10 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const v = getVenueBySlug(params.slug);
   if (!v) return { title: 'Not found' };
-  const title = `${v.name} — ${v.vibe} Date Spot in ${v.neighborhood} DC`;
+
+  const title = `${v.name} â ${v.vibe} Date Spot in ${v.neighborhood} DC`;
   const description = `${v.name} in ${v.neighborhood}: ${v.desc} ${priceLabel(v.price)}. Ranked ${v.score ?? 'top'} on DatingDex.`;
+
   return {
     title,
     description,
@@ -111,31 +113,30 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
       <article className="container">
         <nav className="breadcrumbs" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
-          <span>›</span>
+          <span>âº</span>
           <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
-          <span>›</span>
+          <span>âº</span>
           <span>{v.name}</span>
         </nav>
 
         <div className="page-hero">
           <div className="spot-meta" style={{ fontSize: '.95rem' }}>
             <Link href={`/vibe/${slugify(v.vibe)}`}>{v.vibe}</Link>
-            <span>·</span>
+            <span>Â·</span>
             <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
-            <span>·</span>
+            <span>Â·</span>
             <span>
-              {v.price} · {priceLabel(v.price)}
+              {v.price} Â· {priceLabel(v.price)}
             </span>
             {v.score !== null && (
               <>
-                <span>·</span>
-                <span>★ {v.score.toFixed(1)}</span>
+                <span>Â·</span>
+                <span>â {v.score.toFixed(1)}</span>
               </>
             )}
           </div>
           <h1>{v.name}</h1>
           <p style={{ fontSize: '1.15rem', color: '#444' }}>{v.hook}</p>
-          <p>{v.desc}</p>
         </div>
 
         {v.photo && (
@@ -156,19 +157,18 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
 
         <section style={{ margin: '2rem 0' }}>
           <h2>What DatingDex says</h2>
+
           {v.dating_intelligence ? (
             <DatingIntelligence data={v.dating_intelligence as DatingIntelligenceData} />
-          ) : (
-            <div className="spot-pills" style={{ marginTop: '.75rem' }}>
-              {v.scores.convo && <span className="pill">{v.scores.convo}</span>}
-              {v.scores.vibe && <span className="pill">{v.scores.vibe}</span>}
-              {v.scores.exit && <span className="pill">{v.scores.exit}</span>}
-            </div>
-          )}
+          ) : null}
+
           <p style={{ marginTop: '1rem' }}>
+            {v.desc}
+          </p>
+          <p style={{ marginTop: '.75rem' }}>
             {v.name} is one of the top {v.vibe.toLowerCase()} spots in {v.neighborhood}.{' '}
-            {v.desc} At a {priceLabel(v.price).toLowerCase()} price point, it fits well when
-            you want a {v.vibe.toLowerCase()} feel without guesswork.
+            At a {priceLabel(v.price).toLowerCase()} price point, it fits well when you want
+            a {v.vibe.toLowerCase()} feel without guesswork.
           </p>
         </section>
 
