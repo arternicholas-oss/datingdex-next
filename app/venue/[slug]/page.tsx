@@ -14,7 +14,7 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const v = getVenueBySlug(params.slug);
   if (!v) return { title: 'Not found' };
 
-  const title = `${v.name} â ${v.vibe} Date Spot in ${v.neighborhood} DC`;
+  const title = `${v.name} \u2014 ${v.vibe} Date Spot in ${v.neighborhood} DC`;
   const description = `${v.name} in ${v.neighborhood}: ${v.desc} ${priceLabel(v.price)}. Ranked ${v.score ?? 'top'} on DatingDex.`;
 
   return {
@@ -75,7 +75,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
       '@type': 'Review',
       reviewRating: { '@type': 'Rating', ratingValue: v.score, bestRating: 10 },
       author: { '@type': 'Organization', name: 'DatingDex' },
-      reviewBody: `${v.hook}. ${v.desc}`,
+      reviewBody: v.desc,
     };
   }
 
@@ -113,25 +113,25 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
       <article className="container">
         <nav className="breadcrumbs" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
-          <span>âº</span>
+          <span>{'\u203A'}</span>
           <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
-          <span>âº</span>
+          <span>{'\u203A'}</span>
           <span>{v.name}</span>
         </nav>
 
         <div className="page-hero">
           <div className="spot-meta" style={{ fontSize: '.95rem' }}>
             <Link href={`/vibe/${slugify(v.vibe)}`}>{v.vibe}</Link>
-            <span>Â·</span>
+            <span>{'\u00B7'}</span>
             <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
-            <span>Â·</span>
+            <span>{'\u00B7'}</span>
             <span>
-              {v.price} Â· {priceLabel(v.price)}
+              {v.price} {'\u00B7'} {priceLabel(v.price)}
             </span>
             {v.score !== null && (
               <>
-                <span>Â·</span>
-                <span>â {v.score.toFixed(1)}</span>
+                <span>{'\u00B7'}</span>
+                <span>{'\u2B50'} {v.score.toFixed(1)}</span>
               </>
             )}
           </div>
@@ -157,11 +157,9 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
 
         <section style={{ margin: '2rem 0' }}>
           <h2>What DatingDex says</h2>
-
           {v.dating_intelligence ? (
             <DatingIntelligence data={v.dating_intelligence as DatingIntelligenceData} />
           ) : null}
-
           <p style={{ marginTop: '1rem' }}>
             {v.desc}
           </p>
