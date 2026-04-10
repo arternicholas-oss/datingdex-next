@@ -25,7 +25,7 @@ const FAQ = [
   },
   {
     q: 'How does the AI part work?',
-    a: 'You describe the date in plain English ("second date, she likes natural wine, $120 budget"). Claude parses what you said, our planner ranks 309 hand-curated DC venues against your situation, and Claude writes you personalized 4-sentence reasons each pick works — referencing what you actually told us. No generic blurbs.',
+    a: 'You describe the date in plain English ("second date, she likes natural wine, $120 budget"). Claude parses what you said, our planner ranks 300+ hand-curated DC venues against your situation, and Claude writes you personalized 4-sentence reasons each pick works — referencing what you actually told us. No generic blurbs.',
   },
   {
     q: 'Is it free?',
@@ -93,7 +93,7 @@ export default function PlanMyDateLanding() {
             <div className="pmd-step">
               <div className="pmd-step-num">2</div>
               <h3>We build the night</h3>
-              <p>Our planner picks the right spots from 309 hand-curated DC venues, clusters them so you can walk between them, and writes you personalized reasons each one fits.</p>
+              <p>Our planner picks the right spots from 300+ hand-curated DC venues, clusters them so you can walk between them, and writes you personalized reasons each one fits.</p>
             </div>
             <div className="pmd-step">
               <div className="pmd-step-num">3</div>

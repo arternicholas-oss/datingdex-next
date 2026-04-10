@@ -31,7 +31,7 @@ export default function HomePage() {
           <h1>Your entire date night, choreographed.</h1>
           <p className="hero-sub">
             Where to sit. What to order. What to say. How to get there.
-            309 DC spots, one AI that plans the whole night in <strong>30 seconds</strong>.
+            {VENUES.length}+ DC spots, one AI that plans the whole night in <strong>30 seconds</strong>.
           </p>
           <p className="hero-proof">
             <span className="dot" /> 1,284 dates planned this month · Trusted by DC couples since 2024
@@ -65,8 +65,6 @@ export default function HomePage() {
 
       {/* ==================== TONIGHT IN DC (Eventbrite) ==================== */}
       <section className="container tonight-section">
-        <h2>Tonight in DC</h2>
-        <p className="section-sub">Live events from Eventbrite — fold one into your date plan.</p>
         <EventbriteTonight />
       </section>
 

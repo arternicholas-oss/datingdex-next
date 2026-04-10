@@ -50,15 +50,14 @@ export default function EventbriteTonight() {
   }
 
   if (events.length === 0) {
-    return (
-      <div className="eb-tonight-empty">
-        <p>Check back soon — we pull tonight&apos;s best events from Eventbrite every hour.</p>
-      </div>
-    );
+    return null;
   }
 
   return (
-    <div className="eb-tonight-grid">
+    <>
+      <h2>Tonight in DC</h2>
+      <p className="section-sub">Live events from Eventbrite — fold one into your date plan.</p>
+      <div className="eb-tonight-grid">
       {events.map((e) => (
         <a
           key={e.id}
@@ -88,5 +87,6 @@ export default function EventbriteTonight() {
         </a>
       ))}
     </div>
+    </>
   );
 }
