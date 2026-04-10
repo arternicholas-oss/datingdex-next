@@ -9,6 +9,7 @@ export default function SpotCard({ venue }: { venue: Venue }) {
         <div className="spot-badge">{venue.vibe}</div>
         {venue.score !== null && <div className="spot-score">{venue.score.toFixed(1)}</div>}
       </div>
+
       <div className="spot-body">
         <div className="spot-meta">
           <span>{venue.neighborhood}</span>
@@ -20,11 +21,6 @@ export default function SpotCard({ venue }: { venue: Venue }) {
         {venue.desc && venue.desc.trim() !== venue.hook.trim() && (
           <div className="spot-desc">{venue.desc}</div>
         )}
-        <div className="spot-pills">
-          {venue.scores.convo && <span className="pill">{venue.scores.convo}</span>}
-          {venue.scores.vibe && <span className="pill">{venue.scores.vibe}</span>}
-          {venue.scores.exit && <span className="pill">{venue.scores.exit}</span>}
-        </div>
       </div>
     </Link>
   );
