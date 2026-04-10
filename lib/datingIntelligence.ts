@@ -101,11 +101,24 @@ const SENTIMENT_MAP: Record<AllLabels, "positive" | "neutral" | "caution"> = {
   "Very Likely": "positive",
 };
 
+/** Simple deterministic hash for stable ordering across renders. */
+function stableHash(s: string): number {
+  let h = 0;
+  for (let i = 0; i < s.length; i++) {
+    h = ((h << 5) - h + s.charCodeAt(i)) | 0;
+  }
+  return Math.abs(h);
+}
+
 /**
  * Selects which 2–3 categories to display for a venue.
+ * All four categories are treated equally — vibe is NOT given priority.
+ * Categories with extreme sentiments (positive / caution) are preferred
+ * over neutral ones. Tie-breaking is deterministic but varies per venue
+ * so different venues surface different category combos.
  */
 export function selectDisplayCategories(data: DatingIntelligenceData): DisplayCategory[] {
-  const categories: DisplayCategory[] = [
+  const allCats: DisplayCategory[] = [
     {
       type: "vibe",
       emoji: CATEGORY_EMOJI.vibe,
@@ -114,53 +127,44 @@ export function selectDisplayCategories(data: DatingIntelligenceData): DisplayCa
       sentiment: SENTIMENT_MAP[data.vibe_label],
       categoryName: CATEGORY_NAME.vibe,
     },
-  ];
-
-  const extras: DisplayCategory[] = [];
-
-  if (data.kiss_likelihood_label === "High Chance" || data.kiss_likelihood_label === "Very Likely") {
-    extras.push({
-      type: "kiss_likelihood",
-      emoji: CATEGORY_EMOJI.kiss_likelihood,
-      label: data.kiss_likelihood_label,
-      flavor: data.kiss_likelihood_flavor,
-      sentiment: SENTIMENT_MAP[data.kiss_likelihood_label],
-      categoryName: CATEGORY_NAME.kiss_likelihood,
-    });
-  }
-
-  if (data.privacy_label === "No Privacy" || data.privacy_label === "Very Intimate") {
-    extras.push({
-      type: "privacy",
-      emoji: CATEGORY_EMOJI.privacy,
-      label: data.privacy_label,
-      flavor: data.privacy_flavor,
-      sentiment: SENTIMENT_MAP[data.privacy_label],
-      categoryName: CATEGORY_NAME.privacy,
-    });
-  }
-
-  if (data.conversation_label === "Deep Connection" || data.conversation_label === "Not Ideal for Talking") {
-    extras.push({
+    {
       type: "conversation",
       emoji: CATEGORY_EMOJI.conversation,
       label: data.conversation_label,
       flavor: data.conversation_flavor,
       sentiment: SENTIMENT_MAP[data.conversation_label],
       categoryName: CATEGORY_NAME.conversation,
-    });
-  }
-
-  if (extras.length === 0) {
-    extras.push({
+    },
+    {
+      type: "privacy",
+      emoji: CATEGORY_EMOJI.privacy,
+      label: data.privacy_label,
+      flavor: data.privacy_flavor,
+      sentiment: SENTIMENT_MAP[data.privacy_label],
+      categoryName: CATEGORY_NAME.privacy,
+    },
+    {
       type: "kiss_likelihood",
       emoji: CATEGORY_EMOJI.kiss_likelihood,
       label: data.kiss_likelihood_label,
       flavor: data.kiss_likelihood_flavor,
       sentiment: SENTIMENT_MAP[data.kiss_likelihood_label],
       categoryName: CATEGORY_NAME.kiss_likelihood,
-    });
-  }
+    },
+  ];
 
-  return [...categories, ...extras.slice(0, 2)];
-}
+  // Seed from all labels so each venue gets a unique but stable order
+  const seed = stableHash(
+    data.vibe_label + data.conversation_label + data.privacy_label + data.kiss_likelihood_label
+  );
+
+  // Non-neutral categories are more interesting; hash breaks ties
+  const score = (cat: DisplayCategory): number => {
+    const interest = cat.sentiment === "neutral" ? 0 : 1;
+    return interest * 10000 + (stableHash(cat.type + String(seed)) % 9999);
+  };
+
+  allCats.sort((a, b) => score(b) - score(a));
+
+  return allCats.slice(0, 3);
+                                          }
