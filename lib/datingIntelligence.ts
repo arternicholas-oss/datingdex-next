@@ -51,13 +51,54 @@ export interface DisplayCategory {
   emoji: string;
   label: string;
   flavor: string;
+  sentiment: "positive" | "neutral" | "caution";
+  categoryName: string;
 }
 
 const CATEGORY_EMOJI: Record<CategoryType, string> = {
   vibe: "✨",
   conversation: "💬",
   privacy: "🔒",
-  kiss_likelihood: "💋",
+  kiss_likelihood: "👌",
+};
+
+const CATEGORY_NAME: Record<CategoryType, string> = {
+  vibe: "Vibe",
+  conversation: "Conversation",
+  privacy: "Privacy",
+  kiss_likelihood: "Kiss Likelihood",
+};
+
+type AllLabels = VibeLabel | ConversationLabel | PrivacyLabel | KissLikelihoodLabel;
+
+const SENTIMENT_MAP: Record<AllLabels, "positive" | "neutral" | "caution"> = {
+  // Vibe
+  "Soft Life Energy": "positive",
+  "Rich Date Energy": "positive",
+  "We Outside Energy": "positive",
+  "High Value Date Spot": "positive",
+  "Treat Yourself Vibes": "positive",
+  "Champagne Night Energy": "positive",
+  "CEO Date Night": "positive",
+  "First-Class Energy": "positive",
+  // Conversation
+  "Deep Connection": "positive",
+  "Easy & Flowing": "positive",
+  "Balanced": "neutral",
+  "Light & Playful": "neutral",
+  "Not Ideal for Talking": "caution",
+  // Privacy
+  "No Privacy": "caution",
+  "Low Privacy": "neutral",
+  "Medium Privacy": "neutral",
+  "High Privacy": "positive",
+  "Very Intimate": "positive",
+  // Kiss Likelihood
+  "Not Likely": "caution",
+  "Low Chance": "neutral",
+  "Possible": "neutral",
+  "High Chance": "positive",
+  "Very Likely": "positive",
 };
 
 /**
@@ -70,6 +111,8 @@ export function selectDisplayCategories(data: DatingIntelligenceData): DisplayCa
       emoji: CATEGORY_EMOJI.vibe,
       label: data.vibe_label,
       flavor: data.vibe_flavor,
+      sentiment: SENTIMENT_MAP[data.vibe_label],
+      categoryName: CATEGORY_NAME.vibe,
     },
   ];
 
@@ -81,6 +124,8 @@ export function selectDisplayCategories(data: DatingIntelligenceData): DisplayCa
       emoji: CATEGORY_EMOJI.kiss_likelihood,
       label: data.kiss_likelihood_label,
       flavor: data.kiss_likelihood_flavor,
+      sentiment: SENTIMENT_MAP[data.kiss_likelihood_label],
+      categoryName: CATEGORY_NAME.kiss_likelihood,
     });
   }
 
@@ -90,6 +135,8 @@ export function selectDisplayCategories(data: DatingIntelligenceData): DisplayCa
       emoji: CATEGORY_EMOJI.privacy,
       label: data.privacy_label,
       flavor: data.privacy_flavor,
+      sentiment: SENTIMENT_MAP[data.privacy_label],
+      categoryName: CATEGORY_NAME.privacy,
     });
   }
 
@@ -99,6 +146,8 @@ export function selectDisplayCategories(data: DatingIntelligenceData): DisplayCa
       emoji: CATEGORY_EMOJI.conversation,
       label: data.conversation_label,
       flavor: data.conversation_flavor,
+      sentiment: SENTIMENT_MAP[data.conversation_label],
+      categoryName: CATEGORY_NAME.conversation,
     });
   }
 
@@ -108,6 +157,8 @@ export function selectDisplayCategories(data: DatingIntelligenceData): DisplayCa
       emoji: CATEGORY_EMOJI.kiss_likelihood,
       label: data.kiss_likelihood_label,
       flavor: data.kiss_likelihood_flavor,
+      sentiment: SENTIMENT_MAP[data.kiss_likelihood_label],
+      categoryName: CATEGORY_NAME.kiss_likelihood,
     });
   }
 
