@@ -15,8 +15,14 @@ export const metadata: Metadata = {
   description:
     'The 300+ best date ideas in Washington DC, hand-picked and ranked. Filter by vibe \u2014 first date, impress them, coffee, late night \u2014 plus neighborhood and budget. Free.',
   keywords: [
-    'DC date ideas', 'Washington DC date night', 'date spots DC', 'romantic restaurants DC',
-    'first date DC', 'DMV date ideas', 'Georgetown date', 'Logan Circle restaurants',
+    'DC date ideas',
+    'Washington DC date night',
+    'date spots DC',
+    'romantic restaurants DC',
+    'first date DC',
+    'DMV date ideas',
+    'Georgetown date',
+    'Logan Circle restaurants',
   ],
   authors: [{ name: 'DatingDex' }],
   openGraph: {
@@ -24,7 +30,8 @@ export const metadata: Metadata = {
     siteName: 'DatingDex',
     url: 'https://www.datingdex.com',
     title: '300+ Best Date Spots in Washington DC (2026) | DatingDex',
-    description: 'Hand-picked date ideas across DC, Arlington & Alexandria. Filter by vibe, budget, and neighborhood.',
+    description:
+      'Hand-picked date ideas across DC, Arlington & Alexandria. Filter by vibe, budget, and neighborhood.',
     images: ['/og-image.jpg'],
     locale: 'en_US',
   },
@@ -34,7 +41,12 @@ export const metadata: Metadata = {
     description: 'Hand-picked date ideas across DC, Arlington & Alexandria.',
     images: ['/og-image.jpg'],
   },
-  robots: { index: true, follow: true, 'max-image-preview': 'large', 'max-snippet': -1 } as any,
+  robots: {
+    index: true,
+    follow: true,
+    'max-image-preview': 'large',
+    'max-snippet': -1,
+  } as any,
   alternates: { canonical: 'https://www.datingdex.com' },
 };
 
@@ -63,8 +75,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
     <html lang="en">
       <head>
         <meta name="theme-color" content="#FF5C3A" />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }}
+        />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(orgJsonLd) }}
+        />
       </head>
       <body>
         <AuthProvider>
@@ -76,7 +94,9 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                 <HeaderNav />
               </div>
             </header>
+
             <main id="main-content">{children}</main>
+
             <footer className="footer">
               <div className="footer-inner">
                 <div className="footer-top">
@@ -97,7 +117,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     <h4>Resources</h4>
                     <ul>
                       <li><Link href="/guides">Blog</Link></li>
-                      <li><Link href="/for-restaurants">For Restaurants</Link></li>
                       <li><Link href="/for-restaurants">For Restaurants</Link></li>
                     </ul>
                   </div>
