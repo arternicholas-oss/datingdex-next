@@ -26,7 +26,8 @@ img { max-width: 100%; display: block; }
 
 .skip-to-content { position: absolute; left: -9999px; top: 0; }
 .skip-to-content:focus {
-  left: 1rem; top: 1rem; background: var(--brand); color: #fff;
+  left: 1rem; top: 1rem;
+  background: var(--brand); color: #fff;
   padding: .75rem 1rem; border-radius: 8px; z-index: 9999;
 }
 :focus-visible { outline: 3px solid var(--brand); outline-offset: 2px; border-radius: 4px; }
@@ -35,22 +36,26 @@ img { max-width: 100%; display: block; }
 
 .site-header {
   position: sticky; top: 0;
-  background: rgba(255,255,255,0.95); backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--border); z-index: 100;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--border);
+  z-index: 100;
 }
 .site-header .inner {
   display: flex; align-items: center; justify-content: space-between;
   padding: 1rem 1.25rem; max-width: 1200px; margin: 0 auto;
 }
+
 .logo { font-weight: 800; font-size: 1.25rem; color: var(--brand); }
+
 .nav { display: flex; gap: 1.5rem; }
 .nav a { color: var(--muted); font-weight: 500; font-size: .95rem; }
 .nav a:hover { color: var(--ink); }
 
 .hero { padding: 3.5rem 1.25rem 2rem; text-align: center; }
 .hero h1 {
-  font-size: clamp(2rem, 5vw, 3rem); margin: 0 0 .75rem;
-  line-height: 1.1; letter-spacing: -0.02em;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin: 0 0 .75rem; line-height: 1.1; letter-spacing: -0.02em;
 }
 .hero p { font-size: 1.15rem; color: var(--muted); max-width: 640px; margin: 0 auto 1.5rem; }
 
@@ -72,7 +77,6 @@ img { max-width: 100%; display: block; }
   box-shadow: var(--shadow); transition: transform .2s, box-shadow .2s;
 }
 .spot-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
-
 .spot-img {
   position: relative; width: 100%; padding-top: 56.25%;
   background-size: cover; background-position: center; background-color: #f0f0f0;
@@ -84,26 +88,20 @@ img { max-width: 100%; display: block; }
 .spot-badge {
   position: absolute; bottom: .75rem; left: .75rem;
   background: rgba(0,0,0,0.7); color: #fff;
-  font-size: .75rem; font-weight: 600; padding: .3rem .6rem; border-radius: 6px;
+  font-size: .75rem; font-weight: 600;
+  padding: .3rem .6rem; border-radius: 6px;
 }
 .spot-score {
   position: absolute; top: .75rem; right: .75rem;
   background: var(--brand); color: #fff;
-  font-size: .8rem; font-weight: 700; padding: .25rem .5rem; border-radius: 6px;
+  font-size: .8rem; font-weight: 700;
+  padding: .25rem .5rem; border-radius: 6px;
 }
-
 .spot-body { padding: 1rem; display: flex; flex-direction: column; gap: .35rem; }
 .spot-meta { display: flex; gap: .4rem; font-size: .82rem; color: var(--muted); }
 .spot-name { font-weight: 700; font-size: 1.05rem; }
 .spot-hook { font-size: .88rem; color: var(--muted); line-height: 1.4; }
 .spot-desc { font-size: .85rem; color: var(--muted); line-height: 1.4; margin-top: .15rem; }
-
-.spot-pills { display: flex; flex-wrap: wrap; gap: .4rem; margin-top: .5rem; }
-.pill {
-  font-size: .75rem; padding: .25rem .5rem;
-  background: #f5f5f5; border-radius: 6px; color: var(--muted);
-}
-
 .spots-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.25rem; margin: 1.5rem 0;
@@ -132,8 +130,7 @@ img { max-width: 100%; display: block; }
   width: 2.5rem; height: 2.5rem;
   background: var(--brand); color: #fff;
   font-size: 1.1rem; font-weight: 800;
-  border-radius: 50%;
-  flex-shrink: 0;
+  border-radius: 50%; flex-shrink: 0;
 }
 .how-step h3 { margin: .25rem 0 0; font-size: 1.1rem; }
 .how-step p { margin: 0; color: var(--muted); font-size: .95rem; line-height: 1.5; }
@@ -145,9 +142,7 @@ img { max-width: 100%; display: block; }
   font-weight: 700; font-size: 1rem; border-radius: 10px;
   transition: background .2s, transform .15s;
 }
-.cta-primary {
-  background: var(--brand); color: #fff;
-}
+.cta-primary { background: var(--brand); color: #fff; }
 .cta-primary:hover { background: var(--brand-dark); transform: translateY(-1px); }
 
 /* ==================== HERO EXTRAS ==================== */
@@ -163,9 +158,9 @@ img { max-width: 100%; display: block; }
 .couples-teaser { margin: 3rem auto; }
 .couples-card {
   display: flex; align-items: center; justify-content: space-between;
-  background: linear-gradient(135deg, #fff5f3, #fff); border: 1px solid var(--border);
-  border-radius: var(--radius); padding: 2.5rem; gap: 2rem;
-  box-shadow: var(--shadow);
+  background: linear-gradient(135deg, #fff5f3, #fff);
+  border: 1px solid var(--border); border-radius: var(--radius);
+  padding: 2.5rem; gap: 2rem; box-shadow: var(--shadow);
 }
 .couples-card h2 { margin: .5rem 0; }
 .couples-card p { color: var(--muted); margin: .75rem 0 1.25rem; line-height: 1.6; }
@@ -174,17 +169,35 @@ img { max-width: 100%; display: block; }
 /* ==================== SECTION HELPERS ==================== */
 .section-sub { color: var(--muted); margin: .25rem 0 1.5rem; font-size: 1rem; }
 .breadcrumbs {
-  display: flex; gap: .5rem; font-size: .85rem; color: var(--muted);
-  margin-bottom: 1.25rem; flex-wrap: wrap;
+  display: flex; gap: .5rem; font-size: .85rem;
+  color: var(--muted); margin-bottom: 1.25rem; flex-wrap: wrap;
 }
 .breadcrumbs a:hover { color: var(--ink); }
 .page-hero { margin-bottom: 1.5rem; }
 
 /* ==================== VENUE DETAIL PAGE ==================== */
-.venue-detail {
-  max-width: 800px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem;
-}
+.venue-detail { max-width: 800px; margin: 0 auto; padding: 1.5rem 1.25rem 3rem; }
 .venue-detail h1 { font-size: clamp(1.5rem, 4vw, 2.25rem); margin: 0 0 .5rem; }
+
+/* ==================== FOOTER ==================== */
+.footer {
+  margin-top: 4rem;
+  border-top: 1px solid var(--border);
+  background: #fafafa;
+  padding: 3rem 0 1.5rem;
+}
+.footer-inner { max-width: 1200px; margin: 0 auto; padding: 0 1.25rem; }
+.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 2rem; }
+.footer-col h4 { margin: 0 0 .75rem; font-size: .95rem; }
+.footer-col p { color: var(--muted); font-size: .88rem; line-height: 1.6; margin: 0; }
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: .5rem; }
+.footer-col ul li a { color: var(--muted); font-size: .88rem; }
+.footer-col ul li a:hover { color: var(--ink); }
+.footer-bottom {
+  margin-top: 2rem; padding-top: 1.25rem;
+  border-top: 1px solid var(--border); text-align: center;
+}
+.footer-bottom p { color: var(--muted); font-size: .82rem; margin: 0; }
 
 /* ==================== MOBILE RESPONSIVE ==================== */
 @media (max-width: 640px) {
@@ -193,31 +206,23 @@ img { max-width: 100%; display: block; }
   .hero p { font-size: 1rem; margin-bottom: 1rem; }
   .vibe-grid { grid-template-columns: 1fr 1fr; gap: .75rem; }
   .vibe-card { padding: .85rem; }
-
   .spot-body { padding: .75rem; }
   .spot-name { font-size: .95rem; }
   .spot-hook { font-size: .82rem; }
   .spot-desc { font-size: .8rem; }
-  .spot-pills { gap: .3rem; }
-  .pill { font-size: .7rem; padding: .2rem .4rem; }
-
   .spots-grid { grid-template-columns: 1fr; gap: 1rem; }
-
   .venue-detail { padding: 1rem 1rem 2rem; }
   .venue-detail h1 { font-size: 1.5rem; }
-
   .di-emoji { font-size: 1.15rem; }
   .di-label { font-size: .88rem; }
   .di-flavor { font-size: .82rem; }
-
   .how-grid { grid-template-columns: 1fr; gap: 1.25rem; }
   .how-num { width: 2rem; height: 2rem; font-size: .95rem; }
-
   .couples-card { flex-direction: column; padding: 1.5rem; text-align: center; }
   .couples-illo { font-size: 3rem; }
-
   .container { padding: 0 .75rem; }
   .site-header .inner { padding: .75rem 1rem; }
   .nav { gap: .75rem; }
   .nav a { font-size: .85rem; }
+  .footer-top { grid-template-columns: 1fr; gap: 1.5rem; }
 }
