@@ -12,7 +12,9 @@ export default function DatingIntelligence({ data }: { data: DatingIntelligenceD
         <div key={cat.type} className="di-row">
           <span className="di-emoji" aria-hidden>{cat.emoji}</span>
           <div className="di-text">
-            <span className="di-label">{cat.label}</span>
+            <span className={`di-label di-label--${cat.sentiment}`}>
+              {cat.categoryName}: {cat.label}
+            </span>
             <span className="di-flavor">{cat.flavor}</span>
           </div>
         </div>
