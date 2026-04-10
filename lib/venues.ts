@@ -1,4 +1,5 @@
 import venuesData from '@/data/venues.json';
+import type { DatingIntelligenceData } from '@/lib/datingIntelligence';
 
 export type Venue = {
   slug: string;
@@ -11,6 +12,7 @@ export type Venue = {
   desc: string;
   photo: string | null;
   scores: { convo: string | null; vibe: string | null; exit: string | null };
+  dating_intelligence?: DatingIntelligenceData;
 };
 
 export const VENUES: Venue[] = venuesData as Venue[];
