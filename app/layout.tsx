@@ -122,7 +122,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                   </div>
                 </div>
                 <div className="footer-bottom">
-                  <p>&copy; {new Date().getFullYear()} DatingDex &middot; Washington DC</p>
+                  <p>&copy; {new Date().getFullYear()} DatingDex &middot; Washington DC &middot; <Link href="/terms">Terms</Link> &middot; <Link href="/privacy">Privacy</Link></p>
                 </div>
               </div>
             </footer>

@@ -15,6 +15,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/premium`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/for-restaurants`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${BASE}/for-restaurants/pricing`, lastModified: now, changeFrequency: 'monthly', priority: 0.75 },
+    { url: `${BASE}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
+    { url: `${BASE}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.3 },
   ];
   for (const g of GUIDES) {
     routes.push({ url: `${BASE}/guides/${g.slug}`, lastModified: new Date(g.updated), changeFrequency: 'monthly', priority: 0.85 });

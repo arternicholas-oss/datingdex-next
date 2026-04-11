@@ -540,3 +540,16 @@ img { max-width: 100%; display: block; }
 @media (min-width: 769px) {
   .nav-mobile-overlay, .nav-mobile-menu { display: none !important; }
 }
+
+/* Legal pages (Terms, Privacy) */
+.legal { max-width: 760px; padding-top: 2.5rem; padding-bottom: 4rem; }
+.legal h1 { font-size: clamp(1.75rem, 4vw, 2.25rem); margin-bottom: .5rem; }
+.legal-updated { color: var(--muted); font-size: .88rem; margin-bottom: 2rem; }
+.legal section { margin-bottom: 2rem; }
+.legal h2 { font-size: 1.15rem; margin-bottom: .75rem; color: var(--ink); }
+.legal h3 { font-size: 1rem; margin: 1rem 0 .5rem; color: var(--ink); }
+.legal p { color: #444; font-size: .95rem; line-height: 1.7; margin-bottom: .75rem; }
+.legal ul { padding-left: 1.5rem; margin-bottom: .75rem; }
+.legal li { color: #444; font-size: .95rem; line-height: 1.7; margin-bottom: .35rem; }
+.legal a { color: var(--brand); }
+.legal a:hover { text-decoration: underline; }
