@@ -35,7 +35,7 @@ export default function EmailCapture() {
         ) : (
           <form onSubmit={submit}>
             <input
-              type="email"
+              type="email" name="email"
               required
               placeholder="you@email.com"
               value={email}

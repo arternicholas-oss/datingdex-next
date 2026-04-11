@@ -3,6 +3,8 @@ import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { VENUES, getVenueBySlug, slugify, priceLabel } from '@/lib/venues';
 import SpotCard from '@/components/SpotCard';
+import DatingIntelligence from '@/components/DatingIntelligence';
+import type { DatingIntelligenceData } from '@/lib/datingIntelligence';
 
 export function generateStaticParams() {
   return VENUES.map((v) => ({ slug: v.slug }));
@@ -11,14 +13,17 @@ export function generateStaticParams() {
 export function generateMetadata({ params }: { params: { slug: string } }): Metadata {
   const v = getVenueBySlug(params.slug);
   if (!v) return { title: 'Not found' };
-  const title = `${v.name} — ${v.vibe} Date Spot in ${v.neighborhood} DC`;
+
+  const title = `${v.name} \u2014 ${v.vibe} Date Spot in ${v.neighborhood} DC`;
   const description = `${v.name} in ${v.neighborhood}: ${v.desc} ${priceLabel(v.price)}. Ranked ${v.score ?? 'top'} on DatingDex.`;
+
   return {
     title,
     description,
     alternates: { canonical: `https://www.datingdex.com/venue/${v.slug}` },
     openGraph: {
-      title, description,
+      title,
+      description,
       url: `https://www.datingdex.com/venue/${v.slug}`,
       images: v.photo ? [{ url: v.photo }] : undefined,
       type: 'article',
@@ -36,7 +41,9 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
   const v = getVenueBySlug(params.slug);
   if (!v) return notFound();
 
-  const related = VENUES.filter((x) => x.slug !== v.slug && (x.neighborhood === v.neighborhood || x.vibe === v.vibe)).slice(0, 6);
+  const related = VENUES.filter(
+    (x) => x.slug !== v.slug && (x.neighborhood === v.neighborhood || x.vibe === v.vibe)
+  ).slice(0, 6);
 
   const restaurantJsonLd: any = {
     '@context': 'https://schema.org',
@@ -45,10 +52,16 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
     name: v.name,
     description: v.desc,
     image: v.photo || undefined,
-    address: { '@type': 'PostalAddress', addressLocality: v.neighborhood, addressRegion: 'DC', addressCountry: 'US' },
+    address: {
+      '@type': 'PostalAddress',
+      addressLocality: v.neighborhood,
+      addressRegion: 'DC',
+      addressCountry: 'US',
+    },
     priceRange: v.price,
     servesCuisine: v.hook,
   };
+
   if (v.score !== null) {
     restaurantJsonLd.aggregateRating = {
       '@type': 'AggregateRating',
@@ -62,7 +75,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
       '@type': 'Review',
       reviewRating: { '@type': 'Rating', ratingValue: v.score, bestRating: 10 },
       author: { '@type': 'Organization', name: 'DatingDex' },
-      reviewBody: `${v.hook}. ${v.desc}`,
+      reviewBody: v.desc,
     };
   }
 
@@ -71,54 +84,101 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
     '@type': 'BreadcrumbList',
     itemListElement: [
       { '@type': 'ListItem', position: 1, name: 'Home', item: 'https://www.datingdex.com' },
-      { '@type': 'ListItem', position: 2, name: v.neighborhood, item: `https://www.datingdex.com/dc/${slugify(v.neighborhood)}` },
-      { '@type': 'ListItem', position: 3, name: v.name, item: `https://www.datingdex.com/venue/${v.slug}` },
+      {
+        '@type': 'ListItem',
+        position: 2,
+        name: v.neighborhood,
+        item: `https://www.datingdex.com/dc/${slugify(v.neighborhood)}`,
+      },
+      {
+        '@type': 'ListItem',
+        position: 3,
+        name: v.name,
+        item: `https://www.datingdex.com/venue/${v.slug}`,
+      },
     ],
   };
 
   return (
     <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }} />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(restaurantJsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbJsonLd) }}
+      />
+
       <article className="container">
         <nav className="breadcrumbs" aria-label="Breadcrumb">
-          <Link href="/">Home</Link><span>›</span>
-          <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link><span>›</span>
+          <Link href="/">Home</Link>
+          <span>{'\u203A'}</span>
+          <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
+          <span>{'\u203A'}</span>
           <span>{v.name}</span>
         </nav>
+
         <div className="page-hero">
           <div className="spot-meta" style={{ fontSize: '.95rem' }}>
-            <Link href={`/vibe/${slugify(v.vibe)}`}>{v.vibe}</Link><span>·</span>
-            <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link><span>·</span>
-            <span>{v.price} · {priceLabel(v.price)}</span>
-            {v.score !== null && <><span>·</span><span>★ {v.score.toFixed(1)}</span></>}
+            <Link href={`/vibe/${slugify(v.vibe)}`}>{v.vibe}</Link>
+            <span>{'\u00B7'}</span>
+            <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
+            <span>{'\u00B7'}</span>
+            <span>
+              {v.price} {'\u00B7'} {priceLabel(v.price)}
+            </span>
+            {v.score !== null && (
+              <>
+                <span>{'\u00B7'}</span>
+                <span>{'\u2B50'} {v.score.toFixed(1)}</span>
+              </>
+            )}
           </div>
           <h1>{v.name}</h1>
           <p style={{ fontSize: '1.15rem', color: '#444' }}>{v.hook}</p>
-          <p>{v.desc}</p>
         </div>
 
         {v.photo && (
-          <div style={{ margin: '1.5rem 0', borderRadius: 'var(--radius)', overflow: 'hidden', aspectRatio: '16/9', backgroundImage: `url("${v.photo}")`, backgroundSize: 'cover', backgroundPosition: 'center' }} aria-label={`Photo of ${v.name}`} role="img" />
+          <div
+            style={{
+              margin: '1.5rem 0',
+              borderRadius: 'var(--radius)',
+              overflow: 'hidden',
+              aspectRatio: '16/9',
+              backgroundImage: `url("${v.photo}")`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'center',
+            }}
+            aria-label={`Photo of ${v.name}`}
+            role="img"
+          />
         )}
 
         <section style={{ margin: '2rem 0' }}>
           <h2>What DatingDex says</h2>
-          <div className="spot-pills" style={{ marginTop: '.75rem' }}>
-            {v.scores.convo && <span className="pill">{v.scores.convo}</span>}
-            {v.scores.vibe && <span className="pill">{v.scores.vibe}</span>}
-            {v.scores.exit && <span className="pill">{v.scores.exit}</span>}
-          </div>
+          {v.dating_intelligence ? (
+            <DatingIntelligence data={v.dating_intelligence as DatingIntelligenceData} />
+          ) : null}
           <p style={{ marginTop: '1rem' }}>
-            {v.name} is one of the top {v.vibe.toLowerCase()} spots in {v.neighborhood}. {v.desc} At a {priceLabel(v.price).toLowerCase()} price point, it fits well when you want a {v.vibe.toLowerCase()} feel without guesswork.
+            {v.desc}
+          </p>
+          <p style={{ marginTop: '.75rem' }}>
+            {v.name} is one of the top {v.vibe.toLowerCase()} spots in {v.neighborhood}.{' '}
+            At a {priceLabel(v.price).toLowerCase()} price point, it fits well when you want
+            a {v.vibe.toLowerCase()} feel without guesswork.
           </p>
         </section>
 
         {related.length > 0 && (
           <section style={{ margin: '2.5rem 0' }}>
-            <h2>More {v.vibe.toLowerCase()} spots in {v.neighborhood}</h2>
+            <h2>
+              More {v.vibe.toLowerCase()} spots in {v.neighborhood}
+            </h2>
             <div className="spots-grid">
-              {related.map((r) => <SpotCard key={r.slug} venue={r} />)}
+              {related.map((r) => (
+                <SpotCard key={r.slug} venue={r} />
+              ))}
             </div>
           </section>
         )}
