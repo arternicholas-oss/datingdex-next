@@ -5,11 +5,18 @@ import { createServiceClient } from '@/lib/supabase-server';
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
-  apiVersion: '2024-06-20' as any,
-});
+// Lazy-init: avoid crashing at build time when env vars aren't set
+let _stripe: Stripe | null = null;
+function getStripe() {
+  if (!_stripe) {
+    _stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
+      apiVersion: '2024-06-20' as any,
+    });
+  }
+  return _stripe;
+}
 
-const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET!;
+// WEBHOOK_SECRET accessed inside handler to avoid build-time crash
 
 // Map Stripe price IDs to profile tiers
 function priceToTier(priceId: string): 'premium' | 'annual' | 'featured' | 'restaurant_premium' | null {
@@ -25,6 +32,7 @@ function priceToTier(priceId: string): 'premium' | 'annual' | 'featured' | 'rest
 export async function POST(req: Request) {
   const body = await req.text();
   const sig = req.headers.get('stripe-signature');
+    const WEBHOOK_SECRET = process.env.STRIPE_WEBHOOK_SECRET!;
 
   if (!sig || !WEBHOOK_SECRET) {
     return NextResponse.json({ error: 'Missing signature or webhook secret' }, { status: 400 });
@@ -32,7 +40,7 @@ export async function POST(req: Request) {
 
   let event: Stripe.Event;
   try {
-    event = stripe.webhooks.constructEvent(body, sig, WEBHOOK_SECRET);
+    event = getStripe().webhooks.constructEvent(body, sig, WEBHOOK_SECRET);
   } catch (err: any) {
     console.error('Webhook signature verification failed:', err.message);
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 });
@@ -84,7 +92,7 @@ export async function POST(req: Request) {
         }
 
         // Fetch the subscription to get the price ID
-        const subscription = await stripe.subscriptions.retrieve(subscriptionId);
+        const subscription = await getStripe().subscriptions.retrieve(subscriptionId);
         const priceId = subscription.items.data[0]?.price?.id;
         const tier = priceId ? priceToTier(priceId) : 'premium';
 
