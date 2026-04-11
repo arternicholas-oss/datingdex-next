@@ -47,12 +47,6 @@ export default function HomePage() {
             <p>It&apos;s 5pm. You need a plan. We&apos;ll build one in 30 seconds with what&apos;s happening in DC right now.</p>
             <span className="door-cta">Plan tonight →</span>
           </Link>
-          <Link href="/couples" className="door-card door-couples">
-            <div className="door-icon">💑</div>
-            <h2>We&apos;re a Couple</h2>
-            <p>Save spots together. Vote on tonight. Get anniversary reminders. Your shared date brain.</p>
-            <span className="door-cta">Try Couples Mode →</span>
-          </Link>
         </div>
       </section>
 
