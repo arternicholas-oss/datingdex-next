@@ -26,14 +26,11 @@ export default function HomePage() {
       {/* ==================== HERO ==================== */}
       <section className="hero hero-v2">
         <div className="container">
-          <div className="hero-badge">{'\u2728'} AI date director for Washington DC</div>
+          <div className="hero-badge">{'\u2728'} AI Date Planner — Curated for Your City</div>
           <h1>Your entire date night, choreographed.</h1>
           <p className="hero-sub">
             Where to sit. What to order. What to say. How to get there.
             {VENUES.length}+ DC spots, one AI that plans the whole night in <strong>30 seconds</strong>.
-          </p>
-          <p className="hero-proof">
-            <span className="dot" /> 1,284 dates planned this month · Trusted by DC couples since 2024
           </p>
           <div className="hero-ctas">
             <Link href="/plan-my-date" className="cta cta-primary">Plan my date — free →</Link>
