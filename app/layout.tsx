@@ -110,6 +110,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                       <li><Link href="/discovery">All Spots</Link></li>
                       <li><Link href="/plan-my-date">Plan My Date</Link></li>
                       <li><Link href="/couples">Couples Mode</Link></li>
+                      <li><Link href="/wingman">Wingman Mode</Link></li>
                       <li><Link href="/premium">Premium</Link></li>
                     </ul>
                   </div>

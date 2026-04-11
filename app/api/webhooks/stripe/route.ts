@@ -42,13 +42,40 @@ export async function POST(req: Request) {
 
   try {
     switch (event.type) {
-      // Checkout completed — activate the subscription
+      // Checkout completed — activate subscription OR fulfill wingman gift
       case 'checkout.session.completed': {
         const session = event.data.object as Stripe.Checkout.Session;
-        if (session.mode !== 'subscription') break;
-
         const userId = session.metadata?.user_id;
         const customerId = session.customer as string;
+
+        // --- Wingman Mode (one-time payment) ---
+        if (session.metadata?.type === 'wingman' && session.mode === 'payment') {
+          const giftId = session.metadata?.gift_id;
+          if (giftId) {
+            // Mark gift as paid and trigger plan generation
+            await svc
+              .from('wingman_gifts')
+              .update({ status: 'paid', stripe_session_id: session.id })
+              .eq('id', giftId);
+            console.log(`✓ Wingman gift ${giftId} paid — will generate plan`);
+
+            // Trigger async plan generation + delivery
+            // The /api/wingman/fulfill endpoint handles this
+            const fulfillUrl = `${process.env.NEXT_PUBLIC_SITE_URL}/api/wingman/fulfill`;
+            fetch(fulfillUrl, {
+              method: 'POST',
+              headers: {
+                'content-type': 'application/json',
+                authorization: `Bearer ${process.env.CRON_SECRET}`,
+              },
+              body: JSON.stringify({ giftId }),
+            }).catch((e) => console.error('fulfill trigger failed', e));
+          }
+          break;
+        }
+
+        // --- Subscription checkout ---
+        if (session.mode !== 'subscription') break;
         const subscriptionId = session.subscription as string;
 
         if (!userId) {

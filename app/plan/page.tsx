@@ -138,6 +138,19 @@ function PlanPage() {
     setTimeout(() => setCopied(false), 2000);
   }
 
+  async function downloadDateCard() {
+    if (!result) return;
+    track('date_card_downloaded', { share_id: result.shareId });
+    const url = `/api/og/story/${result.shareId}`;
+    const res = await fetch(url);
+    const blob = await res.blob();
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `datingdex-${result.shareId}.png`;
+    a.click();
+    URL.revokeObjectURL(a.href);
+  }
+
   return (
     <div className="container plan-page">
       <div className="plan-header">
@@ -237,6 +250,9 @@ function PlanPage() {
               <Link href={`/plan/${result.shareId}`} className="cta cta-secondary plan-share-btn">View full plan →</Link>
               <button className="cta cta-ghost plan-share-btn" onClick={copyShareLink}>
                 {copied ? 'Copied!' : 'Copy share link'}
+              </button>
+              <button className="cta cta-ghost plan-share-btn" onClick={downloadDateCard}>
+                📸 Download Date Card
               </button>
             </div>
           </div>
