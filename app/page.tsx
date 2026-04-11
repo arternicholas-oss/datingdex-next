@@ -47,12 +47,6 @@ export default function HomePage() {
             <p>It&apos;s 5pm. You need a plan. We&apos;ll build one in 30 seconds with what&apos;s happening in DC right now.</p>
             <span className="door-cta">Plan tonight →</span>
           </Link>
-          <Link href="/plan?mode=impress" className="door-card door-impress">
-            <div className="door-icon">✨</div>
-            <h2>Impress Them</h2>
-            <p>Anniversary, third date, or someone you want to wow. Choreographed down to the conversation opener.</p>
-            <span className="door-cta">Impress them →</span>
-          </Link>
           <Link href="/couples" className="door-card door-couples">
             <div className="door-icon">💑</div>
             <h2>We&apos;re a Couple</h2>
