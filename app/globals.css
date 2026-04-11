@@ -101,6 +101,55 @@ img { max-width: 100%; display: block; }
 .spot-name { font-weight: 700; font-size: 1.05rem; }
 .spot-hook { font-size: .88rem; color: var(--muted); line-height: 1.4; }
 .spot-desc { font-size: .85rem; color: var(--muted); line-height: 1.4; margin-top: .15rem; }
+/* ==================== DISCOVERY FILTER SIDEBAR ==================== */
+.filter-toggle {
+  display: inline-flex; align-items: center; gap: .4rem;
+  padding: .55rem 1rem; border: 1px solid var(--border); border-radius: 999px;
+  background: var(--card); color: var(--ink); font-weight: 600; font-size: .9rem;
+  cursor: pointer; font-family: inherit; margin-bottom: 1rem;
+}
+.filter-toggle:hover { background: #f5f5f5; }
+
+/* Sidebar — hidden by default, shown when toggled */
+.discovery-sidebar {
+  display: none;
+  background: var(--card); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.25rem; margin-bottom: 1.5rem;
+}
+.discovery-sidebar--open { display: block; }
+
+.sidebar-section h3 {
+  font-size: .95rem; font-weight: 700; color: var(--ink);
+  margin: 0 0 .5rem; text-transform: uppercase; letter-spacing: .03em;
+}
+.sidebar-section + .sidebar-section { margin-top: 1.25rem; }
+.sidebar-section ul {
+  list-style: none; padding: 0; margin: 0;
+  display: flex; flex-wrap: wrap; gap: .5rem;
+}
+.sidebar-section li { margin: 0; }
+.sidebar-section a {
+  display: inline-block; padding: .35rem .75rem;
+  border: 1px solid var(--border); border-radius: 999px;
+  font-size: .85rem; color: var(--muted); font-weight: 500;
+  text-decoration: none; transition: all .15s;
+}
+.sidebar-section a:hover { background: var(--brand); color: #fff; border-color: var(--brand); }
+
+.filter-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.15); z-index: 50;
+}
+
+@media (max-width: 768px) {
+  .discovery-sidebar--open {
+    position: fixed; top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 9998; overflow-y: auto; border-radius: 0;
+    padding: 4.5rem 1.25rem 2rem;
+  }
+  .filter-backdrop { z-index: 9997; }
+}
+
+/* ==================== SPOTS GRID ==================== */
 .spots-grid {
   display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
   gap: 1.25rem; margin: 1.5rem 0;
