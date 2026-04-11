@@ -29,7 +29,7 @@ const FAQ = [
   },
   {
     q: 'Is it free?',
-    a: 'You get 3 full plans for free with an account. Premium ($9.99/mo) gives you unlimited plans, the post-date debrief that makes your next plan smarter, saved itineraries, and exclusive features like Hidden Gems and Anniversary Mode.',
+    a: 'You get 3 full plans for free with an account. Pro ($12/mo) gives you unlimited plans, the post-date debrief that makes your next plan smarter, saved itineraries, and exclusive features like Hidden Gems and Anniversary Mode.',
   },
   {
     q: 'Does it actually book the reservation?',
