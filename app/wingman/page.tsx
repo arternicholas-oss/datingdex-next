@@ -132,7 +132,7 @@ export default function WingmanPage() {
         <div className="plan-field">
           <span className="plan-label">Their email (we&apos;ll deliver the plan here)</span>
           <input
-            type="email"
+            type="email" aria-label="Email address"
             className="plan-input"
             placeholder="friend@example.com"
             value={recipientEmail}

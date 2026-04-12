@@ -101,11 +101,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
               <div className="footer-inner">
                 <div className="footer-top">
                   <div className="footer-col">
-                    <h4>DatingDex</h4>
+                    <h3>DatingDex</h3>
                     <p>Hand-picked date spots in Washington DC. 300+ venues ranked by vibe, budget, and neighborhood.</p>
                   </div>
                   <div className="footer-col">
-                    <h4>Explore</h4>
+                    <h3>Explore</h3>
                     <ul>
                       <li><Link href="/discovery">All Spots</Link></li>
                       <li><Link href="/plan-my-date">Plan My Date</Link></li>
@@ -115,7 +115,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
                     </ul>
                   </div>
                   <div className="footer-col">
-                    <h4>Resources</h4>
+                    <h3>Resources</h3>
                     <ul>
                       <li><Link href="/guides">Blog</Link></li>
                       <li><Link href="/for-restaurants">For Restaurants</Link></li>

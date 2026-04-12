@@ -174,7 +174,7 @@ export default function RestaurantDashboard() {
             <label>Hero photo URL<input type="url" value={active.hero_photo ?? ''} onChange={(e) => setActive({ ...active, hero_photo: e.target.value })} /></label>
             <label>Website<input type="url" value={active.website ?? ''} onChange={(e) => setActive({ ...active, website: e.target.value })} /></label>
             <label>Phone<input type="tel" value={active.phone ?? ''} onChange={(e) => setActive({ ...active, phone: e.target.value })} /></label>
-            <label>Contact email<input type="email" value={active.contact_email ?? ''} onChange={(e) => setActive({ ...active, contact_email: e.target.value })} /></label>
+            <label>Contact email<input type="email" aria-label="Email address" value={active.contact_email ?? ''} onChange={(e) => setActive({ ...active, contact_email: e.target.value })} /></label>
 
             <div className="dashboard-tags">
               <span className="plan-label">Tags</span>
