@@ -13,6 +13,8 @@ type Profile = {
   plan_uses_count: number;
 };
 
+export type AuthContext = 'default' | 'restaurant' | 'couples';
+
 type AuthCtx = {
   user: User | null;
   session: Session | null;
@@ -21,9 +23,11 @@ type AuthCtx = {
   isPremium: boolean;
   signOut: () => Promise<void>;
   refreshProfile: () => Promise<void>;
-  openAuth: (mode?: 'signin' | 'signup') => void;
+  openAuth: (mode?: 'signin' | 'signup', defaultRole?: 'user' | 'restaurant', context?: AuthContext) => void;
   closeAuth: () => void;
   authOpen: false | 'signin' | 'signup';
+  authDefaultRole: 'user' | 'restaurant';
+  authContext: AuthContext;
 };
 
 const Ctx = createContext<AuthCtx | null>(null);
@@ -35,6 +39,8 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [profile, setProfile] = useState<Profile | null>(null);
   const [loading, setLoading] = useState(true);
   const [authOpen, setAuthOpen] = useState<false | 'signin' | 'signup'>(false);
+  const [authDefaultRole, setAuthDefaultRole] = useState<'user' | 'restaurant'>('user');
+  const [authContext, setAuthContext] = useState<AuthContext>('default');
 
   const loadProfile = useCallback(
     async (uid: string) => {
@@ -82,9 +88,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
     isPremium: profile?.tier === 'premium' || profile?.tier === 'annual',
     signOut,
     refreshProfile,
-    openAuth: (mode = 'signin') => setAuthOpen(mode),
+    openAuth: (mode = 'signin', defaultRole = 'user', context = 'default') => {
+      setAuthDefaultRole(defaultRole);
+      setAuthContext(context);
+      setAuthOpen(mode);
+    },
     closeAuth: () => setAuthOpen(false),
     authOpen,
+    authDefaultRole,
+    authContext,
   };
 
   return <Ctx.Provider value={value}>{children}</Ctx.Provider>;

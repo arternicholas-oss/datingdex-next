@@ -53,7 +53,7 @@ export default function CouplesPage() {
               The shared date brain for you and your person.
             </p>
             <div className="hero-ctas">
-              <button className="cta cta-primary" onClick={() => openAuth('signup')}>Sign up free →</button>
+              <button className="cta cta-primary" onClick={() => openAuth('signup', 'user', 'couples')}>Sign up free →</button>
               <Link href="/plan-my-date" className="cta cta-ghost">Or plan a date solo</Link>
             </div>
           </div>

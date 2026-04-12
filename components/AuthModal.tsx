@@ -1,11 +1,26 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { createClient } from '@/lib/supabase-browser';
 import { useAuth } from './AuthProvider';
 
+const SUBTITLE: Record<string, { signup: string; signin: string }> = {
+  default: {
+    signup: 'Save your date plans, get a post-date debrief email, and unlock smarter recommendations over time.',
+    signin: 'Sign in to keep your saved plans and preferences.',
+  },
+  restaurant: {
+    signup: 'Create a restaurant account to claim your listing, manage your profile, and reach daters in DC.',
+    signin: 'Sign in to manage your restaurant listing and view analytics.',
+  },
+  couples: {
+    signup: 'Create an account to start your shared date brain — save spots together, vote on plans, and get anniversary reminders.',
+    signin: 'Sign in to get back to your shared Couples space.',
+  },
+};
+
 export default function AuthModal() {
-  const { authOpen, closeAuth, openAuth } = useAuth();
+  const { authOpen, closeAuth, openAuth, authDefaultRole, authContext } = useAuth();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [name, setName] = useState('');
@@ -13,10 +28,58 @@ export default function AuthModal() {
   const [busy, setBusy] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [info, setInfo] = useState<string | null>(null);
+  const modalRef = useRef<HTMLDivElement>(null);
+
+  // Reset role to the default whenever the modal opens
+  useEffect(() => {
+    if (authOpen) {
+      setRole(authDefaultRole);
+      setErr(null);
+      setInfo(null);
+      setEmail('');
+      setPassword('');
+      setName('');
+    }
+  }, [authOpen, authDefaultRole]);
+
+  // Escape key closes modal
+  useEffect(() => {
+    if (!authOpen) return;
+    function handleKey(e: KeyboardEvent) {
+      if (e.key === 'Escape') closeAuth();
+    }
+    document.addEventListener('keydown', handleKey);
+    return () => document.removeEventListener('keydown', handleKey);
+  }, [authOpen, closeAuth]);
+
+  // Focus trap: keep Tab within modal
+  useEffect(() => {
+    if (!authOpen || !modalRef.current) return;
+    const modal = modalRef.current;
+    const focusable = modal.querySelectorAll<HTMLElement>(
+      'button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])'
+    );
+    if (focusable.length) (focusable[0] as HTMLElement).focus();
+
+    function trapFocus(e: KeyboardEvent) {
+      if (e.key !== 'Tab' || !focusable.length) return;
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last) { e.preventDefault(); first.focus(); }
+      }
+    }
+    document.addEventListener('keydown', trapFocus);
+    return () => document.removeEventListener('keydown', trapFocus);
+  }, [authOpen]);
 
   if (!authOpen) return null;
   const mode = authOpen;
   const supabase = createClient();
+  const ctx = authContext || 'default';
+  const sub = SUBTITLE[ctx] || SUBTITLE.default;
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -46,24 +109,32 @@ export default function AuthModal() {
 
   return (
     <div className="modal-overlay" onClick={(e) => { if (e.target === e.currentTarget) closeAuth(); }}>
-      <div className="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title">
+      <div className="modal" role="dialog" aria-modal="true" aria-labelledby="auth-title" ref={modalRef}>
         <button className="modal-close" onClick={closeAuth} aria-label="Close">×</button>
         <h2 id="auth-title" className="modal-title">
           {mode === 'signup' ? 'Create your account' : 'Welcome back'}
         </h2>
         <p className="modal-sub">
-          {mode === 'signup'
-            ? 'Save your date plans, get a post-date debrief email, and unlock smarter recommendations over time.'
-            : 'Sign in to keep your saved plans and preferences.'}
+          {mode === 'signup' ? sub.signup : sub.signin}
         </p>
         <form onSubmit={submit} className="auth-form">
           {mode === 'signup' && (
             <>
               <div className="auth-role-picker">
-                <button type="button" className={role === 'user' ? 'active' : ''} onClick={() => setRole('user')}>
+                <button
+                  type="button"
+                  className={role === 'user' ? 'active' : ''}
+                  onClick={() => setRole('user')}
+                  aria-pressed={role === 'user'}
+                >
                   I&apos;m planning a date
                 </button>
-                <button type="button" className={role === 'restaurant' ? 'active' : ''} onClick={() => setRole('restaurant')}>
+                <button
+                  type="button"
+                  className={role === 'restaurant' ? 'active' : ''}
+                  onClick={() => setRole('restaurant')}
+                  aria-pressed={role === 'restaurant'}
+                >
                   I own a restaurant
                 </button>
               </div>
@@ -96,9 +167,9 @@ export default function AuthModal() {
         </form>
         <div className="auth-switch">
           {mode === 'signup' ? (
-            <>Already have an account? <button onClick={() => openAuth('signin')}>Sign in</button></>
+            <>Already have an account? <button onClick={() => openAuth('signin', authDefaultRole, authContext)}>Sign in</button></>
           ) : (
-            <>New here? <button onClick={() => openAuth('signup')}>Create account</button></>
+            <>New here? <button onClick={() => openAuth('signup', authDefaultRole, authContext)}>Create account</button></>
           )}
         </div>
       </div>

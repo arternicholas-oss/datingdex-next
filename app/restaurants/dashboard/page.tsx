@@ -59,7 +59,7 @@ export default function RestaurantDashboard() {
         <div className="dashboard-empty">
           <h1>Restaurant Dashboard</h1>
           <p>Sign in or create a restaurant account to claim your listing.</p>
-          <button className="cta" onClick={() => openAuth('signup')}>Get started</button>
+          <button className="cta" onClick={() => openAuth('signup', 'restaurant', 'restaurant')}>Get started</button>
         </div>
       </div>
     );
