@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
+import PlanForm from '@/components/PlanForm';
 
 export const metadata: Metadata = {
   title: 'Plan My Date — AI Date Night Planner for Washington DC',
@@ -74,12 +75,14 @@ export default function PlanMyDateLanding() {
             Tell us about the date in plain English. We build a complete timestamped night — drinks before, dinner, after-spot — all walkable, all bookable, all matched to the vibe you actually want.
           </p>
           <div className="pmd-cta-row">
-            <Link href="/plan" className="cta">Plan my night ✦</Link>
+            <a href="#planner" className="cta">Plan my night ✦</a>
             <Link href="/premium" className="cta cta-secondary">See Premium</Link>
           </div>
           <p className="pmd-fineprint">3 free plans · No credit card · Built for Washington DC</p>
         </div>
       </section>
+
+      <PlanForm />
 
       <section className="pmd-how">
         <div className="container">
@@ -186,7 +189,7 @@ export default function PlanMyDateLanding() {
         <div className="container">
           <h2>Ready to skip the planning?</h2>
           <p>3 free plans. No credit card. 30 seconds.</p>
-          <Link href="/plan" className="cta">Plan my night ✦</Link>
+          <a href="#planner" className="cta">Plan my night ✦</a>
         </div>
       </section>
     </div>
