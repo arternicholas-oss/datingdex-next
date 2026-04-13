@@ -36,7 +36,7 @@ export default function HeaderNav() {
             >
               ✕
             </button>
-            <Link href="/discovery" onClick={() => setOpen(false)}>All Spots</Link>
+            <Link href="/locations" onClick={() => setOpen(false)}>Locations</Link>
             <Link href="/plan-my-date" onClick={() => setOpen(false)}>Plan My Date ✦</Link>
             <Link href="/couples" onClick={() => setOpen(false)}>Couples</Link>
             <Link href="/premium" onClick={() => setOpen(false)}>Premium</Link>
@@ -59,7 +59,7 @@ export default function HeaderNav() {
       <nav className="nav" aria-label="Primary">
         {/* Desktop links (hidden on mobile via CSS) */}
         <div className="nav-desktop">
-          <Link href="/discovery">All Spots</Link>
+          <Link href="/locations">Locations</Link>
           <Link href="/plan-my-date" className="nav-plan">Plan My Date ✦</Link>
           <Link href="/couples">Couples</Link>
           <Link href="/premium">Premium</Link>
