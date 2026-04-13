@@ -37,7 +37,19 @@ const VIBES = [
   { id: 'sexy', label: 'Sexy' },
 ];
 
-const NEIGHBORHOODS = allNeighborhoods().slice(0, 12);
+const CITIES = [
+  { slug: 'dc', name: 'Washington, DC' },
+  { slug: 'nyc', name: 'New York City' },
+  { slug: 'atlanta', name: 'Atlanta' },
+  { slug: 'miami', name: 'Miami' },
+  { slug: 'philly', name: 'Philadelphia' },
+] as const;
+
+type CitySlug = typeof CITIES[number]['slug'];
+
+function cityLabel(slug: CitySlug): string {
+  return CITIES.find((c) => c.slug === slug)?.name || 'your city';
+}
 
 function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
@@ -52,23 +64,31 @@ export default function PlanFormInner() {
   const { user, openAuth, isPremium, profile } = useAuth();
 
   const mode = searchParams.get('mode');
+  const cityParam = searchParams.get('city') as CitySlug | null;
+  const validCityParam: CitySlug | null = cityParam && CITIES.some((c) => c.slug === cityParam) ? cityParam : null;
   const defaultVibe = mode === 'tonight' ? 'fun-playful' : mode === 'impress' ? 'impressive' : 'romantic';
 
+  const [city, setCity] = useState<CitySlug>(validCityParam || 'dc');
   const [freeText, setFreeText] = useState('');
   const [neighborhood, setNeighborhood] = useState('');
   const [vibe, setVibe] = useState(defaultVibe);
   const [budget, setBudget] = useState(75);
   const [busy, setBusy] = useState(false);
   const [result, setResult] = useState<{
-    shareId: string;
+    shareId: string | null;
+    anonymous?: boolean;
     itinerary: Itin;
     shareBlurb: string;
     copilot?: Copilot;
     usesRemaining: number | null;
+    upsellMessage?: string;
   } | null>(null);
   const [paywall, setPaywall] = useState(false);
   const [err, setErr] = useState<string | null>(null);
   const [copied, setCopied] = useState(false);
+
+  // Reset neighborhood when city changes
+  const neighborhoods = allNeighborhoods(city).slice(0, 12);
 
   function budgetToBucket(val: number): string {
     if (val < 30) return 'under-30';
@@ -82,18 +102,14 @@ export default function PlanFormInner() {
     setErr(null);
     setPaywall(false);
     setCopied(false);
-    track('plan_started', { neighborhood, vibe, budget, has_free_text: !!freeText });
-    if (!user) {
-      track('plan_blocked_logged_out');
-      openAuth('signup');
-      return;
-    }
+    track('plan_started', { city, neighborhood, vibe, budget, has_free_text: !!freeText, anonymous: !user });
     setBusy(true);
     try {
       const res = await fetch('/api/plan', {
         method: 'POST',
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
+          city,
           neighborhood,
           vibe,
           budget: budgetToBucket(budget),
@@ -108,9 +124,15 @@ export default function PlanFormInner() {
         track('plan_paywall_hit');
         return;
       }
+      if (res.status === 429 && data.error === 'anon_rate_limit') {
+        setErr(data.message);
+        track('plan_anon_rate_limited');
+        openAuth('signup');
+        return;
+      }
       if (!res.ok) throw new Error(data.message || 'Failed to plan.');
       setResult(data);
-      track('plan_completed', { share_id: data.shareId, uses_remaining: data.usesRemaining });
+      track('plan_completed', { share_id: data.shareId, anonymous: data.anonymous, uses_remaining: data.usesRemaining });
     } catch (e: any) {
       setErr(e.message);
     } finally {
@@ -157,10 +179,25 @@ export default function PlanFormInner() {
 
       <form onSubmit={submit} className="plan-form">
         <div className="plan-field">
-          <span className="plan-label">Where in DC?</span>
+          <span className="plan-label">Which city?</span>
+          <div className="plan-chips">
+            {CITIES.map((c) => (
+              <Chip
+                key={c.slug}
+                active={city === c.slug}
+                onClick={() => { setCity(c.slug); setNeighborhood(''); }}
+              >
+                {c.name}
+              </Chip>
+            ))}
+          </div>
+        </div>
+
+        <div className="plan-field">
+          <span className="plan-label">Where in {cityLabel(city)}?</span>
           <div className="plan-chips">
             <Chip active={neighborhood === ''} onClick={() => setNeighborhood('')}>Anywhere</Chip>
-            {NEIGHBORHOODS.map((n) => (
+            {neighborhoods.map((n) => (
               <Chip key={n.slug} active={neighborhood === n.slug} onClick={() => setNeighborhood(n.slug)}>
                 {n.name}
               </Chip>
@@ -210,6 +247,7 @@ export default function PlanFormInner() {
             value={freeText}
             onChange={(e) => setFreeText(e.target.value)}
             rows={3}
+            aria-label="Describe your date in plain English"
           />
         </div>
 
@@ -229,6 +267,12 @@ export default function PlanFormInner() {
 
       {result && (
         <div className="plan-result">
+          {result.anonymous && result.upsellMessage && (
+            <div className="plan-anon-nudge" style={{background:'var(--soft,#fff4f1)', border:'1px solid var(--border,#eee)', padding:'1rem 1.25rem', borderRadius:'12px', marginBottom:'1.5rem', display:'flex', flexWrap:'wrap', gap:'.75rem', alignItems:'center', justifyContent:'space-between'}}>
+              <span style={{flex:'1 1 260px'}}>{result.upsellMessage}</span>
+              <button type="button" className="cta cta-primary" onClick={() => openAuth('signup')}>Save this plan {'\u2192'}</button>
+            </div>
+          )}
           <div className="plan-result-head">
             <h2>Your night \u2726</h2>
             <p>Estimated total: ${result.itinerary.totalEstimateUsd[0]}&ndash;${result.itinerary.totalEstimateUsd[1]} for two &middot; {result.itinerary.walkingMinutes} min walking between stops</p>
@@ -237,15 +281,17 @@ export default function PlanFormInner() {
                 <strong>What to wear:</strong> {result.itinerary.dressCode}
               </div>
             )}
-            <div className="plan-share-row">
-              <Link href={`/plan/${result.shareId}`} className="cta cta-secondary plan-share-btn">View full plan &rarr;</Link>
-              <button className="cta cta-ghost plan-share-btn" onClick={copyShareLink}>
-                {copied ? 'Copied!' : 'Copy share link'}
-              </button>
-              <button className="cta cta-ghost plan-share-btn" onClick={downloadDateCard}>
-                \ud83d\udcf8 Download Date Card
-              </button>
-            </div>
+            {!result.anonymous && result.shareId && (
+              <div className="plan-share-row">
+                <Link href={`/plan/${result.shareId}`} className="cta cta-secondary plan-share-btn">View full plan &rarr;</Link>
+                <button className="cta cta-ghost plan-share-btn" onClick={copyShareLink}>
+                  {copied ? 'Copied!' : 'Copy share link'}
+                </button>
+                <button className="cta cta-ghost plan-share-btn" onClick={downloadDateCard}>
+                  \ud83d\udcf8 Download Date Card
+                </button>
+              </div>
+            )}
           </div>
 
           {result.itinerary.stops.map((s, i) => (

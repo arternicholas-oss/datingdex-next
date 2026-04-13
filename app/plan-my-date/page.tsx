@@ -3,13 +3,13 @@ import Link from 'next/link';
 import PlanForm from '@/components/PlanForm';
 
 export const metadata: Metadata = {
-  title: 'Plan My Date — AI Date Night Planner for Washington DC',
+  title: 'Plan My Date \u2014 AI Date Night Planner for DC, NYC, Atlanta, Miami & Philly',
   description:
-    'Tell us about your date in plain English. We build a complete timestamped night — where to go, when to arrive, what to order, and how to book — in 30 seconds. Built for DC.',
+    'Tell us about your date in plain English. We build a complete timestamped night \u2014 where to go, when to arrive, what to order, and how to book \u2014 in 30 seconds. Now live in DC, NYC, Atlanta, Miami, and Philadelphia.',
   alternates: { canonical: 'https://www.datingdex.com/plan-my-date' },
   openGraph: {
-    title: 'Plan My Date — AI Date Night Planner for DC',
-    description: 'A complete date night plan in 30 seconds. Dinner, drinks before, after-spot — all walkable, all bookable.',
+    title: 'Plan My Date \u2014 AI Date Night Planner for 5 US Cities',
+    description: 'A complete date night plan in 30 seconds. Dinner, drinks before, after-spot \u2014 all walkable, all bookable. 1,200+ venues across DC, NYC, Atlanta, Miami, and Philly.',
     type: 'website',
     images: ['/og-image.jpg'],
   },
@@ -26,7 +26,7 @@ const FAQ = [
   },
   {
     q: 'How does the AI part work?',
-    a: 'You describe the date in plain English ("second date, she likes natural wine, $120 budget"). Claude parses what you said, our planner ranks 300+ hand-curated DC venues against your situation, and Claude writes you personalized 4-sentence reasons each pick works — referencing what you actually told us. No generic blurbs.',
+    a: 'You describe the date in plain English ("second date, she likes natural wine, $120 budget"). Claude parses what you said, our planner ranks 1,200+ hand-curated venues across 5 cities against your situation, and Claude writes you personalized 4-sentence reasons each pick works — referencing what you actually told us. No generic blurbs.',
   },
   {
     q: 'Is it free?',
@@ -78,7 +78,7 @@ export default function PlanMyDateLanding() {
             <a href="#planner" className="cta">Plan my night ✦</a>
             <Link href="/premium" className="cta cta-secondary">See Premium</Link>
           </div>
-          <p className="pmd-fineprint">3 free plans · No credit card · Built for Washington DC</p>
+          <p className="pmd-fineprint">3 free plans {'\u00B7'} No credit card {'\u00B7'} Live in DC, NYC, Atlanta, Miami & Philly</p>
         </div>
       </section>
 
@@ -96,7 +96,7 @@ export default function PlanMyDateLanding() {
             <div className="pmd-step">
               <div className="pmd-step-num">2</div>
               <h3>We build the night</h3>
-              <p>Our planner picks the right spots from 300+ hand-curated DC venues, clusters them so you can walk between them, and writes you personalized reasons each one fits.</p>
+              <p>Our planner picks the right spots from 1,200+ hand-curated venues across 5 cities, clusters them so you can walk between them, and writes you personalized reasons each one fits.</p>
             </div>
             <div className="pmd-step">
               <div className="pmd-step-num">3</div>
@@ -114,7 +114,7 @@ export default function PlanMyDateLanding() {
             <div className="pmd-col pmd-col-bad">
               <h3>The old way</h3>
               <ul>
-                <li>30 minutes Googling &ldquo;best date night DC&rdquo;</li>
+                <li>30 minutes Googling &ldquo;best date night near me&rdquo;</li>
                 <li>15 reviews that all say &ldquo;great vibe&rdquo;</li>
                 <li>Pick a restaurant. Hope it&apos;s not too loud.</li>
                 <li>Realize you didn&apos;t plan a drink before, scramble.</li>

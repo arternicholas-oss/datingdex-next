@@ -7,7 +7,7 @@ export default function HomePage() {
     '@type': 'FAQPage',
     mainEntity: [
       { '@type': 'Question', name: 'How does DatingDex plan a date?', acceptedAnswer: { '@type': 'Answer', text: 'Tell us your city, vibe, and budget. Our AI plans a full choreographed night \u2014 where to go, where to sit, what to order, and conversation hooks.' } },
-      { '@type': 'Question', name: 'Which cities does DatingDex cover?', acceptedAnswer: { '@type': 'Answer', text: 'DatingDex is live in Washington, DC with New York, Atlanta, Miami, and Philadelphia launching in spring 2026.' } },
+      { '@type': 'Question', name: 'Which cities does DatingDex cover?', acceptedAnswer: { '@type': 'Answer', text: 'DatingDex is live in Washington DC, New York City, Atlanta, Miami, and Philadelphia \u2014 with 1,200+ hand-curated venues across all five cities.' } },
       { '@type': 'Question', name: 'Is DatingDex free?', acceptedAnswer: { '@type': 'Answer', text: 'Yes \u2014 plan dates for free on the web. The DatingDex app adds memory, Couples Mode, post-date debriefs, and push notifications.' } },
     ],
   };
@@ -30,8 +30,38 @@ export default function HomePage() {
             <a href="#app-waitlist" className="cta cta-ghost">Get the app {'\u2192'}</a>
           </div>
           <p className="hero-footnote" style={{marginTop:'1rem', color:'var(--muted)', fontSize:'.9rem'}}>
-            Live in DC {'\u00B7'} Launching in NYC, Atlanta, Miami & Philly
+            Live in DC, NYC, Atlanta, Miami & Philly {'\u00B7'} 1,200+ hand-curated venues
           </p>
+        </div>
+      </section>
+
+      {/* ==================== CITIES GRID ==================== */}
+      <section className="container cities-grid-section" style={{padding:'3rem 1.25rem 1rem'}}>
+        <h2 style={{textAlign:'center', marginBottom:'.5rem'}}>Now in 5 cities</h2>
+        <p style={{textAlign:'center', color:'var(--muted)', marginBottom:'2rem'}}>
+          Hand-curated venues, scored by vibe. Planned for your night.
+        </p>
+        <div className="cities-grid" style={{display:'grid', gridTemplateColumns:'repeat(auto-fit, minmax(220px, 1fr))', gap:'1rem'}}>
+          <Link href="/dc" className="city-card" style={{display:'block', padding:'1.5rem', border:'1px solid var(--border, #eee)', borderRadius:'16px', textDecoration:'none', background:'var(--card, #fff)'}}>
+            <h3 style={{margin:'0 0 .25rem'}}>Washington, DC</h3>
+            <p style={{margin:0, color:'var(--muted)', fontSize:'.9rem'}}>296 venues {'\u00B7'} 22 neighborhoods</p>
+          </Link>
+          <Link href="/nyc" className="city-card" style={{display:'block', padding:'1.5rem', border:'1px solid var(--border, #eee)', borderRadius:'16px', textDecoration:'none', background:'var(--card, #fff)'}}>
+            <h3 style={{margin:'0 0 .25rem'}}>New York City</h3>
+            <p style={{margin:0, color:'var(--muted)', fontSize:'.9rem'}}>230 venues {'\u00B7'} Manhattan & Brooklyn</p>
+          </Link>
+          <Link href="/atlanta" className="city-card" style={{display:'block', padding:'1.5rem', border:'1px solid var(--border, #eee)', borderRadius:'16px', textDecoration:'none', background:'var(--card, #fff)'}}>
+            <h3 style={{margin:'0 0 .25rem'}}>Atlanta</h3>
+            <p style={{margin:0, color:'var(--muted)', fontSize:'.9rem'}}>231 venues {'\u00B7'} Buckhead, Midtown & more</p>
+          </Link>
+          <Link href="/miami" className="city-card" style={{display:'block', padding:'1.5rem', border:'1px solid var(--border, #eee)', borderRadius:'16px', textDecoration:'none', background:'var(--card, #fff)'}}>
+            <h3 style={{margin:'0 0 .25rem'}}>Miami</h3>
+            <p style={{margin:0, color:'var(--muted)', fontSize:'.9rem'}}>231 venues {'\u00B7'} Wynwood, Brickell & beach</p>
+          </Link>
+          <Link href="/philly" className="city-card" style={{display:'block', padding:'1.5rem', border:'1px solid var(--border, #eee)', borderRadius:'16px', textDecoration:'none', background:'var(--card, #fff)'}}>
+            <h3 style={{margin:'0 0 .25rem'}}>Philadelphia</h3>
+            <p style={{margin:0, color:'var(--muted)', fontSize:'.9rem'}}>230 venues {'\u00B7'} Rittenhouse, Fishtown & more</p>
+          </Link>
         </div>
       </section>
 

@@ -8,6 +8,7 @@ export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
 
 const FREE_LIMIT = 3;
+const ANON_LIMIT_PER_IP_PER_DAY = 2;
 
 export async function POST(req: Request) {
   let body: any = {};
@@ -19,16 +20,27 @@ export async function POST(req: Request) {
   const { data: userRes } = await supabase.auth.getUser();
   const user = userRes.user;
 
-  // Logged-out users: see the wizard but never get a real result
+  // Anonymous users: rate-limit by IP, no account required for first plan.
+  // They can see the plan, but "Save" / "Share" / "Copilot" are gated.
+  let anonymous = false;
   if (!user) {
-    return NextResponse.json(
-      { error: 'auth_required', message: 'Sign up to see your plan. It only takes 20 seconds.' },
-      { status: 401 }
-    );
+    anonymous = true;
+    const fwd = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || 'anon';
+    const ipKey = `anon:${fwd.split(',')[0].trim()}`;
+    const rl = rateLimitPlan(ipKey);
+    if (!rl.allowed) {
+      return NextResponse.json(
+        {
+          error: 'anon_rate_limit',
+          message: 'Great, you got your free plan. Sign up (it\u2019s free) to plan more and save them.',
+        },
+        { status: 429, headers: { 'Retry-After': String(Math.ceil((rl.resetAt - Date.now()) / 1000)) } },
+      );
+    }
   }
 
-  // Rate limit check
-  const rl = rateLimitPlan(user.id);
+  // Rate limit check (authed)
+  const rl = user ? rateLimitPlan(user.id) : { allowed: true, resetAt: 0 };
   if (!rl.allowed) {
     return NextResponse.json(
       { error: 'rate_limit', message: 'Too many plans. Try again later.' },
@@ -36,14 +48,16 @@ export async function POST(req: Request) {
     );
   }
 
-  // Check tier + usage
+  // Check tier + usage (authed only)
   const svc = createServiceClient();
-  const { data: profile } = await svc.from('profiles').select('*').eq('id', user.id).single();
+  const profile = user
+    ? (await svc.from('profiles').select('*').eq('id', user.id).single()).data
+    : null;
   const tier = profile?.tier ?? 'free';
   const uses = profile?.plan_uses_count ?? 0;
   const isPremium = tier === 'premium' || tier === 'annual';
 
-  if (!isPremium && uses >= FREE_LIMIT) {
+  if (user && !isPremium && uses >= FREE_LIMIT) {
     return NextResponse.json(
       { error: 'paywall', message: 'Free plan limit reached. Upgrade to Premium for unlimited plans.', uses, limit: FREE_LIMIT },
       { status: 402 }
@@ -80,16 +94,18 @@ export async function POST(req: Request) {
     tierMap[r.venue_slug] = r.tier as any;
   }
 
-  // Load date history for personalization (no-repeat within 60 days)
+  // Load date history for personalization (no-repeat within 60 days) — authed users only
   let dateHistory: string[] = [];
   const sixtyDaysAgo = new Date(Date.now() - 60 * 24 * 3600 * 1000).toISOString();
-  const { data: recentPlans } = await svc
-    .from('plans')
-    .select('itinerary')
-    .eq('user_id', user.id)
-    .gte('created_at', sixtyDaysAgo)
-    .order('created_at', { ascending: false })
-    .limit(10);
+  const { data: recentPlans } = user
+    ? await svc
+        .from('plans')
+        .select('itinerary')
+        .eq('user_id', user.id)
+        .gte('created_at', sixtyDaysAgo)
+        .order('created_at', { ascending: false })
+        .limit(10)
+    : { data: [] as any[] };
 
   if (recentPlans) {
     for (const p of recentPlans) {
@@ -132,41 +148,53 @@ export async function POST(req: Request) {
     itinerary.dressCode = copilot.dressCode;
   }
 
-  // Persist
-  const { data: inserted, error: insErr } = await svc
-    .from('plans')
-    .insert({
-      user_id: user.id,
-      city: input.city,
-      situation: input.situation,
-      vibe: input.vibe,
-      activity: input.activity,
-      budget: input.budget,
-      natural_language: input.freeText || null,
-      date_at: input.dateAt || null,
-      itinerary,
-      share_blurb: shareBlurb,
-      is_public: true,
-    })
-    .select('id, share_id')
-    .single();
+  // Persist — authed users only. Anonymous users get an ephemeral plan.
+  let shareId: string | null = null;
+  if (user) {
+    const { data: inserted, error: insErr } = await svc
+      .from('plans')
+      .insert({
+        user_id: user.id,
+        city: input.city,
+        situation: input.situation,
+        vibe: input.vibe,
+        activity: input.activity,
+        budget: input.budget,
+        natural_language: input.freeText || null,
+        date_at: input.dateAt || null,
+        itinerary,
+        share_blurb: shareBlurb,
+        is_public: true,
+      })
+      .select('id, share_id')
+      .single();
 
-  if (insErr) {
-    console.error('plan insert failed', insErr);
-    return NextResponse.json({ error: 'db', message: 'Could not save plan.' }, { status: 500 });
-  }
+    if (insErr) {
+      console.error('plan insert failed', insErr);
+      return NextResponse.json({ error: 'db', message: 'Could not save plan.' }, { status: 500 });
+    }
+    shareId = inserted.share_id;
 
-  // Increment usage if not premium
-  if (!isPremium) {
-    await svc.rpc('increment_plan_uses', { p_user_id: user.id });
+    // Increment usage if not premium
+    if (!isPremium) {
+      await svc.rpc('increment_plan_uses', { p_user_id: user.id });
+    }
   }
 
   return NextResponse.json({
     ok: true,
-    shareId: inserted.share_id,
+    anonymous,
+    shareId,
     itinerary,
     shareBlurb,
     copilot: isPremium ? copilot : undefined,
-    usesRemaining: isPremium ? null : Math.max(0, FREE_LIMIT - (uses + 1)),
+    usesRemaining: anonymous
+      ? 0
+      : isPremium
+        ? null
+        : Math.max(0, FREE_LIMIT - (uses + 1)),
+    upsellMessage: anonymous
+      ? 'Sign up free to save this plan, get 3 more, and unlock post-date memory.'
+      : undefined,
   });
 }

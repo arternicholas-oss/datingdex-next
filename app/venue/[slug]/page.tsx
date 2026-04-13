@@ -1,10 +1,18 @@
 import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
-import { VENUES, getVenueBySlug, slugify, priceLabel } from '@/lib/venues';
+import { VENUES, getVenueBySlug, slugify, priceLabel, type City } from '@/lib/venues';
 import SpotCard from '@/components/SpotCard';
 import DatingIntelligence from '@/components/DatingIntelligence';
 import type { DatingIntelligenceData } from '@/lib/datingIntelligence';
+
+const CITY_LABEL: Record<City, { name: string; state: string }> = {
+  dc: { name: 'Washington', state: 'DC' },
+  nyc: { name: 'New York', state: 'NY' },
+  atlanta: { name: 'Atlanta', state: 'GA' },
+  miami: { name: 'Miami', state: 'FL' },
+  philly: { name: 'Philadelphia', state: 'PA' },
+};
 
 export function generateStaticParams() {
   return VENUES.map((v) => ({ slug: v.slug }));
@@ -14,8 +22,9 @@ export function generateMetadata({ params }: { params: { slug: string } }): Meta
   const v = getVenueBySlug(params.slug);
   if (!v) return { title: 'Not found' };
 
-  const title = `${v.name} \u2014 ${v.vibe} Date Spot in ${v.neighborhood} DC`;
-  const description = `${v.name} in ${v.neighborhood}: ${v.desc} ${priceLabel(v.price)}. Ranked ${v.score ?? 'top'} on DatingDex.`;
+  const cityLbl = CITY_LABEL[v.city] || CITY_LABEL.dc;
+  const title = `${v.name} \u2014 ${v.vibe} Date Spot in ${v.neighborhood}, ${cityLbl.state}`;
+  const description = `${v.name} in ${v.neighborhood}, ${cityLbl.name}: ${v.desc} ${priceLabel(v.price)}. Ranked ${v.score ?? 'top'} on DatingDex.`;
 
   return {
     title,
@@ -55,7 +64,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
     address: {
       '@type': 'PostalAddress',
       addressLocality: v.neighborhood,
-      addressRegion: 'DC',
+      addressRegion: (CITY_LABEL[v.city] || CITY_LABEL.dc).state,
       addressCountry: 'US',
     },
     priceRange: v.price,
@@ -88,7 +97,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
         '@type': 'ListItem',
         position: 2,
         name: v.neighborhood,
-        item: `https://www.datingdex.com/dc/${slugify(v.neighborhood)}`,
+        item: `https://www.datingdex.com/${v.city}/${slugify(v.neighborhood)}`,
       },
       {
         '@type': 'ListItem',
@@ -114,7 +123,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
         <nav className="breadcrumbs" aria-label="Breadcrumb">
           <Link href="/">Home</Link>
           <span>{'\u203A'}</span>
-          <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
+          <Link href={`/${v.city}/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
           <span>{'\u203A'}</span>
           <span>{v.name}</span>
         </nav>
@@ -123,7 +132,7 @@ export default function VenuePage({ params }: { params: { slug: string } }) {
           <div className="spot-meta" style={{ fontSize: '.95rem' }}>
             <Link href={`/vibe/${slugify(v.vibe)}`}>{v.vibe}</Link>
             <span>{'\u00B7'}</span>
-            <Link href={`/dc/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
+            <Link href={`/${v.city}/${slugify(v.neighborhood)}`}>{v.neighborhood}</Link>
             <span>{'\u00B7'}</span>
             <span>
               {v.price} {'\u00B7'} {priceLabel(v.price)}

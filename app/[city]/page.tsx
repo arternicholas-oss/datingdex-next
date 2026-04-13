@@ -21,8 +21,8 @@ export function generateMetadata({ params }: { params: { city: string } }): Meta
   if (!meta) return { title: 'Not found' };
   const count = VENUES.filter((v) => (v.city || 'dc') === params.city).length;
   const title = count > 0
-    ? `${count} Best Date Spots in ${meta.name}, ${meta.state} (2026) | DatingDex`
-    : `Date Spots in ${meta.name}, ${meta.state} \u2014 Launching Soon | DatingDex`;
+    ? `${count} Best Date Spots in ${meta.name}, ${meta.state} (2026)`
+    : `Date Spots in ${meta.name}, ${meta.state} \u2014 Launching Soon`;
   const description = count > 0
     ? `Curated ${count} best date restaurants, bars, and experiences in ${meta.name}. Scored on vibe, conversation, and the moment.`
     : `DatingDex is launching in ${meta.name}, ${meta.state}. Join the waitlist for 200+ curated date spots.`;
@@ -69,7 +69,7 @@ export default function CityPage({ params }: { params: { city: string } }) {
     <div className="container">
       <div className="page-hero">
         <div className="hero-badge">{'\uD83D\uDCCD'} {meta.name}, {meta.state}</div>
-        <h1>The {list.length} Best Date Spots in {meta.name}</h1>
+        <h1>The {list.length} Best Date Spots in {meta.name}, {meta.state}</h1>
         <p>{meta.blurb}</p>
       </div>
 

@@ -47,12 +47,45 @@ export default function NeighborhoodPage({ params }: { params: { city: string; n
         <span>{name}</span>
       </nav>
       <div className="page-hero">
-        <h1>{list.length} Best Date Spots in {name}</h1>
+        <h1>{list.length} Best Date Spots in {name}, {cityName}</h1>
         <p>The most date-worthy restaurants, bars, and experiences in {name}, {cityName}.</p>
       </div>
-      <div className="spots-grid">
-        {sorted.map((v) => <SpotCard key={v.slug} venue={v} />)}
-      </div>
+
+      {/* Group venues by vibe */}
+      {(() => {
+        const byVibe = new Map<string, typeof sorted>();
+        for (const v of sorted) {
+          const key = v.vibe;
+          if (!byVibe.has(key)) byVibe.set(key, []);
+          byVibe.get(key)!.push(v);
+        }
+        const vibeOrder = Array.from(byVibe.entries()).sort((a, b) => b[1].length - a[1].length);
+        // If there's only one vibe, show flat grid (no need to group)
+        if (vibeOrder.length <= 1) {
+          return (
+            <div className="spots-grid">
+              {sorted.map((v) => <SpotCard key={v.slug} venue={v} />)}
+            </div>
+          );
+        }
+        return (
+          <>
+            {vibeOrder.map(([vibe, venues]) => (
+              <section key={vibe} style={{ marginBottom: '2.5rem' }}>
+                <h2 style={{ marginTop: '1.5rem' }}>
+                  <Link href={`/vibe/${slugify(vibe)}`} style={{ textDecoration: 'none', color: 'inherit' }}>
+                    {vibe} in {name}
+                  </Link>
+                </h2>
+                <div className="spots-grid">
+                  {venues.map((v) => <SpotCard key={v.slug} venue={v} />)}
+                </div>
+              </section>
+            ))}
+          </>
+        );
+      })()}
+
       <section className="seo-content">
         <h3>Explore other {cityName} neighborhoods</h3>
         <ul className="seo-links">

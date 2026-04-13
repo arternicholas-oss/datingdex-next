@@ -3,9 +3,9 @@ import Link from 'next/link';
 import { GUIDES } from '@/lib/guides';
 
 export const metadata: Metadata = {
-  title: 'Dating Guides for Washington DC (2026)',
+  title: 'Dating Guides \u2014 DC, NYC, Atlanta, Miami & Philly (2026)',
   description:
-    'Hand-written dating guides for Washington DC — first dates, anniversaries, cheap dates under $50, romantic dinners, and rainy day ideas. Updated 2026.',
+    'Hand-written dating guides for DC, NYC, Atlanta, Miami, and Philadelphia \u2014 first dates, anniversaries, cheap dates under $50, romantic dinners, and rainy day ideas. Updated 2026.',
   alternates: { canonical: 'https://www.datingdex.com/guides' },
 };
 
@@ -13,7 +13,7 @@ export default function GuidesIndex() {
   const collectionJsonLd = {
     '@context': 'https://schema.org',
     '@type': 'CollectionPage',
-    name: 'Dating Guides for Washington DC',
+    name: 'Dating Guides \u2014 DC, NYC, Atlanta, Miami & Philly',
     url: 'https://www.datingdex.com/guides',
     hasPart: GUIDES.map((g) => ({
       '@type': 'Article',
@@ -28,8 +28,8 @@ export default function GuidesIndex() {
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(collectionJsonLd) }} />
       <div className="container">
         <header className="page-hero">
-          <h1>Dating Guides for Washington DC</h1>
-          <p>Hand-written, human-ranked, no listicles. Pick a situation and we will tell you exactly where to go.</p>
+          <h1>Dating Guides</h1>
+          <p>Hand-written, human-ranked, no listicles. Pick a situation and we will tell you exactly where to go \u2014 across DC, NYC, Atlanta, Miami, and Philadelphia.</p>
         </header>
         <div className="spots-grid">
           {GUIDES.map((g) => (
