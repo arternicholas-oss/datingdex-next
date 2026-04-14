@@ -25,21 +25,21 @@ export async function generateMetadata({ params }: Params): Promise<Metadata> {
   if (!plan) return { title: 'Plan not found' };
   const it: any = plan.itinerary;
   const stops = it?.stops || [];
-  const title = stops.map((s: any) => s.venue?.name).filter(Boolean).join(' \u2192 ');
+  const title = stops.map((s: any) => s.venue?.name).filter(Boolean).join(' → ');
   const desc = plan.share_blurb || `A complete date night plan in ${plan.city}.`;
   const ogUrl = `${process.env.NEXT_PUBLIC_SITE_URL || 'https://www.datingdex.com'}/api/og/plan/${params.shareId}`;
   return {
-    title: `${title} \u2014 Date Night Plan`,
+    title: `${title} — Date Night Plan`,
     description: desc,
     openGraph: {
-      title: `${title} \u2014 Date Night Plan`,
+      title: `${title} — Date Night Plan`,
       description: desc,
       images: [{ url: ogUrl, width: 1200, height: 630 }],
       type: 'article',
     },
     twitter: {
       card: 'summary_large_image',
-      title: `${title} \u2014 Date Night Plan`,
+      title: `${title} — Date Night Plan`,
       description: desc,
       images: [ogUrl],
     },
@@ -59,15 +59,15 @@ export default async function SavedPlanPage({ params }: Params) {
   return (
     <div className="container plan-saved plan-result-v3">
       <div className="plan-saved-head">
-        <div className="plan-saved-eyebrow">A DatingDex date plan \u2726</div>
-        <h1>{stops.map((s: any) => s.venue?.name).filter(Boolean).join(' \u2192 ')}</h1>
+        <div className="plan-saved-eyebrow">A DatingDex date plan ✦</div>
+        <h1>{stops.map((s: any) => s.venue?.name).filter(Boolean).join(' → ')}</h1>
 
-        {p.coldOpen && <div className="plan-cold-open">\u201c{p.coldOpen}\u201d</div>}
+        {p.coldOpen && <div className="plan-cold-open">“{p.coldOpen}”</div>}
         {p.nightAtAGlance && <div className="plan-glance">{glance12h(p.nightAtAGlance)}</div>}
         {!p.coldOpen && plan.share_blurb && <p className="plan-saved-sub">{plan.share_blurb}</p>}
 
         <p className="plan-saved-meta">
-          {plan.city} \u00b7 Estimated total ${it.totalEstimateUsd?.[0] ?? '\u2014'}\u2013${it.totalEstimateUsd?.[1] ?? '\u2014'} for two \u00b7 {it.walkingMinutes ?? 0} min walking
+          {plan.city} · Estimated total ${it.totalEstimateUsd?.[0] ?? '—'}–${it.totalEstimateUsd?.[1] ?? '—'} for two · {it.walkingMinutes ?? 0} min walking
         </p>
       </div>
 
@@ -82,12 +82,12 @@ export default async function SavedPlanPage({ params }: Params) {
         />
         <div className="plan-share-actions">
           <a
-            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`My date night plan: ${stops.map((s: any) => s.venue?.name).join(' \u2192 ')} \u2726`)}&url=${encodeURIComponent(`${siteUrl}/plan/${params.shareId}`)}`}
+            href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(`My date night plan: ${stops.map((s: any) => s.venue?.name).join(' → ')} ✦`)}&url=${encodeURIComponent(`${siteUrl}/plan/${params.shareId}`)}`}
             target="_blank"
             rel="noopener noreferrer"
             className="cta cta-secondary plan-share-btn"
           >
-            Share on X \u2192
+            Share on X →
           </a>
           <a
             href={`/api/plan/${params.shareId}/ics`}
@@ -112,7 +112,7 @@ export default async function SavedPlanPage({ params }: Params) {
           <div className="plan-strip-col">
             <div className="plan-strip-label">Leave by</div>
             <div className="plan-strip-value">{formatTime12h(p.timingSheet.leaveBy)}</div>
-            <div className="plan-strip-sub">Ride ~{p.timingSheet.rideEstimateMin}min \u00b7 ET</div>
+            <div className="plan-strip-sub">Ride ~{p.timingSheet.rideEstimateMin}min · ET</div>
           </div>
           <div className="plan-strip-col">
             <div className="plan-strip-label">Arrive</div>
@@ -122,7 +122,7 @@ export default async function SavedPlanPage({ params }: Params) {
           {p.weather && (
             <div className="plan-strip-col">
               <div className="plan-strip-label">Weather</div>
-              <div className="plan-strip-value">{p.weather.tempF}\u00b0F</div>
+              <div className="plan-strip-value">{p.weather.tempF}°F</div>
               <div className="plan-strip-sub">{p.weather.note}</div>
             </div>
           )}
@@ -130,7 +130,7 @@ export default async function SavedPlanPage({ params }: Params) {
             <div className="plan-strip-col">
               <div className="plan-strip-label">Pre-date playlist</div>
               <a href={p.playlist.url} target="_blank" rel="noopener noreferrer" className="plan-strip-link">
-                {p.playlist.name} \u2192
+                {p.playlist.name} →
               </a>
               <div className="plan-strip-sub">{p.playlist.note}</div>
             </div>
@@ -148,7 +148,7 @@ export default async function SavedPlanPage({ params }: Params) {
             </div>
             <div className="plan-stop-title">
               <h3>{s.venue?.name}</h3>
-              <div className="plan-stop-meta">{s.venue?.neighborhood} \u00b7 {s.venue?.price}</div>
+              <div className="plan-stop-meta">{s.venue?.neighborhood} · {s.venue?.price}</div>
             </div>
           </div>
           {s.blurb && <p className="plan-stop-blurb">{dedupeLeadingSentence(s.blurb)}</p>}
@@ -165,7 +165,7 @@ export default async function SavedPlanPage({ params }: Params) {
             {s.photoSpot && <div className="plan-extra"><strong>Photo spot:</strong> {s.photoSpot}</div>}
           </div>
           <a href={s.bookingUrl} target="_blank" rel="noopener noreferrer" className="plan-book-btn">
-            {s.bookingProvider === 'walk-in' ? 'Get directions \u2192' : 'Find a table \u2192'}
+            {s.bookingProvider === 'walk-in' ? 'Get directions →' : 'Find a table →'}
           </a>
           {s.walkTo && i < stops.length - 1 && (
             <div className="plan-walk">
@@ -187,7 +187,7 @@ export default async function SavedPlanPage({ params }: Params) {
         <div className="plan-section plan-section-split">
           {p.extendLine && (
             <div>
-              <h4>If it\u2019s going great</h4>
+              <h4>If it’s going great</h4>
               <p>{p.extendLine}</p>
             </div>
           )}
@@ -203,14 +203,14 @@ export default async function SavedPlanPage({ params }: Params) {
       {p.postDateText && (
         <div className="plan-section">
           <h3>Morning-after text</h3>
-          <p className="plan-text-msg">\u201c{p.postDateText}\u201d</p>
+          <p className="plan-text-msg">“{p.postDateText}”</p>
         </div>
       )}
 
       {p.producersNote && (
         <div className="plan-producers-note">
           <p>{p.producersNote}</p>
-          <p className="plan-producers-sig">\u2014 DatingDex</p>
+          <p className="plan-producers-sig">— DatingDex</p>
         </div>
       )}
 
@@ -227,7 +227,7 @@ export default async function SavedPlanPage({ params }: Params) {
 
       <div className="plan-saved-cta">
         <p>Want a plan like this for your next date?</p>
-        <Link href="/plan-my-date" className="cta">Build my own \u2726</Link>
+        <Link href="/plan-my-date" className="cta">Build my own ✦</Link>
       </div>
     </div>
   );

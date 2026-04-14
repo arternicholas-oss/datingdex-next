@@ -64,14 +64,14 @@ const WHEN_OPTIONS = [
 
 const OCCASIONS = [
   { id: 'first-date', label: 'First date', hint: 'Low-stakes, easy conversation' },
-  { id: 'early-dates', label: 'Early dates', hint: '2nd\u20135th date, still impressing' },
+  { id: 'early-dates', label: 'Early dates', hint: '2nd–5th date, still impressing' },
   { id: 'regular', label: 'Regular date night', hint: 'Keeping the spark' },
   { id: 'special', label: 'Anniversary / birthday', hint: 'Something to remember' },
   { id: 'something-else', label: 'Something else', hint: 'Tell us' },
 ];
 
 const VIBES = [
-  { id: 'impressive', label: 'Impressive', hint: 'Show up, don\u2019t overthink it' },
+  { id: 'impressive', label: 'Impressive', hint: 'Show up, don’t overthink it' },
   { id: 'intimate', label: 'Intimate', hint: 'Close, warm, low-lit' },
   { id: 'low-pressure', label: 'Low-pressure', hint: 'Fun over formal' },
   { id: 'classic-romantic', label: 'Classic romantic', hint: 'Candles, wine, the thing' },
@@ -82,13 +82,13 @@ const VIBES = [
 const SHAPES = [
   { id: 'dinner-only', label: 'Just dinner', hint: 'One spot, done right' },
   { id: 'drinks-and-dinner', label: 'Drinks + dinner', hint: 'Two-stop classic' },
-  { id: 'full-night', label: 'Full night', hint: 'Drinks \u2192 dinner \u2192 after-spot' },
+  { id: 'full-night', label: 'Full night', hint: 'Drinks → dinner → after-spot' },
 ];
 
 const BUDGETS = [
   { id: 'under-60', label: 'Under $60' },
-  { id: '60-120', label: '$60\u2013120' },
-  { id: '120-200', label: '$120\u2013200' },
+  { id: '60-120', label: '$60–120' },
+  { id: '120-200', label: '$120–200' },
   { id: '200-plus', label: '$200+' },
   { id: 'flexible', label: 'Flexible' },
 ];
@@ -241,7 +241,7 @@ export default function PlanFormInner() {
       ),
     },
     {
-      title: 'What\u2019s the vibe?',
+      title: 'What’s the vibe?',
       valid: () => !!vibe && (vibe !== 'something-else' || !!vibeNote.trim()),
       render: () => (
         <>
@@ -448,8 +448,8 @@ export default function PlanFormInner() {
       <div className="container plan-page" id="planner">
         <div className="paywall">
           <h2>Your free plans are done.</h2>
-          <p>Three plans in, you\u2019ve seen what this does. Premium gives you unlimited plans, the post-date debrief, saved nights, calendar drops, PDF exports, and Couples Mode when it ships.</p>
-          <Link href="/premium" className="cta">See Premium \u2192</Link>
+          <p>Three plans in, you’ve seen what this does. Premium gives you unlimited plans, the post-date debrief, saved nights, calendar drops, PDF exports, and Couples Mode when it ships.</p>
+          <Link href="/premium" className="cta">See Premium →</Link>
         </div>
       </div>
     );
@@ -462,7 +462,7 @@ export default function PlanFormInner() {
           <h2>One more free plan.</h2>
           <p>Create a free account to get one more on us, save your plans, and unlock the post-date debrief.</p>
           <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap', marginTop: '1rem' }}>
-            <button className="cta" onClick={() => openAuth('signup')}>Sign up free \u2192</button>
+            <button className="cta" onClick={() => openAuth('signup')}>Sign up free →</button>
             <button className="cta cta-secondary" onClick={() => openAuth('signin')}>Log in</button>
           </div>
         </div>
@@ -474,8 +474,8 @@ export default function PlanFormInner() {
     return (
       <div className="container plan-page" id="planner">
         <div className="paywall">
-          <h2>One more free plan \u2014 drop your email.</h2>
-          <p>That was your first. Enter your email and we\u2019ll plan another one, plus send you the occasional genuinely useful thing. No spam, unsubscribe anytime.</p>
+          <h2>One more free plan — drop your email.</h2>
+          <p>That was your first. Enter your email and we’ll plan another one, plus send you the occasional genuinely useful thing. No spam, unsubscribe anytime.</p>
           <form onSubmit={submitEmail} className="wiz-email-form">
             <input
               type="email"
@@ -488,7 +488,7 @@ export default function PlanFormInner() {
             />
             {emailErr && <div className="auth-err">{emailErr}</div>}
             <button type="submit" className="cta" disabled={emailBusy}>
-              {emailBusy ? 'Saving\u2026' : 'Get my next plan \u2192'}
+              {emailBusy ? 'Saving…' : 'Get my next plan →'}
             </button>
           </form>
           <p className="wiz-fineprint">
@@ -505,7 +505,7 @@ export default function PlanFormInner() {
     <div className="container plan-page" id="planner">
       <div className="plan-header">
         <h2>Plan My Date <span className="ai-tag">AI</span></h2>
-        <p className="plan-sub">A fully produced night \u2014 where to go, what to order, what to say, what to wear.</p>
+        <p className="plan-sub">A fully produced night — where to go, what to order, what to say, what to wear.</p>
         {user && !isPremium && profile && (
           <div className="plan-quota">
             {Math.max(0, 1 - (profile.plan_uses_count || 0))} of 1 free account plan remaining &middot;{' '}
@@ -517,8 +517,8 @@ export default function PlanFormInner() {
       {busy ? (
         <div className="wiz-loading">
           <div className="wiz-spinner" />
-          <p>Producing your night\u2026</p>
-          <p className="wiz-loading-sub">Cold open, stops, timing, playlist, weather \u2014 it takes about 20 seconds.</p>
+          <p>Producing your night…</p>
+          <p className="wiz-loading-sub">Cold open, stops, timing, playlist, weather — it takes about 20 seconds.</p>
         </div>
       ) : (
         <div className="wiz">
@@ -527,13 +527,13 @@ export default function PlanFormInner() {
           {current?.render()}
           <div className="wiz-nav">
             {step > 0 && (
-              <button type="button" className="cta cta-ghost" onClick={back}>\u2190 Back</button>
+              <button type="button" className="cta cta-ghost" onClick={back}>← Back</button>
             )}
             {step < steps.length - 1 && current?.valid() && (
-              <button type="button" className="cta cta-secondary" onClick={advanceIfValid}>Next \u2192</button>
+              <button type="button" className="cta cta-secondary" onClick={advanceIfValid}>Next →</button>
             )}
             {step === steps.length - 1 && current?.valid() && (
-              <button type="button" className="cta" onClick={submit}>Build my night \u2726</button>
+              <button type="button" className="cta" onClick={submit}>Build my night ✦</button>
             )}
           </div>
           {err && <div className="auth-err">{err}</div>}
@@ -544,7 +544,7 @@ export default function PlanFormInner() {
 }
 
 // ------------------------------------------------------------
-// PlanResult \u2014 the rich render
+// PlanResult — the rich render
 // ------------------------------------------------------------
 
 function PlanResult({ result }: { result: { shareId: string | null; tier: string; itinerary: Itin; payload: Payload; shareBlurb: string; usesRemaining: number | null; nextWall?: string; upsellMessage?: string } }) {
@@ -564,7 +564,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
   return (
     <div className="container plan-result-v3">
       {/* 1. Cold open */}
-      <div className="plan-cold-open">\u201c{payload.coldOpen}\u201d</div>
+      <div className="plan-cold-open">“{payload.coldOpen}”</div>
 
       {/* 2. Night at a glance */}
       <div className="plan-glance">{glance12h(payload.nightAtAGlance)}</div>
@@ -573,7 +573,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
         <div className="plan-anon-nudge">
           <span>{result.upsellMessage}</span>
           {!user && (
-            <button type="button" className="cta cta-primary" onClick={() => openAuth('signup')}>Save this plan \u2192</button>
+            <button type="button" className="cta cta-primary" onClick={() => openAuth('signup')}>Save this plan →</button>
           )}
         </div>
       )}
@@ -583,7 +583,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
         <div className="plan-strip-col">
           <div className="plan-strip-label">Leave by</div>
           <div className="plan-strip-value">{formatTime12h(payload.timingSheet.leaveBy)}</div>
-          <div className="plan-strip-sub">Ride ~{payload.timingSheet.rideEstimateMin}min \u00b7 ET</div>
+          <div className="plan-strip-sub">Ride ~{payload.timingSheet.rideEstimateMin}min · ET</div>
         </div>
         <div className="plan-strip-col">
           <div className="plan-strip-label">Arrive</div>
@@ -593,7 +593,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
         {payload.weather && (
           <div className="plan-strip-col">
             <div className="plan-strip-label">Weather</div>
-            <div className="plan-strip-value">{payload.weather.tempF}\u00b0F</div>
+            <div className="plan-strip-value">{payload.weather.tempF}°F</div>
             <div className="plan-strip-sub">{payload.weather.note}</div>
           </div>
         )}
@@ -601,7 +601,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
           <div className="plan-strip-col">
             <div className="plan-strip-label">Pre-date playlist</div>
             <a href={payload.playlist.url} target="_blank" rel="noopener noreferrer" className="plan-strip-link">
-              {payload.playlist.name} \u2192
+              {payload.playlist.name} →
             </a>
             <div className="plan-strip-sub">{payload.playlist.note}</div>
           </div>
@@ -619,7 +619,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
             </div>
             <div className="plan-stop-title">
               <h3>{s.venue.name}</h3>
-              <div className="plan-stop-meta">{s.venue.neighborhood} \u00b7 {s.venue.price}</div>
+              <div className="plan-stop-meta">{s.venue.neighborhood} · {s.venue.price}</div>
             </div>
           </div>
 
@@ -650,7 +650,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
           <div className="plan-stop-actions">
             <a href={s.bookingUrl} target="_blank" rel="noopener noreferrer" className="plan-book-btn"
                onClick={() => track('booking_clicked', { provider: s.bookingProvider, venue: s.venue.slug })}>
-              {s.bookingProvider === 'walk-in' ? 'Get directions \u2192' : 'Find a table \u2192'}
+              {s.bookingProvider === 'walk-in' ? 'Get directions →' : 'Find a table →'}
             </a>
           </div>
 
@@ -686,7 +686,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
         <div className="plan-section plan-section-split">
           {payload.extendLine && (
             <div>
-              <h4>If it\u2019s going great</h4>
+              <h4>If it’s going great</h4>
               <p>{payload.extendLine}</p>
             </div>
           )}
@@ -703,7 +703,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
       {payload.postDateText && (
         <div className="plan-section">
           <h3>Morning-after text (optional)</h3>
-          <p className="plan-text-msg">\u201c{payload.postDateText}\u201d</p>
+          <p className="plan-text-msg">“{payload.postDateText}”</p>
           <button
             type="button"
             className="cta cta-ghost"
@@ -716,7 +716,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
       {payload.producersNote && (
         <div className="plan-producers-note">
           <p>{payload.producersNote}</p>
-          <p className="plan-producers-sig">\u2014 DatingDex</p>
+          <p className="plan-producers-sig">— DatingDex</p>
         </div>
       )}
 
@@ -724,7 +724,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
       <div className="plan-action-bar">
         {shareId && (
           <>
-            <Link href={`/plan/${shareId}`} className="cta cta-secondary">View full plan \u2192</Link>
+            <Link href={`/plan/${shareId}`} className="cta cta-secondary">View full plan →</Link>
             <button type="button" className="cta cta-ghost" onClick={copyShareLink}>
               {copied ? 'Copied!' : 'Copy share link'}
             </button>
