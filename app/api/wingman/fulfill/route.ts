@@ -1,6 +1,6 @@
 import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
-import { buildItinerary, type PlanInput } from '@/lib/planner';
+import { buildItinerary, normalizeLegacyInput, type PlanInput } from '@/lib/planner';
 import { writeChoreography, validateVenues, parseFreeText } from '@/lib/anthropic';
 import { createServiceClient } from '@/lib/supabase-server';
 
@@ -44,21 +44,24 @@ export async function POST(req: Request) {
   }
 
   try {
-    // Build the plan
-    let input: PlanInput = {
-      city: 'Washington, DC',
-      situation: gift.occasion === 'anniversary' ? 'anniversary' : gift.occasion === 'first-date-help' ? 'first-date' : 'date-night',
+    // Build the plan — wingman gifts are DC-only for now
+    let input: PlanInput = normalizeLegacyInput({
+      city: 'dc',
+      situation:
+        gift.occasion === 'anniversary' ? 'anniversary'
+        : gift.occasion === 'first-date-help' ? 'first-date'
+        : 'casual-hang',
       vibe: gift.vibe || 'romantic',
       activity: 'dinner',
       budget: gift.budget || '60-100',
       neighborhood: gift.neighborhood || undefined,
       freeText: gift.free_text || undefined,
-    };
+    });
 
     // Parse free text if provided
     if (gift.free_text) {
       try {
-        const parsed = await parseFreeText(gift.free_text);
+        const parsed: any = await parseFreeText(gift.free_text);
         input = { ...input, ...parsed };
       } catch (e) {
         console.error('parseFreeText failed for wingman gift', e);
@@ -100,7 +103,7 @@ export async function POST(req: Request) {
       .insert({
         user_id: gift.sender_id,
         city: input.city,
-        situation: input.situation,
+        situation: input.occasion,
         vibe: input.vibe,
         activity: input.activity,
         budget: input.budget,

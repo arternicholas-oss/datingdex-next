@@ -1,8 +1,16 @@
 /**
- * Simple in-memory rate limiter.
- * For production, swap this with Upstash Redis (@upstash/ratelimit).
- * This version works on Vercel serverless (per-instance, best-effort).
+ * Three-tier free-plan funnel:
+ *   1. Pure anonymous       \u2014 1 plan per IP (then email wall)
+ *   2. Email captured       \u2014 1 more plan per email (then signup wall)
+ *   3. Authenticated free   \u2014 1 more plan (then paywall)
+ *   4. Premium              \u2014 unlimited
+ *
+ * IP-based anon counts + email-capture counts are persisted in Supabase so
+ * they survive across serverless instances. In-memory guards are layered on
+ * top for burst protection.
  */
+
+import crypto from 'node:crypto';
 
 type RateLimitEntry = {
   count: number;
@@ -12,12 +20,14 @@ type RateLimitEntry = {
 const store = new Map<string, RateLimitEntry>();
 
 // Cleanup stale entries every 5 minutes
-setInterval(() => {
-  const now = Date.now();
-  for (const [key, entry] of store) {
-    if (entry.resetAt < now) store.delete(key);
-  }
-}, 5 * 60 * 1000);
+if (typeof setInterval !== 'undefined') {
+  setInterval(() => {
+    const now = Date.now();
+    for (const [key, entry] of store) {
+      if (entry.resetAt < now) store.delete(key);
+    }
+  }, 5 * 60 * 1000);
+}
 
 export function rateLimit(
   key: string,
@@ -28,7 +38,6 @@ export function rateLimit(
   const existing = store.get(key);
 
   if (!existing || existing.resetAt < now) {
-    // New window
     const entry: RateLimitEntry = { count: 1, resetAt: now + windowMs };
     store.set(key, entry);
     return { allowed: true, remaining: limit - 1, resetAt: entry.resetAt };
@@ -42,18 +51,35 @@ export function rateLimit(
   return { allowed: true, remaining: limit - existing.count, resetAt: existing.resetAt };
 }
 
-// Pre-configured rate limiters
+// Burst guard for the POST /api/plan endpoint (e.g., prevent 100 reqs/sec)
 export function rateLimitPlan(userId: string) {
-  // Free tier: 5 plans/day, Premium: 30 plans/day
   return rateLimit(`plan:${userId}`, 30, 24 * 60 * 60 * 1000);
 }
 
 export function rateLimitReview(userId: string) {
-  // 10 reviews/day for any tier
   return rateLimit(`review:${userId}`, 10, 24 * 60 * 60 * 1000);
 }
 
 export function rateLimitApi(ip: string) {
-  // General API: 100 requests/minute per IP
   return rateLimit(`api:${ip}`, 100, 60 * 1000);
+}
+
+// ------------------------------------------------------------
+// Three-tier funnel helpers
+// ------------------------------------------------------------
+
+export const FREE_PLAN_LIMITS = {
+  anon: 1, // fully anonymous \u2014 no email
+  email: 1, // after email capture
+  signed: 1, // after signup, before paywall
+} as const;
+
+export function hashIp(ip: string): string {
+  const salt = process.env.IP_HASH_SALT || 'datingdex-salt-v1';
+  return crypto.createHash('sha256').update(salt + ip).digest('hex').slice(0, 32);
+}
+
+export function extractIp(req: Request): string {
+  const fwd = req.headers.get('x-forwarded-for') || req.headers.get('x-real-ip') || '';
+  return (fwd.split(',')[0] || '').trim() || 'anon';
 }

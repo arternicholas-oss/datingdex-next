@@ -30,7 +30,11 @@ const FAQ = [
   },
   {
     q: 'Is it free?',
-    a: 'You get 3 full plans for free with an account. Pro ($12/mo) gives you unlimited plans, the post-date debrief that makes your next plan smarter, saved itineraries, and exclusive features like Hidden Gems and Anniversary Mode.',
+    a: 'Your first plan is free, no signup. Drop an email for a second. Make an account for a third. After that, Pro ($12/mo) gives you unlimited plans, the post-date debrief that makes your next plan smarter, saved itineraries, the printable date card, calendar export, and Anniversary Mode.',
+  },
+  {
+    q: 'What do I actually get in each plan?',
+    a: 'A cold-open hook to set the tone, a night-at-a-glance summary, a leave-by timing sheet with ride estimate, live weather read, a pre-date playlist, 2-3 stops each with a walk-in line, why-this-works, order-first, insider tip, what-to-wear and photo spot, a payment playbook, an if-it-goes-great extend plan, a polite bailout line, a morning-after text template, a producer\u2019s note, a shareable date card image, a PDF you can print, and a calendar file. Every surface earns its keep.',
   },
   {
     q: 'Does it actually book the reservation?',
@@ -78,7 +82,7 @@ export default function PlanMyDateLanding() {
             <a href="#planner" className="cta">Plan my night ✦</a>
             <Link href="/premium" className="cta cta-secondary">See Premium</Link>
           </div>
-          <p className="pmd-fineprint">3 free plans {'\u00B7'} No credit card {'\u00B7'} Live in DC, NYC, Atlanta, Miami & Philly</p>
+          <p className="pmd-fineprint">First plan free, no signup {'\u00B7'} No credit card {'\u00B7'} Live in DC, NYC, Atlanta, Miami & Philly</p>
         </div>
       </section>
 
@@ -188,7 +192,7 @@ export default function PlanMyDateLanding() {
       <section className="pmd-final">
         <div className="container">
           <h2>Ready to skip the planning?</h2>
-          <p>3 free plans. No credit card. 30 seconds.</p>
+          <p>First plan free, no signup. 30 seconds.</p>
           <a href="#planner" className="cta">Plan my night ✦</a>
         </div>
       </section>

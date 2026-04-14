@@ -1,11 +1,30 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useAuth } from '@/components/AuthProvider';
 import { track } from '@/components/PostHogProvider';
-import { allNeighborhoods } from '@/lib/venues';
+
+type CitySlug = 'dc' | 'nyc' | 'atlanta' | 'miami' | 'philly';
+
+type Payload = {
+  coldOpen: string;
+  nightAtAGlance: string;
+  producersNote: string;
+  postDateText: string;
+  bailoutLine?: string;
+  extendLine: string;
+  paymentNote?: string;
+  timingSheet: {
+    leaveBy: string;
+    arriveBy: string;
+    rideEstimateMin: number;
+    reservationHoldMin: number;
+  };
+  weather?: { forecast: string; tempF: number; note: string };
+  playlist?: { name: string; url: string; note: string };
+};
 
 type Itin = {
   stops: Array<{
@@ -14,42 +33,72 @@ type Itin = {
     durationMin: number;
     venue: { slug: string; name: string; neighborhood: string; price: string; vibe: string; photo: string | null };
     blurb?: string;
+    beats?: { arrival?: string; whyThisWorks?: string; orderFirst?: string; insiderTip?: string };
+    walkTo?: { minutes: number; line: string };
+    conversationHook?: string;
+    whatToWear?: string;
+    photoSpot?: string;
     bookingUrl: string;
     bookingProvider: string;
   }>;
   totalEstimateUsd: [number, number];
   walkingMinutes: number;
   dressCode?: string;
+  payload?: Payload;
 };
 
-type Copilot = {
-  dressCode: string;
-  conversationOpeners: string[];
-  postDateText: string;
-  arrivalTip: string;
-};
-
-const VIBES = [
-  { id: 'low-pressure', label: 'Low pressure' },
-  { id: 'romantic', label: 'Romantic' },
-  { id: 'fun-playful', label: 'Fun & playful' },
-  { id: 'impressive', label: 'Impressive' },
-  { id: 'sexy', label: 'Sexy' },
-];
-
-const CITIES = [
+const CITIES: { slug: CitySlug; name: string }[] = [
   { slug: 'dc', name: 'Washington, DC' },
   { slug: 'nyc', name: 'New York City' },
   { slug: 'atlanta', name: 'Atlanta' },
   { slug: 'miami', name: 'Miami' },
   { slug: 'philly', name: 'Philadelphia' },
-] as const;
+];
 
-type CitySlug = typeof CITIES[number]['slug'];
+const WHEN_OPTIONS = [
+  { id: 'tonight', label: 'Tonight' },
+  { id: 'this-weekend', label: 'This weekend' },
+  { id: 'pick-date', label: 'Pick a date' },
+];
 
-function cityLabel(slug: CitySlug): string {
-  return CITIES.find((c) => c.slug === slug)?.name || 'your city';
-}
+const OCCASIONS = [
+  { id: 'first-date', label: 'First date', hint: 'Low-stakes, easy conversation' },
+  { id: 'early-dates', label: 'Early dates', hint: '2nd\u20135th date, still impressing' },
+  { id: 'regular', label: 'Regular date night', hint: 'Keeping the spark' },
+  { id: 'special', label: 'Anniversary / birthday', hint: 'Something to remember' },
+  { id: 'something-else', label: 'Something else', hint: 'Tell us' },
+];
+
+const VIBES = [
+  { id: 'impressive', label: 'Impressive', hint: 'Show up, don\u2019t overthink it' },
+  { id: 'intimate', label: 'Intimate', hint: 'Close, warm, low-lit' },
+  { id: 'low-pressure', label: 'Low-pressure', hint: 'Fun over formal' },
+  { id: 'classic-romantic', label: 'Classic romantic', hint: 'Candles, wine, the thing' },
+  { id: 'adventurous', label: 'Adventurous', hint: 'A little unusual' },
+  { id: 'something-else', label: 'Something else', hint: 'Tell us' },
+];
+
+const SHAPES = [
+  { id: 'dinner-only', label: 'Just dinner', hint: 'One spot, done right' },
+  { id: 'drinks-and-dinner', label: 'Drinks + dinner', hint: 'Two-stop classic' },
+  { id: 'full-night', label: 'Full night', hint: 'Drinks \u2192 dinner \u2192 after-spot' },
+];
+
+const BUDGETS = [
+  { id: 'under-60', label: 'Under $60' },
+  { id: '60-120', label: '$60\u2013120' },
+  { id: '120-200', label: '$120\u2013200' },
+  { id: '200-plus', label: '$200+' },
+  { id: 'flexible', label: 'Flexible' },
+];
+
+const ACTIVITIES = [
+  { id: 'none', label: 'Just food & drinks' },
+  { id: 'live-music', label: 'Live music' },
+  { id: 'active', label: 'Something active' },
+  { id: 'creative', label: 'Creative (art, games)' },
+  { id: 'outdoor', label: 'Outdoor' },
+];
 
 function Chip({ active, onClick, children }: { active: boolean; onClick: () => void; children: React.ReactNode }) {
   return (
@@ -59,50 +108,231 @@ function Chip({ active, onClick, children }: { active: boolean; onClick: () => v
   );
 }
 
+function Dots({ step, total }: { step: number; total: number }) {
+  return (
+    <div className="wiz-dots" aria-label={`Step ${step + 1} of ${total}`}>
+      {Array.from({ length: total }).map((_, i) => (
+        <span key={i} className={`wiz-dot${i <= step ? ' on' : ''}`} />
+      ))}
+    </div>
+  );
+}
+
 export default function PlanFormInner() {
   const searchParams = useSearchParams();
   const { user, openAuth, isPremium, profile } = useAuth();
 
-  const mode = searchParams.get('mode');
   const cityParam = searchParams.get('city') as CitySlug | null;
   const validCityParam: CitySlug | null = cityParam && CITIES.some((c) => c.slug === cityParam) ? cityParam : null;
-  const defaultVibe = mode === 'tonight' ? 'fun-playful' : mode === 'impress' ? 'impressive' : 'romantic';
 
+  // 6-question wizard state
+  const [step, setStep] = useState(0);
   const [city, setCity] = useState<CitySlug>(validCityParam || 'dc');
-  const [freeText, setFreeText] = useState('');
-  const [neighborhood, setNeighborhood] = useState('');
-  const [vibe, setVibe] = useState(defaultVibe);
-  const [budget, setBudget] = useState(75);
+  const [when, setWhen] = useState<string>('this-weekend');
+  const [dateAt, setDateAt] = useState<string>('');
+  const [occasion, setOccasion] = useState<string>('');
+  const [occasionNote, setOccasionNote] = useState('');
+  const [vibe, setVibe] = useState<string>('');
+  const [vibeNote, setVibeNote] = useState('');
+  const [shape, setShape] = useState<string>('');
+  const [budget, setBudget] = useState<string>('');
+  const [activity, setActivity] = useState<string>('none');
+
   const [busy, setBusy] = useState(false);
-  const [result, setResult] = useState<{
-    shareId: string | null;
-    anonymous?: boolean;
-    itinerary: Itin;
-    shareBlurb: string;
-    copilot?: Copilot;
-    usesRemaining: number | null;
-    upsellMessage?: string;
-  } | null>(null);
-  const [paywall, setPaywall] = useState(false);
+  const [result, setResult] = useState<{ shareId: string | null; tier: string; itinerary: Itin; payload: Payload; shareBlurb: string; usesRemaining: number | null; nextWall?: string; upsellMessage?: string } | null>(null);
   const [err, setErr] = useState<string | null>(null);
-  const [copied, setCopied] = useState(false);
 
-  // Reset neighborhood when city changes
-  const neighborhoods = allNeighborhoods(city).slice(0, 12);
+  // Email wall state
+  const [emailWall, setEmailWall] = useState(false);
+  const [signupWall, setSignupWall] = useState(false);
+  const [paywall, setPaywall] = useState(false);
+  const [email, setEmail] = useState('');
+  const [emailBusy, setEmailBusy] = useState(false);
+  const [emailErr, setEmailErr] = useState<string | null>(null);
+  const [capturedEmail, setCapturedEmail] = useState<string | null>(null);
 
-  function budgetToBucket(val: number): string {
-    if (val < 30) return 'under-30';
-    if (val <= 60) return '30-60';
-    if (val <= 100) return '60-100';
-    return 'no-limit';
+  // City from geo (best-effort)
+  useEffect(() => {
+    if (validCityParam) return;
+    fetch('/api/city-hint')
+      .then((r) => (r.ok ? r.json() : null))
+      .then((d) => {
+        if (d?.city) setCity(d.city);
+      })
+      .catch(() => {});
+  }, [validCityParam]);
+
+  // Restore captured email across submissions
+  useEffect(() => {
+    try {
+      const e = sessionStorage.getItem('ddx_capture_email');
+      if (e) setCapturedEmail(e);
+    } catch {}
+  }, []);
+
+  // Showing the activity step is DC-only
+  const showActivity = city === 'dc';
+  const totalSteps = showActivity ? 7 : 6;
+
+  const steps: Array<{ title: string; render: () => React.ReactNode; valid: () => boolean }> = [
+    {
+      title: 'Which city?',
+      valid: () => !!city,
+      render: () => (
+        <div className="plan-chips">
+          {CITIES.map((c) => (
+            <Chip key={c.slug} active={city === c.slug} onClick={() => { setCity(c.slug); advanceIfValid(); }}>{c.name}</Chip>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: 'When?',
+      valid: () => !!when && (when !== 'pick-date' || !!dateAt),
+      render: () => (
+        <>
+          <div className="plan-chips">
+            {WHEN_OPTIONS.map((w) => (
+              <Chip key={w.id} active={when === w.id} onClick={() => {
+                setWhen(w.id);
+                if (w.id !== 'pick-date') advanceIfValid();
+              }}>{w.label}</Chip>
+            ))}
+          </div>
+          {when === 'pick-date' && (
+            <input
+              type="datetime-local"
+              className="wiz-date-input"
+              value={dateAt}
+              onChange={(e) => setDateAt(e.target.value)}
+              aria-label="Pick a date and time"
+            />
+          )}
+        </>
+      ),
+    },
+    {
+      title: 'What are you planning?',
+      valid: () => !!occasion && (occasion !== 'something-else' || !!occasionNote.trim()),
+      render: () => (
+        <>
+          <div className="plan-chips stack">
+            {OCCASIONS.map((o) => (
+              <Chip key={o.id} active={occasion === o.id} onClick={() => {
+                setOccasion(o.id);
+                if (o.id !== 'something-else') advanceIfValid();
+              }}>
+                <span className="chip-label">{o.label}</span>
+                <span className="chip-hint">{o.hint}</span>
+              </Chip>
+            ))}
+          </div>
+          {occasion === 'something-else' && (
+            <input
+              type="text"
+              className="wiz-text-input"
+              placeholder="e.g., reconnecting after a rough month"
+              value={occasionNote}
+              onChange={(e) => setOccasionNote(e.target.value)}
+            />
+          )}
+        </>
+      ),
+    },
+    {
+      title: 'What\u2019s the vibe?',
+      valid: () => !!vibe && (vibe !== 'something-else' || !!vibeNote.trim()),
+      render: () => (
+        <>
+          <div className="plan-chips stack">
+            {VIBES.map((v) => (
+              <Chip key={v.id} active={vibe === v.id} onClick={() => {
+                setVibe(v.id);
+                if (v.id !== 'something-else') advanceIfValid();
+              }}>
+                <span className="chip-label">{v.label}</span>
+                <span className="chip-hint">{v.hint}</span>
+              </Chip>
+            ))}
+          </div>
+          {vibe === 'something-else' && (
+            <input
+              type="text"
+              className="wiz-text-input"
+              placeholder="e.g., fancy but not stiff"
+              value={vibeNote}
+              onChange={(e) => setVibeNote(e.target.value)}
+            />
+          )}
+        </>
+      ),
+    },
+    {
+      title: 'Shape of the night?',
+      valid: () => !!shape,
+      render: () => (
+        <div className="plan-chips stack">
+          {SHAPES.map((s) => (
+            <Chip key={s.id} active={shape === s.id} onClick={() => { setShape(s.id); advanceIfValid(); }}>
+              <span className="chip-label">{s.label}</span>
+              <span className="chip-hint">{s.hint}</span>
+            </Chip>
+          ))}
+        </div>
+      ),
+    },
+    {
+      title: 'Budget?',
+      valid: () => !!budget,
+      render: () => (
+        <div className="plan-chips">
+          {BUDGETS.map((b) => (
+            <Chip key={b.id} active={budget === b.id} onClick={() => { setBudget(b.id); advanceIfValid(); }}>{b.label}</Chip>
+          ))}
+        </div>
+      ),
+    },
+  ];
+
+  if (showActivity) {
+    steps.push({
+      title: 'Add an activity? (optional, DC only)',
+      valid: () => true,
+      render: () => (
+        <div className="plan-chips">
+          {ACTIVITIES.map((a) => (
+            <Chip key={a.id} active={activity === a.id} onClick={() => { setActivity(a.id); advanceIfValid(); }}>{a.label}</Chip>
+          ))}
+        </div>
+      ),
+    });
   }
 
-  async function submit(e: React.FormEvent) {
-    e.preventDefault();
+  function advanceIfValid() {
+    // micro-delay so the chip click animates
+    setTimeout(() => {
+      setStep((s) => {
+        if (!steps[s]?.valid()) return s;
+        return Math.min(s + 1, steps.length);
+      });
+    }, 80);
+  }
+
+  function back() {
+    setStep((s) => Math.max(0, s - 1));
+  }
+
+  const ready = step >= steps.length && steps.every((s) => s.valid());
+
+  async function submit() {
     setErr(null);
     setPaywall(false);
-    setCopied(false);
-    track('plan_started', { city, neighborhood, vibe, budget, has_free_text: !!freeText, anonymous: !user });
+    setEmailWall(false);
+    setSignupWall(false);
+    track('plan_started', {
+      city, when, occasion, vibe, shape, budget, activity,
+      user: !!user, emailCaptured: !!capturedEmail,
+    });
     setBusy(true);
     try {
       const res = await fetch('/api/plan', {
@@ -110,29 +340,46 @@ export default function PlanFormInner() {
         headers: { 'content-type': 'application/json' },
         body: JSON.stringify({
           city,
-          neighborhood,
+          when,
+          dateAt: when === 'pick-date' ? dateAt : undefined,
+          occasion,
+          occasionNote,
           vibe,
-          budget: budgetToBucket(budget),
-          activity: mode === 'tonight' ? 'full-evening' : 'dinner',
-          situation: mode === 'impress' ? 'anniversary' : 'first-date',
-          freeText,
+          vibeNote,
+          shape,
+          budget,
+          activity,
+          capturedEmail: capturedEmail || undefined,
         }),
       });
       const data = await res.json();
-      if (res.status === 402) {
-        setPaywall(true);
-        track('plan_paywall_hit');
+      if (res.status === 402 && data.error === 'email_wall') {
+        setEmailWall(true);
+        track('plan_email_wall_hit');
+        setBusy(false);
         return;
       }
-      if (res.status === 429 && data.error === 'anon_rate_limit') {
-        setErr(data.message);
-        track('plan_anon_rate_limited');
-        openAuth('signup');
+      if (res.status === 402 && data.error === 'signup_wall') {
+        setSignupWall(true);
+        track('plan_signup_wall_hit');
+        setBusy(false);
+        return;
+      }
+      if (res.status === 402 && data.error === 'paywall') {
+        setPaywall(true);
+        track('plan_paywall_hit');
+        setBusy(false);
+        return;
+      }
+      if (res.status === 409 && data.error === 'already_converted') {
+        setEmailErr('Looks like you already have an account. Log in to continue.');
+        openAuth('signin');
+        setBusy(false);
         return;
       }
       if (!res.ok) throw new Error(data.message || 'Failed to plan.');
       setResult(data);
-      track('plan_completed', { share_id: data.shareId, anonymous: data.anonymous, uses_remaining: data.usesRemaining });
+      track('plan_completed', { share_id: data.shareId, tier: data.tier });
     } catch (e: any) {
       setErr(e.message);
     } finally {
@@ -140,230 +387,355 @@ export default function PlanFormInner() {
     }
   }
 
-  async function copyShareLink() {
-    if (!result) return;
-    const url = `${window.location.origin}/plan/${result.shareId}`;
-    await navigator.clipboard.writeText(url);
-    setCopied(true);
-    track('share_link_copied', { share_id: result.shareId });
-    setTimeout(() => setCopied(false), 2000);
+  async function submitEmail(e: React.FormEvent) {
+    e.preventDefault();
+    setEmailErr(null);
+    if (!/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+      setEmailErr('Enter a valid email address.');
+      return;
+    }
+    setEmailBusy(true);
+    try {
+      const res = await fetch('/api/capture-email', {
+        method: 'POST',
+        headers: { 'content-type': 'application/json' },
+        body: JSON.stringify({ email, source: 'email_wall', marketingOptIn: true }),
+      });
+      const data = await res.json();
+      if (!res.ok) throw new Error(data.message || 'Failed to capture email.');
+      try { sessionStorage.setItem('ddx_capture_email', email); } catch {}
+      setCapturedEmail(email);
+      setEmailWall(false);
+      track('email_captured', { source: 'email_wall' });
+      // Immediately retry plan submission
+      await submit();
+    } catch (e: any) {
+      setEmailErr(e.message);
+    } finally {
+      setEmailBusy(false);
+    }
   }
 
-  async function downloadDateCard() {
-    if (!result) return;
-    track('date_card_downloaded', { share_id: result.shareId });
-    const url = `/api/og/story/${result.shareId}`;
-    const res = await fetch(url);
-    const blob = await res.blob();
-    const a = document.createElement('a');
-    a.href = URL.createObjectURL(blob);
-    a.download = `datingdex-${result.shareId}.png`;
-    a.click();
-    URL.revokeObjectURL(a.href);
+  // Keyboard: Enter = advance / Esc = back
+  useEffect(() => {
+    function onKey(e: KeyboardEvent) {
+      if (result || emailWall || signupWall || paywall) return;
+      if (e.key === 'Enter' && step < steps.length) {
+        if (steps[step]?.valid()) advanceIfValid();
+      }
+      if (e.key === 'Escape' && step > 0) back();
+    }
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [step, result, emailWall, signupWall, paywall, city, when, dateAt, occasion, occasionNote, vibe, vibeNote, shape, budget]);
+
+  // If all steps done and not submitted yet, auto-submit
+  useEffect(() => {
+    if (ready && !busy && !result && !err && !emailWall && !signupWall && !paywall) {
+      submit();
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [ready]);
+
+  // ---- Render ----
+  if (result) {
+    return <PlanResult result={result} />;
   }
+
+  if (paywall) {
+    return (
+      <div className="container plan-page" id="planner">
+        <div className="paywall">
+          <h2>Your free plans are done.</h2>
+          <p>Three plans in, you\u2019ve seen what this does. Premium gives you unlimited plans, the post-date debrief, saved nights, calendar drops, PDF exports, and Couples Mode when it ships.</p>
+          <Link href="/premium" className="cta">See Premium \u2192</Link>
+        </div>
+      </div>
+    );
+  }
+
+  if (signupWall) {
+    return (
+      <div className="container plan-page" id="planner">
+        <div className="paywall">
+          <h2>One more free plan.</h2>
+          <p>Create a free account to get one more on us, save your plans, and unlock the post-date debrief.</p>
+          <div style={{ display: 'flex', gap: '.75rem', flexWrap: 'wrap', marginTop: '1rem' }}>
+            <button className="cta" onClick={() => openAuth('signup')}>Sign up free \u2192</button>
+            <button className="cta cta-secondary" onClick={() => openAuth('signin')}>Log in</button>
+          </div>
+        </div>
+      </div>
+    );
+  }
+
+  if (emailWall) {
+    return (
+      <div className="container plan-page" id="planner">
+        <div className="paywall">
+          <h2>One more free plan \u2014 drop your email.</h2>
+          <p>That was your first. Enter your email and we\u2019ll plan another one, plus send you the occasional genuinely useful thing. No spam, unsubscribe anytime.</p>
+          <form onSubmit={submitEmail} className="wiz-email-form">
+            <input
+              type="email"
+              placeholder="you@example.com"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="wiz-text-input"
+              autoFocus
+              required
+            />
+            {emailErr && <div className="auth-err">{emailErr}</div>}
+            <button type="submit" className="cta" disabled={emailBusy}>
+              {emailBusy ? 'Saving\u2026' : 'Get my next plan \u2192'}
+            </button>
+          </form>
+          <p className="wiz-fineprint">
+            Already have an account? <button type="button" className="link-btn" onClick={() => openAuth('signin')}>Log in</button>
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  const current = steps[Math.min(step, steps.length - 1)];
 
   return (
     <div className="container plan-page" id="planner">
       <div className="plan-header">
         <h2>Plan My Date <span className="ai-tag">AI</span></h2>
-        <p className="plan-sub">
-          3 questions. 30 seconds. A fully choreographed night &mdash; where to go, when to arrive, what to order, what to say.
-        </p>
+        <p className="plan-sub">A fully produced night \u2014 where to go, what to order, what to say, what to wear.</p>
         {user && !isPremium && profile && (
           <div className="plan-quota">
-            {Math.max(0, 3 - (profile.plan_uses_count || 0))} of 3 free plans remaining &middot;{" "}
+            {Math.max(0, 1 - (profile.plan_uses_count || 0))} of 1 free account plan remaining &middot;{' '}
             <Link href="/premium">Go unlimited</Link>
           </div>
         )}
       </div>
 
-      <form onSubmit={submit} className="plan-form">
-        <div className="plan-field">
-          <span className="plan-label">Which city?</span>
-          <div className="plan-chips">
-            {CITIES.map((c) => (
-              <Chip
-                key={c.slug}
-                active={city === c.slug}
-                onClick={() => { setCity(c.slug); setNeighborhood(''); }}
-              >
-                {c.name}
-              </Chip>
-            ))}
-          </div>
+      {busy ? (
+        <div className="wiz-loading">
+          <div className="wiz-spinner" />
+          <p>Producing your night\u2026</p>
+          <p className="wiz-loading-sub">Cold open, stops, timing, playlist, weather \u2014 it takes about 20 seconds.</p>
         </div>
-
-        <div className="plan-field">
-          <span className="plan-label">Where in {cityLabel(city)}?</span>
-          <div className="plan-chips">
-            <Chip active={neighborhood === ''} onClick={() => setNeighborhood('')}>Anywhere</Chip>
-            {neighborhoods.map((n) => (
-              <Chip key={n.slug} active={neighborhood === n.slug} onClick={() => setNeighborhood(n.slug)}>
-                {n.name}
-              </Chip>
-            ))}
+      ) : (
+        <div className="wiz">
+          <Dots step={step} total={steps.length} />
+          <h3 className="wiz-q">{current?.title}</h3>
+          {current?.render()}
+          <div className="wiz-nav">
+            {step > 0 && (
+              <button type="button" className="cta cta-ghost" onClick={back}>\u2190 Back</button>
+            )}
+            {step < steps.length - 1 && current?.valid() && (
+              <button type="button" className="cta cta-secondary" onClick={advanceIfValid}>Next \u2192</button>
+            )}
+            {step === steps.length - 1 && current?.valid() && (
+              <button type="button" className="cta" onClick={submit}>Build my night \u2726</button>
+            )}
           </div>
+          {err && <div className="auth-err">{err}</div>}
         </div>
+      )}
+    </div>
+  );
+}
 
-        <div className="plan-field">
-          <span className="plan-label">What&apos;s the vibe?</span>
-          <div className="plan-chips">
-            {VIBES.map((v) => (
-              <Chip key={v.id} active={vibe === v.id} onClick={() => setVibe(v.id)}>{v.label}</Chip>
-            ))}
-          </div>
-        </div>
+// ------------------------------------------------------------
+// PlanResult \u2014 the rich render
+// ------------------------------------------------------------
 
-        <div className="plan-field">
-          <span className="plan-label">Budget for the night (both of you): <strong>${budget}</strong></span>
-          <input
-            type="range"
-            min={20}
-            max={300}
-            step={10}
-            value={budget}
-            onChange={(e) => setBudget(Number(e.target.value))}
-            className="plan-slider"
-          />
-          <div className="plan-slider-labels">
-            <span>$20</span>
-            <span>$100</span>
-            <span>$200</span>
-            <span>$300+</span>
-          </div>
-          <div className="plan-budget-hints">
-            <span>Coffee date</span>
-            <span>Casual dinner</span>
-            <span>Cocktails + dinner</span>
-            <span>The full experience</span>
-          </div>
-        </div>
+function PlanResult({ result }: { result: { shareId: string | null; tier: string; itinerary: Itin; payload: Payload; shareBlurb: string; usesRemaining: number | null; nextWall?: string; upsellMessage?: string } }) {
+  const { openAuth, user, isPremium } = useAuth();
+  const { itinerary, payload, shareId } = result;
+  const [copied, setCopied] = useState(false);
 
-        <div className="plan-field">
-          <span className="plan-label">Anything else? <span className="plan-optional-tag">optional</span></span>
-          <textarea
-            className="plan-textarea"
-            placeholder="Third date, she likes natural wine and hates loud places. I want somewhere intimate but not stuffy. $120 budget."
-            value={freeText}
-            onChange={(e) => setFreeText(e.target.value)}
-            rows={3}
-            aria-label="Describe your date in plain English"
-          />
-        </div>
+  async function copyShareLink() {
+    if (!shareId) return;
+    const url = `${window.location.origin}/plan/${shareId}`;
+    await navigator.clipboard.writeText(url);
+    setCopied(true);
+    track('share_link_copied', { share_id: shareId });
+    setTimeout(() => setCopied(false), 2000);
+  }
 
-        {err && <div className="auth-err">{err}</div>}
-        <button type="submit" className={`cta plan-submit${busy ? " loading" : ""}`} disabled={busy}>
-          {busy ? 'Choreographing your night\u2026' : 'Build my date night \u2726'}
-        </button>
-      </form>
+  return (
+    <div className="container plan-result-v3">
+      {/* 1. Cold open */}
+      <div className="plan-cold-open">\u201c{payload.coldOpen}\u201d</div>
 
-      {paywall && (
-        <div className="paywall">
-          <h2>You&apos;ve used your 3 free plans</h2>
-          <p>Pro gives you unlimited plans, Date Copilot (what to wear, say, and text after), and recommendations that learn from every date.</p>
-          <Link href="/premium" className="cta">See Pro &rarr;</Link>
+      {/* 2. Night at a glance */}
+      <div className="plan-glance">{payload.nightAtAGlance}</div>
+
+      {result.upsellMessage && (
+        <div className="plan-anon-nudge">
+          <span>{result.upsellMessage}</span>
+          {!user && (
+            <button type="button" className="cta cta-primary" onClick={() => openAuth('signup')}>Save this plan \u2192</button>
+          )}
         </div>
       )}
 
-      {result && (
-        <div className="plan-result">
-          {result.anonymous && result.upsellMessage && (
-            <div className="plan-anon-nudge" style={{background:'var(--soft,#fff4f1)', border:'1px solid var(--border,#eee)', padding:'1rem 1.25rem', borderRadius:'12px', marginBottom:'1.5rem', display:'flex', flexWrap:'wrap', gap:'.75rem', alignItems:'center', justifyContent:'space-between'}}>
-              <span style={{flex:'1 1 260px'}}>{result.upsellMessage}</span>
-              <button type="button" className="cta cta-primary" onClick={() => openAuth('signup')}>Save this plan {'\u2192'}</button>
+      {/* Timing + weather strip */}
+      <div className="plan-strip">
+        <div className="plan-strip-col">
+          <div className="plan-strip-label">Leave by</div>
+          <div className="plan-strip-value">{payload.timingSheet.leaveBy}</div>
+          <div className="plan-strip-sub">Ride ~{payload.timingSheet.rideEstimateMin}min</div>
+        </div>
+        <div className="plan-strip-col">
+          <div className="plan-strip-label">Arrive</div>
+          <div className="plan-strip-value">{payload.timingSheet.arriveBy}</div>
+          <div className="plan-strip-sub">Table holds {payload.timingSheet.reservationHoldMin}min</div>
+        </div>
+        {payload.weather && (
+          <div className="plan-strip-col">
+            <div className="plan-strip-label">Weather</div>
+            <div className="plan-strip-value">{payload.weather.tempF}\u00b0F</div>
+            <div className="plan-strip-sub">{payload.weather.note}</div>
+          </div>
+        )}
+        {payload.playlist && (
+          <div className="plan-strip-col">
+            <div className="plan-strip-label">Pre-date playlist</div>
+            <a href={payload.playlist.url} target="_blank" rel="noopener noreferrer" className="plan-strip-link">
+              {payload.playlist.name} \u2192
+            </a>
+            <div className="plan-strip-sub">{payload.playlist.note}</div>
+          </div>
+        )}
+      </div>
+
+      {/* 3. Stops */}
+      {itinerary.stops.map((s, i) => (
+        <article key={i} className="plan-stop-v3">
+          <div className="plan-stop-header">
+            <div className="plan-stop-time">
+              <div className="plan-stop-slot">{s.slot === 'main' ? 'Main' : s.slot === 'before' ? 'Drinks' : s.slot === 'activity' ? 'Activity' : 'After'}</div>
+              <div className="plan-stop-clock">{s.startTime}</div>
+              <div className="plan-stop-dur">{s.durationMin} min</div>
             </div>
-          )}
-          <div className="plan-result-head">
-            <h2>Your night \u2726</h2>
-            <p>Estimated total: ${result.itinerary.totalEstimateUsd[0]}&ndash;${result.itinerary.totalEstimateUsd[1]} for two &middot; {result.itinerary.walkingMinutes} min walking between stops</p>
-            {result.itinerary.dressCode && (
-              <div className="plan-dress-code">
-                <strong>What to wear:</strong> {result.itinerary.dressCode}
-              </div>
-            )}
-            {!result.anonymous && result.shareId && (
-              <div className="plan-share-row">
-                <Link href={`/plan/${result.shareId}`} className="cta cta-secondary plan-share-btn">View full plan &rarr;</Link>
-                <button className="cta cta-ghost plan-share-btn" onClick={copyShareLink}>
-                  {copied ? 'Copied!' : 'Copy share link'}
-                </button>
-                <button className="cta cta-ghost plan-share-btn" onClick={downloadDateCard}>
-                  \ud83d\udcf8 Download Date Card
-                </button>
-              </div>
-            )}
+            <div className="plan-stop-title">
+              <h3>{s.venue.name}</h3>
+              <div className="plan-stop-meta">{s.venue.neighborhood} \u00b7 {s.venue.price} \u00b7 {s.venue.vibe}</div>
+            </div>
           </div>
 
-          {result.itinerary.stops.map((s, i) => (
-            <article key={i} className="plan-stop">
-              <div className="plan-stop-time">
-                <div className="plan-stop-slot">{s.slot === 'main' ? 'Main' : s.slot === 'before' ? 'Before' : 'After'}</div>
-                <div className="plan-stop-clock">{s.startTime}</div>
-                <div className="plan-stop-dur">{s.durationMin} min</div>
-              </div>
-              <div className="plan-stop-body">
-                <h3>{s.venue.name}</h3>
-                <div className="plan-stop-meta">{s.venue.neighborhood} &middot; {s.venue.price} &middot; {s.venue.vibe}</div>
-                <p className="plan-stop-blurb">{s.blurb}</p>
-                <a
-                  href={s.bookingUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="plan-book-btn"
-                  onClick={() => track('booking_clicked', { provider: s.bookingProvider, venue: s.venue.slug })}
-                >
-                  {s.bookingProvider === 'resy' ? 'Book on Resy \u2192' : s.bookingProvider === 'opentable' ? 'Book on OpenTable \u2192' : 'Get directions \u2192'}
-                </a>
-              </div>
-            </article>
-          ))}
+          {s.blurb && <p className="plan-stop-blurb">{s.blurb}</p>}
 
-          {result.copilot && (
-            <div className="copilot-section">
-              <div className="copilot-badge">Date Copilot <span className="ai-tag">PRO</span></div>
-              {result.copilot.arrivalTip && (
-                <div className="copilot-card">
-                  <h4>When you arrive</h4>
-                  <p>{result.copilot.arrivalTip}</p>
-                </div>
+          {s.beats && (
+            <div className="plan-beats">
+              {s.beats.arrival && (
+                <div className="plan-beat"><span className="plan-beat-label">Walk in:</span> {s.beats.arrival}</div>
               )}
-              {result.copilot.conversationOpeners?.length > 0 && (
-                <div className="copilot-card">
-                  <h4>Conversation starters</h4>
-                  <ul className="copilot-openers">
-                    {result.copilot.conversationOpeners.map((o, i) => (
-                      <li key={i}>{o}</li>
-                    ))}
-                  </ul>
-                </div>
+              {s.beats.whyThisWorks && (
+                <div className="plan-beat"><span className="plan-beat-label">Why this:</span> {s.beats.whyThisWorks}</div>
               )}
-              {result.copilot.postDateText && (
-                <div className="copilot-card">
-                  <h4>The follow-up text</h4>
-                  <p className="copilot-text-msg">&ldquo;{result.copilot.postDateText}&rdquo;</p>
-                  <button
-                    className="copilot-copy-btn"
-                    onClick={() => {
-                      navigator.clipboard.writeText(result.copilot!.postDateText);
-                      track('copilot_text_copied');
-                    }}
-                  >
-                    Copy text
-                  </button>
-                </div>
+              {s.beats.orderFirst && (
+                <div className="plan-beat"><span className="plan-beat-label">Order first:</span> {s.beats.orderFirst}</div>
+              )}
+              {s.beats.insiderTip && (
+                <div className="plan-beat"><span className="plan-beat-label">Insider:</span> {s.beats.insiderTip}</div>
               )}
             </div>
           )}
 
-          {!result.copilot && !isPremium && (
-            <div className="copilot-upsell">
-              <div className="copilot-badge">Date Copilot <span className="ai-tag">PRO</span></div>
-              <p>What to wear. 3 conversation starters tied to your venues. A follow-up text to send after.</p>
-              <Link href="/premium" className="cta cta-secondary">Unlock Date Copilot &rarr;</Link>
+          <div className="plan-stop-extras">
+            {s.whatToWear && <div className="plan-extra"><strong>Wear:</strong> {s.whatToWear}</div>}
+            {s.photoSpot && <div className="plan-extra"><strong>Photo spot:</strong> {s.photoSpot}</div>}
+          </div>
+
+          <div className="plan-stop-actions">
+            <a href={s.bookingUrl} target="_blank" rel="noopener noreferrer" className="plan-book-btn"
+               onClick={() => track('booking_clicked', { provider: s.bookingProvider, venue: s.venue.slug })}>
+              {s.bookingProvider === 'resy' ? 'Book on Resy \u2192' : s.bookingProvider === 'opentable' ? 'Book on OpenTable \u2192' : 'Get directions \u2192'}
+            </a>
+          </div>
+
+          {s.walkTo && i < itinerary.stops.length - 1 && (
+            <div className="plan-walk">
+              <span className="plan-walk-badge">{s.walkTo.minutes}m walk</span>
+              <span className="plan-walk-line">{s.walkTo.line}</span>
+            </div>
+          )}
+        </article>
+      ))}
+
+      {/* Conversation hooks */}
+      {payload && (payload as any).conversationHooks?.length > 0 && (
+        <div className="plan-section">
+          <h3>Conversation hooks</h3>
+          <ul className="plan-hooks">
+            {(payload as any).conversationHooks.map((h: string, i: number) => <li key={i}>{h}</li>)}
+          </ul>
+        </div>
+      )}
+
+      {/* Payment note */}
+      {payload.paymentNote && (
+        <div className="plan-section">
+          <h3>At the bill</h3>
+          <p>{payload.paymentNote}</p>
+        </div>
+      )}
+
+      {/* Bailout / extend */}
+      {(payload.bailoutLine || payload.extendLine) && (
+        <div className="plan-section plan-section-split">
+          {payload.extendLine && (
+            <div>
+              <h4>If it\u2019s going great</h4>
+              <p>{payload.extendLine}</p>
+            </div>
+          )}
+          {payload.bailoutLine && (
+            <div>
+              <h4>If you need out</h4>
+              <p>{payload.bailoutLine}</p>
             </div>
           )}
         </div>
       )}
+
+      {/* Post-date text */}
+      {payload.postDateText && (
+        <div className="plan-section">
+          <h3>Morning-after text (optional)</h3>
+          <p className="plan-text-msg">\u201c{payload.postDateText}\u201d</p>
+          <button
+            type="button"
+            className="cta cta-ghost"
+            onClick={() => { navigator.clipboard.writeText(payload.postDateText); track('post_text_copied'); }}
+          >Copy text</button>
+        </div>
+      )}
+
+      {/* Producer's note */}
+      {payload.producersNote && (
+        <div className="plan-producers-note">
+          <p>{payload.producersNote}</p>
+          <p className="plan-producers-sig">\u2014 DatingDex</p>
+        </div>
+      )}
+
+      {/* Action bar */}
+      <div className="plan-action-bar">
+        {shareId && (
+          <>
+            <Link href={`/plan/${shareId}`} className="cta cta-secondary">View full plan \u2192</Link>
+            <button type="button" className="cta cta-ghost" onClick={copyShareLink}>
+              {copied ? 'Copied!' : 'Copy share link'}
+            </button>
+            <a href={`/api/plan/${shareId}/ics`} className="cta cta-ghost" onClick={() => track('ics_downloaded')}>
+              Add to calendar
+            </a>
+            <a href={`/api/plan/${shareId}/pdf`} target="_blank" rel="noopener noreferrer" className="cta cta-ghost" onClick={() => track('pdf_downloaded')}>
+              Download PDF
+            </a>
+          </>
+        )}
+      </div>
     </div>
   );
 }

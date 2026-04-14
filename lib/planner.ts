@@ -1,30 +1,103 @@
-import { VENUES, type Venue, slugify } from './venues';
+import { VENUES, type Venue, slugify, type City } from './venues';
 
-// Map of venue_slug -> restaurant tier ('featured' | 'restaurant_premium').
-// Populated at request time and passed into buildItinerary so paying
-// restaurants get a score boost in Plan My Date results.
-export type RestaurantTierMap = Record<string, 'featured' | 'restaurant_premium'>;
+// ------------------------------------------------------------
+// v3 input shape — the 6-question guided wizard
+// ------------------------------------------------------------
+
+export type CitySlug = City;
+export type Occasion =
+  | 'first-date'
+  | 'early-dates'
+  | 'regular'
+  | 'special'
+  | 'something-else';
+export type VibeChoice =
+  | 'impressive'
+  | 'intimate'
+  | 'low-pressure'
+  | 'classic-romantic'
+  | 'adventurous'
+  | 'something-else';
+export type Shape = 'dinner-only' | 'drinks-and-dinner' | 'full-night';
+export type Budget = 'under-60' | '60-120' | '120-200' | '200-plus' | 'flexible';
+export type Activity = 'none' | 'live-music' | 'active' | 'creative' | 'outdoor';
+export type When = 'tonight' | 'this-weekend' | string; // else ISO datetime
 
 export type PlanInput = {
-  city: string;
-  situation: string; // first-date, second-date, anniversary, casual-hang, make-it-up
-  vibe: string; // low-pressure, romantic, fun-playful, impressive, sexy
-  activity: string; // dinner, drinks-only, coffee, activity, full-evening
-  budget: string; // under-30, 30-60, 60-100, no-limit  OR dollar amount
-  neighborhood?: string; // optional neighborhood filter
-  dateAt?: string; // ISO datetime of the date
-  freeText?: string;
+  city: CitySlug;
+  when: When;
+  dateAt?: string; // ISO datetime if specific
+  occasion: Occasion;
+  occasionNote?: string; // if "something else"
+  vibe: VibeChoice;
+  vibeNote?: string; // if "something else"
+  shape: Shape;
+  budget: Budget;
+  activity?: Activity; // DC-only bonus question
+  neighborhood?: string; // future: optional constraint
+  freeText?: string; // legacy support
 };
 
+// Legacy fields some older callers may still pass. We normalize onto v3.
+export type LegacyPlanInput = {
+  situation?: string;
+  vibe?: string;
+  activity?: string;
+  budget?: string;
+};
+
+export type RestaurantTierMap = Record<string, 'featured' | 'restaurant_premium'>;
+
 export type Stop = {
-  slot: 'before' | 'main' | 'after';
+  slot: 'before' | 'main' | 'after' | 'activity';
   startTime: string; // HH:MM
   durationMin: number;
   venue: Venue;
-  blurb?: string;
+  blurb?: string; // flowing choreography prose
+  beats?: {
+    arrival?: string;
+    whyThisWorks?: string;
+    orderFirst?: string;
+    insiderTip?: string;
+  };
+  walkTo?: {
+    minutes: number;
+    line: string;
+  };
+  conversationHook?: string;
+  whatToWear?: string;
+  photoSpot?: string;
   bookingUrl: string;
   bookingProvider: 'resy' | 'opentable' | 'walk-in';
-  whatToOrder?: string[];
+};
+
+export type PlanPayload = {
+  // Narrative layer
+  coldOpen: string;
+  nightAtAGlance: string;
+  producersNote: string;
+  bailoutLine?: string; // first-date-only
+  extendLine?: string;
+  postDateText: string;
+  // Logistics
+  timingSheet: {
+    leaveBy: string;
+    arriveBy: string;
+    rideEstimateMin: number;
+    reservationHoldMin: number;
+  };
+  weather?: {
+    forecast: string;
+    tempF: number;
+    note: string;
+  };
+  playlist?: {
+    name: string;
+    url: string;
+    note: string;
+  };
+  paymentNote?: string;
+  backups?: Array<{ slot: 'before' | 'main' | 'after'; name: string; slug: string; why: string }>;
 };
 
 export type Itinerary = {
@@ -34,70 +107,78 @@ export type Itinerary = {
   walkingMinutes: number;
   generatedAt: string;
   dressCode?: string;
+  payload?: PlanPayload;
 };
 
-const PRICE_BUCKETS: Record<string, string[]> = {
-  'under-30': ['$'],
-  '30-60': ['$', '$$'],
-  '60-100': ['$$', '$$$'],
-  'no-limit': ['$$', '$$$', '$$$$'],
+// ------------------------------------------------------------
+// Scoring & selection
+// ------------------------------------------------------------
+
+const BUDGET_TO_PRICE: Record<Budget, string[]> = {
+  'under-60': ['$', '$$'],
+  '60-120': ['$$', '$$$'],
+  '120-200': ['$$$', '$$$$'],
+  '200-plus': ['$$$', '$$$$'],
+  'flexible': ['$', '$$', '$$$', '$$$$'],
 };
 
-const VIBE_TO_TAG: Record<string, string[]> = {
+const VIBE_TO_TAG: Record<VibeChoice, string[]> = {
+  'impressive': ['Impress Them', 'Romantic', 'Date Night'],
+  'intimate': ['Romantic', 'Late Night', 'Date Night'],
   'low-pressure': ['First Date', 'Coffee Date', 'Casual'],
-  'romantic': ['Romantic', 'Impress Them', 'Date Night'],
-  'fun-playful': ['Casual', 'Late Night', 'Activity'],
-  'impressive': ['Impress Them', 'Romantic'],
-  'sexy': ['Late Night', 'Romantic', 'Impress Them'],
+  'classic-romantic': ['Romantic', 'Date Night', 'Impress Them'],
+  'adventurous': ['Activity', 'Late Night', 'Casual'],
+  'something-else': ['Romantic', 'Date Night', 'Casual'],
 };
 
-const ACTIVITY_TO_SLOT: Record<string, ('before' | 'main' | 'after')[]> = {
-  'dinner': ['main', 'after'],
-  'drinks-only': ['main'],
-  'coffee': ['main'],
-  'activity': ['main', 'after'],
-  'full-evening': ['before', 'main', 'after'],
+const SHAPE_TO_SLOTS: Record<Shape, ('before' | 'main' | 'after')[]> = {
+  'dinner-only': ['main'],
+  'drinks-and-dinner': ['before', 'main'],
+  'full-night': ['before', 'main', 'after'],
 };
 
-/**
- * Convert dollar amount budget to price bucket.
- * Supports both legacy bucket strings and dollar amounts.
- */
-function normalizeBudget(budget: string): string {
-  if (PRICE_BUCKETS[budget]) return budget;
-  const num = parseInt(budget.replace(/[^0-9]/g, ''), 10);
-  if (isNaN(num)) return '30-60';
-  if (num < 30) return 'under-30';
-  if (num <= 60) return '30-60';
-  if (num <= 100) return '60-100';
-  return 'no-limit';
+function priceMidpoint(p: string): number {
+  return ({ '$': 25, '$$': 50, '$$$': 85, '$$$$': 140 } as Record<string, number>)[p] ?? 50;
 }
 
 function score(v: Venue, input: PlanInput, tiers?: RestaurantTierMap): number {
   let s = v.score ?? 7;
   const tagPrefs = VIBE_TO_TAG[input.vibe] || [];
   if (tagPrefs.includes(v.vibe)) s += 1.2;
-  const normalizedBudget = normalizeBudget(input.budget);
-  if ((PRICE_BUCKETS[normalizedBudget] || []).includes(v.price)) s += 0.6;
-  // Neighborhood match gives strong boost
+  if ((BUDGET_TO_PRICE[input.budget] || []).includes(v.price)) s += 0.6;
   if (input.neighborhood && slugify(v.neighborhood) === slugify(input.neighborhood)) s += 2.0;
-  // Restaurant tier boost - paying restaurants surface more in Plan My Date.
   const tier = tiers?.[v.slug];
   if (tier === 'restaurant_premium') s += 1.5;
   else if (tier === 'featured') s += 0.9;
-  // Add small random jitter so repeat runs get variety
   s += Math.random() * 0.5;
   return s;
 }
 
+function slotBoost(v: Venue, slot: 'before' | 'main' | 'after' | 'activity'): number {
+  const vibe = v.vibe || '';
+  if (slot === 'before') {
+    if (/Coffee|Wine|Bar|Cocktail/i.test(vibe)) return 0.8;
+  } else if (slot === 'after') {
+    if (/Late Night|Bar|Cocktail|Dessert/i.test(vibe)) return 0.8;
+  } else if (slot === 'main') {
+    if (/Romantic|Impress|Date Night|Dinner/i.test(vibe)) return 0.5;
+  } else if (slot === 'activity') {
+    if (/Activity|Late Night/i.test(vibe)) return 0.6;
+  }
+  return 0;
+}
+
 function pickFor(
-  slot: 'before' | 'main' | 'after',
+  slot: 'before' | 'main' | 'after' | 'activity',
   input: PlanInput,
   exclude: Set<string>,
   tiers?: RestaurantTierMap,
-  excludeHistory?: Set<string>
+  excludeHistory?: Set<string>,
+  cityOverride?: CitySlug
 ): Venue | null {
+  const city = cityOverride || input.city;
   const filtered = VENUES.filter((v) => {
+    if (v.city !== city) return false;
     if (exclude.has(v.slug)) return false;
     if (excludeHistory?.has(v.slug)) return false;
     return true;
@@ -108,31 +189,18 @@ function pickFor(
   return ranked[0]?.v ?? null;
 }
 
-function slotBoost(v: Venue, slot: 'before' | 'main' | 'after'): number {
-  const vibe = v.vibe || '';
-  if (slot === 'before') {
-    if (/Coffee|Wine|Bar|Cocktail/i.test(vibe)) return 0.8;
-  } else if (slot === 'after') {
-    if (/Late Night|Bar|Cocktail|Dessert/i.test(vibe)) return 0.8;
-  } else {
-    if (/Romantic|Impress|Date Night|Dinner/i.test(vibe)) return 0.5;
-  }
-  return 0;
-}
-
 function bookingFor(v: Venue): { url: string; provider: 'resy' | 'opentable' | 'walk-in' } {
   const date = encodeURIComponent(new Date(Date.now() + 48 * 3600 * 1000).toISOString().slice(0, 10));
   if (v.price === '$') {
-    return { url: `https://www.google.com/maps/search/${encodeURIComponent(v.name + ' Washington DC')}`, provider: 'walk-in' };
+    return {
+      url: `https://www.google.com/maps/search/${encodeURIComponent(v.name + ' ' + v.city)}`,
+      provider: 'walk-in',
+    };
   }
   return {
-    url: `https://resy.com/cities/dc/search?date=${date}&seats=2&query=${encodeURIComponent(v.name)}`,
+    url: `https://resy.com/cities/${v.city === 'dc' ? 'dc' : v.city === 'nyc' ? 'ny' : v.city}/search?date=${date}&seats=2&query=${encodeURIComponent(v.name)}`,
     provider: 'resy',
   };
-}
-
-function priceMidpoint(p: string): number {
-  return { '$': 25, '$$': 50, '$$$': 85, '$$$$': 140 }[p] ?? 50;
 }
 
 function timeMath(start: string, addMin: number): string {
@@ -148,16 +216,18 @@ export function buildItinerary(
   tiers?: RestaurantTierMap,
   excludeHistory?: string[]
 ): Itinerary {
-  const slots = ACTIVITY_TO_SLOT[input.activity] || ['main'];
+  const slots = [...SHAPE_TO_SLOTS[input.shape]];
   const used = new Set<string>();
   const historySet = new Set(excludeHistory || []);
   const stops: Stop[] = [];
 
-  // base start time: 6:30pm if not provided
-  let cursor = '18:30';
+  // Base start: 7:00pm for dinner, 6:30pm if drinks-first, flexible with date_at
+  let cursor = input.shape === 'full-night' ? '18:30' : '19:00';
   if (input.dateAt) {
     const d = new Date(input.dateAt);
-    if (!isNaN(d.getTime())) cursor = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+    if (!isNaN(d.getTime())) {
+      cursor = `${String(d.getHours()).padStart(2, '0')}:${String(d.getMinutes()).padStart(2, '0')}`;
+    }
   }
 
   for (const slot of slots) {
@@ -174,7 +244,25 @@ export function buildItinerary(
       bookingUrl: booking.url,
       bookingProvider: booking.provider,
     });
-    cursor = timeMath(cursor, dur + 10); // 10 min walk buffer
+    cursor = timeMath(cursor, dur + 10);
+  }
+
+  // Optional DC-only activity add-on
+  if (input.activity && input.activity !== 'none' && input.city === 'dc') {
+    const v = pickFor('activity', input, used, tiers, historySet);
+    if (v) {
+      used.add(v.slug);
+      const booking = bookingFor(v);
+      stops.push({
+        slot: 'activity',
+        startTime: cursor,
+        durationMin: 60,
+        venue: v,
+        bookingUrl: booking.url,
+        bookingProvider: booking.provider,
+      });
+      cursor = timeMath(cursor, 70);
+    }
   }
 
   const lo = stops.reduce((a, s) => a + priceMidpoint(s.venue.price) * 2 * 0.85, 0);
@@ -187,5 +275,57 @@ export function buildItinerary(
     totalEstimateUsd,
     walkingMinutes: Math.max(0, (stops.length - 1) * 10),
     generatedAt: new Date().toISOString(),
+  };
+}
+
+// ------------------------------------------------------------
+// Legacy adapter — accept old `{situation, vibe, activity, budget}` input
+// and coerce to the new 6-question shape so nothing breaks.
+// ------------------------------------------------------------
+export function normalizeLegacyInput(raw: any): PlanInput {
+  if (raw.occasion && raw.shape && raw.city) return raw as PlanInput;
+
+  const citySlug: CitySlug =
+    (['dc', 'nyc', 'atlanta', 'miami', 'philly'].includes(raw.city) ? raw.city : 'dc') as CitySlug;
+
+  const occasionMap: Record<string, Occasion> = {
+    'first-date': 'first-date',
+    'second-date': 'early-dates',
+    'anniversary': 'special',
+    'casual-hang': 'regular',
+    'make-it-up': 'special',
+  };
+  const vibeMap: Record<string, VibeChoice> = {
+    'low-pressure': 'low-pressure',
+    'romantic': 'classic-romantic',
+    'fun-playful': 'adventurous',
+    'impressive': 'impressive',
+    'sexy': 'intimate',
+  };
+  const shapeMap: Record<string, Shape> = {
+    'dinner': 'dinner-only',
+    'drinks-only': 'drinks-and-dinner',
+    'coffee': 'dinner-only',
+    'activity': 'full-night',
+    'full-evening': 'full-night',
+  };
+  const budgetMap: Record<string, Budget> = {
+    'under-30': 'under-60',
+    '30-60': 'under-60',
+    '60-100': '60-120',
+    'no-limit': '200-plus',
+  };
+
+  return {
+    city: citySlug,
+    when: raw.dateAt ? raw.dateAt : 'this-weekend',
+    dateAt: raw.dateAt,
+    occasion: occasionMap[raw.situation || ''] || 'early-dates',
+    vibe: vibeMap[raw.vibe || ''] || 'classic-romantic',
+    shape: shapeMap[raw.activity || ''] || 'drinks-and-dinner',
+    budget: budgetMap[raw.budget || ''] || '60-120',
+    activity: 'none',
+    neighborhood: raw.neighborhood,
+    freeText: raw.freeText,
   };
 }
