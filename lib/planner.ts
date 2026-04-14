@@ -177,29 +177,37 @@ function pickFor(
   cityOverride?: CitySlug
 ): Venue | null {
   const city = cityOverride || input.city;
-  const filtered = VENUES.filter((v) => {
+  const allowedPrices = new Set(BUDGET_TO_PRICE[input.budget] || ['$', '$$', '$$$', '$$$$']);
+  const baseFilter = (v: Venue) => {
     if (v.city !== city) return false;
     if (exclude.has(v.slug)) return false;
     if (excludeHistory?.has(v.slug)) return false;
     return true;
-  });
-  const ranked = filtered
+  };
+  // Strict: within budget AND correct slot fit.
+  const strictPool = VENUES.filter((v) => baseFilter(v) && allowedPrices.has(v.price));
+  // Fallback pool: budget-only, in case slot boost wipes out options.
+  const softPool = strictPool.length > 0 ? strictPool : VENUES.filter(baseFilter);
+  const ranked = softPool
     .map((v) => ({ v, s: score(v, input, tiers) + slotBoost(v, slot) }))
     .sort((a, b) => b.s - a.s);
   return ranked[0]?.v ?? null;
 }
 
 function bookingFor(v: Venue): { url: string; provider: 'resy' | 'opentable' | 'walk-in' } {
-  const date = encodeURIComponent(new Date(Date.now() + 48 * 3600 * 1000).toISOString().slice(0, 10));
+  // Honest fallback: we don't have per-venue Resy/OpenTable URLs yet, so we
+  // search Google for "<name> <neighborhood> reservation" which surfaces
+  // whichever platform (Resy, OpenTable, Tock, direct) actually hosts it.
   if (v.price === '$') {
     return {
-      url: `https://www.google.com/maps/search/${encodeURIComponent(v.name + ' ' + v.city)}`,
+      url: `https://www.google.com/maps/search/${encodeURIComponent(v.name + ' ' + v.neighborhood)}`,
       provider: 'walk-in',
     };
   }
+  const q = encodeURIComponent(`${v.name} ${v.neighborhood} reservation`);
   return {
-    url: `https://resy.com/cities/${v.city === 'dc' ? 'dc' : v.city === 'nyc' ? 'ny' : v.city}/search?date=${date}&seats=2&query=${encodeURIComponent(v.name)}`,
-    provider: 'resy',
+    url: `https://www.google.com/search?q=${q}`,
+    provider: 'resy', // kept for type-compat; UI label is now "Find a table"
   };
 }
 

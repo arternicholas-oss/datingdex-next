@@ -1,10 +1,19 @@
 import Anthropic from '@anthropic-ai/sdk';
 import type { Itinerary, PlanInput, PlanPayload } from './planner';
 import { VENUES } from './venues';
+import { dedupeLeadingSentence } from './format';
 
 const client = process.env.ANTHROPIC_API_KEY
   ? new Anthropic({ apiKey: process.env.ANTHROPIC_API_KEY })
   : null;
+
+if (!client && typeof process !== 'undefined' && process.env.NODE_ENV === 'production') {
+  // Surface this clearly in Vercel logs so it's obvious when fallbacks
+  // are being used in prod (e.g. env var not set).
+  console.warn(
+    '[anthropic] ANTHROPIC_API_KEY is not set \u2014 plans will use static fallback copy. Set it in Vercel env vars.'
+  );
+}
 
 // ------------------------------------------------------------
 // parseFreeText — legacy NL \u2192 structured. Still useful for "something else"
@@ -115,8 +124,12 @@ export async function writeFullPlan(
   paymentNote: string;
   shareBlurb: string;
 }> {
-  const fallbackBlurb = (i: number) =>
-    `${itinerary.stops[i]?.venue.hook || ''}. ${itinerary.stops[i]?.venue.desc || ''}`.trim();
+  const fallbackBlurb = (i: number) => {
+    const hook = (itinerary.stops[i]?.venue.hook || '').trim().replace(/[.!?]+$/, '');
+    const desc = (itinerary.stops[i]?.venue.desc || '').trim();
+    const raw = [hook, desc].filter(Boolean).join('. ');
+    return dedupeLeadingSentence(raw).trim();
+  };
 
   if (!client) {
     // No key \u2014 return safe fallbacks so the product still ships.
@@ -179,6 +192,11 @@ ${itinerary.input.freeText ? `User free-text: "${itinerary.input.freeText}"` : '
   const msg = await client.messages.create({
     model: 'claude-haiku-4-5-20251001',
     max_tokens: 3200,
+    // 25s is enough for Haiku even with 3200 max_tokens; Vercel hobby caps at 60s.
+    // Without this, a flaky upstream can stall the whole plan request and
+    // silently return the static fallbacks, which looks like the bug Nick hit.
+    // @ts-ignore \u2014 SDK accepts request-level timeout
+    timeout: 25000,
     system: `You are the DatingDex Date Producer.
 ${VOICE_GUIDE}
 

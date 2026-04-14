@@ -1,5 +1,6 @@
 import { ImageResponse } from 'next/og';
 import { createServiceClient } from '@/lib/supabase-server';
+import { formatTime12h } from '@/lib/format';
 
 export const runtime = 'nodejs';
 
@@ -82,13 +83,13 @@ export async function GET(_req: Request, { params }: { params: { shareId: string
               }}
             >
               <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-                <span style={{ fontSize: 20, color: '#FF5C3A', fontWeight: 700 }}>{s.startTime}</span>
+                <span style={{ fontSize: 20, color: '#FF5C3A', fontWeight: 700 }}>{formatTime12h(s.startTime)}</span>
                 <span style={{ fontSize: 20, color: '#999' }}>·</span>
                 <span style={{ fontSize: 20, color: '#999' }}>{s.venue?.neighborhood}</span>
               </div>
               <div style={{ fontSize: 28, fontWeight: 700, marginTop: 4 }}>{s.venue?.name}</div>
               <div style={{ fontSize: 18, color: '#888', marginTop: 2 }}>
-                {s.venue?.price} · {s.venue?.vibe}
+                {s.venue?.price}
               </div>
             </div>
           ))}

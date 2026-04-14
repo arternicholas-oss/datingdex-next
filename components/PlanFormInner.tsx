@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useSearchParams } from 'next/navigation';
 import { useAuth } from '@/components/AuthProvider';
 import { track } from '@/components/PostHogProvider';
+import { formatTime12h, glance12h, dedupeLeadingSentence } from '@/lib/format';
 
 type CitySlug = 'dc' | 'nyc' | 'atlanta' | 'miami' | 'philly';
 
@@ -566,7 +567,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
       <div className="plan-cold-open">\u201c{payload.coldOpen}\u201d</div>
 
       {/* 2. Night at a glance */}
-      <div className="plan-glance">{payload.nightAtAGlance}</div>
+      <div className="plan-glance">{glance12h(payload.nightAtAGlance)}</div>
 
       {result.upsellMessage && (
         <div className="plan-anon-nudge">
@@ -581,12 +582,12 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
       <div className="plan-strip">
         <div className="plan-strip-col">
           <div className="plan-strip-label">Leave by</div>
-          <div className="plan-strip-value">{payload.timingSheet.leaveBy}</div>
-          <div className="plan-strip-sub">Ride ~{payload.timingSheet.rideEstimateMin}min</div>
+          <div className="plan-strip-value">{formatTime12h(payload.timingSheet.leaveBy)}</div>
+          <div className="plan-strip-sub">Ride ~{payload.timingSheet.rideEstimateMin}min \u00b7 ET</div>
         </div>
         <div className="plan-strip-col">
           <div className="plan-strip-label">Arrive</div>
-          <div className="plan-strip-value">{payload.timingSheet.arriveBy}</div>
+          <div className="plan-strip-value">{formatTime12h(payload.timingSheet.arriveBy)}</div>
           <div className="plan-strip-sub">Table holds {payload.timingSheet.reservationHoldMin}min</div>
         </div>
         {payload.weather && (
@@ -613,16 +614,16 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
           <div className="plan-stop-header">
             <div className="plan-stop-time">
               <div className="plan-stop-slot">{s.slot === 'main' ? 'Main' : s.slot === 'before' ? 'Drinks' : s.slot === 'activity' ? 'Activity' : 'After'}</div>
-              <div className="plan-stop-clock">{s.startTime}</div>
+              <div className="plan-stop-clock">{formatTime12h(s.startTime)}</div>
               <div className="plan-stop-dur">{s.durationMin} min</div>
             </div>
             <div className="plan-stop-title">
               <h3>{s.venue.name}</h3>
-              <div className="plan-stop-meta">{s.venue.neighborhood} \u00b7 {s.venue.price} \u00b7 {s.venue.vibe}</div>
+              <div className="plan-stop-meta">{s.venue.neighborhood} \u00b7 {s.venue.price}</div>
             </div>
           </div>
 
-          {s.blurb && <p className="plan-stop-blurb">{s.blurb}</p>}
+          {s.blurb && <p className="plan-stop-blurb">{dedupeLeadingSentence(s.blurb)}</p>}
 
           {s.beats && (
             <div className="plan-beats">
@@ -649,7 +650,7 @@ function PlanResult({ result }: { result: { shareId: string | null; tier: string
           <div className="plan-stop-actions">
             <a href={s.bookingUrl} target="_blank" rel="noopener noreferrer" className="plan-book-btn"
                onClick={() => track('booking_clicked', { provider: s.bookingProvider, venue: s.venue.slug })}>
-              {s.bookingProvider === 'resy' ? 'Book on Resy \u2192' : s.bookingProvider === 'opentable' ? 'Book on OpenTable \u2192' : 'Get directions \u2192'}
+              {s.bookingProvider === 'walk-in' ? 'Get directions \u2192' : 'Find a table \u2192'}
             </a>
           </div>
 

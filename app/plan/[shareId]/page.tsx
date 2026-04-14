@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { notFound } from 'next/navigation';
 import Link from 'next/link';
 import { createServiceClient } from '@/lib/supabase-server';
+import { formatTime12h, glance12h, dedupeLeadingSentence } from '@/lib/format';
 
 export const dynamic = 'force-dynamic';
 export const revalidate = 0;
@@ -62,7 +63,7 @@ export default async function SavedPlanPage({ params }: Params) {
         <h1>{stops.map((s: any) => s.venue?.name).filter(Boolean).join(' \u2192 ')}</h1>
 
         {p.coldOpen && <div className="plan-cold-open">\u201c{p.coldOpen}\u201d</div>}
-        {p.nightAtAGlance && <div className="plan-glance">{p.nightAtAGlance}</div>}
+        {p.nightAtAGlance && <div className="plan-glance">{glance12h(p.nightAtAGlance)}</div>}
         {!p.coldOpen && plan.share_blurb && <p className="plan-saved-sub">{plan.share_blurb}</p>}
 
         <p className="plan-saved-meta">
@@ -110,12 +111,12 @@ export default async function SavedPlanPage({ params }: Params) {
         <div className="plan-strip">
           <div className="plan-strip-col">
             <div className="plan-strip-label">Leave by</div>
-            <div className="plan-strip-value">{p.timingSheet.leaveBy}</div>
-            <div className="plan-strip-sub">Ride ~{p.timingSheet.rideEstimateMin}min</div>
+            <div className="plan-strip-value">{formatTime12h(p.timingSheet.leaveBy)}</div>
+            <div className="plan-strip-sub">Ride ~{p.timingSheet.rideEstimateMin}min \u00b7 ET</div>
           </div>
           <div className="plan-strip-col">
             <div className="plan-strip-label">Arrive</div>
-            <div className="plan-strip-value">{p.timingSheet.arriveBy}</div>
+            <div className="plan-strip-value">{formatTime12h(p.timingSheet.arriveBy)}</div>
             <div className="plan-strip-sub">Table holds {p.timingSheet.reservationHoldMin}min</div>
           </div>
           {p.weather && (
@@ -142,15 +143,15 @@ export default async function SavedPlanPage({ params }: Params) {
           <div className="plan-stop-header">
             <div className="plan-stop-time">
               <div className="plan-stop-slot">{s.slot === 'main' ? 'Main' : s.slot === 'before' ? 'Drinks' : s.slot === 'activity' ? 'Activity' : 'After'}</div>
-              <div className="plan-stop-clock">{s.startTime}</div>
+              <div className="plan-stop-clock">{formatTime12h(s.startTime)}</div>
               <div className="plan-stop-dur">{s.durationMin} min</div>
             </div>
             <div className="plan-stop-title">
               <h3>{s.venue?.name}</h3>
-              <div className="plan-stop-meta">{s.venue?.neighborhood} \u00b7 {s.venue?.price} \u00b7 {s.venue?.vibe}</div>
+              <div className="plan-stop-meta">{s.venue?.neighborhood} \u00b7 {s.venue?.price}</div>
             </div>
           </div>
-          {s.blurb && <p className="plan-stop-blurb">{s.blurb}</p>}
+          {s.blurb && <p className="plan-stop-blurb">{dedupeLeadingSentence(s.blurb)}</p>}
           {s.beats && (
             <div className="plan-beats">
               {s.beats.arrival && <div className="plan-beat"><span className="plan-beat-label">Walk in:</span> {s.beats.arrival}</div>}
@@ -164,7 +165,7 @@ export default async function SavedPlanPage({ params }: Params) {
             {s.photoSpot && <div className="plan-extra"><strong>Photo spot:</strong> {s.photoSpot}</div>}
           </div>
           <a href={s.bookingUrl} target="_blank" rel="noopener noreferrer" className="plan-book-btn">
-            {s.bookingProvider === 'resy' ? 'Book on Resy \u2192' : s.bookingProvider === 'opentable' ? 'Book on OpenTable \u2192' : 'Get directions \u2192'}
+            {s.bookingProvider === 'walk-in' ? 'Get directions \u2192' : 'Find a table \u2192'}
           </a>
           {s.walkTo && i < stops.length - 1 && (
             <div className="plan-walk">

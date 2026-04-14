@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server';
 import { createServiceClient } from '@/lib/supabase-server';
+import { formatTime12h, glance12h, dedupeLeadingSentence } from '@/lib/format';
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -37,15 +38,15 @@ export async function GET(_req: Request, { params }: { params: { shareId: string
           <div class="stop-head">
             <div class="time">
               <div class="slot">${esc(s.slot || 'main')}</div>
-              <div class="clock">${esc(s.startTime || '')}</div>
+              <div class="clock">${esc(formatTime12h(s.startTime || ''))}</div>
               <div class="dur">${esc(s.durationMin || 60)} min</div>
             </div>
             <div class="title">
               <h2>${esc(s.venue?.name || 'Stop')}</h2>
-              <div class="meta">${esc(s.venue?.neighborhood || '')} \u00b7 ${esc(s.venue?.price || '')} \u00b7 ${esc(s.venue?.vibe || '')}</div>
+              <div class="meta">${esc(s.venue?.neighborhood || '')} \u00b7 ${esc(s.venue?.price || '')}</div>
             </div>
           </div>
-          ${s.blurb ? `<p class="blurb">${esc(s.blurb)}</p>` : ''}
+          ${s.blurb ? `<p class="blurb">${esc(dedupeLeadingSentence(s.blurb))}</p>` : ''}
           <dl class="beats">
             ${beats.arrival ? `<dt>Walk in</dt><dd>${esc(beats.arrival)}</dd>` : ''}
             ${beats.whyThisWorks ? `<dt>Why this</dt><dd>${esc(beats.whyThisWorks)}</dd>` : ''}
@@ -125,11 +126,11 @@ export async function GET(_req: Request, { params }: { params: { shareId: string
     <div class="brand">DATINGDEX \u00b7 Date plan</div>
     <h1>${esc(stops.map((s: any) => s.venue?.name).filter(Boolean).join(' \u2192 '))}</h1>
     ${p.coldOpen ? `<div class="cold">${esc(p.coldOpen)}</div>` : ''}
-    ${p.nightAtAGlance ? `<div class="glance">${esc(p.nightAtAGlance)}</div>` : ''}
+    ${p.nightAtAGlance ? `<div class="glance">${esc(glance12h(p.nightAtAGlance))}</div>` : ''}
 
     <div class="strip">
-      <div><div class="lbl">Leave by</div><div class="val">${esc(p.timingSheet?.leaveBy || '')}</div></div>
-      <div><div class="lbl">Arrive</div><div class="val">${esc(p.timingSheet?.arriveBy || '')}</div></div>
+      <div><div class="lbl">Leave by</div><div class="val">${esc(formatTime12h(p.timingSheet?.leaveBy || ''))}</div></div>
+      <div><div class="lbl">Arrive</div><div class="val">${esc(formatTime12h(p.timingSheet?.arriveBy || ''))}</div></div>
       <div><div class="lbl">Weather</div><div class="val">${p.weather ? esc(p.weather.tempF) + '\u00b0F' : '\u2014'}</div></div>
       <div><div class="lbl">Total</div><div class="val">$${it?.totalEstimateUsd?.[0] ?? '\u2014'}\u2013${it?.totalEstimateUsd?.[1] ?? '\u2014'}</div></div>
     </div>

@@ -1,6 +1,7 @@
 import { NextResponse } from 'next/server';
 import { buildItinerary, normalizeLegacyInput, type PlanInput, type PlanPayload } from '@/lib/planner';
 import { parseFreeText, writeFullPlan, validateVenues } from '@/lib/anthropic';
+import { dedupeLeadingSentence } from '@/lib/format';
 import { createSupabaseServerClient, createServiceClient } from '@/lib/supabase-server';
 import { extractIp, hashIp, rateLimitPlan, FREE_PLAN_LIMITS } from '@/lib/rate-limit';
 import { getWeather } from '@/lib/weather';
@@ -190,14 +191,17 @@ export async function POST(req: Request) {
   }
 
   // Stitch full into itinerary stops
-  itinerary.stops = itinerary.stops.map((s, i) => ({
-    ...s,
-    blurb: full.blurbs[i] || `${s.venue.hook}. ${s.venue.desc}`,
-    beats: full.beats[i],
-    walkTo: i < itinerary.stops.length - 1 ? full.walkTransitions[i] : undefined,
-    whatToWear: full.whatToWear[i],
-    photoSpot: full.photoSpots[i],
-  }));
+  itinerary.stops = itinerary.stops.map((s, i) => {
+    const rawBlurb = full.blurbs[i] || `${s.venue.hook}. ${s.venue.desc}`;
+    return {
+      ...s,
+      blurb: dedupeLeadingSentence(rawBlurb),
+      beats: full.beats[i],
+      walkTo: i < itinerary.stops.length - 1 ? full.walkTransitions[i] : undefined,
+      whatToWear: full.whatToWear[i],
+      photoSpot: full.photoSpots[i],
+    };
+  });
 
   itinerary.dressCode = full.whatToWear[0];
 
